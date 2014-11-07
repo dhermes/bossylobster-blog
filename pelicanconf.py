@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
-import os
 
 AUTHOR = u'Danny Hermes'
 
@@ -46,3 +43,6 @@ TWITTER_FOLLOW_BUTTON = True
 TWITTER_TWEET_COUNT = 3
 TWITTER_SHOW_REPLIES = 'false'
 TWITTER_SHOW_FOLLOWER_COUNT = 'true'
+
+# Search
+SEARCH_BOX = True
