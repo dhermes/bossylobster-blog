@@ -65,3 +65,6 @@ TWITTER_SHOW_FOLLOWER_COUNT = 'true'
 
 # Search
 SEARCH_BOX = True
+
+# Sidebar for the octopress theme, a relative path (to the root).
+SIDEBAR_IMAGE = 'images/bossy_lobster_200_alpha.png'
