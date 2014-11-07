@@ -19,10 +19,15 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
 # Title menu options
 MENUITEMS = [
+    ('All Posts', '/archive.html'),
     ('GitHub Profile', 'http://github.com/dhermes/'),
     ('Berkeley Page', 'http://math.berkeley.edu/~dhermes/'),
 ]
-NEWEST_FIRST_ARCHIVES = False
+
+# Archive customizations.
+NEWEST_FIRST_ARCHIVES = True
+HIDE_CATEGORIES_IN_ARCHIVE = True
+ARCHIVE_TITLE = 'All Posts'
 
 # This assumes pelican>=3.3
 STATIC_PATHS = [
