@@ -144,9 +144,12 @@ well, forcing the continued fraction expansion \$\$\\sqrt{D} = a\_0 +
 \\cfrac{1}{a\_1 + \\cfrac{1}{a\_2 + \\ddots}}\$\$ to be
 periodic.\\(\\Box\\)
 
-**Update:** I [posted
-this](http://www.proofwiki.org/wiki/Continued_Fraction_Expansion_of_Irrational_Square_Root)
+**Update:** I
+[posted this](http://www.proofwiki.org/wiki/Continued_Fraction_Expansion_of_Irrational_Square_Root)
 on
-![](http://2.bp.blogspot.com/-W5Bi5WJPoZw/TiUQmeH06-I/AAAAAAAAA3U/RI-_kAcBlo4/s1600/175px-Logo.png)
+
+<div markdown="1" style="text-align: center;">
+  ![ProofWiki logo](/images/175px-Logo.png)
+</div>
 
 <a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

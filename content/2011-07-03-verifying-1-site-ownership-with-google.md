@@ -11,12 +11,9 @@ site at [bossylobster.appspot.com](http://bossylobster.appspot.com/) and
 decided to launch by clicking "Add Domain" in the "Application
 Settings".
 
-<div class="separator" style="clear: both; text-align: center;">
-
-[![](http://2.bp.blogspot.com/-OfMIzEGrOGs/ThDuKl-ytFI/AAAAAAAAAv4/z0BFojIJcWQ/s1600/Screen+shot+2011-07-03+at+2.05.13+PM.png)](http://2.bp.blogspot.com/-OfMIzEGrOGs/ThDuKl-ytFI/AAAAAAAAAv4/z0BFojIJcWQ/s1600/Screen+shot+2011-07-03+at+2.05.13+PM.png)
-
+<div markdown="1" style="text-align: center;">
+  ![Application Settings](/images/verify1and1_screenshot1.png)
 </div>
-
 
 After clicking this I was greeted with a note: "You must sign up for
 Google Apps to register this domain or prove that you already own it."
@@ -53,17 +50,16 @@ Well, since I hadn't set my website up, the last three options were off
 limits to me (or so I thought). I had a bare minimum package from 1&1,
 so hosting was pretty much off limits. Apparently I picked one of the
 inept domain hosts because they don't support creation of a CNAME TXT
-record!! A quick Google search reveals ["Yes, we do understand what an
-SPF record is. Unfortunately we do not support in on our hosting plans.
-We apologize for any
-inconvenience."](http://webmasters.stackexchange.com/questions/859/how-can-i-create-an-spf-record-on-my-1and1-com-hosted-domain)
+record!! A quick Google search
+[reveals](http://webmasters.stackexchange.com/questions/859/how-can-i-create-an-spf-record-on-my-1and1-com-hosted-domain)
 
-<div class="separator" style="clear: both; text-align: center;">
+> Yes, we do understand what an SPF record is. Unfortunately we
+> do not support in on our hosting plans. We apologize for any
+> inconvenience.
 
-[![](http://1.bp.blogspot.com/-j-MndPbqYKg/ThDu5PUlt0I/AAAAAAAAAv8/OF5_gWCx3Zs/s640/Screen+shot+2011-07-03+at+3.02.11+PM.png)](http://1.bp.blogspot.com/-j-MndPbqYKg/ThDu5PUlt0I/AAAAAAAAAv8/OF5_gWCx3Zs/s1600/Screen+shot+2011-07-03+at+3.02.11+PM.png)
-
+<div markdown="1" style="text-align: center;">
+  ![Verify Ownership Panel](/images/verify1and1_screenshot2.png)
 </div>
-
 
 So here I am back to square one, just trying to prove I own something,
 an inherently basic task made incredibly frustrating. Hopefully I can
@@ -130,10 +126,8 @@ your change has propagated to DNS servers worldwide (wait until it has)
 11. Upon propagation, login to [Google Apps](https://www.google.com/a)
 and verify via the meta tag
 
-<div class="separator" style="clear: both; text-align: center;">
-
-[![](http://3.bp.blogspot.com/-WanRI9X9Gd0/ThDv2kFDk8I/AAAAAAAAAwA/9XpdLm-b7Ds/s640/Screen+shot+2011-07-03+at+3.02.22+PM.png)](http://3.bp.blogspot.com/-WanRI9X9Gd0/ThDv2kFDk8I/AAAAAAAAAwA/9XpdLm-b7Ds/s1600/Screen+shot+2011-07-03+at+3.02.22+PM.png)
-
+<div markdown="1" style="text-align: center;">
+  ![Verify Ownership Success](/images/verify1and1_screenshot3.png)
 </div>
 
 <a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

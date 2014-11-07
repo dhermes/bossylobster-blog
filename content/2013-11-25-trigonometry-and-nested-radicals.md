@@ -32,7 +32,9 @@ regular polygon:
 
 <div class="separator" style="clear: both; text-align: center;">
 
-[![](http://1.bp.blogspot.com/-VRz8LKn081A/UpPU9TzebwI/AAAAAAAANJs/qK36fAX2aOY/s1600/p045.png "From http://www.qbyte.org/puzzles/p045s.html")](http://1.bp.blogspot.com/-VRz8LKn081A/UpPU9TzebwI/AAAAAAAANJs/qK36fAX2aOY/s1600/p045.png)
+<div markdown="1" style="text-align: center;">
+  ![Compute pi from polygons](/images/p045.png)
+</div>
 
 </div>
 
