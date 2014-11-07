@@ -2,8 +2,9 @@
 
 AUTHOR = u'Danny Hermes'
 
-SITENAME = u'Zoop Zap Title'
-SITESUBTITLE = None
+SITENAME = u'Bossylobster Blog'
+SITESUBTITLE = (u'Musings on humor/tech/mathematics/sports '
+                'from the bossiest lobster')
 SITEURL = ''
 
 PATH = 'content'
@@ -14,12 +15,11 @@ TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = u'en'
 
 # Set the article URL
-ARTICLE_URL = None
+ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = None
 
 # Title menu options
-MENUITEMS = [('Archives', '/archives.html'),
-             ('Home Page', 'XX')]
+MENUITEMS = []
 NEWEST_FIRST_ARCHIVES = False
 
 # Theme and plugins
