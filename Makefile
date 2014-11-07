@@ -25,7 +25,7 @@ help:
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
 	@echo '   make stopserver                  stop local server                  '
-	@echo '   make github                      upload the web site via gh-pages   '
+	@echo '   make github-push                 push the web site to GitHub        '
 	@echo '                                                                       '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
@@ -61,7 +61,7 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-github: publish
+github-push: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
 

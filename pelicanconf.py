@@ -15,7 +15,7 @@ DEFAULT_LANG = u'en'
 
 # Set the article URL
 ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
-ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}/index.html'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
 # Title menu options
 MENUITEMS = [
@@ -28,17 +28,24 @@ NEWEST_FIRST_ARCHIVES = False
 STATIC_PATHS = [
     'images',
     'favicon.ico',
+    'favicon.png',
 ]
 
 # Theme and plugins
 THEME = 'pelican-octopress-theme/'
-PLUGIN_PATH = 'pelican-plugins'
+PLUGIN_PATHS = [
+    'pelican-plugins',
+]
 PLUGINS = [
     'summary',
-    'liquid_tags.include_code',
-    'liquid_tags.notebook',
+    # These tags currently fail when building with Pelican 3.5.
+    # 'liquid_tags.include_code',
+    # 'liquid_tags.notebook',
 ]
+
+# Some menu settings
 DISPLAY_PAGES_ON_MENU = False
+DISPLAY_CATEGORIES_ON_MENU = False
 
 # Sharing
 TWITTER_USER = 'bossylobster'

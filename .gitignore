@@ -1,5 +1,6 @@
 *~
 *.pyc
+cache
 output
 _build
 _nb_header.html
