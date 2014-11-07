@@ -4,6 +4,7 @@
 import os
 import glob
 import json
+import subprocess
 
 # In order to pull down all (36) of my blog posts I ran:
 # $ pelican-import \
@@ -43,3 +44,14 @@ if set(cleaned_titles.values()) != EXISTING_POSTS:
                       cleaned_only, existing_only))
 else:
     print 'Filenames match blog titles.'
+
+
+for year, month, title_as_md in cleaned_titles.iterkeys():
+    print '=' * 70
+
+    new_title = '%s-%s-%s' % (year, month, title_as_md)
+
+    old_path = os.path.join('content', title_as_md)
+    new_path = os.path.join('content', new_title)
+    print 'Moving %s -> %s' % (old_path, new_path)
+    subprocess.call(['git', 'mv', old_path, new_path])
