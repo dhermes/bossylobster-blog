@@ -1,8 +1,8 @@
 Title: Math for Humans, A Second Attempt
-Date: 2014-08-22 20:20
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Bayes, Bayesian, Kahneman, Layman, Mathematics, Probability
-Slug: math-for-humans-a-second-attempt
+date: 2014-08-22
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Bayes, Bayesian, Kahneman, Layman, Mathematics, Probability
+slug: math-for-humans-second-attempt
 
 The morning after posting my latest [blog
 post](http://blog.bossylobster.com/2014/07/conditional-probabilities-in-thinking.html),

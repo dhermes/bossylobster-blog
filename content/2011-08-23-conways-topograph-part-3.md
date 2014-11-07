@@ -1,8 +1,8 @@
 Title: Conway's Topograph Part 3
-Date: 2011-11-18 16:47
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
-Slug: conways-topograph-part-3
+date: 2011-08-23
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
+slug: conways-topograph-part-3
 
 This is the third (continued from [Part
 2](http://blog.bossylobster.com/2011/08/conways-topograph-part-2.html)) in

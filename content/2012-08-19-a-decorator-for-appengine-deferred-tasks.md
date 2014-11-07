@@ -1,8 +1,8 @@
 Title: A Decorator for App Engine Deferred Tasks
-Date: 2012-09-10 15:00
-Author: Danny Hermes (noreply@blogger.com)
-Tags: AppEngine, Decorator, Deferred Library, Environment Variables, Google App Engine, Python, Task Queue API
-Slug: a-decorator-for-app-engine-deferred-tasks
+date: 2012-08-19
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: AppEngine, Decorator, Deferred Library, Environment Variables, Google App Engine, Python, Task Queue API
+slug: a-decorator-for-appengine-deferred-tasks
 
 <p>
 I happen to be a big fan of the [deferred

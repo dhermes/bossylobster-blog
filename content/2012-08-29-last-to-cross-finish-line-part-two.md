@@ -1,8 +1,8 @@
 Title: Last to Cross the Finish Line: Part Two
-Date: 2012-11-20 23:37
-Author: Danny Hermes (noreply@blogger.com)
-Tags: AppEngine, Deferred Library, Google App Engine, Google Codesite, Javascript, jQuery, Python, Task Queue API
-Slug: last-to-cross-the-finish-line-part-two
+date: 2012-08-29
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: AppEngine, Deferred Library, Google App Engine, Google Codesite, Javascript, jQuery, Python, Task Queue API
+slug: last-to-cross-finish-line-part-two
 
 Recently, my colleague [+Fred
 Sauer](https://plus.google.com/115640166224745944209) and I gave a tech

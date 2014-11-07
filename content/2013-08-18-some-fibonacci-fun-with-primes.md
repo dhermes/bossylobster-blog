@@ -1,8 +1,8 @@
 Title: Some Fibonacci Fun with Primes
-Date: 2014-07-29 21:16
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Algebra, Fibonacci, Finite Field, Linear Algebra, Math, Number Theory
-Slug: some-fibonacci-fun-with-primes
+date: 2013-08-18
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Algebra, Fibonacci, Finite Field, Linear Algebra, Math, Number Theory
+slug: some-fibonacci-fun-with-primes
 
 I haven't written in way too long and just wanted to post this fun
 little proof.  

@@ -1,8 +1,8 @@
 Title: Getting Divvy-like functionality on Linux
-Date: 2011-11-18 16:49
-Author: Danny Hermes (dhermes@bossylobster.com)
-Tags: Compiz, Divvy, Linux, Mac OS X, Window Manager
-Slug: getting-divvy-like-functionality-on-linux
+date: 2011-07-01
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Compiz, Divvy, Linux, Mac OS X, Window Manager
+slug: i-love-divvy-as-im-sure-many-do-but-its
 
 I **love** my [Divvy](http://mizage.com/divvy), as I'm sure many do, but
 it's not available for Linux. (I completely understand why it isn't,

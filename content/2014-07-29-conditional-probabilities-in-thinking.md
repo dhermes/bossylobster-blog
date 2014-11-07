@@ -1,8 +1,8 @@
 Title: Conditional Probabilities in "Thinking Fast and Slow"
-Date: 2014-08-22 20:09
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Bayes, Bayesian, Kahneman, Layman, Mathematics, Probability
-Slug: conditional-probabilities-in-thinking-fast-and-slow
+date: 2014-07-29
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Bayes, Bayesian, Kahneman, Layman, Mathematics, Probability
+slug: conditional-probabilities-in-thinking
 
 I'm currently reading [Thinking Fast and
 Slow](http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555)

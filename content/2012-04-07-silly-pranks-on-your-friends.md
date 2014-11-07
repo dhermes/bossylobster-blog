@@ -1,8 +1,8 @@
 Title: Silly Pranks on your Friends
-Date: 2012-05-16 00:33
-Author: Danny Hermes (noreply@blogger.com)
-Tags: DNS, DNS Lookup, Domain Name System, Hosts file, Internet Protocol, Internet Service Provider, IP Address, ISP, Macbook, nytimes.com, people.com, Practical Joke, Prank, UNIX
-Slug: silly-pranks-on-your-friends
+date: 2012-04-07
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: DNS, DNS Lookup, Domain Name System, Hosts file, Internet Protocol, Internet Service Provider, IP Address, ISP, Macbook, nytimes.com, people.com, Practical Joke, Prank, UNIX
+slug: silly-pranks-on-your-friends
 
 <p>
 <span style="font-size: large;">Disclaimer: These are silly little

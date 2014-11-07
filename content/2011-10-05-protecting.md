@@ -1,8 +1,8 @@
 Title: Protecting Sensitive Information in Public Git Repositories
-Date: 2011-11-27 21:58
-Author: Danny Hermes (noreply@blogger.com)
-Tags: AppEngine, Commit Hook, Config Files, Git, Private Key, Protect, Python
-Slug: protecting-sensitive-information-in-public-git-repositories
+date: 2011-10-05
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: AppEngine, Commit Hook, Config Files, Git, Private Key, Protect, Python
+slug: protecting
 
 <p>
 On the (much too early) bus to work this morning, I was reading my

@@ -1,8 +1,8 @@
 Title: Life of π: Continued Fractions and Infinite Series
-Date: 2012-05-18 03:37
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Analysis, Continued Fractions, Math, Pi, Tangent
-Slug: life-of-p-continued-fractions-and-infinite-series
+date: 2012-05-17
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Analysis, Continued Fractions, Math, Pi, Tangent
+slug: life-of-continued-fractions-and
 
 <p>
 This is from a talk I gave to the [UC Santa Cruz

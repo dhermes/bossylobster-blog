@@ -1,8 +1,8 @@
 Title: Continued Fractions for the Greater Good part 1
-Date: 2011-08-31 04:04
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Algebra, Continued, Fractions, Math
-Slug: continued-fractions-for-the-greater-good-part-1
+date: 2011-07-10
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Algebra, Continued, Fractions, Math
+slug: continued-fractions-for-greater-good
 
 OK, maybe not for the greater good, but still fun. This first post will
 be relatively short and sweet, intended to give an introduction for the

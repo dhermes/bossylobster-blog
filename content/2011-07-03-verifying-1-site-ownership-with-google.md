@@ -1,8 +1,8 @@
 Title: Verifying 1and1 Site Ownership with Google Apps
-Date: 2011-11-28 21:55
-Author: Danny Hermes (noreply@blogger.com)
-Tags: 1and1.com, Django, Google Apps, Verification
-Slug: verifying-1and1-site-ownership-with-google-apps
+date: 2011-07-03
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: 1and1.com, Django, Google Apps, Verification
+slug: verifying-1-site-ownership-with-google
 
 Hello freens. I purchased bossylobster.com from [1&1](http://1and1.com/)
 recently with the intent of hosting it on Google App Engine. I soon

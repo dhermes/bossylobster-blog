@@ -1,8 +1,8 @@
 Title: Trigonometry and Nested Radicals
-Date: 2014-07-29 21:16
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Approximation, Infinite Nested Radical, Math, Nested Radical, Pi, Radical, Root Two, Square Root
-Slug: trigonometry-and-nested-radicals
+date: 2013-11-25
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Approximation, Infinite Nested Radical, Math, Nested Radical, Pi, Radical, Root Two, Square Root
+slug: trigonometry-and-nested-radicals
 
 Early last month, I was chatting with one of my officemates about a
 curious problem I had studied in high school. I hadn't written any of

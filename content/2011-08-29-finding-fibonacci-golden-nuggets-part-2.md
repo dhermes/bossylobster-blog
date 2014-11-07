@@ -1,8 +1,8 @@
 Title: Finding (Fibonacci) Golden Nuggets Part 2
-Date: 2011-11-18 16:47
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory, Project Euler
-Slug: finding-fibonacci-golden-nuggets-part-2
+date: 2011-08-29
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory, Project Euler
+slug: finding-fibonacci-golden-nuggets-part-2
 
 This is the *mostly code* second half of a [two part
 post](http://blog.bossylobster.com/2011/08/finding-fibonacci-golden-nuggets.html)

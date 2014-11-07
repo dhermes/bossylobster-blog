@@ -1,8 +1,8 @@
 Title: Where have I been?
-Date: 2012-03-29 01:09
-Author: Danny Hermes (noreply@blogger.com)
-Tags: AppEngine, Google App Engine, Google Codesite, Open Source, Python, Stack Overflow
-Slug: where-have-i-been
+date: 2012-03-28
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: AppEngine, Google App Engine, Google Codesite, Open Source, Python, Stack Overflow
+slug: where-have-i-been
 
 Well, it's been a bit crazy and I haven't written a blog post in ages. I
 have several brewing, but had just been too busy at work (and a ton of

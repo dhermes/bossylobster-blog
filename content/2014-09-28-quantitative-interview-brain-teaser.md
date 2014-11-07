@@ -1,8 +1,8 @@
 Title: Quantitative Interview Brain Teaser: Computer Assistance
-Date: 2014-09-29 01:25
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, itertools, Mathematics, Programming, Python
-Slug: quantitative-interview-brain-teaser-computer-assistance
+date: 2014-09-28
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, itertools, Mathematics, Programming, Python
+slug: quantitative-interview-brain-teaser
 
 <p>
 In a [previous

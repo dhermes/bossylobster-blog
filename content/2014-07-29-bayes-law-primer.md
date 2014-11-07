@@ -1,8 +1,8 @@
 Title: Bayes' Law Primer
-Date: 2014-07-29 22:07
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Bayes, Layman, Mathematics, Probability
-Slug: bayes-law-primer
+date: 2014-07-29
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Bayes, Layman, Mathematics, Probability
+slug: bayes-law-primer
 
 I'm currently writing a blog post that uses [Bayes'
 Law](http://en.wikipedia.org/wiki/Bayes%27_law) but don't want to muddy

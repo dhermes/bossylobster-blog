@@ -1,8 +1,8 @@
 Title: Calculating a Greatest Common Divisor with Dirichlet's Help
-Date: 2014-07-29 21:16
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Dirichlet, Math, Mathematics, Number Theory, Prime Number
-Slug: calculating-a-greatest-common-divisor-with-dirichlets-help
+date: 2013-09-10
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Dirichlet, Math, Mathematics, Number Theory, Prime Number
+slug: calculating-greatest-common-divisor
 
 Having just left Google and started my PhD in Applied Mathematics
 at [Berkeley](http://math.berkeley.edu/), I thought it might be

@@ -1,8 +1,8 @@
 Title: Handling errors in Google App Engine...and failing
-Date: 2011-11-30 22:52
-Author: Danny Hermes (noreply@blogger.com)
-Tags: AppEngine, Deferred Library, Exception, Google App Engine, Mail API, Metaclass, Python, Pythonic, Request Handler, Task Queue API
-Slug: handling-errors-in-google-app-engineand-failing
+date: 2011-11-27
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: AppEngine, Deferred Library, Exception, Google App Engine, Mail API, Metaclass, Python, Pythonic, Request Handler, Task Queue API
+slug: handling-errors-in-google-app-engineand
 
 <p>
 After spending a nontrivial amount of my nights and weekends working on

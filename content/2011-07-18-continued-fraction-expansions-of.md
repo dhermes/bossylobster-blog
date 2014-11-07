@@ -1,8 +1,8 @@
 Title: Continued fraction expansions of irrational square roots
-Date: 2011-11-18 16:48
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Algebra, Continued Fractions, Math, Quadratic Irrational, Square Root
-Slug: continued-fraction-expansions-of-irrational-square-roots
+date: 2011-07-18
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Algebra, Continued Fractions, Math, Quadratic Irrational, Square Root
+slug: continued-fraction-expansions-of
 
 I had no idea (until this Thursday, July 16) that I had never seen a
 proof of the fact that the continued fraction expansion of

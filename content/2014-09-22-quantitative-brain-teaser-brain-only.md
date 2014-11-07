@@ -1,8 +1,8 @@
 Title: Quantitative Brain Teaser: Brain Only
-Date: 2014-09-23 16:10
-Author: Danny Hermes (noreply@blogger.com)
-Tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, Mathematics
-Slug: quantitative-brain-teaser-brain-only
+date: 2014-09-22
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, Mathematics
+slug: quantitative-brain-teaser-brain-only
 
 <p>
 I've recently been working some atrophied mental muscles and came across

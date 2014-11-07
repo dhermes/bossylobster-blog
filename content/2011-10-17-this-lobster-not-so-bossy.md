@@ -1,7 +1,8 @@
 Title: This Lobster, not so Bossy
-Date: 2011-11-27 23:42
-Author: Danny Hermes (noreply@blogger.com)
-Slug: this-lobster-not-so-bossy
+date: 2011-10-17
+author: Danny Hermes (dhermes@bossylobster.com)
+tags:
+slug: this-lobster-not-so-bossy
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -16,4 +17,3 @@ Slug: this-lobster-not-so-bossy
 [About Bossy Lobster](https://profiles.google.com/114760865724135687241)
 
 </p>
-

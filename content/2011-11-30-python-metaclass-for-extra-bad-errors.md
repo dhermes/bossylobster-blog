@@ -1,8 +1,8 @@
 Title: A Python Metaclass for "extra bad" errors in Google App Engine
-Date: 2011-11-30 22:51
-Author: Danny Hermes (noreply@blogger.com)
-Tags: AppEngine, Class as Object, Decorator, Exception, Google App Engine, Metaclass, OOP, Python, Pythonic, Request Handler
-Slug: a-python-metaclass-for-extra-bad-errors-in-google-app-engine
+date: 2011-11-30
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: AppEngine, Class as Object, Decorator, Exception, Google App Engine, Metaclass, OOP, Python, Pythonic, Request Handler
+slug: python-metaclass-for-extra-bad-errors
 
 <p>
 So now here we are, having tried to [handle errors in Google App
