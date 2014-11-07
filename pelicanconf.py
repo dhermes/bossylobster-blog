@@ -27,7 +27,6 @@ NEWEST_FIRST_ARCHIVES = False
 # This assumes pelican>=3.3
 STATIC_PATHS = [
     'images',
-    'favicon.ico',
     'favicon.png',
 ]
 
