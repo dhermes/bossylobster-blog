@@ -5,9 +5,8 @@ AUTHOR = u'Danny Hermes'
 SITENAME = u'Bossylobster Blog'
 SITESUBTITLE = (u'Musings on humor/tech/mathematics/sports '
                 'from the bossiest lobster')
-SITEURL = ''
-
-PATH = 'content'
+SITEURL = ''  # This is changed in publishconf.py.
+PATH = 'content'  # Directory containing posts.
 
 # Times and dates
 DEFAULT_DATE_FORMAT = '%b %d, %Y'
@@ -15,20 +14,30 @@ TIMEZONE = 'US/Pacific'
 DEFAULT_LANG = u'en'
 
 # Set the article URL
-ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{slug}.html'
-ARTICLE_SAVE_AS = None
+ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}/index.html'
 
 # Title menu options
-MENUITEMS = []
+MENUITEMS = [
+    ('GitHub Profile', 'http://github.com/dhermes/'),
+    ('Berkeley Page', 'http://math.berkeley.edu/~dhermes/'),
+]
 NEWEST_FIRST_ARCHIVES = False
+
+# This assumes pelican>=3.3
+STATIC_PATHS = [
+    'images',
+    'favicon.ico',
+]
 
 # Theme and plugins
 THEME = 'pelican-octopress-theme/'
 PLUGIN_PATH = 'pelican-plugins'
-PLUGINS = ['summary', 'liquid_tags.img', 'liquid_tags.video',
-           'liquid_tags.include_code', 'liquid_tags.notebook',
-           'liquid_tags.literal']
-
+PLUGINS = [
+    'summary',
+    'liquid_tags.include_code',
+    'liquid_tags.notebook',
+]
 DISPLAY_PAGES_ON_MENU = False
 
 # Sharing
@@ -43,6 +52,10 @@ TWITTER_FOLLOW_BUTTON = True
 TWITTER_TWEET_COUNT = 3
 TWITTER_SHOW_REPLIES = 'false'
 TWITTER_SHOW_FOLLOWER_COUNT = 'true'
+
+# RSS/Atom feeds intentionally not used.
+# FEED_DOMAIN = None
+# FEED_ATOM = None
 
 # Search
 SEARCH_BOX = True
