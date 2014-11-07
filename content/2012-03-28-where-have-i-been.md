@@ -6,14 +6,14 @@ slug: where-have-i-been
 
 Well, it's been a bit crazy and I haven't written a blog post in ages. I
 have several brewing, but had just been too busy at work (and a ton of
-travel for personal fun) to really have the excess time to write.  
-  
+travel for personal fun) to really have the excess time to write.
+
 This return post will not have much content but will announce that I'm a
-big boy now.  
-  
+big boy now.
+
 In the 1.6.3 release of the App Engine SDK (and hence runtime), three
 nifty changes of mine were included. Two of them even made the [Release
-Notes](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes#Version_1.6.3_-_February_28,_2012):  
+Notes](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes#Version_1.6.3_-_February_28,_2012):
 
 <ul>
 <li>
@@ -40,8 +40,6 @@ any set of Release Notes, but I "closed" the
 I originally opened on StackOverflow. Checkout the
 [diff](http://code.google.com/p/googleappengine/source/diff?spec=svn241&r=241&format=side&path=/trunk/python/google/appengine/ext/gql/__init__.py&old_path=/trunk/python/google/appengine/ext/gql/__init__.py) to
 see the details. I'll follow up with a summary of each of the fixes in a
-later post. [About Bossy
-Lobster](https://profiles.google.com/114760865724135687241)
+later post.
 
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

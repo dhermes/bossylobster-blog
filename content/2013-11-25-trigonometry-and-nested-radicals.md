@@ -8,14 +8,14 @@ Early last month, I was chatting with one of my officemates about a
 curious problem I had studied in high school. I hadn't written any of
 the results down, so much of the discussion involved me rediscovering
 the results and proving them with much more powerful tools than I once
-possessed.  
-  
+possessed.
+
 Before writing about the problem I had played around with, I want to
 give a ~~brief~~ motivation. For as long as humans have been doing
 mathematics, finding values of \\(\\pi\\) has been deemed worthwhile (or
 every generation has just found it worthwhile to waste time computing
-digits).  
-  
+digits).
+
 One such way the Greeks (particularly
 [Archmides](http://www.math.utah.edu/~alfeld/Archimedes/Archimedes.html))
 computed \\(\\pi\\) was by approximating a circle by a regular polygon
@@ -23,12 +23,12 @@ and letting the number of sides grow large enough so that the error
 between the area of the unit circle (\\(\\pi \\cdot 1\^2\\)) and the
 area of the polygon would be smaller than some fixed threshold. Usually
 these thresholds were picked to ensure that the first \\(k\\) digits
-were fully accurate (for some appropriate value of \\(k\\)).  
-  
+were fully accurate (for some appropriate value of \\(k\\)).
+
 In many introductory Calculus courses, this problem is introduced
 exactly when the limit is introduced and students are forced to think
 about the [area problem](http://www.qbyte.org/puzzles/p045s.html) in the
-regular polygon:  
+regular polygon:
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -42,8 +42,8 @@ regular polygon:
 
 Given \\(N\\) sides, the area is \\(N \\cdot T\_N\\) where \\(T\_N\\) is
 the area of each individual triangle given by one side of the polygon
-and the circumcenter.  
-  
+and the circumcenter.
+
 Call one such triangle \\(\\Delta ABC\\) and let \\(BC\\) be the side
 that is also a side of the polygon while the other sides have
 \\(\\left|AB\\right| = \\left|AC\\right| = 1\\) since the polygon is
@@ -52,19 +52,19 @@ inscribed in a unit circle. The angle \\(\\angle BAC =
 angle and there are \\(N\\) of them. If we can find the perpendicular
 height \\(h\\) from \\(AB\\) to \\(C\\), the area will be
 \\(\\frac{1}{2} h \\left|AB\\right| = \\frac{h}{2}\\). But we also know
-that  
+that
 \\[\\sin\\left(\\angle BAC\\right) = \\frac{h}{\\left|AC\\right|}
 \\Rightarrow h = \\sin\\left(\\frac{2\\pi}{N}\\right).\\] Combining all
-of these, we can approximate \\(\\pi\\) with the area:  
+of these, we can approximate \\(\\pi\\) with the area:
 \\[\\pi \\approx \\frac{N}{2} \\sin\\left(\\frac{2\\pi}{N}\\right) =
 \\pi \\frac{\\sin\\left(\\frac{2\\pi}{N}\\right)}{\\frac{2 \\pi}{N}}.
 \\] As I've shown my [Math
 1A](http://math.berkeley.edu/courses/choosing/lowerdivcourses/math1A)
-students, we see that  
+students, we see that
 \\[\\lim\_{N \\to \\infty} \\pi
 \\frac{\\sin\\left(\\frac{2\\pi}{N}\\right)}{\\frac{2 \\pi}{N}} = \\pi
 \\lim\_{x \\to 0} \\frac{\\sin(x)}{x} = \\pi\\] so these are indeed good
-approximations.  
+approximations.
 
 ### Theory is Nice, But I Thought We Were Computing Something
 
@@ -78,21 +78,21 @@ identities](http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Double
 of [Abraham De Moivre](http://en.wikipedia.org/wiki/Abraham_de_Moivre)).
 To keep track of these polygons with a power of two as the number of
 sides, we call \\(A\_n = \\frac{2\^n}{2}
-\\sin\\left(\\frac{2\\pi}{2\^n}\\right)\\).  
-  
+\\sin\\left(\\frac{2\\pi}{2\^n}\\right)\\).
+
 Starting out with the simplest polygon, the square with \\(N = 2\^2\\)
-sides, we have  
+sides, we have
 \\[A\_2 = 2 \\sin\\left(\\frac{\\pi}{2}\\right) = 2.\\] Jumping to the
 [octagon](http://en.wikipedia.org/wiki/Octagon) (no not that "[The
 Octagon](https://www.google.com/search?q=%22the+octagon%22&tbm=isch)"),
-we have  
+we have
 \\[A\_3 = 4 \\sin\\left(\\frac{\\pi}{4}\\right) = 4 \\frac{\\sqrt{2}}{2}
 = 2 \\sqrt{2}.\\] So far, the toughest thing we've had to deal with is a
 \\(45\^{\\circ}\\) angle and haven't yet had to lean on Abraham
 ([him](http://www.nocturnar.com/imagenes/abraham-de-moivre-mathematician-abraham-de-moivre.jpg), [not
 him](http://foglobe.com/data_images/main/abraham-lincoln/abraham-lincoln-03.jpg)) for
 help. The [hexadecagon](http://en.wikipedia.org/wiki/Hexadecagon) wants
-to change that:  
+to change that:
 \\[A\_4 = 8 \\sin\\left(\\frac{\\pi}{8}\\right) = 8 \\sqrt{\\frac{1 -
 \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = 8 \\sqrt{\\frac{2 -
 \\sqrt{2}}{4}} = 4 \\sqrt{2 - \\sqrt{2}}.\\]
@@ -111,11 +111,11 @@ names):
 \\cos\\left(\\frac{\\pi}{8}\\right)}{2}}.\\] Before, we could rely on
 the fact that we know that a \\(45-45-90\\) triangle looked like, but
 now, we come across \\(\\cos\\left(\\frac{\\pi}{8}\\right)\\), a value
-which we haven't seen before. Luckily, Abraham has help here as well:  
+which we haven't seen before. Luckily, Abraham has help here as well:
 \\[\\cos\\left(\\frac{\\pi}{8}\\right) = \\sqrt{\\frac{1 +
 \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = \\sqrt{\\frac{2 +
 \\sqrt{2}}{4}} = \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}\\] which lets us
-compute  
+compute
 \\[A\_5 = 16 \\sqrt{\\frac{1 - \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}}{2}} =
 8 \\sqrt{2 - \\sqrt{2 + \\sqrt{2}}}.\\]
 
@@ -123,7 +123,7 @@ compute
 
 <div>
 
-  
+
 
 </div>
 
@@ -151,7 +151,7 @@ and only one minus sign at the beginning.
 
 <div>
 
-  
+
 
 </div>
 
@@ -169,7 +169,7 @@ know how close we are to \\(\\pi\\) as we increase the number of sides.
 
 <div>
 
-  
+
 
 </div>
 
@@ -190,7 +190,7 @@ infinite radical that converged and what the convergence behavior was.
 
 <div>
 
-  
+
 
 </div>
 
@@ -220,7 +220,7 @@ SFO to Dallas.
 
 <div>
 
-  
+
 
 </div>
 
@@ -232,7 +232,4 @@ and what other questions I have.
 
 </div>
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

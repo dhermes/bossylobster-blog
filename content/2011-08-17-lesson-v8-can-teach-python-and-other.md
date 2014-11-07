@@ -4,7 +4,6 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Benchmark, Comparison, Dynamic Language, Javascript, Javascript Engine, JIT, Just-in Time Compile, node.js, Performance, Project Euler, PyPy, Python, V8
 slug: lesson-v8-can-teach-python-and-other
 
-<p>
 Being unable to completely give up math for computers, I am naturally
 drawn to [Project Euler](http://projecteuler.net/) and as a result
 solved a [ridiculous
@@ -17,8 +16,8 @@ Javascript](https://github.com/dhermes/ProjectEuler/commit/663ee638c6b8255d00b84
 month and a half later I [came
 back](https://github.com/dhermes/ProjectEuler/commit/72c092ccf82c3933944584c2479d2e7ca0ef06f7)
 to it, and then finally two months after that, I [began to take it
-seriously](https://github.com/dhermes/ProjectEuler/commit/f19f85978aeeac3310b2175812d53bbea884d73b).  
-  
+seriously](https://github.com/dhermes/ProjectEuler/commit/f19f85978aeeac3310b2175812d53bbea884d73b).
+
 After making this decision, I noticed the prime Sieve of Eratosthenes
 was mighty fast when I ran it in Chrome, maybe even faster than my
 beloved Python. I tabled the thought for a little, but never really
@@ -27,8 +26,8 @@ working install of [node](http://nodejs.org/) running on my machine and
 was able to make more of this thought. (I say *finally installed*
 because on two previous tries I gave up because of conflicts with my
 version of gcc, coupled with the fact that I had no good reason to use
-node.)  
-  
+node.)
+
 When I originally did the conversion, I had skipped problem 8, because
 my implementation required pulling in the problem data as text from a
 file. While hanging out with [Boris](http://twitter.com/#!/borismus) and
@@ -48,14 +47,14 @@ my way into converting the Python solutions for problems 11 through 50
 (the remaining unconverted) into their Javascript equivalents, while
 also converting a good portion of my hefty
 [functions](http://code.google.com/p/dhermes-project-euler/source/browse/python_code/functions.py)
-module.  
-  
+module.
+
 Once this was done, I had also found I could replace most of the nice
 parts about Python with my own equivalent. For example, I was able to
 replace functionality I needed from the Python <span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">set</span>
-datatype with  
+datatype with
 
 ~~~~ {.prettyprint style="background-color: white;"}
 function uniq(arr) {  var result = {};  for (var i = 0, val; val = arr[i]; i++) {    result[val] = true;  }  return Object.keys(result);};
@@ -82,14 +81,14 @@ module [operator](http://docs.python.org/library/operator.html), and my
 own
 [timer.js](http://code.google.com/p/dhermes-project-euler/source/browse/js/timer.js)
 to stand in for the Python native
-module [time](http://docs.python.org/library/time.html).  
-  
+module [time](http://docs.python.org/library/time.html).
+
 Finally, I had working code and could do a side by side comparison of V8
 and the Python interpreter. **Update**: *I added a column
 for [PyPy](http://pypy.org/), a just in time implementation of
 Python. *Here is what I found (averaging the runtime over 10 separate
-calls to each function, the results are):  
-  
+calls to each function, the results are):
+
 
 <center>
 <table border="1" style="border-collapse: collapse;">
@@ -1430,19 +1429,19 @@ run 10000 times.
 </tbody>
 </table>
 </center>
-  
+
 As you'll notice, standard Python gets its butt kicked. I was kind of
 saddened by this, but in the end, just giddy that our web is faster
 because of it (90% of my life is digital) and also that we can do
 scripting faster on the server side (attribute to [Boris
 Smus](http://twitter.com/#!/borismus)) because of the node project
-(thanks Ryan Dahl).  
-  
+(thanks Ryan Dahl).
+
 Standard Python is actually slower in 46 of the 50 problems. In 28 of
 the 46 node is faster by a factor of 10 or greater, in 9 of those 28 by
 a factor of 50 or greater and in 2 of the 9 by a factor of 100 or
 greater! The only 4 in which Python was faster were from the ***n =
-10000*** sample. In fact, I was able to pinpoint exactly why:  
+10000*** sample. In fact, I was able to pinpoint exactly why:
 
 -   \#5 - My own Javascript implementation of <span
     class="Apple-style-span"
@@ -1480,8 +1479,8 @@ compilation and other incredible techniques has taken a formerly slow
 and clunky language (Javascript) which was used well beyond its original
 intended scope, and turned it into a damn fast dynamic language.
 Hopefully, this movement will make its way to Python and other dynamic
-languages and we can all have our code end up this close to the metal.  
-  
+languages and we can all have our code end up this close to the metal.
+
 **Update**: *In response to the comments, I ran the same code on the
 same machine, but with PyPy in place of Python. This is the direction I
 hope standard Python goes in and commend the guys pumping out faster and
@@ -1491,8 +1490,8 @@ update the post with more detailed metrics.) While I do commend them,
 the results don't really belong in this post because PyPy is still an
 offshoot. (However, as I understand, they both have ties to C, as PyPy
 uses GCC to compile to bytecode and V8 is written in C++. Feel free to
-supplement my knowledge in the comments.)*  
-  
+supplement my knowledge in the comments.)*
+
 **Update**: *All benchmarking was run on my Mac Pro Desktop with a 3.2
 GHz Quad-Core Intel Xeon processor and 4 cores for a total of 12 GB 1066
 MHz DDR3 memory. I used Python version 2.6.1, node version 0.4.9, and
@@ -1500,7 +1499,4 @@ PyPy version 1.5 (running on top of Python 2.7.1 with GCC 4.0.1).*
 
 </div>
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

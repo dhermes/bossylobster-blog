@@ -6,11 +6,11 @@ slug: continued-fractions-for-greater-good
 
 OK, maybe not for the greater good, but still fun. This first post will
 be relatively short and sweet, intended to give an introduction for the
-posts that will follow.  
-  
+posts that will follow.
+
 Before the introduction, some
 [motivation](http://en.wikipedia.org/wiki/Continued_fraction#Motivation)
-courtesy of [Wikipedia](http://en.wikipedia.org/wiki/Main_Page):  
+courtesy of [Wikipedia](http://en.wikipedia.org/wiki/Main_Page):
 
 <div>
 
@@ -44,8 +44,8 @@ With this in mind, one can define an infinite continued fraction to be
 denominators \\(a\_0, a\_1, a\_2, \\ldots\\), we can define a recurrence
 for the finite approximations (convergents) of this value. For example,
 the zeroth is \\(a\_0\\) and the first is \\(a\_0 + \\frac{1}{a\_1} =
-\\frac{a\_0 a\_1 + 1}{a\_1}\\).  
-  
+\\frac{a\_0 a\_1 + 1}{a\_1}\\).
+
 The other motivation (the one I actually learned first in real life) for
 continued fractions comes from \\(\\sqrt{2}\\) being represented by an
 infinite continued fraction. (Instead of saying a probability of
@@ -56,17 +56,17 @@ we try to write \\(\\sqrt{2} = 1.41421356\\ldots\\) as \\(1 +
 itself, we have \$\$\\sqrt{2} = 1 + \\cfrac{1}{1 + 1 +
 \\cfrac{1}{\\sqrt{2} + 1}} = 1 + \\cfrac{1}{1 + 1 + \\cfrac{1}{1 + 1 +
 \\cfrac{1}{\\sqrt{2} + 1}}}\$\$ and notice it can be represented by
-\\((1; 2, 2, 2, \\ldots)\\).  
-  
+\\((1; 2, 2, 2, \\ldots)\\).
+
 Define the \\(n\\)th convergent to be \\(\\frac{h\_n}{k\_n}\\), so above
 we have \\(h\_0 = a\_0, k\_0 = 1\\) and \\(h\_1 = a\_0 a\_1 + 1, k\_0 =
-a\_1\\).  
-  
+a\_1\\).
+
 Claim: \\(h\_n\\) and \\(k\_n\\) satisfy \\begin{align\*}h\_n &= a\_n
 h\_{n - 1} + h\_{n - 2} \\\\ k\_n &= a\_n k\_{n - 1} + k\_{n -
 2} \\end{align\*} along with \\(h\_{-1} = 1, h\_{-2} = 0\\) and
-\\(k\_{-1} = 0, k\_{-2} = 1\\).  
-  
+\\(k\_{-1} = 0, k\_{-2} = 1\\).
+
 Proof: The fraction \\(\\frac{h\_n}{k\_n}\\) is converted
 into \\(\\frac{h\_{n + 1}}{k\_{n + 1}}\\) simply by changing \\(a\_n\\)
 to \\(a\_n + \\frac{1}{a\_{n + 1}}\\) in the final denominator.
@@ -77,16 +77,16 @@ k\_{n - 1} + k\_{n - 2}}\$\$ we similarly have
 \\frac{1}{a\_{n + 1}}\\right) k\_{n - 1} + k\_{n - 2}} \\\\ &=
 \\frac{a\_{n + 1}(a\_n h\_{n - 1} + h\_{n - 2}) + h\_{n - 1}}{a\_{n +
 1}(a\_n k\_{n - 1} + k\_{n - 2}) + k\_{n - 1}} \\\\ &= \\frac{a\_{n + 1}
-h\_n + h\_{n - 1}}{a\_{n + 1} k\_n + k\_{n - 1}}\\end{align\*}  
-Thus \\(h\_{n + 1}\\) and \\(k\_{n + 1}\\) satisfy the same recurrence.  
-  
+h\_n + h\_{n - 1}}{a\_{n + 1} k\_n + k\_{n - 1}}\\end{align\*}
+Thus \\(h\_{n + 1}\\) and \\(k\_{n + 1}\\) satisfy the same recurrence.
+
 It remains to check the initial conditions work, but note
 \\begin{align\*}h\_0 &= a\_0 h\_{-1} + h\_{-2} = a\_0 \\cdot 1 + 0 =
 a\_0 \\\\ k\_0 &= a\_0 k\_{-1} + k\_{-2} = a\_0 \\cdot 0 + 1 =
 1\\end{align\*} and \\begin{align\*}h\_1 &= a\_1 h\_{0} + h\_{-1} = a\_0
 a\_1 + 1 \\\\ k\_1 &= a\_1 k\_{0} + k\_{-1} = a\_1 \\cdot 1 + 0 =
-a\_1\\end{align\*} as we checked above.  \\(\\Box\\)  
-  
+a\_1\\end{align\*} as we checked above.  \\(\\Box\\)
+
 Check out my [next
 post](http://blog.bossylobster.com/2011/07/continued-fraction-expansions-of.html),
 where I actually accomplish something with fractions (or at least
@@ -94,7 +94,4 @@ prepare to accomplish something).
 
 </div>
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

@@ -13,30 +13,30 @@ way to understand a binary quadratic form – a very important algebraic
 object – in a geometric context. This is by no means original work, just
 my interpretation of some key points from his [The Sensual (Quadratic)
 Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303) that
-I'll need for some other posts.  
-  
+I'll need for some other posts.
+
 
 * * * * *
 
-  
+
 In the following, as mentioned in Part 1, "when referring to a
 base/superbase, we are referring to the lax equivalent of these
-notions."  
-  
+notions."
+
 To begin to form the topograph, note each superbase \\(\\left\\{e\_1,
-e\_2, e\_3\\right\\}\\) contains only three bases  
+e\_2, e\_3\\right\\}\\) contains only three bases
 \\[\\left\\{e\_1, e\_2\\right\\}, \\left\\{e\_2, e\_3\\right\\},
-\\left\\{e\_3, e\_1\\right\\}\\]  
+\\left\\{e\_3, e\_1\\right\\}\\]
 as subsets. Going the other direction, a base \\(\\left\\{e\_1,
 e\_2\\right\\}\\) can only possibly be contained as a subset of two
-superbases:  
+superbases:
 \\[\\langle e\_1, e\_2, (e\_1 + e\_2)\\rangle, \\langle e\_1, e\_2,
-(e\_1 - e\_2)\\rangle.\\]  
+(e\_1 - e\_2)\\rangle.\\]
 With these two facts in hand, we can begin to form the geometric
 structure of the topograph. The interactions between bases and
 superbases (as well as the individual vectors themselves) give us the
 form. In the graph, we join each superbase (\\(\\bigcirc\\)) to the
-three bases (\\(\\square\\)) in it.  
+three bases (\\(\\square\\)) in it.
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -49,7 +49,7 @@ and we mark each of these edges with a (\\(\\square\\)) in the middle.
 Since each base can only be in two superbases, we have well--defined
 endpoints for each base (edge). Similarly, since each superbase contains
 three bases as subsets, each superbase (endpoint) has three bases
-(edges) coming out of it.  
+(edges) coming out of it.
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -61,7 +61,7 @@ As we traverse each edge (base) surrounding a given vector (\\(e\_1\\)
 above), we move from superbase (vertex) to superbase (vertex), and form
 a face. Starting from a base \\(e\_1, e\_2\\), traveling along each of
 the new faces encountered we begin to form the full (labeled) topograph
-below:  
+below:
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -71,26 +71,26 @@ below:
 
 Notice the *values* of \\(f\\) on the combinations of \\(e\_1\\) and
 \\(e\_2\\) is immaterial to the above discussion, hence the shape of the
-topograph doesn't depend on \\(f\\).  
-  
+topograph doesn't depend on \\(f\\).
+
 If we know the values of \\(f\\) at some superbase, it is actually
 possibly to find the values of \\(f\\) at vectors (faces) we encounter
-on the topograph without actually knowing \\(f\\).  
-  
-**Claim**: For vectors \\(v\_1, v\_2\\),  
+on the topograph without actually knowing \\(f\\).
+
+**Claim**: For vectors \\(v\_1, v\_2\\),
 \\[f(v\_1 + v\_2) + f(v\_1 - v\_2) = 2\\left(f(v\_1) +
-f(v\_2)\\right)\\]  
+f(v\_2)\\right)\\]
 **Proof**: Exercise. (If you really can't get it, let me know in the
-comments.) \\(\\Box\\)  
-  
-This implies that if  
+comments.) \\(\\Box\\)
+
+This implies that if
 \\[a = f(v\_1), \\quad b = f(v\_2), \\quad c = f(v\_1 + v\_2), \\quad d
-= f(v\_1 - v\_2)\\]  
+= f(v\_1 - v\_2)\\]
 then \\(d\\), \\(a + b\\), \\(c\\) form an arithmetic progression with
 common difference \\(h\\). This so--called *Arithmetic Progression
 Rule* allows us to mark each edge with a direction based on the value of
 \\(h\\). Hence if \\(d \< a + b \< c\\), we have \\(h \> 0\\) and the
-following directed edge:  
+following directed edge:
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -113,7 +113,7 @@ forms a structure called a tree, and all nodes are connected.
 
 <div class="separator" style="clear: both; text-align: left;">
 
-  
+
 
 </div>
 
@@ -137,17 +137,17 @@ positive, then \\(c\\) is positive and the other two edges at
 hence \\(c = a + b + h \> 0\\). The two other edges at \\(Q\\) have
 common differences \\((a + c) - b\\) and \\((b + c) - a\\). Since \\(c =
 a + b + h\\) is greater than both \\(a\\) and \\(b\\), these differences
-are positive. \\(\\Box\\)  
-  
+are positive. \\(\\Box\\)
+
 Notice also that this establishes two new triples \\((a, a + b + h, 2 a
 + h)\\) and \\((b, a + b + h, 2 b + h)\\) that continue to point away
 from each successive superbase and hence *climb* the topograph. We can
 use this lemma (along with a specific form) to show that there are no
 cycles in the topograph, i.e. the topograph doesn't loop back on
-itself.  
-  
+itself.
+
 Consider the form which takes the following values at a given
-superbase:  
+superbase:
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -157,7 +157,7 @@ superbase:
 
 Due to the symmetry, we may consider traveling along an edge in any
 direction from this superbase identically. Picking an arbitrary
-direction, we reach the following superbase:  
+direction, we reach the following superbase:
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -168,19 +168,17 @@ direction, we reach the following superbase:
 Since the values must increase indefinitely as laid out by the climbing
 lemma, the form can't loop back on itself; if it were to, it would need
 to loop back to a smaller value. Since this holds in all directions from
-the original well, there are no cycles.  
-  
+the original well, there are no cycles.
+
 Follow along to [Part
-3](http://blog.bossylobster.com/2011/08/conways-topograph-part-3.html).  
-  
+3](http://blog.bossylobster.com/2011/08/conways-topograph-part-3.html).
+
 **Update**: *This material is intentionally aimed at an intermediate
 (think college freshman/high school senior) audience. One can go deeper
-with it, and I'd love to get more technical off the post.*  
-  
+with it, and I'd love to get more technical off the post.*
+
 **Update**: *All images were created with the
 [tikz](http://www.texample.net/tikz/examples/) LaTeX library and can be
-compiled with native LaTeX if pgf is installed.*  
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
+compiled with native LaTeX if pgf is installed.*
 
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

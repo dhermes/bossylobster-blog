@@ -4,10 +4,9 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, itertools, Mathematics, Programming, Python
 slug: quantitative-interview-brain-teaser
 
-<p>
 In a [previous
 post](http://blog.bossylobster.com/2014/09/quantitative-brain-teaser-brain-only.html)
-I discussed a recent brain teaser I had come across:   
+I discussed a recent brain teaser I had come across:
 
 > Find a <span>10-digit number</span>, where each digit represents the
 > number of that ordinal number in the whole number. So, the <span>first
@@ -571,8 +570,6 @@ brains alone:
 </div>
 
 This serves to make the interview question that much more difficult,
-since there is a unique solution. [About Bossy
-Lobster](https://profiles.google.com/114760865724135687241)
+since there is a unique solution.
 
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

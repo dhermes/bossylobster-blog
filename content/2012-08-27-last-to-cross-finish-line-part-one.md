@@ -12,12 +12,12 @@ with [App Engine](https://appengine.google.com/)". This is part one in a
 three part series where I will share our
 [learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent) and
 give some helpful references to the [App Engine
-documentation](https://developers.google.com/appengine/docs/).  
+documentation](https://developers.google.com/appengine/docs/).
 
 <span style="font-size: large;">Intro</span>
 --------------------------------------------
 
-Before I dive in, a quick overview of our approach:  
+Before I dive in, a quick overview of our approach:
 
 -   "Fan out; Fan in" First spread tasks over independent workers; then
     gather the results back together
@@ -34,7 +34,7 @@ Before I dive in, a quick overview of our approach:
         Drive, Cloud Storage, GitHub, ...)
 -   Keep track of all workers; notify client when work is complete
 
-Before talking about the sample, let's check it out in action:   
+Before talking about the sample, let's check it out in action:
 
 <div style="text-align: center;">
 
@@ -44,14 +44,14 @@ We are randomly generating a color in a worker and sending it back to
 the client to fill in a square in the "quilt". (Thanks to [+Iein
 Valdez](https://plus.google.com/103073491679741548297) for this term.)
 In this example, think of each square as a (most likely more complex)
-compute task.  
+compute task.
 
 <span style="font-size: large;">Application Overview</span>
 -----------------------------------------------------------
 
 The
 [application](https://github.com/GoogleCloudPlatform/appengine-last-across-the-finish-line-python) has
-a simple structure:   
+a simple structure:
 
 ~~~~ {.prettyprint style="background-color: white;"}
 gae-last-across-the-finish-line/|-- app.yaml|-- display.py|-- main.py|-- models.py+-- templates/       +-- main.html
@@ -67,14 +67,14 @@ and explore how they interact with one another. In addition to this,
 we'll briefly inspect the HTML and Javascript contained in the template
 <span
 style="color: lime; font-family: Courier New, Courier, monospace;">main.html</span>,
-to understand how the workers pass messages back to the client.  
-  
+to understand how the workers pass messages back to the client.
+
 In this post, I will explain the actual background work we did and
 briefly touch on the methods for communicating with the client, but
 won't get into client side code or the generic code for running the
 workers and watching them all as they cross the finish line. In the
 second post, we’ll examine the client side code and in the third, we’ll
-discuss the models that orchestrate the work.  
+discuss the models that orchestrate the work.
 
 <span style="font-size: large;">Workers</span>
 ----------------------------------------------
@@ -84,7 +84,7 @@ style="color: lime; font-family: Courier New, Courier, monospace;">display.py</s
 To generate the random colors, we simply choose a hexadecimal digit six
 different times and throw a <span
 style="color: lime; font-family: Courier New, Courier, monospace;">\#</span>
-on at the beginning:  
+on at the beginning:
 
 ~~~~ {.prettyprint style="background-color: white;"}
 import randomHEX_DIGITS = '0123456789ABCDEF'def RandHexColor(length=6):  result = [random.choice(HEX_DIGITS) for _ in range(length)]  return '#' + ''.join(result)
@@ -100,7 +100,7 @@ client, we use the [Channel
 API](https://developers.google.com/appengine/docs/python/channel/) and
 serialize our messages using the [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">json</span>](http://docs.python.org/library/json.html)
-library in Python.  
+library in Python.
 
 ~~~~ {.prettyprint style="background-color: white;"}
 import jsonfrom google.appengine.api import channeldef SendColor(row, column, session_id):  color = RandHexColor(length=6)  color_dict = {'row': row, 'column': column, 'color': color}  channel.send_message(session_id, json.dumps(color_dict))
@@ -114,8 +114,6 @@ post](http://blog.bossylobster.com/2012/08/last-to-cross-finish-line-part-two.ht
 we'll explore the [WSGI
 handlers](https://developers.google.com/appengine/docs/python/tools/webapp/running)
 that run the application and the client side code that handles the
-messages from the workers. [About Bossy
-Lobster](https://profiles.google.com/114760865724135687241)
+messages from the workers.
 
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

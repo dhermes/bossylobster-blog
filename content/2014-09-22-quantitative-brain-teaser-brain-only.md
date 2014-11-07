@@ -4,9 +4,8 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, Mathematics
 slug: quantitative-brain-teaser-brain-only
 
-<p>
 I've recently been working some atrophied mental muscles and came across
-a brain teaser that was pretty nifty:   
+a brain teaser that was pretty nifty:
 
 > Find a <span>10-digit number</span>, where each digit represents the
 > number of that ordinal number in the whole number. So, the <span>first
@@ -18,7 +17,7 @@ a brain teaser that was pretty nifty:
 
 #### Example
 
-If we shortened from 10 digits to 4 digit, the number   
+If we shortened from 10 digits to 4 digit, the number
 
 <div style="text-align: center;">
 
@@ -293,8 +292,8 @@ class="mord">9</span></span></span><span class="baseline-fix"><span
 class="fontsize-ensurer reset-size5 size5"><span
 style="font-size: 0em;">​</span></span>​</span></span></span><span
 class="mrel">=</span><span class="mord">0</span></span></span></span>
-should not occur.   
-  
+should not occur.
+
 Thus we see <span>none of our choices are possible</span> when <span
 class="katex"><span class="katex-inner"><span class="strut"
 style="height: 0.69444em;"></span><span
@@ -424,8 +423,8 @@ class="mrel">=</span><span class="mord">1</span></span></span></span>.
 It must be at least 1 since the first digit is a 7. It can't be 2
 because the presence of another 7 would mean another digit (other than
 0) would occur 7 times, which is impossible since there are only 10
-total digits.   
-  
+total digits.
+
 Since we know <span class="katex"><span class="katex-inner"><span
 class="strut" style="height: 0.69444em;"></span><span
 class="strut bottom"></span><span class="base textstyle uncramped"><span
@@ -508,8 +507,8 @@ class="reset-textstyle scriptstyle cramped"><span
 class="mord">1</span></span></span><span class="baseline-fix"><span
 class="fontsize-ensurer reset-size5 size5"><span
 style="font-size: 0em;">​</span></span>​</span></span></span></span></span></span>
-by placing more 1's in our number.   
-  
+by placing more 1's in our number.
+
 Thus we see <span>none of our choices are possible</span> when <span
 class="katex"><span class="katex-inner"><span class="strut"
 style="height: 0.69444em;"></span><span
@@ -542,8 +541,8 @@ class="fontsize-ensurer reset-size5 size5"><span
 style="font-size: 0em;">​</span></span>​</span></span></span><span
 class="mrel">=</span><span class="mord">1</span></span></span></span>
 since (as above), two different digits can't occur six times among 10
-digits.   
-  
+digits.
+
 Also as before we can't have <span class="katex"><span
 class="katex-inner"><span class="strut"
 style="height: 0.69444em;"></span><span
@@ -583,8 +582,8 @@ class="reset-textstyle scriptstyle cramped"><span
 class="mord">2</span></span></span><span class="baseline-fix"><span
 class="fontsize-ensurer reset-size5 size5"><span
 style="font-size: 0em;">​</span></span>​</span></span></span><span
-class="mrel">=</span><span class="mord">1</span></span></span></span>.   
-  
+class="mrel">=</span><span class="mord">1</span></span></span></span>.
+
 Now we have 4 non-zero digits along with six 0's to place:
 
 <div style="text-align: center;">
@@ -607,15 +606,13 @@ Now we have 4 non-zero digits along with six 0's to place:
 Thus <span>we have found a number</span> which satisfies the criteria!
 The zero digits in the 3, 4, 5, 7, 8, and 9 places correspond to the
 absence of those digits. The non-zero digits in the 0, 1, 2, and 6
-places also are the correct counts of each of those digits.   
-  
+places also are the correct counts of each of those digits.
+
 As a math nerd, I was still curious to know how to find every possible
 number that satisfies the criteria, but that task is too tedious to
 handle with the brain alone (or at least to be worth reading about when
 solved by hand). In my follow up to this, I'll show how a combination of
 smarts and programming can perform an exhaustive search in under 10
-seconds. [About Bossy
-Lobster](https://profiles.google.com/114760865724135687241)
+seconds.
 
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

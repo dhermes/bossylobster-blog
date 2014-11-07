@@ -4,7 +4,6 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: AppEngine, Decorator, GData, gdata-python-client, Google App Engine, Google Calendar, google-api-python-client, OAuth, OAuth2.0, Python
 slug: bridging-oauth-20-objects-between-gdata
 
-<p>
 My colleague [+Takashi
 Matsuo](http://plus.google.com/110554344789668969711) and I recently
 gave a [talk](http://www.youtube.com/watch?v=HoUdWBzUZ-M) about using
@@ -20,7 +19,7 @@ sprung up asking about the right way to use the decorator and, as a
 follow up,  if the decorator could be used with the [Google Apps
 Provisioning
 API](https://developers.google.com/google-apps/provisioning/). As I
-mentioned in my answer,  
+mentioned in my answer,
 
 > The Google Apps Provisioning API is a [Google Data
 > API](https://developers.google.com/gdata/docs/2.0/reference)...As a
@@ -40,7 +39,7 @@ Instead of making everyone and their brother write their own, I thought
 I'd take a stab at it and write about it here. The general philosophy I
 took was that the token subclass should be 100% based on an <span
 style="color: lime; font-family: Courier New, Courier, monospace;">OAuth2Credentials</span>
-object:   
+object:
 
 -   the token constructor simply takes an <span
     style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
@@ -51,7 +50,7 @@ object:
     style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
     set on the token
 
-Starting from the top, we'll use two imports:  
+Starting from the top, we'll use two imports:
 
 ~~~~ {.prettyprint style="background-color: white;"}
 import httplib2from gdata.gauth import OAuth2Token
@@ -63,8 +62,8 @@ using the mechanics native to <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">google-api-python-client</span>,
 and the second is needed so we may subclass the <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">gdata-python-client</span> native
-token class.  
-  
+token class.
+
 As I mentioned, the values should be updated directly from an <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object,
 so in our constructor, we first initialize the values to <span
@@ -72,7 +71,7 @@ style="color: lime; font-family: Courier New, Courier, monospace;">None</span>
 and then call our update method to actual set the values. This allows us
 to write less code, because, [repeating is
 bad](http://en.wikipedia.org/wiki/Don't_repeat_yourself) (I think
-someone told me that once?).   
+someone told me that once?).
 
 ~~~~ {.prettyprint style="background-color: white;"}
 class OAuth2TokenFromCredentials(OAuth2Token):  def __init__(self, credentials):    self.credentials = credentials    super(OAuth2TokenFromCredentials, self).__init__(None, None, None, None)    self.UpdateFromCredentials()
@@ -95,7 +94,7 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">scope</span
 part of the token exchange handled elsewhere (<span
 style="color: lime; font-family: Courier New, Courier, monospace;">OAuth2WebServerFlow</span>) in
 the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">google-api-python-client</span> library.  
+style="color: lime; font-family: 'Courier New', Courier, monospace;">google-api-python-client</span> library.
 
 ~~~~ {.prettyprint style="background-color: white;"}
   def UpdateFromCredentials(self):    self.client_id = self.credentials.client_id    self.client_secret = self.credentials.client_secret    self.user_agent = self.credentials.user_agent    ...
@@ -110,14 +109,14 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">revoke\_uri
 style="color: lime; font-family: Courier New, Courier, monospace;">redirect</span><span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">\_uri</span> will
 not be set either. However, the token URI and the token data are the
-same for both.  
+same for both.
 
 ~~~~ {.prettyprint style="background-color: white;"}
     ...    self.token_uri = self.credentials.token_uri    self.access_token = self.credentials.access_token    self.refresh_token = self.credentials.refresh_token    ...
 ~~~~
 
 Finally, we copy the extra fields which may be set outside of a
-constructor:  
+constructor:
 
 ~~~~ {.prettyprint style="background-color: white;"}
     ...    self.token_expiry = self.credentials.token_expiry    self._invalid = self.credentials.invalid
@@ -128,7 +127,7 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Crede
 deal with all parts of the OAuth 2.0 process, we disable those methods
 from <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Token</span> that
-do.  
+do.
 
 ~~~~ {.prettyprint style="background-color: white;"}
   def generate_authorize_url(self, *args, **kwargs): raise NotImplementedError  def get_access_token(self, *args, **kwargs): raise NotImplementedError  def revoke(self, *args, **kwargs): raise NotImplementedError  def _extract_tokens(self, *args, **kwargs): raise NotImplementedError
@@ -141,7 +140,7 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Crede
 and then update the current GData token after the refresh. Instead of
 using the passed in request object, we use one from <span
 style="color: lime; font-family: Courier New, Courier, monospace;">httplib2</span>
-as we mentioned in imports.  
+as we mentioned in imports.
 
 ~~~~ {.prettyprint style="background-color: white;"}
   def _refresh(self, unused_request):    self.credentials._refresh(httplib2.Http().request)    self.UpdateFromCredentials()
@@ -150,17 +149,14 @@ as we mentioned in imports.
 After refreshing the <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object,
 we can update the current token using the same method called in the
-constructor.  
-  
+constructor.
+
 Using this class, we can simultaneously call a [discovery-based
 API](https://developers.google.com/discovery/v1/getting_started#background)
-and a GData API:   
+and a GData API:
 
 ~~~~ {.prettyprint style="background-color: white;"}
 from apiclient.discovery import buildfrom gdata.contacts.client import ContactsClientservice = build('calendar', 'v3', developerKey='...')class MainHandler(webapp2.RequestHandler):  @decorator.oauth_required  def get(self):    auth_token = OAuth2TokenFromCredentials(decorator.credentials)    contacts_client = ContactsClient()    auth_token.authorize(contacts_client)    contacts = contacts_client.get_contacts()    ...    events = service.events().list(calendarId='primary').execute(        http=decorator.http())    ...
 ~~~~
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

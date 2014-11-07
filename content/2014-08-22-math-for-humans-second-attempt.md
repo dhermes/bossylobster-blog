@@ -6,22 +6,22 @@ slug: math-for-humans-second-attempt
 
 The morning after posting my latest [blog
 post](http://blog.bossylobster.com/2014/07/conditional-probabilities-in-thinking.html),
-I woke up still thinking about how to explain the concept.  
-  
+I woke up still thinking about how to explain the concept.
+
 More importantly, I realized that my goal of writing <span>math for
-humans</span> failed miserably.   
-  
-So here is a second go at it.  
-  
+humans</span> failed miserably.
+
+So here is a second go at it.
+
 First we're told we're in a world where <span>85% of cabs are
 Green</span> and the rest are Blue. Humans love tables (and they are
 easy to understand). So we start off with a representative sample of 100
 cabs:
-<!--- http://blogknowhow.blogspot.com/2011/01/how-add-table-blogger-blogspot-post.html -->  
+<!--- http://blogknowhow.blogspot.com/2011/01/how-add-table-blogger-blogspot-post.html -->
 
 <div style="margin-left: auto; margin-right: auto; text-align: center;">
 
-  
+
 <div class="nobrtable">
 
 <table border="2" bordercolor="#0033FF" cellpadding="10" cellspacing="0" style="background-color: #99ffff; border-collapse: collapse; color: black; margin-left: auto; margin-right: auto; width: 100%px;">
@@ -61,16 +61,16 @@ Cabs
 
 </div>
 
-  
+
 After this, we're told that a bystander <span>correctly identifies a cab
 80% of the time</span>, or 4 out of every 5. Applying this to the 85
 Green cabs (85 is 17 times 5), this bystander will mis-identify 17 as
 Blue (1 out of 5) and the other 68 will correctly be identified as
-Green:   
+Green:
 
 <div style="margin-left: auto; margin-right: auto; text-align: center;">
 
-  
+
 <div class="nobrtable">
 
 <table border="2" bordercolor="#0033FF" cellpadding="10" cellspacing="0" style="background-color: #99ffff; border-collapse: collapse; color: black; margin-left: auto; margin-right: auto; width: 100%px;">
@@ -134,14 +134,14 @@ ID'd Blue
 
 </div>
 
-  
+
 Similarly, of the 15 Blue cabs (15 is 3 times 5), this bystander will
 mis-identify 3 as Green (1 out of 5) and the other 12 will correctly be
-identified as Blue:   
+identified as Blue:
 
 <div style="margin-left: auto; margin-right: auto; text-align: center;">
 
-  
+
 <div class="nobrtable">
 
 <table border="2" bordercolor="#0033FF" cellpadding="10" cellspacing="0" style="background-color: #99ffff; border-collapse: collapse; color: black; margin-left: auto; margin-right: auto; width: 100%px;">
@@ -207,15 +207,15 @@ ID'd Blue
 
 </div>
 
-  
+
 Now Kahneman wants us to use the data at hand to determine what the
 probability is that a cab is <span>actually Blue</span> given the
 bystander <span>identified the cab as Blue.</span> To determine this
-probability, we simply need to consider the final row of the table:   
+probability, we simply need to consider the final row of the table:
 
 <div style="margin-left: auto; margin-right: auto; text-align: center;">
 
-  
+
 <div class="nobrtable">
 
 <table border="2" bordercolor="#0033FF" cellpadding="10" cellspacing="0" style="background-color: #99ffff; border-collapse: collapse; color: black; margin-left: auto; margin-right: auto; width: 100%px;">
@@ -255,7 +255,7 @@ ID'd Blue
 
 </div>
 
-  
+
 This rows tells us that only 29 cabs will be identified as Blue, and
 among those, 12 will actually be Blue. Hence the probability will be
 \\[\\boxed{\\frac{12}{29} \\approx 0.413793103}.\\] What this really
@@ -273,7 +273,4 @@ What I Overlooked
 -   Introducing mathematical notation is almost always overkill
 -   Tables and samples are a good way to discuss probabilities
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

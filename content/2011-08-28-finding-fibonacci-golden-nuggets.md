@@ -9,15 +9,15 @@ and this post will be the first to deliver on that. In fact this is the
 *all math, no code* first half of a two part post that will deliver. If
 you see words like topograph, river, and base and you aren't sure what I
 mean, you may want to read that last [set of
-posts](http://blog.bossylobster.com/2011/08/conways-topograph-part-3.html).  
-  
+posts](http://blog.bossylobster.com/2011/08/conways-topograph-part-3.html).
+
 In this post, I outline a solution to Project Euler [problem
 137](http://projecteuler.net/index.php?section=problems&id=137), so stop
 reading now if you don't want to be spoiled. There is no code here, but
 the [second
 half](http://blog.bossylobster.com/2011/08/finding-fibonacci-golden-nuggets-part-2.html) of
-this post has a pretty useful abstraction.  
-  
+this post has a pretty useful abstraction.
+
 The problems asks us to consider \\[A\_F(z) = z F\_1 + z\^2 F\_2 + z\^3
 F\_3 + \\ldots,\\] the generating polynomial for the Fibonacci
 sequence[\*](http://www.blogger.com/post-edit.g?blogID=1697307561385480651&postID=8793933354039507148#footnote).
@@ -26,8 +26,8 @@ The problem defines (without stating so), a sequence
 asks us to find the values \\(n\\) for which \\(z\_n\\) is rational.
 Such a value \\(n\\) is called a *golden nugget*. As noted in the
 problem statement, \\(A\_F(\\frac{1}{2}) = 2\\), hence \\(z\_2 =
-\\frac{1}{2}\\) is rational and \\(2\\) is the first golden nugget.  
-  
+\\frac{1}{2}\\) is rational and \\(2\\) is the first golden nugget.
+
 As a first step, we determine a criterion for \\(n\\) to be a golden
 nugget by analyzing the equation \\(A\_F(z) = n\\). With the recurrence
 relation given by the Fibonacci sequence as inspiration, we consider
@@ -41,8 +41,8 @@ z\^3 F\_3 + z\^4 F\_4 + \\ldots = A\_F(z) -z\\] which implies \\[A\_F(z)
 order for \\(n\\) to be a golden nugget, we must have the solutions
 \\(z\\) rational. This only occurs if the discriminant \\[(n + 1)\^2 -
 4(n)(-n) = 5 n\^2 + 2 n + 1\\] in the quadratic is the square of a
-rational.  
-  
+rational.
+
 So we now positive seek values \\(n\\) such that \\(5 n\^2 + 2 n + 1 =
 m\^2\\) for some integer \\(m\\) (the value \\(m\\) must be an integer
 since a rational square root of an integer can only be an integer.) This
@@ -59,10 +59,10 @@ that occur on the topograph, we know \\(x\\) and \\(y\\) share no
 factors. Hence solutions \\(f(x, y) = 4\\) can come either come from
 pairs on the topograph or by taking a pair which satisfies \\(f(x, y) =
 1\\) and scaling up by a factor of \\(2\\) (we will have \\(f(2x, 2y) =
-2\^2 \\cdot 1 = 4\\) due to the homogeneity of \\(f\\)).  
-  
+2\^2 \\cdot 1 = 4\\) due to the homogeneity of \\(f\\)).
+
 Starting from the trivial base \\(u = (1, 0)\\) and \\(v = (0, 1)\\),
-the full period of the river has length \\(8\\) as seen below:  
+the full period of the river has length \\(8\\) as seen below:
 
 <div class="separator" style="clear: both; text-align: center;">
 
@@ -81,8 +81,8 @@ we are concerned with -- \\(f(x, y) = 1\\) or \\(4\\) -- must appear on
 the river. Notice on the river, the trivial base \\((u, v)\\) is
 replaced by the base \\((9 u + 20 v, 4 u + 9 v)\\). This actually gives
 us a concrete recurrence for the river and with it we can get a complete
-understanding of our solution set.  
-  
+understanding of our solution set.
+
 When we start from the trivial base, we only need consider moving to the
 right (orientation provided by the above picture) along the river since
 we only care about the absolute value of the coordinates (\\(n\\) comes
@@ -100,8 +100,8 @@ base solutions on the river and quickly find each successive golden
 nugget. Since each value is a coordinate in a vector, it satisfies the
 same linear recurrence as the vector. Also, since each of the solution
 vectors occur as linear combinations of \\(u\_k\\) and \\(v\_k\\), they
-must satisfy the same recurrence as well.  
-  
+must satisfy the same recurrence as well.
+
 Since the recurrence is degree two, we need the first two values to
 determine the entire sequence. For the first solution we start with
 \\(u\_0 + v\_0 = (1, 1)\\) and \\(u\_1 + v\_1 = (13, 29)\\); for the
@@ -111,8 +111,8 @@ u\_0 + 11 v\_0 = (5, 11)\\) and \\(5 u\_1 + 11 v\_1 = (89, 199)\\). For
 the second solution, since \\(f(1, 2) = 1\\), we use homogeneity to
 scale up to \\((2, 4)\\) and \\((34, 76)\\) to start us off. With these
 values, we take the second coordinate along the recurrence and get the
-following values:  
-  
+following values:
+
 
 <center>
 <table border="1" style="border-collapse: collapse;">
@@ -468,7 +468,7 @@ Third
 </tbody>
 </table>
 </center>
-  
+
 We don't get our fifteenth golden nugget candidate (value must be one
 more than a multiple of \\(5\\)) until \\(5600748293801\\), which yields
 \\(\\boxed{n = 1120149658760}\\). By no means did I do this by hand in
@@ -476,8 +476,8 @@ real life; I didn't make a pretty representation of the river either. I
 just wanted to make the idea clear without any code. To get to the code
 (and the way you should approach this stuff), move on to the [second
 half](http://blog.bossylobster.com/2011/08/finding-fibonacci-golden-nuggets-part-2.html)
-of this post.  
-  
+of this post.
+
 
 <div id="footnote">
 
@@ -486,7 +486,4 @@ of this post.
 
 </div>
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

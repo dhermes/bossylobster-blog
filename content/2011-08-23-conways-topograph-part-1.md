@@ -12,12 +12,12 @@ way to understand a binary quadratic form – a very important algebraic
 object – in a geometric context. This is by no means original work, just
 my interpretation of some key points from his [The Sensual (Quadratic)
 Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303) that
-I'll need for some other posts.  
-  
+I'll need for some other posts.
+
 
 * * * * *
 
-  
+
 
 <div class="p1">
 
@@ -47,7 +47,7 @@ class="Apple-style-span">\\(\\Box\\)</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">  
+<span class="Apple-style-span">
 </span>
 
 </div>
@@ -85,7 +85,7 @@ congruent to 1 modulo 4.</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">  
+<span class="Apple-style-span">
 </span>
 
 </div>
@@ -105,7 +105,7 @@ think of \\(v = (x, y)\\) as \\(\\pm v\\), i.e. \\(\\left\\{(x, y), (-x,
 
 <div class="p1">
 
-<span class="Apple-style-span">  
+<span class="Apple-style-span">
 </span>
 
 </div>
@@ -137,7 +137,7 @@ integral linear combinations.</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">  
+<span class="Apple-style-span">
 </span>
 
 </div>
@@ -158,7 +158,7 @@ base. \\(\\Box\\)</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">  
+<span class="Apple-style-span">
 </span>
 
 </div>
@@ -176,7 +176,7 @@ strict superbase. \\(\\Box\\)</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">  
+<span class="Apple-style-span">
 </span>
 
 </div>
@@ -189,18 +189,15 @@ afterthought since a binary quadratic form is unchanged given a sign
 change. From here forward, for a vector \\(v\\), we use the notation
 \\(v\\) interchangeably with \\(\\pm v\\) and when referring to a
 base/superbase, we are referring to the lax equivalent of these
-notions.</span>  
-  
+notions.</span>
+
 Follow along to [Part
-2](http://blog.bossylobster.com/2011/08/conways-topograph-part-2.html).  
-  
+2](http://blog.bossylobster.com/2011/08/conways-topograph-part-2.html).
+
 **Update**: *This material is intentionally aimed at an intermediate
 (think college freshman/high school senior) audience. One can go deeper
 with it, and I'd love to get more technical off the post.*
 
 </div>
 
-[About Bossy Lobster](https://profiles.google.com/114760865724135687241)
-
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

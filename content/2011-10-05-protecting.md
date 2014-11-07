@@ -4,11 +4,10 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: AppEngine, Commit Hook, Config Files, Git, Private Key, Protect, Python
 slug: protecting
 
-<p>
 On the (much too early) bus to work this morning, I was reading my
 Twitter feed and saw an [interesting
 question](https://twitter.com/#!/robhawkes/status/121593545202216960) from
-[Rob Hawkes](https://twitter.com/#!/robhawkes):  
+[Rob Hawkes](https://twitter.com/#!/robhawkes):
 
 <center>
 <div id="post-container">
@@ -21,8 +20,8 @@ question](https://twitter.com/#!/robhawkes/status/121593545202216960) from
 id="name-span"> [![Rob
 Hawkes](http://www.bossylobster.com/images/blog/robhawkes.jpg)](http://twitter.com/intent/user?screen_name=robhawkes "Rob Hawkes")
 **[@robhawkes](http://twitter.com/intent/user?screen_name=robhawkes "Rob Hawkes")**
-<span style="color: #999999; font-size: 14px;">  
-Rob Hawkes</span></span></span>   
+<span style="color: #999999; font-size: 14px;">
+Rob Hawkes</span></span></span>
 <div style="margin: 1em 0em .5em 0em;">
 
 How do you handle config files in your apps when you use Git? I keep
@@ -54,8 +53,8 @@ found so far is creating a temporary config file and keeping that in
 git, then .gitignoring the real one." and then "Thanks for the config
 file tips! In the end I went with a "config.example.js" file stored in
 [Git](http://git-scm.com/) and a "config.js" file that is ignored." For
-those following along at home, they mean the same thing.  
-  
+those following along at home, they mean the same thing.
+
 As Rob was probably intending, this can be used for deploying an app on
 your personal server, or for a sample App on a PaaS like [Google App
 Engine](http://code.google.com/appengine/) or
@@ -63,8 +62,8 @@ Engine](http://code.google.com/appengine/) or
 to have a native environment locally is a huge convenience, but the
 overhead of remembering which private keys need to be hidden is a
 headache and sometimes completely neglected. But it shouldn't be,
-because git never forgets!  
-  
+because git never forgets!
+
 Anyone who has used git for any substantial amount of time probably
 initially conceived of this hack when on first thought. (This is no
 insult to Rob, just the inevitability of the pattern.) But, by the time
@@ -72,8 +71,8 @@ Rob posted his solution, I had moved on from this and came up a solution
 that I think does the trick a bit more thoroughly. I envisioned a
 solution which assumes people who checkout my code will want to keep
 their config in a specified path that is already in the repo; of course,
-I also wanted to share this with the interwebs.  
-  
+I also wanted to share this with the interwebs.
+
 <span class="Apple-style-span">Anyhow, this is quick and dirty. First,
 create <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span>
@@ -90,7 +89,7 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js
 hold the master contents that actually show up in the public repo. For
 example, the contents of <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js
-are</span>:  
+are</span>:
 
 <div style="text-align: center;">
 
@@ -101,7 +100,7 @@ SECRET = 'Nnkrndkmn978489MDkjw';</span>
 </div>
 
 and the contents of <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>are:  
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>are:
 
 <div style="text-align: center;">
 
@@ -124,8 +123,8 @@ its own line in the <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">.gitignore </span>file.)
 After doing so, I set up two [git
 hooks](http://progit.org/book/ch7-3.html), a pre-commit and post-commit
-hook.  
-  
+hook.
+
 To "*install*" the hooks, just add the files <span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit </span>and <span
@@ -148,7 +147,7 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</
 the changelist. First I'll give you the contents of <span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>,
-and then explain why it's cool/safe:  
+and then explain why it's cool/safe:
 
 ~~~~ {.prettyprint style="background-color: white;"}
 #!/usr/bin/env pythonimport oshooks_dir = os.path.dirname(os.path.abspath(__file__))relative_dir = os.path.join(hooks_dir, '../..')project_root = os.path.abspath(relative_dir)git_included_config = os.path.join(project_root, 'config.js')confidential_config = os.path.join(project_root, '_config.js')with open(git_included_config, 'rU') as fh:  git_included_contents = fh.read()with open(confidential_config, 'rU') as fh:  confidential_contents = fh.read()with open(git_included_config, 'w') as fh:  fh.write(confidential_contents)with open(confidential_config, 'w') as fh:  fh.write(git_included_contents)os.system('git add %s' % git_included_config)
@@ -159,9 +158,9 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">post-commit
 exactly the same, except without the final statement: <span
 class="Apple-style-span"
 style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">os.system('git
-add %s' % git\_included\_config)</span>.)  
-  
-So what is happening in this file:  
+add %s' % git\_included\_config)</span>.)
+
+So what is happening in this file:
 
 1.  Uses the Python <span class="Apple-style-span"
     style="color: lime; font-family: 'Courier New', Courier, monospace;">os</span>
@@ -187,8 +186,8 @@ add</span>ing the file with your actual data, these hooks prevent an
 accident and allow you to update your local <span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>file
-with more fields as your config spec changes.  
-  
+with more fields as your config spec changes.
+
 But wait bossylobster, you say, what if one of the hooks doesn't occur?
 You are right! As  <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit </span>stands
@@ -205,7 +204,7 @@ class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>will
 be switched but not switched back. So, to account for this, we need to
 append the following code to the end of <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>:  
+style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>:
 
 ~~~~ {.prettyprint style="background-color: white;"}
 with os.popen('git st') as fh:  git_status = fh.read()if ('nothing to commit' in git_status or    'no changes added to commit' in git_status or    'nothing added to commit' in git_status):  import sys  msg = '# From pre-commit hook: No commit necessary, ' \        'sensitive config unchanged. #'  hash_head = '#' * len(msg)  print ('%s\n%s\n%s\n\n' % (hash_head, msg, hash_head)),  with open(git_included_config, 'w') as fh:    fh.write(git_included_contents)  with open(confidential_config, 'w') as fh:    fh.write(confidential_contents)  sys.exit(1)
@@ -215,19 +214,18 @@ For final versions see
 the [pre-commit](http://www.bossylobster.com/scripts/pre-commit) and
 [post-commit](http://www.bossylobster.com/scripts/post-commit) files.
 Thanks again to [Rob Hawkes](https://twitter.com/#!/robhawkes) for the
-idea/work break over lunch! [About Bossy
-Lobster](https://profiles.google.com/114760865724135687241)  
-  
+idea/work break over lunch!
+
 **Update**: *One of Rob's followers, [Paul
 King](https://twitter.com/#!/nrocy), found and
 [tweeted](https://twitter.com/#!/nrocy/status/124468167086051328) a very
 different alternative that is also pretty cool. Check out the
 [post](http://archive.robwilkerson.org/2010/03/02/git-tip-ignore-changes-to-tracked-files/) he
-found by [Rob Wilkerson](https://twitter.com/#!/robwilkerson).*  
-  
+found by [Rob Wilkerson](https://twitter.com/#!/robwilkerson).*
+
 **Update**: *I swapped out a screen shot of the tweet for a CSS-ified
-version, inspired by and based on a design used on Mashable.*  
-  
+version, inspired by and based on a design used on Mashable.*
+
 **Update**: *Some change in git causes empty commits to be allowed. I
 either didn't notice this before or it just showed up in git. So I
 added*<span class="Apple-style-span"
@@ -237,5 +235,4 @@ check for the phrase *<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">nothing
 added to commit</span>*as well.*
 
-</p>
-
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>
