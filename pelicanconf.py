@@ -45,6 +45,8 @@ PLUGINS = [
 # Some menu settings
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
+HIDE_TAGS_IN_SIDEBAR = True
+HIDE_CATEGORIES_IN_SIDEBAR = True
 
 # Sharing
 TWITTER_USER = 'bossylobster'

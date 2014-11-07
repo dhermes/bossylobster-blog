@@ -1,6 +1,6 @@
-[submodule "pelican-octopress-theme"]
-	path = pelican-octopress-theme
-	url = https://github.com/duilio/pelican-octopress-theme
 [submodule "pelican-plugins"]
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins.git
+[submodule "pelican-octopress-theme"]
+	path = pelican-octopress-theme
+	url = https://github.com/dhermes/pelican-octopress-theme.git
