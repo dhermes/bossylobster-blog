@@ -85,3 +85,8 @@ EXTRA_HEADER = open('katex_header.html').read().decode('utf-8')
 # NOTE: The liquid_tags.notebook plugin will also create an
 #       _nb_header.html file so we should add that if
 #       liquid_tags.notebook is to be used.
+
+# Paths to ignore. These are custom files used to render actual
+# posts. The `.template` files are Jinja2 templates and the
+# `.katex` files are just HTML to be placed in those files.
+IGNORE_FILES = ['*.katex', '*.template']
