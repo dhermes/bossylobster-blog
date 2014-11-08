@@ -1,11 +1,35 @@
 import codecs
 import glob
 import os
+import re
+import subprocess
+import tempfile
 
 from jinja2 import Environment, PackageLoader
 
 
 ENV = Environment(loader=PackageLoader(__name__, 'content'))
+NODE_SCRIPT_TEMPLATE = u"""\
+katex = require('katex');
+value = katex.renderToString("%s");
+console.log(value);
+"""
+
+
+def escape_string(latex_str):
+    return latex_str.replace('\\', r'\\')
+
+
+def get_katex(latex_str):
+    escaped = escape_string(latex_str)
+    script_content = NODE_SCRIPT_TEMPLATE % (escaped,)
+
+    temp_script = tempfile.mktemp()
+    with open(temp_script, 'w') as fh:
+        fh.write(script_content)
+
+    result = subprocess.check_output(['node', temp_script])
+    return result.strip().decode('utf8')
 
 
 def get_templates():
@@ -30,7 +54,7 @@ def write_template(template):
     new_filename = 'content/%s.md' % (name,)
     print 'Writing', new_filename
     with codecs.open(new_filename, 'wb', 'utf-8') as fh:
-        rendered_file = template.render()
+        rendered_file = template.render(get_katex=get_katex)
         fh.write(rendered_file)
         # Make sure the file has a trailing newline.
         if rendered_file[-1] != '\n':

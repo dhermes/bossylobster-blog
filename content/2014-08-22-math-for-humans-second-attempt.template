@@ -150,7 +150,7 @@ This rows tells us that only 29 cabs will be identified as Blue, and
 among those, 12 will actually be Blue. Hence the probability will be
 
 <div class="katex-elt"><blockquote>
-{% include 'katex/12_over_29.katex' %}
+{{ get_katex("\\frac{12}{29} \\approx 0.413793103") }}
 </blockquote></div>
 
 What this really shows is that even though the bystander has a large
