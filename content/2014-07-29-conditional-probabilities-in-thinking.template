@@ -1,0 +1,97 @@
+Title: Conditional Probabilities in "Thinking Fast and Slow"
+date: 2014-07-29
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Bayes, Bayesian, Kahneman, Layman, Mathematics, Probability
+slug: conditional-probabilities-in-thinking
+
+I'm currently reading
+[Thinking Fast and Slow](http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555)
+by [Daniel Kahneman](http://en.wikipedia.org/wiki/Daniel_Kahneman).
+(Thanks to Elianna for letting me borrow it.) I'm not finished yet, but
+60% of the way through I definitely recommend it.
+
+While reading the "Causes Trump Statistics" chapter (number 16), there
+is a description of a study about cabs and hit-and-run accidents. It
+describes a scenario where participants are told that 85% of cabs are
+Green, 15% are Blue and a given observer has an 80% chance of correctly
+identifying the color of a given cab. Given this data, the chapter
+presents a scenario where a bystander identifies a cab in an accident as
+Blue and Kahneman goes on to explain how we fail to take the data into
+consideration. I really enjoyed this chapter, but won't wreck the book
+for you.
+
+Instead, I want to do some math (big surprise, I know). However, I want
+to make it accessible to non-mathematicians (atypical for my posts).
+
+Given the data, Kahneman tells us that the true probability that the cab
+was Blue is 41% though we likely bias our thinking towards the 80%
+probability of the identification being correct. I was on the
+[bus](http://www.sfmta.com/) and it kept bothering me, to the point that
+I couldn't continue reading. Eventually I figured it out (when I got to
+the [train](http://www.bart.gov/)) and I wanted to explain how this is
+computed using [Bayes' Law](http://en.wikipedia.org/wiki/Bayes%27_law).
+As a primer, I wrote a
+[post](/2014/07/bayes-law-primer.html) using
+layman's terms explaining how we use Bayes' Law. (There is some notation
+introduced but I hope it isn't too confusing.)
+
+Putting Bayes' Law to Use
+-------------------------
+
+We need to understand what 41% even corresponds to before we can compute
+it. What's actually happened is that we know the event
+{{ get_katex("IDB") }} has occurred -- the cab has been identified
+({{ get_katex("ID") }}) as Blue ({{ get_katex("B") }}).
+What we want is the probability that the cab **is Blue** given we know
+it has been identified -- we want:
+
+{{ get_katex("\\text{Pr}(B \\, | \\, IDB).", blockquote=True) }}
+
+Using Bayes' Law, we can write
+
+{{ get_katex("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)}", blockquote=True) }}
+
+and
+
+{{ get_katex("\\text{Pr}(IDB \\, | \\, B) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(B)}.", blockquote=True) }}
+
+identified 80% of the time hence
+
+{{ get_katex("\\text{Pr}(IDB \\, | \\, B) = 0.8", blockquote=True) }}
+
+(i.e. the probability of correct ID
+as Blue given it is actually Blue). We're also told that 15% of the cabs
+are Blue hence
+
+{{ get_katex("\\text{Pr}(B) = 0.15.", blockquote=True) }}
+
+ We can combine these with the second
+application of Bayes' Law above to show that
+
+{{ get_katex("\\text{Pr}(B \\text{ and } IDB \\text{ both occur}) = \\text{Pr}(IDB \\, | \\, B) \\cdot \\text{Pr}(B) = 0.12.", blockquote=True) }}
+
+The only piece of data missing now to finish our computation is
+{{ get_katex("\\text{Pr}(IDB)") }}.
+
+Using the
+[extended form](http://blog.bossylobster.com/2014/07/bayes-law-primer.html#extended)
+of Bayes' Law, since we know that the events {{ get_katex("B") }} and
+{{ get_katex("G") }} (the cab is Blue or Green) are exclusive and cover all
+possibilities for the cab, we can say that
+
+{{ get_katex("\\text{Pr}(IDB) = \\text{Pr}(IDB \\, | \\, B) \\cdot \\text{Pr}(B) + \\text{Pr}(IDB \\, | \\, G) \\cdot \\text{Pr}(G).", blockquote=True) }}
+
+Since there is only an 80% chance of correct identification, we know that
+{{ get_katex("\\text{Pr}(IDB \\, | \\, G) = 0.2") }} (the probability of
+misidentifying a Green cab as Blue). We also know that 85% of the cabs are
+Green hence we can plug these in (along with numbers already computed) to get
+
+{{ get_katex("\\text{Pr}(IDB) = 0.8 \\cdot 0.15 + 0.2 \\cdot 0.85 = 0.12 + 0.17 = 0.29.", blockquote=True) }}
+
+Putting it all together we get our answer
+
+{{ get_katex("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)} = \\frac{0.12}{0.29} \\approx 0.413793103.", blockquote=True) }}
+
+Fantastic! Now we can get back to reading...
+
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

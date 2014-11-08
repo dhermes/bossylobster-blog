@@ -47,12 +47,12 @@ in this case is the same as {{ get_katex("X") }} since the roll can only be
 {{ get_katex("\\text{Pr}(X \\text{ and } Y \\text{ both occur}) = \\frac{1}{6}", blockquote=True) }}
 
 and we can compute the conditional probability
-{{ get_katex("\\text{Pr}(X \\, | \\, Y) = \\frac{\\frac{1}{6}}{\\frac{1}{2}} = \\frac{1}{3}.", blockquote=True) }}
+{{ get_katex("\\text{Pr}(X \\, | \\, Y) = \\frac{1 / 6}{1 / 2} = \\frac{1}{3}.", blockquote=True) }}
 
 As we expect, one out of every three odd rolls is a {{ get_katex("3") }}.
 
-Bayes' Law Extended Form (XXX NEEDS extended ANCHOR)
-------------------------
+Bayes' Law Extended Form {{ "{#extended}" }}
+--------------------------------------------
 
 Instead of considering a single event {{ get_katex("Y") }}, we can consider
 a range of {{ get_katex("n") }} possible events
