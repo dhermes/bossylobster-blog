@@ -1,4 +1,7 @@
 language: python
 
+install:
+  - pip install pelican markdown
+
 script:
   - ./update_pages_repo.sh
