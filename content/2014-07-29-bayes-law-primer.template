@@ -59,9 +59,9 @@ a range of {{ get_katex("n") }} possible events
 {{ get_katex("Y_1, Y_2, \\ldots, Y_n") }}
 occur. We require that one of these {{ get_katex("Y") }}-events must occur
 and that they cover all possible events that could occur. For example
-{{ get_katex("Y_1") }} is the event that H2O is vapor, {{ get_katex("Y_2") }}
-is the event that H2O is water and {{ get_katex("Y_3") }} is the event that
-H2O is ice.
+{{ get_katex("Y_1") }} is the event that H<sub>2</sub>O is vapor,
+{{ get_katex("Y_2") }} is the event that H<sub>2</sub>O is water and
+{{ get_katex("Y_3") }} is the event that H<sub>2</sub>O is ice.
 
 In such a case we know that since the {{ get_katex("Y") }}-events are distinct
 

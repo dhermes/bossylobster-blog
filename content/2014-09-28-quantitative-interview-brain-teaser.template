@@ -63,8 +63,8 @@ different possible ways to make them 0 or 1.
 #### Listing All Choices
 
 Now for the fun part: programming (in Python). We now have 90,000
-{{ get_katex("9 \\cdot 10^4") }}
-choices for our first 5 digits and 32 choices for our last 5 digits.
+({{ get_katex("9 \\cdot 10^4") }}) choices for our first 5 digits
+and 32 choices for our last 5 digits.
 
 We can use Python's `range(10**4, 10**5)` to represent the 5-digit
 numbers between 10,000 and 99,999 (inclusive). For the 32 choices

@@ -71,8 +71,8 @@ different possible ways to make them 0 or 1.
 #### Listing All Choices
 
 Now for the fun part: programming (in Python). We now have 90,000
-<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord">9</span><span class="mbin">&#8901;</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#8203;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord">4</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#8203;</span></span>&#8203;</span></span></span></span></span></span>
-choices for our first 5 digits and 32 choices for our last 5 digits.
+(<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord">9</span><span class="mbin">&#8901;</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#8203;</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord">4</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#8203;</span></span>&#8203;</span></span></span></span></span></span>) choices for our first 5 digits
+and 32 choices for our last 5 digits.
 
 We can use Python's `range(10**4, 10**5)` to represent the 5-digit
 numbers between 10,000 and 99,999 (inclusive). For the 32 choices
