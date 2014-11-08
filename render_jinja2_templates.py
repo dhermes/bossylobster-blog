@@ -1,5 +1,4 @@
 import binascii
-import codecs
 from Crypto.Hash import MD5
 import glob
 import json
@@ -30,6 +29,18 @@ def escape_string(latex_str):
     return latex_str.replace('\\', r'\\')
 
 
+def utf8_to_html_entity(char_val):
+    ordinal_val = ord(char_val)
+    if ordinal_val < 127:
+        return char_val
+    return '&#%04d;' % (ordinal_val,)
+
+
+def utf8_to_html_entities(str_val):
+    chars = [utf8_to_html_entity(char_val) for char_val in str_val]
+    return ''.join(chars)
+
+
 def get_katex(latex_str, blockquote=False):
     escaped = escape_string(latex_str)
     script_content = NODE_SCRIPT_TEMPLATE % (escaped,)
@@ -40,6 +51,7 @@ def get_katex(latex_str, blockquote=False):
 
     node_result = subprocess.check_output(['node', temp_script])
     result = node_result.strip().decode('utf8')
+    result = utf8_to_html_entities(result)
     if blockquote:
         return KATEX_BLOCK_TEMPLATE % (result,)
     else:
@@ -79,7 +91,7 @@ def write_template(template):
     # This assumes we are running in the root of the repository.
     new_filename = 'content/%s.md' % (name,)
     print 'Writing', new_filename
-    with codecs.open(new_filename, 'wb', 'utf-8') as fh:
+    with open(new_filename, 'wb') as fh:
         rendered_file = template.render(get_katex=get_katex)
         fh.write(rendered_file)
         # Make sure the file has a trailing newline.
