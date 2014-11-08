@@ -5,7 +5,7 @@ AUTHOR = u'Danny Hermes'
 SITENAME = u'Bossylobster Blog'
 SITESUBTITLE = (u'Musings on humor/tech/mathematics/sports '
                 'from the bossiest lobster')
-SITEURL = ''  # This is changed in publishconf.py.
+SITEURL = ''  # This will make all links relative.
 PATH = 'content'  # Directory containing posts.
 
 # Times and dates
