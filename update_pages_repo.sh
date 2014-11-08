@@ -34,5 +34,11 @@ git config --global user.name "travis-ci"
 git add .
 git status  # To see what has changed.
 
-git commit -m "Update ${PAGES_REPO} after blog commit in ${GH_PROJECT_NAME}."
-git push origin master
+# H/T: http://stackoverflow.com/a/5139346/1068170
+if [[ -n "$(git status --porcelain)" ]]; then
+  git commit -m "Update ${PAGES_REPO} after blog commit in ${GH_PROJECT_NAME}."
+  git status
+  git push origin master
+else
+  echo "Nothing to commit. Exiting without pushing changes."
+fi
