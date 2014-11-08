@@ -1,5 +1,8 @@
+import binascii
 import codecs
+from Crypto.Hash import MD5
 import glob
+import json
 import os
 import re
 import subprocess
@@ -18,6 +21,9 @@ KATEX_BLOCK_TEMPLATE = u"""\
 <div class="katex-elt"><blockquote>
 %s
 </blockquote></div>"""
+TEMPLATE_HASHES_FILENAME = 'template_hashes.json'
+with open(TEMPLATE_HASHES_FILENAME, 'r') as fh:
+    TEMPLATE_HASHES = json.load(fh)
 
 
 def escape_string(latex_str):
@@ -53,10 +59,22 @@ def get_templates():
     return result
 
 
+def get_md5_sum(filename):
+    with open(filename, 'rb') as fh:
+        hash = MD5.new(data=fh.read())
+    digest_bytes = hash.digest()
+    return binascii.hexlify(digest_bytes)
+
+
 def write_template(template):
     name, ext = os.path.splitext(template.name)
     if ext != '.template':
         raise ValueError(template.name)
+
+    md5_sum = get_md5_sum(template.filename)
+    if md5_sum == TEMPLATE_HASHES.get(template.filename):
+        print 'Already up-to-date:', template.filename
+        return
 
     # This assumes we are running in the root of the repository.
     new_filename = 'content/%s.md' % (name,)
@@ -67,6 +85,10 @@ def write_template(template):
         # Make sure the file has a trailing newline.
         if rendered_file[-1] != '\n':
             fh.write('\n')
+
+    TEMPLATE_HASHES[template.filename] = md5_sum
+    with open(TEMPLATE_HASHES_FILENAME, 'w') as fh:
+        json.dump(TEMPLATE_HASHES, fh, indent=2)
 
 
 if __name__ == '__main__':
