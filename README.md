@@ -4,13 +4,15 @@
 
 This repository houses the content of my [blog][1] [posts][2]
 as markdown. The blog is built with [Pelican][8] and I followed
-@jakevdp's [`PythonicPerambulations`][9] while getting started.
+[jakevdp][10]'s [`PythonicPerambulations`][9] while getting started.
 
 After cloning, local dev can be done via
 
 ```
 make clean && make html
-make serve
+make serve &
+# Do some stuff
+make stopserver
 ```
 
 This depends on locally installing
@@ -71,3 +73,4 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 [7]: https://github.com/dhermes/pelican-octopress-theme
 [8]: http://docs.getpelican.com/en/3.5.0/
 [9]: https://github.com/jakevdp/PythonicPerambulations
+[10]: https://twitter.com/jakevdp
