@@ -149,9 +149,9 @@ probability, we simply need to consider the final row of the table:
 This rows tells us that only 29 cabs will be identified as Blue, and
 among those, 12 will actually be Blue. Hence the probability will be
 
-<div style="text-align: center;"><blockquote><span style="font-size: x-large;">
+<div class="katex-elt"><blockquote>
 <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.845108em;"></span><span class="strut bottom" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="minner reset-textstyle textstyle uncramped"><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord">2</span><span class="mord">9</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.394em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord scriptstyle uncramped"><span class="mord">1</span><span class="mord">2</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mrel">≈</span><span class="mord">0</span><span class="mord">.</span><span class="mord">4</span><span class="mord">1</span><span class="mord">3</span><span class="mord">7</span><span class="mord">9</span><span class="mord">3</span><span class="mord">1</span><span class="mord">0</span><span class="mord">3</span></span></span></span>
-</span></blockquote></div>
+</blockquote></div>
 
 What this really shows is that even though the bystander has a large
 chance (80%) of getting the color right, the number of Green cabs is
