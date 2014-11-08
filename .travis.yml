@@ -1,7 +1,7 @@
 language: python
 
 install:
-  - pip install pelican markdown
+  - pip install pelican markdown pycrypto jinja2
 
 script:
   - ./update_pages_repo.sh
