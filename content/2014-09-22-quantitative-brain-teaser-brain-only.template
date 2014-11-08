@@ -1,0 +1,145 @@
+Title: Quantitative Brain Teaser: Brain Only
+date: 2014-09-22
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, Mathematics
+slug: quantitative-brain-teaser-brain-only
+
+I've recently been working some atrophied mental muscles and came across
+a brain teaser that was pretty nifty:
+
+> Find a **10-digit number**, where each digit represents the
+> number of that ordinal number in the whole number. So, the
+> **first digit represents the number of 0's** in the whole 10 digits. The
+> second digit represents the number of 1's in the whole 10 digits. And
+> so on. The first digit is not a 0.
+
+#### Example
+
+If we shortened from 10 digits to 4 digit, the number
+
+{{ get_katex("2,020", blockquote=True) }}
+
+works since we have
+{{ get_katex("d_0 = 2") }}
+and two 0's (in the second and fourth slots),
+{{ get_katex("d_1 = 0") }}
+since the number has no 1's,
+{{ get_katex("d_2 = 2") }}
+since the number has two 2's (in the first and third slots) and
+{{ get_katex("d_3 = 0") }}
+since the number has no 3's.
+
+#### Shorthand Notation
+
+In order to refer to each digit, for search we name them all:
+
+{{ get_katex("n = d_0, d_1 d_2 d_3, d_4 d_5 d_6, d_7 d_8 d_9", blockquote=True) }}
+
+We can see this in the above example when we refer to the digits in the
+four digit number
+
+{{ get_katex("n = d_0, d_1 d_2 d_3", blockquote=True) }}
+
+#### A Practical Approach, Breaking Into Subproblems
+
+Our search space is massive, and with only our wits, we need to quickly
+find a way to focus on a small space of possibilities. Since the first
+digit allows us to place a number of 0's we try to set it equal to
+values starting from the largest. By doing this we only have a little
+wiggle room to find the places which don't hold a zero.
+
+#### First Case: {{ get_katex("d_0 = 9") }}
+
+In this case our only choice is
+
+{{ get_katex("9,000,000,000", blockquote=True) }}
+
+since we must have nine 0's. However since we have one 9,
+{{ get_katex("d_9 = 0") }}
+should not occur.
+
+Thus we see **none of our choices are possible** when
+{{ get_katex("d_0 = 9") }}.
+
+#### Second Case: {{ get_katex("d_0 = 8") }}
+
+Here we must have eight 0's and
+{% include 'katex/d8_gt_0.katex' %}
+so our possible solutions must look like
+
+{{ get_katex("8,000,000,0*0", blockquote=True) }}
+
+But this leaves us with
+{{ get_katex("d_8 = 1") }}
+as our only choice since we can't place any more 8's. But now the
+presence of a 1 in
+
+{{ get_katex("8,000,000,010", blockquote=True) }}
+
+can't coexist with
+{{ get_katex("d_1 = 0") }}
+so we again see **none of our choices are possible** when
+{{ get_katex("d_0 = 8") }}.
+
+#### Third Case: {{ get_katex("d_0 = 7") }}
+
+Here we have seven 0's and know that
+{{ get_katex("d_7 = 1") }}
+It must be at least 1 since the first digit is a 7. It can't be 2
+because the presence of another 7 would mean another digit (other than
+0) would occur 7 times, which is impossible since there are only 10
+total digits.
+
+Since we know
+{{ get_katex("d_7 = 1") }}
+our possible solutions must look like
+
+{{ get_katex("7,*00,000,100", blockquote=True) }}
+
+But again here we reach an impossible point. If we set
+{{ get_katex("d_1 = 1") }}
+then that digit would contradict itself since it is the second
+occurrence of 1. If
+{{ get_katex("d_1 = 2") }}
+it would contradict
+{{ get_katex("d_2 = 0") }}
+and so on for higher values. In addition, we have used all our
+digits, so can't increase the value of
+{{ get_katex("d_1") }}
+by placing more 1's in our number.
+
+Thus we see **none of our choices are possible** when
+{{ get_katex("d_0 = 7") }}.
+
+#### Fourth Case: {{ get_katex("d_0 = 6") }}
+
+Here we have six 0's and must have
+{{ get_katex("d_6 = 1") }}
+since (as above), two different digits can't occur six times among 10
+digits.
+
+Also as before we can't have
+{{ get_katex("d_1 = 1") }}
+but now have some extra freedom (an extra digit which doesn't have to
+be 0) so consider the case
+{{ get_katex("d_1 = 2") }}.
+This corresponds to an occurrence of the digit 2, hence we set
+{{ get_katex("d_2 = 1") }}.
+
+Now we have 4 non-zero digits along with six 0's to place:
+
+{{ get_katex("6,210,001,000", blockquote=True) }}
+
+Thus **we have found a number** which satisfies the criteria!
+The zero digits in the 3, 4, 5, 7, 8, and 9 places correspond to the
+absence of those digits. The non-zero digits in the 0, 1, 2, and 6
+places also are the correct counts of each of those digits.
+
+As a math nerd, I was still curious to know how to find every possible
+number that satisfies the criteria, but that task is too tedious to
+handle with the brain alone (or at least to be worth reading about when
+solved by hand). In my follow up to this, I'll show how a combination of
+smarts and programming can perform an exhaustive search in under 10
+seconds.
+
+<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>
