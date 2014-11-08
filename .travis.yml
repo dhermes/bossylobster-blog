@@ -1,0 +1,4 @@
+language: python
+
+script:
+  - update_pages_repo.sh
