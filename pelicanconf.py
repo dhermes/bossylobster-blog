@@ -19,7 +19,7 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
 # Title menu options
 MENUITEMS = [
-    ('All Posts', '/archive.html'),
+    ('All Posts', '/archives.html'),
     ('GitHub Profile', 'http://github.com/dhermes/'),
     ('Berkeley Page', 'http://math.berkeley.edu/~dhermes/'),
 ]
