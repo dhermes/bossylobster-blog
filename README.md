@@ -2,8 +2,26 @@
 
 [![Travis Build Status](https://travis-ci.org/dhermes/bossylobster-blog.svg)](https://travis-ci.org/dhermes/bossylobster-blog/)
 
-This will house the content of my [blog][1] [posts][2]
-and will (eventually) use Travis to build and push updates.
+This repository houses the content of my [blog][1] [posts][2]
+as markdown. The blog is built with [Pelican][8] and I followed
+@jakevdp's [`PythonicPerambulations`][9] while getting started.
+
+After cloning, local dev can be done via
+
+```
+make clean && make html
+make serve
+```
+
+This depends on locally installing
+
+```
+[sudo] pip install --upgrade pelican markdown
+```
+
+This relies on heavily on the [`pelican-octopress-theme`][7] with
+a few of my own [tweaks][8]. (Hopefully they will just land in
+`master`.)
 
 ## [Travis][3] Instructions
 
@@ -49,3 +67,7 @@ and will (eventually) use Travis to build and push updates.
 [3]: https://travis-ci.org
 [4]: https://github.com/settings/tokens/new
 [5]: https://github.com/travis-ci/travis.rb#installation
+[6]: https://github.com/duilio/pelican-octopress-theme
+[7]: https://github.com/dhermes/pelican-octopress-theme
+[8]: http://docs.getpelican.com/en/3.5.0/
+[9]: https://github.com/jakevdp/PythonicPerambulations
