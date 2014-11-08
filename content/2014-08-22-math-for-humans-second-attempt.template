@@ -149,9 +149,7 @@ probability, we simply need to consider the final row of the table:
 This rows tells us that only 29 cabs will be identified as Blue, and
 among those, 12 will actually be Blue. Hence the probability will be
 
-<div class="katex-elt"><blockquote>
-{{ get_katex("\\frac{12}{29} \\approx 0.413793103") }}
-</blockquote></div>
+{{ get_katex("\\frac{12}{29} \\approx 0.413793103", blockquote=True) }}
 
 What this really shows is that even though the bystander has a large
 chance (80%) of getting the color right, the number of Green cabs is

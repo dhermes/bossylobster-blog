@@ -14,13 +14,17 @@ katex = require('katex');
 value = katex.renderToString("%s");
 console.log(value);
 """
+KATEX_BLOCK_TEMPLATE = u"""\
+<div class="katex-elt"><blockquote>
+%s
+</blockquote></div>"""
 
 
 def escape_string(latex_str):
     return latex_str.replace('\\', r'\\')
 
 
-def get_katex(latex_str):
+def get_katex(latex_str, blockquote=False):
     escaped = escape_string(latex_str)
     script_content = NODE_SCRIPT_TEMPLATE % (escaped,)
 
@@ -28,8 +32,12 @@ def get_katex(latex_str):
     with open(temp_script, 'w') as fh:
         fh.write(script_content)
 
-    result = subprocess.check_output(['node', temp_script])
-    return result.strip().decode('utf8')
+    node_result = subprocess.check_output(['node', temp_script])
+    result = node_result.strip().decode('utf8')
+    if blockquote:
+        return KATEX_BLOCK_TEMPLATE % (result,)
+    else:
+        return result
 
 
 def get_templates():
