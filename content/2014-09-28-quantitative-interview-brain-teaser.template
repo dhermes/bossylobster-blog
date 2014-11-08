@@ -19,7 +19,8 @@ computer).
 
 #### Making the Problem Smaller
 
-Without any thinking, there are 9 billion ({% include 'katex/9_billion.katex' %})
+Without any thinking, there are 9 billion
+({{ get_katex("9 \\cdot 10^9") }})
 
 total choices. This is not only intractable for the human brain, but
 becomes difficult for a computer too. A 3 GHz processor in the most
@@ -27,50 +28,42 @@ optimal case can only perform 3 billion operations per second but there
 is a lot of counting, lists to create, and otherwise to find a number
 which fits the criteria. To start, we write our number as
 
-<div class="katex-elt"><blockquote>
-{% include 'katex/10_digit_n.katex' %}
-</blockquote></div>
+{{ get_katex("n = d_0, d_1 d_2 d_3, d_4 d_5 d_6, d_7 d_8 d_9", blockquote=True) }}
 
 Since there are 10 digits in total and each of the digits represent a
 subcount of occurrences, the total number of occurrences can be
 represented as the sum:
 
-<div class="katex-elt"><blockquote>
-{% include 'katex/digit_sum_quant_interview.katex' %}
-</blockquote></div>
+{{ get_katex("d_0 + d_1 + d_2 + d_3 + d_4 + d_5 + d_6 + d_7 + d_8 + d_9 = 10", blockquote=True) }}
 
 Additionally, (for example) since each 3 contributes a value of 3 to the
 digit sum, we must also have
 
-<div class="katex-elt"><blockquote>
-{% include 'katex/weighted_digit_sum_quant_interview.katex' %}
-</blockquote></div>
+{{ get_katex("d_1 + 2 d_2 + 3 d_3 + 4 d_4 + 5 d_5 + 6 d_6 + 7 d_7 + 8 d_8 + 9 d_9 = 10", blockquote=True) }}
 
 This second equation (which requires the first to make sense) limits our
 choices of digits a great deal:
 
-<div class="katex-elt"><blockquote>
-{% include 'katex/quant_interview_digit_bounds.katex' %}
-</blockquote></div>
+{{ get_katex("0 \\leq d_5, d_6, d_7, d_8, d_9 \\leq 1", blockquote=True) }}
 
 The last four are obvious since (for example)
-{% include 'katex/2_times_6_bound.katex' %}.
+{{ get_katex("2 \\cdot 6 > 10") }}.
 We can also say that
-{% include 'katex/d5_bound.katex' %}.
+{{ get_katex("d_5 < 2") }}.
 It is clearly no bigger than 2 but in the case that
-{% include 'katex/d5_exact.katex' %}
+{{ get_katex("d_5 = 2") }}
 we'd also have
-{% include 'katex/d2_bound.katex' %}
+{{ get_katex("d_2 > 0") }}
 meaning
-{% include 'katex/d5_d2_combine_ineq.katex' %}.
+{{ get_katex("2 d_2 + 5 d_5 = 2 d_2 + 10 > 10") }}.
 Thus to brute force the problem we can choose digits 5 through
-9 (5 digits in total) from the 32 ({% include 'katex/2_to_fifth.katex' %})
+9 (5 digits in total) from the 32 ({{ get_katex("2^5") }})
 different possible ways to make them 0 or 1.
 
 #### Listing All Choices
 
 Now for the fun part: programming (in Python). We now have 90,000
-({% include 'katex/9_times_10000.katex' %})
+{{ get_katex("9 \\cdot 10^4") }}
 choices for our first 5 digits and 32 choices for our last 5 digits.
 
 We can use Python's `range(10**4, 10**5)` to represent the 5-digit
@@ -139,9 +132,7 @@ In other words,
 the only number which fits the criteria is the one we found with our
 brains alone:
 
-<div class="katex-elt"><blockquote>
-{% include 'katex/6210001000.katex' %}
-</blockquote></div>
+{{ get_katex("6,210,001,000", blockquote=True) }}
 
 This serves to make the interview question that much more difficult,
 since there is a unique solution.

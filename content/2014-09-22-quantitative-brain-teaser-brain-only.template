@@ -64,7 +64,7 @@ Thus we see **none of our choices are possible** when
 #### Second Case: {{ get_katex("d_0 = 8") }}
 
 Here we must have eight 0's and
-{% include 'katex/d8_gt_0.katex' %}
+{{ get_katex("d_8 > 0") }}
 so our possible solutions must look like
 
 {{ get_katex("8,000,000,0*0", blockquote=True) }}
