@@ -76,7 +76,7 @@ dividing by \\(N\\), so often special values of \\(N\\) were chosen. In
 fact, starting from \\(N\\) and then using \\(2N\\), the areas could be
 computed via a special way of averaging the previous areas. Lucky for
 us, such a method is equivalent to the trusty [half angle
-identities](http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Double-angle.2C_triple-angle.2C_and_half-angle_formulae) (courtesy
+identities](http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Double-angle.2C_triple-angle.2C_and_half-angle_formulae)(courtesy
 of [Abraham De Moivre](http://en.wikipedia.org/wiki/Abraham_de_Moivre)).
 To keep track of these polygons with a power of two as the number of
 sides, we call \\(A\_n = \\frac{2\^n}{2}
@@ -91,8 +91,8 @@ we have
 \\[A\_3 = 4 \\sin\\left(\\frac{\\pi}{4}\\right) = 4 \\frac{\\sqrt{2}}{2}
 = 2 \\sqrt{2}.\\] So far, the toughest thing we've had to deal with is a
 \\(45\^{\\circ}\\) angle and haven't yet had to lean on Abraham
-([him](http://www.nocturnar.com/imagenes/abraham-de-moivre-mathematician-abraham-de-moivre.jpg), [not
-him](http://foglobe.com/data_images/main/abraham-lincoln/abraham-lincoln-03.jpg)) for
+([him](http://www.nocturnar.com/imagenes/abraham-de-moivre-mathematician-abraham-de-moivre.jpg),[not
+him](http://foglobe.com/data_images/main/abraham-lincoln/abraham-lincoln-03.jpg))for
 help. The [hexadecagon](http://en.wikipedia.org/wiki/Hexadecagon) wants
 to change that:
 \\[A\_4 = 8 \\sin\\left(\\frac{\\pi}{8}\\right) = 8 \\sqrt{\\frac{1 -
@@ -164,7 +164,7 @@ of such a nested radical:
 
 </div>
 
-\\[\\sqrt{2 + s\_1 \\sqrt{2 + s\_2 \\sqrt{ \\cdots }}}\\] as the signs
+\\[\\sqrt{2+ s\_1 \\sqrt{2+ s\_2 \\sqrt{ \\cdots }}}\\] as the signs
 \\(s\_1, s\_2, \\ldots\\) takes values in \\(\\left\\{-1,
 1\\right\\}\\). Recasting in terms of the discussion above, we want to
 know how close we are to \\(\\pi\\) as we increase the number of sides.
@@ -178,7 +178,7 @@ know how close we are to \\(\\pi\\) as we increase the number of sides.
 <div>
 
 When I was in high school, I just loved to [nerd
-out](http://blog.verdebmx.com/wp-content/uploads/2008/07/computer.jpg) on
+out](http://blog.verdebmx.com/wp-content/uploads/2008/07/computer.jpg)on
 any and all math problems, so I studied this just for fun. Having heard
 about the unfathomable brain of
 [Ramanujan](http://en.wikipedia.org/wiki/Srinivasa_Ramanujan) and the
@@ -206,10 +206,10 @@ contest problem along the lines of
 
 <div>
 
-\\[\\text{Find the value of the infinite nested radical } \\sqrt{2 +
-\\sqrt{2 + \\cdots}}\\] or maybe the slightly more difficult
+\\[\\text{Find the value of the infinite nested radical } \\sqrt{2+
+\\sqrt{2+ \\cdots}}\\] or maybe the slightly more difficult
 \\[\\text{Find the value of the infinite nested radical } \\sqrt{2 -
-\\sqrt{2 + \\sqrt{2 - \\sqrt{2 + \\cdots}}}}.\\]
+\\sqrt{2+ \\sqrt{2 -\\sqrt{2 +\\cdots}}}}.\\]
 [Armed](http://www.search-best-cartoon.com/cartoon-moose/armed-cartoon-moose.jpg)
 with my
 [TI-83](http://img1.targetimg1.com/wcsstore/TargetSAS//img/p/93/50/93505.jpg),

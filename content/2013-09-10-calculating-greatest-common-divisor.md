@@ -5,14 +5,14 @@ tags: Dirichlet, Math, Mathematics, Number Theory, Prime Number
 slug: calculating-greatest-common-divisor
 
 Having just left Google and started my PhD in Applied Mathematics
-at [Berkeley](http://math.berkeley.edu/), I thought it might be
+at[Berkeley](http://math.berkeley.edu/), I thought it might be
 appropriate to write some (more) math-related blog posts. Many of these
 posts, I jotted down on napkins and various other places on the web and
 just haven't had time to post until now.
 
 For today, I'm posting a result which was somewhat fun to figure out
 with/for one of
-my [buddies](https://picasaweb.google.com/101796704659729637490/WhereHasYourMathTShirtBeen#5802889644579484306) from
+my[buddies](https://picasaweb.google.com/101796704659729637490/WhereHasYourMathTShirtBeen#5802889644579484306)from
 [Michigan Math](http://www.lsa.umich.edu/math/). I'd also like to point
 out that he is absolutely kicking ass at Brown.
 
@@ -43,10 +43,10 @@ weaker version \\((1)\\).
 
 When he sent me the email informing me of this, I read it at 8am, drove
 down to Santa Clara for [PyCon](https://us.pycon.org/2013/) and by the
-time I arrived at 8:45am I had figured the weaker case \\((1)\\) out.
+time I arrived at 8:45am I had figured the weaker case\\((1)\\)out.
 This felt much better than the days of struggle and made me want to
 write about my victory (which I'm doing now). Though, before we actually
-demonstrate the weaker fact \\((1)\\)  I will admit that I am not in
+demonstrate the weaker fact\\((1)\\) I will admit that I am not in
 fact tall. Instead I stood on the shoulders of Dirichlet and [called
 myself tall](http://www.youtube.com/watch?v=A6f-6l0W-0o#t=35s).
 Everything else is bookkeeping.
@@ -82,14 +82,14 @@ prime.
 With this in mind, along with a subsequence of the arithmetic
 progression \\(\\left\\{5, 13, 21, 29, \\ldots\\right\\}\\), it seems
 that using [Dirichlet's theorem on arithmetic
-progressions](http://en.wikipedia.org/wiki/Dirichlet's_theorem_on_arithmetic_progressions) may
+progressions](http://en.wikipedia.org/wiki/Dirichlet's_theorem_on_arithmetic_progressions)may
 be a good strategy. However, this sequence only tells us about the
 residue modulo \\(8\\), but we also want to know about the residue
 modulo \\(p\^{\\ast}\\). Naturally, we look for a subsequence in
 \\[\\mathbb{Z}/\\mathbb{8Z} \\times \\mathbb{Z}/\\mathbb{p\^{\\ast}Z}\\]
 corresponding to the residue pair \\((5 \\bmod{8}, 1
 \\bmod{p\^{\\ast}})\\). Due to the [Chinese remainder
-theorem](http://en.wikipedia.org/wiki/Chinese_remainder_theorem) this
+theorem](http://en.wikipedia.org/wiki/Chinese_remainder_theorem)this
 corresponds to a unique residue modulo \\(8p\^{\\ast}\\).
 
 Since this residue \\(r\\) has \\(r \\equiv 1 \\bmod{p\^{\\ast}}\\), we
@@ -102,7 +102,7 @@ and \\(k \\equiv 4\\left(p\^{\\ast}\\right)\^{-1} \\bmod{8}\\) since
 its inverse is odd, hence \\(k \\equiv 4\\cdot(2k' + 1) \\equiv 4
 \\bmod{8}\\). Thus we have \\(1 + 4 p\^{\\ast} \\in
 \\mathbb{Z}/8p\^{\\ast}\\mathbb{Z}\\) corresponding to our residue
-pair. Thus every element in the arithmetic progression \\(S =
+pair.Thus every element in the arithmetic progression \\(S =
 \\left\\{(1 + 4p\^{\\ast}) + (8p\^{\\ast})k
 \\right\\}\_{k=0}\^{\\infty}\\) is congruent to \\(1 + 4 p\^{\\ast}
 \\bmod{8p\^{\\ast}}\\) and hence \\(5 \\bmod{8}\\) and \\(1
@@ -128,9 +128,9 @@ We still don't know if the strong version \\((2)\\)
 \\ldots \\right) = 2\\] By similar arguments as above, if any odd prime
 \\(p\^{\\ast}\\) divides this \\(\\gcd\\), then we have
 \\[5\^{2\^n} \\equiv -1 \\bmod{p\^{\\ast}}\\] hence there is an element
-of order \\(2\^{n + 1}\\). This means the order of the multiplicative
+of order \\(2\^{n+ 1}\\). This means the order of the multiplicative
 group \\(\\varphi\\left(p\^{\\ast}\\right) = p\^{\\ast} - 1\\) is
-divisible by \\(2\^{n + 1}\\). Beyond that, who knows? We're still
+divisible by \\(2\^{n+ 1}\\). Beyond that, who knows? We're still
 thinking about it (but only passively, more important things to do).
 
 <a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

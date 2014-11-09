@@ -5,14 +5,14 @@ tags: Benchmark, Comparison, Dynamic Language, Javascript, Javascript Engine, JI
 slug: lesson-v8-can-teach-python-and-other
 
 Being unable to completely give up math for computers, I am naturally
-drawn to [Project Euler](http://projecteuler.net/) and as a result
+drawn to [Project Euler](http://projecteuler.net/)and as a result
 solved a [ridiculous
 number](http://code.google.com/p/dhermes-project-euler/source/browse/#git%2Fpython_code%2Fcomplete)
 of the problems posted there while learning Python. A few months
-ago (March 13), after reading [Secrets of a Javascript
-Ninja](http://jsninja.com/), I decided to begin converting my [solutions
+ago(March 13), after reading [Secrets of a Javascript
+Ninja](http://jsninja.com/), I decided to begin converting my[solutions
 to
-Javascript](https://github.com/dhermes/ProjectEuler/commit/663ee638c6b8255d00b84173b0ecad1af2c53af1). A
+Javascript](https://github.com/dhermes/ProjectEuler/commit/663ee638c6b8255d00b84173b0ecad1af2c53af1).A
 month and a half later I [came
 back](https://github.com/dhermes/ProjectEuler/commit/72c092ccf82c3933944584c2479d2e7ca0ef06f7)
 to it, and then finally two months after that, I [began to take it
@@ -38,20 +38,20 @@ class="Apple-style-span"
 style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">readFileSync</span>
 in the node native <span class="Apple-style-span"
 style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">fs</span>
-module. After witnessing this, over this weekend, I decided to harness
+module. After witnessing this,over this weekend, I decided to harness
 the power of [V8](http://code.google.com/p/v8/) -- the Javascript engine
 that powers Chrome and node -- and run all my scripts locally with node.
 So over a two day period, I
 [hack-hack-hacked](http://code.google.com/p/dhermes-project-euler/source/detail?r=87b2cf2128be9d13d3b374d8eba9cb4ad808c982)
 my way into converting the Python solutions for problems 11 through 50
-(the remaining unconverted) into their Javascript equivalents, while
+(theremaining unconverted)into their Javascript equivalents, while
 also converting a good portion of my hefty
 [functions](http://code.google.com/p/dhermes-project-euler/source/browse/python_code/functions.py)
 module.
 
 Once this was done, I had also found I could replace most of the nice
 parts about Python with my own equivalent. For example, I was able to
-replace functionality I needed from the Python <span
+replace functionality I needed from the Python<span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">set</span>
 datatype with
@@ -64,7 +64,7 @@ and I was able to replace the (amazingly) useful Python handling of
 <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">long</span>
 integers with a non-native node package called
-[bigint](https://github.com/substack/node-bigint) that uses libgmp among
+[bigint](https://github.com/substack/node-bigint)that uses libgmp among
 other usings. Of course, for Python's secret sauce -- the list
 comprehension -- I was able to substitute enough <span
 class="Apple-style-span"
@@ -77,16 +77,16 @@ statements to almost make it seem like I had never left Pythonland.
 After doing all this, I also ended up writing my own
 [operator.js](http://code.google.com/p/dhermes-project-euler/source/browse/js/operator.js)
 to replace the wonderful Python native
-module [operator](http://docs.python.org/library/operator.html), and my
+module[operator](http://docs.python.org/library/operator.html), and my
 own
 [timer.js](http://code.google.com/p/dhermes-project-euler/source/browse/js/timer.js)
 to stand in for the Python native
-module [time](http://docs.python.org/library/time.html).
+module[time](http://docs.python.org/library/time.html).
 
 Finally, I had working code and could do a side by side comparison of V8
-and the Python interpreter. **Update**: *I added a column
-for [PyPy](http://pypy.org/), a just in time implementation of
-Python. *Here is what I found (averaging the runtime over 10 separate
+and the Python interpreter.**Update**: *I added a column
+for[PyPy](http://pypy.org/), a just in time implementation of
+Python.*Here is what I found (averaging the runtime over 10 separate
 calls to each function, the results are):
 
 
@@ -1433,7 +1433,7 @@ run 10000 times.
 As you'll notice, standard Python gets its butt kicked. I was kind of
 saddened by this, but in the end, just giddy that our web is faster
 because of it (90% of my life is digital) and also that we can do
-scripting faster on the server side (attribute to [Boris
+scripting faster on the server side (attribute to[Boris
 Smus](http://twitter.com/#!/borismus)) because of the node project
 (thanks Ryan Dahl).
 
@@ -1449,21 +1449,21 @@ greater! The only 4 in which Python was faster were from the ***n =
     is slower than the native (<span class="Apple-style-span"
     style="color: lime; font-family: 'Courier New', Courier, monospace;">from
     fractions import gcd</span>) Python library (resulting in a
-    difference of 50 ms over 10000 iterations)
+    difference of 50 ms over 10000iterations)
 -   \#13 - The node package <span class="Apple-style-span"
     style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">bigint</span>
     is slower than the Python native <span class="Apple-style-span"
     style="color: lime; font-family: 'Courier New', Courier, monospace;">long
-    int</span> (Javascript is slower by a factor of 6)
--   \#20 - The node package <span class="Apple-style-span"
-    style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">bigint</span> is
-    slower than the Python native <span class="Apple-style-span"
+    int</span>(Javascript is slower by a factor of 6)
+-   \#20 - The node package<span class="Apple-style-span"
+    style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">bigint</span>is
+    slower than the Python native<span class="Apple-style-span"
     style="color: lime; font-family: 'Courier New', Courier, monospace;">long
-    int</span> (Javascript is slower by a factor of 8.5)
--   \#24 - Having to perform two <span class="Apple-style-span"
+    int</span>(Javascript isslower by a factor of 8.5)
+-   \#24 - Having to perform two<span class="Apple-style-span"
     style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">slice</span>s
     is slower in Javascript than in Python and there is no good way to
-    just remove one element (resulting in a difference of 4 ms over
+    just remove one element (resulting in adifference of 4 ms over
     10000 iterations; a little bit about that
     [here](http://ejohn.org/blog/javascript-array-remove/))
 
@@ -1492,8 +1492,8 @@ offshoot. (However, as I understand, they both have ties to C, as PyPy
 uses GCC to compile to bytecode and V8 is written in C++. Feel free to
 supplement my knowledge in the comments.)*
 
-**Update**: *All benchmarking was run on my Mac Pro Desktop with a 3.2
-GHz Quad-Core Intel Xeon processor and 4 cores for a total of 12 GB 1066
+**Update**: *All benchmarking was run on my Mac Pro Desktop with a3.2
+GHz Quad-Core Intel Xeon processor and 4 cores for a total of12 GB 1066
 MHz DDR3 memory. I used Python version 2.6.1, node version 0.4.9, and
 PyPy version 1.5 (running on top of Python 2.7.1 with GCC 4.0.1).*
 

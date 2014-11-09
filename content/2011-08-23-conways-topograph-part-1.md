@@ -5,13 +5,13 @@ tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number T
 slug: conways-topograph-part-1
 
 This is the first in a series of three blog posts. In the following
-we'll investigate a few properties of an object called Conway’s
+we'll investigate a few properties of an object called Conway's
 topograph. [John
 Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) conjured up a
-way to understand a binary quadratic form – a very important algebraic
-object – in a geometric context. This is by no means original work, just
-my interpretation of some key points from his [The Sensual (Quadratic)
-Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303) that
+way to understand a binary quadratic form &ndash; a very important algebraic
+object &ndash; in a geometric context. This is by no means original work, just
+my interpretation of some key points from his[The Sensual (Quadratic)
+Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303)that
 I'll need for some other posts.
 
 
@@ -40,7 +40,7 @@ form:
 
 That is, a function of two variables which is homogeneous of degree two.
 The coefficients \\(A\\), \\(H\\), and \\(B\\) and variables \\(x\\) and
-\\(y\\) are often real numbers, rational numbers or integers. <span
+\\(y\\) are often real numbers, rational numbers or integers.<span
 class="Apple-style-span">\\(\\Box\\)</span>
 
 </div>
@@ -148,11 +148,11 @@ integral linear combinations.</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">**Definition**: A *strict base* is an
+<span class="Apple-style-span">**Definition**:A *strict base*is an
 ordered pair \\((e\_1, e\_2)\\) whose integral linear combinations are
-exactly all vectors with integer coordinates. A *lax base* is a set
+exactly all vectors with integer coordinates. A *lax base*is a set
 \\(\\left\\{\\pm e\_1, \\pm e\_2\\right\\}\\) obtained from a strict
-base. \\(\\Box\\)</span>
+base.\\(\\Box\\)</span>
 
 </div>
 
@@ -165,12 +165,12 @@ base. \\(\\Box\\)</span>
 
 <div class="p1">
 
-<span class="Apple-style-span">**Definition**: A *strict superbase* is
+<span class="Apple-style-span">**Definition**:A *strict superbase*is
 an ordered triple \\((e\_1, e\_2, e\_3)\\), for which \\(e\_1 + e\_2 +
 e\_3 = (0, 0)\\) and \\((e\_1, e\_2)\\) is a strict base (i.e., with
-strict vectors), and a *lax superbase* is a set \\(\\langle\\pm e\_1,
+strict vectors), and a *lax superbase*is a set\\(\\langle\\pm e\_1,
 \\pm e\_2, \\pm e\_3\\rangle\\) where \\((e\_1, e\_2, e\_3)\\) is a
-strict superbase. \\(\\Box\\)</span>
+strict superbase.\\(\\Box\\)</span>
 
 </div>
 

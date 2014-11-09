@@ -4,15 +4,15 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
 slug: conways-topograph-part-3
 
-This is the third (continued from [Part
-2](http://blog.bossylobster.com/2011/08/conways-topograph-part-2.html)) in
+This is the third (continued from[Part
+2](http://blog.bossylobster.com/2011/08/conways-topograph-part-2.html))in
 a series of three blog posts. In the following we'll investigate a few
-properties of an object called Conway’s topograph. [John
-Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) conjured up a
-way to understand a binary quadratic form – a very important algebraic
-object – in a geometric context. This is by no means original work, just
-my interpretation of some key points from his [The Sensual (Quadratic)
-Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303) that
+properties of an object called Conway's topograph.[John
+Conway](http://en.wikipedia.org/wiki/John_Horton_Conway)conjured up a
+way to understand a binary quadratic form &ndash; a very important algebraic
+object &ndash; in a geometric context. This is by no means original work, just
+my interpretation of some key points from his[The Sensual (Quadratic)
+Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303)that
 I'll need for some other posts.
 
 
@@ -20,18 +20,18 @@ I'll need for some other posts.
 
 
 **Definition**: For the form \\(f(x, y) = a x\^2 + h x y + b y\^2\\), we
-define the *discriminant* as the value \\(ab -
-\\left(\\frac{1}{2}h\\right)\^2\\).  \\(\\Box\\)
+define the *discriminant*as the value \\(ab -
+\\left(\\frac{1}{2}h\\right)\^2\\).\\(\\Box\\)
 
-The base \\((1, 0)\\) and \\((0, 1)\\) take values \\(a\\) and \\(b\\)
+The base \\((1, 0)\\) and \\((0, 1)\\) take values \\(a\\)and \\(b\\)
 on the form in the Definition above and are part of a sequence with
 common difference \\(h\\). In fact, if we know the values \\(a'\\),
 \\(b'\\) and the difference \\(h'\\) at any base (edge in the
 topograph), the value \\(a'b' - \\left(\\frac{1}{2}h'\\right)\^2\\) is
 independent of the base and the direction (left or right) which
 determines the sign of \\(h'\\) and hence equal to the discriminant. To
-see this, first note the sign of \\(h'\\) is immaterial since it is
-squared. Also, consider the two other bases (edges) in the superbase. As
+see this,first note the sign of \\(h'\\) is immaterial since it is
+squared. Also,consider the two other bases (edges) in the superbase. As
 in the proof of the climbing lemma, one base takes values \\(a' = a\\)
 and \\(b' = a + b + h\\) with common difference \\(h' = 2a + h\\) which
 gives
@@ -51,7 +51,7 @@ a'b' - \\left(\\frac{1}{2}h'\\right)\^2 &= (a + b + h)b -
 &= ab - \\left(\\frac{1}{2}h\\right)\^2.
 \\end{align\*}
 Having showed that there are no cycles when starting from a given
-superbase, our work in understanding the topograph is not complete. We
+superbase, our work in understanding the topographis not complete. We
 haven't actually showed that we can get from one superbase to any other
 superbases within the topograph. To show this, we'll use the
 discriminant and the following.
@@ -80,8 +80,8 @@ well (with respect to \\(f\\)) \\(W\\), the three values \\(f\\) takes
 on the faces in \\(W\\) are the smallest values that \\(f\\) takes on
 the topograph.
 
-**Proof**: Using the labels from the well in the definition above, the
-*Arithmetic Progression Rule* for our differences gives
+**Proof**:Using the labels from the well in the definition above, the
+*Arithmetic Progression Rule*for our differences gives
 \\[2\\alpha = b + c - a, \\quad 2\\beta = c + a - b, \\quad 2\\gamma = a
 + b - c\\]
 and solving,
@@ -115,14 +115,14 @@ more than two points.
 
 If two of the \\(m\_i\\) are equal, then \\(v\\) must be an integral
 multiple of the third vector, hence the value \\(f(v)\\) will be at
-least as large as the value of \\(f\\) on the third vector. If not, all
+least as largeas the value of \\(f\\) on the third vector. If not, all
 the differences must be non--zero (hence greater than or equal to
 \\(1\\) in absolute value, since integers), thus
 \\[f(v) \\geq \\alpha \\cdot 1\^2 + \\beta \\cdot 1\^2 + \\gamma \\cdot
 1\^2\\]
 which is greater than or equal to each of \\(a = \\beta + \\gamma\\),
 \\(b = \\alpha + \\gamma\\), and \\(c = \\beta + \\alpha\\) since all
-of \\(\\alpha\\), \\(\\beta\\), and \\(\\gamma\\) are non--negative.
+of\\(\\alpha\\), \\(\\beta\\), and \\(\\gamma\\) are non--negative.
 \\(\\Box\\)
 
 **Corollary**: The topograph is connected; one may travel along the
@@ -135,13 +135,13 @@ of the topograph, but there may be more than one component. Since
 \\(f\\) is positive--valued, we must have some well in this component.
 But, by the above, the values at a well must be the absolute lowest
 values \\(f\\) takes on the topograph. This implies the well must take
-the values \\(1\\), \\(1\\), \\(1\\) and shows all superbases must be in
+the values \\(1\\),\\(1\\),\\(1\\)and shows all superbases must be in
 the same component. \\(\\Box\\)
 
 From this point, we will concentrate on a special type of form relevant
 to our discussion. For a form \\(f\\) which takes both positive and
 negative values, but never \\(0\\), the topograph has a special path
-that separates the which separates the faces where takes a positive
+thatseparates the which separates the faces where takes a positive
 value and those where \\(f\\) takes a negative value.
 
 **Claim**: If a form \\(f\\) takes both positive and negative values,
@@ -173,7 +173,7 @@ meet and similarly below. Thus the path must be unique.
 To show this path is periodic, we must utilize the discriminant. For
 each edge along the path, we have some positive value \\(a\\) and a
 negative \\(b\\) (by definition of the path) and the common difference
-\\(h\\). Thus the determinant \\(D\\) must be negative since the product
+\\(h\\).Thus the determinant \\(D\\) must be negative since the product
 \\(ab\\) is, hence
 \\[\\left|D\\right| = \\left|ab\\right| +
 \\left(\\frac{1}{2}h\\right)\^2.\\]
@@ -193,13 +193,13 @@ negative values the **river**. \\(\\Box\\)
 
 Thanks for reading, I'll make use of all this in a few days!
 
-**Update**: *This material is intentionally aimed at an intermediate
+**Update**:*This material is intentionally aimed at an intermediate
 (think college freshman/high school senior) audience. One can go deeper
 with it, and I'd love to get more technical off the post.*
 
 *<span class="Apple-style-span"
-style="font-style: normal;">**Update**: *All images were created with
-the [tikz](http://www.texample.net/tikz/examples/) LaTeX library and can
+style="font-style: normal;">**Update**:*All images were created with
+the[tikz](http://www.texample.net/tikz/examples/)LaTeX library and can
 be compiled with native LaTeX if pgf is installed.*</span>*
 
 <a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

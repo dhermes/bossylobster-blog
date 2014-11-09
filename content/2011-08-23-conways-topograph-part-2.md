@@ -4,15 +4,15 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
 slug: conways-topograph-part-2
 
-This is the second (continued from [Part
-1](http://blog.bossylobster.com/2011/08/conways-topograph-part-1.html)) in
+This is the second (continued from[Part
+1](http://blog.bossylobster.com/2011/08/conways-topograph-part-1.html))in
 a series of three blog posts. In the following we'll investigate a few
-properties of an object called Conway’s topograph. [John
-Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) conjured up a
-way to understand a binary quadratic form – a very important algebraic
-object – in a geometric context. This is by no means original work, just
-my interpretation of some key points from his [The Sensual (Quadratic)
-Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303) that
+properties of an object called Conway's topograph.[John
+Conway](http://en.wikipedia.org/wiki/John_Horton_Conway)conjured up a
+way to understand a binary quadratic form &ndash; a very important algebraic
+object &ndash; in a geometric context. This is by no means original work, just
+my interpretation of some key points from his[The Sensual (Quadratic)
+Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303)that
 I'll need for some other posts.
 
 
@@ -77,7 +77,7 @@ If we know the values of \\(f\\) at some superbase, it is actually
 possibly to find the values of \\(f\\) at vectors (faces) we encounter
 on the topograph without actually knowing \\(f\\).
 
-**Claim**: For vectors \\(v\_1, v\_2\\),
+**Claim**:For vectors \\(v\_1, v\_2\\),
 \\[f(v\_1 + v\_2) + f(v\_1 - v\_2) = 2\\left(f(v\_1) +
 f(v\_2)\\right)\\]
 **Proof**: Exercise. (If you really can't get it, let me know in the
@@ -88,7 +88,7 @@ This implies that if
 = f(v\_1 - v\_2)\\]
 then \\(d\\), \\(a + b\\), \\(c\\) form an arithmetic progression with
 common difference \\(h\\). This so--called *Arithmetic Progression
-Rule* allows us to mark each edge with a direction based on the value of
+Rule*allows us to mark each edge with a direction based on the value of
 \\(h\\). Hence if \\(d \< a + b \< c\\), we have \\(h \> 0\\) and the
 following directed edge:
 
@@ -107,7 +107,7 @@ following directed edge:
 Obviously starting from a base \\(e\_1, e\_2\\), one wonders if it is
 possible to move to any pair \\((x, y)\\) with \\(x\\) and \\(y\\)
 coprime along the topograph. It turns out that we can; the topograph
-forms a structure called a tree, and all nodes are connected.
+forms a structurecalled a tree, and all nodes are connected.
 
 </div>
 
@@ -123,7 +123,7 @@ forms a structure called a tree, and all nodes are connected.
 surrounding faces taking values \\(a\\), \\(b\\), and \\(c\\) as below,
 if the \\(a\\), \\(b\\) and the common difference \\(h\\) are all
 positive, then \\(c\\) is positive and the other two edges at
-\\(Q\\) point away from \\(Q\\).
+\\(Q\\)point away from \\(Q\\).
 
 </div>
 
@@ -133,15 +133,15 @@ positive, then \\(c\\) is positive and the other two edges at
 
 </div>
 
-**Proof**: First \\(c\\) is positive because \\(h = c - (a + b)\\),
+**Proof**:First \\(c\\) is positive because \\(h = c - (a + b)\\),
 hence \\(c = a + b + h \> 0\\). The two other edges at \\(Q\\) have
 common differences \\((a + c) - b\\) and \\((b + c) - a\\). Since \\(c =
-a + b + h\\) is greater than both \\(a\\) and \\(b\\), these differences
-are positive. \\(\\Box\\)
+a + b + h\\) is greater than both \\(a\\)and \\(b\\), these differences
+are positive.\\(\\Box\\)
 
 Notice also that this establishes two new triples \\((a, a + b + h, 2 a
 + h)\\) and \\((b, a + b + h, 2 b + h)\\) that continue to point away
-from each successive superbase and hence *climb* the topograph. We can
+from each successive superbase and hence *climb*the topograph. We can
 use this lemma (along with a specific form) to show that there are no
 cycles in the topograph, i.e. the topograph doesn't loop back on
 itself.

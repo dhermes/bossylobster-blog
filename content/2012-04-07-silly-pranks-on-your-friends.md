@@ -34,7 +34,7 @@ DNS."
 ([source](http://www.justincarmony.com/blog/2011/07/27/mac-os-x-lion-etc-hosts-bugs-and-dns-resolution/))
 This means that even though the [DNS
 Lookup](http://en.wikipedia.org/wiki/Domain_Name_System) provided by her
-[ISP](http://en.wikipedia.org/wiki/Internet_service_provider) could
+[ISP](http://en.wikipedia.org/wiki/Internet_service_provider)could
 resolve people.com, her browser would get an [IP
 address](http://en.wikipedia.org/wiki/IP_address) from the hosts file
 first and hence will render the New York Times page for
@@ -58,7 +58,7 @@ I updated the contents:
 ### Host Database## localhost is used to configure the loopback interface# when the system is booting.  Do not change this entry.##127.0.0.1       localhost255.255.255.255 broadcasthost::1             localhostfe80::1%lo0     localhost199.239.136.200 people.com  # New entry
 ~~~~
 
-Voilà! With that, the prank was complete and the next time she visited
+Voil&#0224;! With that, the prank was complete and the next time she visited
 [people.com](http://people.com/), the got the contents of
 [nytimes.com](http://nytimes.com/) in her browser.
 

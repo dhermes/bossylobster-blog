@@ -10,17 +10,17 @@ talk called "Last Across the Finish Line: Asynchronous
 [Tasks](https://developers.google.com/appengine/docs/python/taskqueue/overview)
 with [App Engine](https://appengine.google.com/)". This is part three in
 a three part series where I will share our
-[learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent) and
-give some helpful references to the [App Engine
+[learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent)and
+give some helpful references to the[App Engine
 documentation](https://developers.google.com/appengine/docs/).
 
-Check out the [previous
-post](http://blog.bossylobster.com/2012/08/last-to-cross-finish-line-part-two.html) if
-you haven't already. In this section, we'll define the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">PopulateBatch</span> function
-and explore the [ndb
-models](https://developers.google.com/appengine/docs/python/ndb/) and [Task
-Queue](https://developers.google.com/appengine/docs/python/taskqueue/) operations
+Check out the[previous
+post](http://blog.bossylobster.com/2012/08/last-to-cross-finish-line-part-two.html)if
+you haven't already.In this section, we'lldefine the<span
+style="color: lime; font-family: Courier New, Courier, monospace;">PopulateBatch</span>function
+and explore the[ndb
+models](https://developers.google.com/appengine/docs/python/ndb/)and[Task
+Queue](https://developers.google.com/appengine/docs/python/taskqueue/)operations
 that make it work.
 
 <span style="font-size: large;">Imports</span>
@@ -41,9 +41,9 @@ style="color: lime; font-family: Courier New, Courier, monospace;">json</span>](
 and <span
 style="color: lime; font-family: Courier New, Courier, monospace;">channel</span>
 for serialization and message passing. We import the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">defer</span> function
+style="color: lime; font-family: Courier New, Courier, monospace;">defer</span>function
 from the [deferred
-library](https://developers.google.com/appengine/articles/deferred) to
+library](https://developers.google.com/appengine/articles/deferred)to
 abstract away task creation and take advantage of the ability to "defer"
 a function call to another thread of execution. Finally, we import <span
 style="color: lime; font-family: Courier New, Courier, monospace;">ndb</span>
@@ -54,8 +54,8 @@ as a means for interacting with the App Engine
 <span style="font-size: large;">Method Wrapper Built for Tasks</span>
 ---------------------------------------------------------------------
 
-As we saw in the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">BeginWork</span> handler
+As we saw in the<span
+style="color: lime; font-family: Courier New, Courier, monospace;">BeginWork</span>handler
 in [part
 two](http://blog.bossylobster.com/2012/08/last-to-cross-finish-line-part-two.html),
 units of work are passed to <span
@@ -74,7 +74,7 @@ def AlwaysComplete(task, method, *args, **kwargs):  try:    method(*args, **kwar
 As you can see, we catch any and all errors thrown by our method and
 don't retry the method if it fails. In our example, if the call <span
 style="color: lime; font-family: Courier New, Courier, monospace;">method(\*args,
-\*\*kwargs)</span> fails, the data won’t be sent through the channel and
+\*\*kwargs)</span> fails, the data won't be sent through the channel and
 the given square will not show up in the quilt. However, since we catch
 these exceptions, the batch will complete and the spinner will disappear
 with this square still missing.
@@ -101,7 +101,7 @@ would execute (or fail) again, which is bad if our user interface is not
 -------------------------------------------------
 
 As we saw above, we need a datastore model to represent tasks within a
-batch. We start out initially with a model having only one attribute — a
+batch. We start out initially with a model having only one attribute &mdash; a
 boolean representing whether or not the task has completed.
 
 ~~~~ {.prettyprint style="background-color: white;"}
@@ -123,7 +123,7 @@ style="color: lime; font-family: Courier New, Courier, monospace;">AlwaysComplet
 In this <span
 style="color: lime; font-family: Courier New, Courier, monospace;">Populate</span>
 method, we first put the object in the datastore
-[transactionally](https://developers.google.com/appengine/docs/python/datastore/transactions) by
+[transactionally](https://developers.google.com/appengine/docs/python/datastore/transactions)by
 using the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">ndb.transactional</span>
 decorator. By adding the <span
@@ -136,13 +136,13 @@ the underscore and creates a [transactional
 task](https://developers.google.com/appengine/docs/python/taskqueue/overview#Tasks_within_Transactions).
 By doing this
 
-> "the task is only enqueued — and guaranteed to be enqueued — if the
+> "the task is only enqueued &mdash; and guaranteed to be enqueued &mdash; if the
 > transaction is committed successfully."
 
 We need this deferred task to be enqueued transactionally for
 consistency of the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">completed</span>
-boolean attribute. The datastore put in <span
+boolean attribute. The datastore put in<span
 style="color: lime; font-family: Courier New, Courier, monospace;">Populate</span>
 uses the default value of <span
 style="color: lime; font-family: Courier New, Courier, monospace;">False</span>,
@@ -165,7 +165,7 @@ method on the task object:
   @ndb.transactional  def Complete(self):    self.completed = True    self.put()    batcher_parent = self.key.parent().get()    defer(batcher_parent.CheckComplete, _transactional=True)
 ~~~~
 
-It performs two functions. First, it sets <span
+It performs two functions. First, it sets<span
 style="color: lime; font-family: Courier New, Courier, monospace;">completed</span>
 to <span
 style="color: lime; font-family: Courier New, Courier, monospace;">True</span>
@@ -188,10 +188,10 @@ in the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">Populate</span>
 method.
 
-**Note**: *It may seem that these*<span
+**Note**:*It may seem that these*<span
 style="color: lime; font-family: Courier New, Courier, monospace;">get</span>*calls
-to retrieve the parent via *<span
-style="color: lime; font-family: Courier New, Courier, monospace;">self.key.parent().get()</span>* are
+to retrieve the parent via*<span
+style="color: lime; font-family: Courier New, Courier, monospace;">self.key.parent().get()</span>*are
 using more bandwidth than necessary. However, we are relying here on the
 power of*<span
 style="color: lime; font-family: Courier New, Courier, monospace;">ndb</span>*.
@@ -232,7 +232,7 @@ objects from the datastore.
 
 We again do the utmost at this step to ensure [<span
 id="goog_842417011"></span>consistency<span
-id="goog_842417012"></span>](https://www.blogger.com/) by using an
+id="goog_842417012"></span>](https://www.blogger.com/)by using an
 ancestor query:
 
 > "There are scenarios in which any pending modifications are guaranteed
@@ -241,12 +241,12 @@ ancestor query:
 > current and consistent."
 
 After checking if a batch is complete, we need to communicate the status
-back to the client. We'll rely on <span
-style="color: lime; font-family: Courier New, Courier, monospace;">PopulateBatch</span> to
-create instances of <span
-style="color: lime; font-family: Courier New, Courier, monospace;">TaskBatcher</span> with
+back to the client. We'll rely on<span
+style="color: lime; font-family: Courier New, Courier, monospace;">PopulateBatch</span>to
+create instances of<span
+style="color: lime; font-family: Courier New, Courier, monospace;">TaskBatcher</span>with
 the ID of the session corresponding to the batch as the datastore
-key. We send a status complete or incomplete message to the client using
+key.We send a status complete or incomplete message to the client using
 the session ID for the channel. In order to correctly handle these
 messages on the client, we'll need to update the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">onmessage</span>
@@ -274,17 +274,17 @@ method that is called when the batch is complete:
 This method uses the key from the batch parent to perform another
 ancestor query and creates an object which can [iterate over all the
 keys](https://developers.google.com/appengine/docs/python/ndb/queries#iterators)
-of the tasks in the batch. By using the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">delete\_multi</span> function
-provided by <span
+of thetasks in the batch. By using the<span
+style="color: lime; font-family: Courier New, Courier, monospace;">delete\_multi</span>function
+provided by<span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">ndb</span>,
 we are able to delete these in parallel rather than waiting for each to
 complete. After deleting all the tasks, the batcher deletes itself and
 clean up is done. Since the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">TaskBatcher.CheckComplete</span>
-spawns <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">CleanUp</span> in
-a deferred task, if the deletes time out, the task will try again until
+spawns<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">CleanUp</span>in
+a deferred task,if the deletes time out, the task will try again until
 all tasks in the batch are deleted.
 
 As a final method on <span
@@ -311,7 +311,7 @@ is <span
 style="color: lime; font-family: Courier New, Courier, monospace;">True</span>,
 then none of the checks initiated by those tasks would signal
 completion. We use a transaction to avoid a race condition with the
-initial datastore put — a put which is a signal that all tasks have
+initial datastore put &mdash; a put which is a signal that all tasks have
 ***not*** loaded.
 
 <span style="font-size: large;">Populating a Batch</span>
@@ -338,8 +338,8 @@ using the default value of <span
 style="color: lime; font-family: Courier New, Courier, monospace;">False</span>
 for <span
 style="color: lime; font-family: Courier New, Courier, monospace;">all\_tasks\_loaded</span>.
-Since this is a single synchronous <span
-style="color: lime; font-family: Courier New, Courier, monospace;">put</span>, it
+Since this is a single synchronous<span
+style="color: lime; font-family: Courier New, Courier, monospace;">put</span>,it
 blocks the thread of execution and we can be sure our parent is in the
 datastore before members of the entity group (the task objects) are
 created.

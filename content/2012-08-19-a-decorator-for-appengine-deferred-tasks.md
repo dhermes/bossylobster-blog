@@ -31,7 +31,7 @@ deferred task.
 Initially I thought I was lost, since any
 [pickled](http://docs.python.org/library/pickle.html) method wouldn't
 directly have access to the [task queue specific
-headers](https://developers.google.com/appengine/docs/python/taskqueue/overview-push#Task_Request_Headers) from
+headers](https://developers.google.com/appengine/docs/python/taskqueue/overview-push#Task_Request_Headers)from
 the request. But luckily, many of these headers persist as [environment
 variables](http://en.wikipedia.org/wiki/Environment_variable), so can be
 accessed via <span
@@ -62,7 +62,7 @@ style="color: lime; font-family: Courier New, Courier, monospace;">HTTP\_X\_APPE
 is checked against the name of the default queue: <span
 style="color: lime; font-family: Courier New, Courier, monospace;">default</span>.
 Again, if this is incorrect or unset, an <span
-style="color: lime; font-family: Courier New, Courier, monospace;">EnvironmentError</span> is
+style="color: lime; font-family: Courier New, Courier, monospace;">EnvironmentError</span>is
 raised. If both these checks pass, the decorated method is called with
 its arguments and the value is returned.
 
@@ -81,7 +81,7 @@ HTTP_X_APPENGINE_TASKRETRYCOUNTHTTP_X_APPENGINE_QUEUENAMEHTTP_X_APPENGINE_TASKNA
 ~~~~
 
 
-\***Specialized Worker**: *I had two different reasons to raise a*<span
+\***Specialized Worker**:*I had two different reasons to raise a*<span
 style="color: lime; font-family: Courier New, Courier, monospace;">SingularTaskFailure</span>*in
 my worker. First, I was polling for resources that may not have been
 online, so wanted the task to sleep and then restart (after raising the

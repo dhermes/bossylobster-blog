@@ -4,20 +4,20 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: AppEngine, Deferred Library, Google App Engine, Google Codesite, Javascript, jQuery, Python, Task Queue API
 slug: last-to-cross-finish-line-part-two
 
-Recently, my colleague [+Fred
-Sauer](https://plus.google.com/115640166224745944209) and I gave a tech
+Recently, my colleague[+Fred
+Sauer](https://plus.google.com/115640166224745944209)and I gave a tech
 talk called "Last Across the Finish Line:
-Asynchronous [Tasks](https://developers.google.com/appengine/docs/python/taskqueue/overview) with [App
-Engine](https://appengine.google.com/)". This is part two in a three
+Asynchronous[Tasks](https://developers.google.com/appengine/docs/python/taskqueue/overview)with[App
+Engine](https://appengine.google.com/)".This is part two in a three
 part series where I will share
-our [learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent) and
-give some helpful references to the [App Engine
+our[learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent)and
+give some helpful references to the[App Engine
 documentation](https://developers.google.com/appengine/docs/).
 
 Check out the [previous
 post](http://blog.bossylobster.com/2012/08/last-to-cross-finish-line-part-one.html)
-if you haven't already. In this section, we'll cover the two [WSGI
-handlers](https://developers.google.com/appengine/docs/python/tools/webapp/running) in
+if you haven't already.In this section, we'll cover the two [WSGI
+handlers](https://developers.google.com/appengine/docs/python/tools/webapp/running)in
 [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">main.py</span>](http://code.google.com/p/gae-last-across-the-finish-line/source/browse/main.py)
 serving requests for our application and the client side code that
@@ -42,8 +42,8 @@ API](https://developers.google.com/appengine/docs/python/channel/),
 style="color: lime; font-family: Courier New, Courier, monospace;">users</span>](https://developers.google.com/appengine/docs/python/users/)
 and [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">login\_required</span>](https://developers.google.com/appengine/docs/python/tools/webapp/utilmodule)
-for authenticating users within a request, [<span
-style="color: lime; font-family: Courier New, Courier, monospace;">webapp2</span>](https://developers.google.com/appengine/docs/python/gettingstartedpython27/usingwebapp) for
+for authenticating users within a request,[<span
+style="color: lime; font-family: Courier New, Courier, monospace;">webapp2</span>](https://developers.google.com/appengine/docs/python/gettingstartedpython27/usingwebapp)for
 creating [WSGI
 Handlers](http://webapp-improved.appspot.com/guide/app.html) and [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">jinja2</span>](https://developers.google.com/appengine/docs/python/gettingstartedpython27/templates)
@@ -53,10 +53,10 @@ Finally, we import four functions from the two other modules defined
 within our project. From the [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">display</span>](http://code.google.com/p/gae-last-across-the-finish-line/source/browse/display.py)
 module, we import the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">SendColor</span> function
-that we explored in part one and the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">RandomRowColumnOrdering</span> function,
-which generates all possible row, column pairs in a random order. From
+style="color: lime; font-family: Courier New, Courier, monospace;">SendColor</span>function
+that we explored in part oneand the<span
+style="color: lime; font-family: Courier New, Courier, monospace;">RandomRowColumnOrdering</span>function,
+whichgenerates all possible row, column pairs in a random order. From
 the as of yet undiscussed [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">models</span>](http://code.google.com/p/gae-last-across-the-finish-line/source/browse/models.py)
 module we import the <span
@@ -85,9 +85,9 @@ class MainPage(webapp2.RequestHandler):  def RenderResponse(self, template, **co
 
 In <span
 style="color: lime; font-family: Courier New, Courier, monospace;">get</span>
-— the actual handler serving the
+&mdash; the actual handler serving the
 [GET](http://en.wikipedia.org/wiki/GET_(HTTP)#Request_methods) request
-from the browser — we use the <span
+from the browser &mdash; we use the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">login\_required</span>
 decorator to make sure the user is signed in, and then create a channel
 for message passing using the ID of the signed in user. The template
@@ -128,23 +128,23 @@ style="color: lime; font-family: Courier New, Courier, monospace;">python27</spa
 <span style="font-size: large;">Client Side Javascript and jQuery</span>
 ------------------------------------------------------------------------
 
-In the template [<span
-style="color: lime; font-family: Courier New, Courier, monospace;">main.html</span>](http://code.google.com/p/gae-last-across-the-finish-line/source/browse/templates/main.html) we
-use [jQuery](http://jquery.com/) to make AJAX requests and manage the
+In thetemplate[<span
+style="color: lime; font-family: Courier New, Courier, monospace;">main.html</span>](http://code.google.com/p/gae-last-across-the-finish-line/source/browse/templates/main.html)we
+use [jQuery](http://jquery.com/)to make AJAX requests and manage the
 CSS for each square in our "quilt". We also define some other Javascript
 functions for interacting with the App Engine Channel API. In the
-HTML <span
-style="color: lime; font-family: Courier New, Courier, monospace;">\<head\></span> element
+HTML<span
+style="color: lime; font-family: Courier New, Courier, monospace;">\<head\></span>element
 we load the [Channel Javascript
 API](https://developers.google.com/appengine/docs/python/channel/javascript),
 and in the <span
-style="color: lime; font-family: Courier New, Courier, monospace;">\<body\></span> element
+style="color: lime; font-family: Courier New, Courier, monospace;">\<body\></span>element
 we open a channel using the <span
 style="color: lime; font-family: Courier New, Courier, monospace;">{{
 token }}</span> passed in to the template:
 
 ~~~~ {.prettyprint style="background-color: white;"}
-<head>  <script src="/_ah/channel/jsapi"></script></head><body>  <script type="text/javascript">    channel = new goog.appengine.Channel('{{ token }}');    socket = channel.open();    socket.onerror = function() { console.log('Socket error'); };    socket.onclose = function() { console.log('Socket closed'); };  </script></body>
+<head>  <script src="/_ah/channel/jsapi"></script></head><body>  <script type="text/javascript">   channel = new goog.appengine.Channel('{{ token }}');   socket = channel.open();   socket.onerror = function() { console.log('Socket error'); };   socket.onclose = function() { console.log('Socket closed'); };  </script></body>
 ~~~~
 
 In addition to <span
@@ -183,7 +183,7 @@ socket.onmessage = function(msg) {  var response = JSON.parse(msg.data);  var sq
 
 As you can see from <span
 style="color: lime; font-family: Courier New, Courier, monospace;">squareId</span>,
-each square in the table generated by the template has an HMTL ID so we
+each square in the table generated by the template hasan HMTL ID so we
 can specifically target it.
 
 <span style="font-size: large;">Next...</span>

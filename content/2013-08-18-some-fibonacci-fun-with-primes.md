@@ -10,7 +10,7 @@ little proof.
 **Assertion:** Let \\(F\_n\\) be the \\(n\\)th Fibonacci number defined
 by \\(F\_n = F\_{n-1} + F\_{n-2}\\), \\(F\_0 = 0, F\_1 = 1\\). Show that
 for an odd prime \\(p\\neq 5\\), we have \\(p\\) divides
-\\(F\_{p\^2−1}\\).
+\\(F\_{p\^2-1}\\).
 
 **Proof:** We do this by working inside \\(\\mathbb{F}\_p\\) instead of
 working in \\(\\mathbb{R}\\). The recurrence is given by
@@ -75,8 +75,8 @@ degree considerations it **must** split completely over
 
 \\[A\^{p\^2 - 1} = P \\left(\\begin{array}{cc} \\alpha & 0 \\\\ 0 &
 \\beta \\end{array} \\right)\^{p\^2 - 1} P\^{-1}
-= P \\left(\\begin{array}{cc} \\alpha\^{p\^2 - 1}  & 0 \\\\ 0 &
-\\beta\^{p\^2 - 1}  \\end{array} \\right)P\^{-1}\\] Since \\(\\chi\_A(0)
+= P \\left(\\begin{array}{cc} \\alpha\^{p\^2 - 1} & 0 \\\\ 0 &
+\\beta\^{p\^2 - 1} \\end{array} \\right)P\^{-1}\\] Since \\(\\chi\_A(0)
 = 0 - 0 - 1 \\neq 0\\) we know \\(\\alpha\\) and \\(\\beta\\) are
 nonzero, hence \\(\\alpha\^{p\^2 - 1} = \\beta\^{p\^2 - 1} = 1 \\in
 \\mathbb{F}\_{p\^2} \\). Thus \\(A\^{p\^2 - 1} = P I\_2 P\^{-1} =

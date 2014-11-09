@@ -10,8 +10,8 @@ talk called "Last Across the Finish Line: Asynchronous
 [Tasks](https://developers.google.com/appengine/docs/python/taskqueue/overview)
 with [App Engine](https://appengine.google.com/)". This is part one in a
 three part series where I will share our
-[learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent) and
-give some helpful references to the [App Engine
+[learnings](http://www.forbes.com/pictures/ekij45gdh/learnings/#gallerycontent)and
+give some helpful references to the[App Engine
 documentation](https://developers.google.com/appengine/docs/).
 
 <span style="font-size: large;">Intro</span>
@@ -50,7 +50,7 @@ compute task.
 -----------------------------------------------------------
 
 The
-[application](https://github.com/GoogleCloudPlatform/appengine-last-across-the-finish-line-python) has
+[application](https://github.com/GoogleCloudPlatform/appengine-last-across-the-finish-line-python)has
 a simple structure:
 
 ~~~~ {.prettyprint style="background-color: white;"}
@@ -62,7 +62,7 @@ style="color: lime; font-family: Courier New, Courier, monospace;">display.py</s
 <span
 style="color: lime; font-family: Courier New, Courier, monospace;">main.py</span>
 and <span
-style="color: lime; font-family: Courier New, Courier, monospace;">models.py</span> individually
+style="color: lime; font-family: Courier New, Courier, monospace;">models.py</span>individually
 and explore how they interact with one another. In addition to this,
 we'll briefly inspect the HTML and Javascript contained in the template
 <span
@@ -73,13 +73,13 @@ In this post, I will explain the actual background work we did and
 briefly touch on the methods for communicating with the client, but
 won't get into client side code or the generic code for running the
 workers and watching them all as they cross the finish line. In the
-second post, we’ll examine the client side code and in the third, we’ll
+second post, we'll examine the client side code and in the third, we'll
 discuss the models that orchestrate the work.
 
 <span style="font-size: large;">Workers</span>
 ----------------------------------------------
 
-These worker methods are defined in [<span
+These worker methods are defined in[<span
 style="color: lime; font-family: Courier New, Courier, monospace;">display.py</span>](http://code.google.com/p/gae-last-across-the-finish-line/source/browse/display.py).
 To generate the random colors, we simply choose a hexadecimal digit six
 different times and throw a <span
@@ -95,9 +95,9 @@ style="color: lime; font-family: Courier New, Courier, monospace;">RandHexColor<
 in hand, we define a worker that will take a row and column to be
 colored and a session ID that will identify the client requesting the
 work. This worker will generate a random color and then send it to the
-specified client along with the row and column. To pass messages to the
+specified client along with the row and column.To pass messages to the
 client, we use the [Channel
-API](https://developers.google.com/appengine/docs/python/channel/) and
+API](https://developers.google.com/appengine/docs/python/channel/)and
 serialize our messages using the [<span
 style="color: lime; font-family: Courier New, Courier, monospace;">json</span>](http://docs.python.org/library/json.html)
 library in Python.

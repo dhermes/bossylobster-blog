@@ -36,12 +36,12 @@ how to verify:
 -   [Create a TXT
     record](http://www.google.com/support/a/bin/answer.py?answer=183895)
 -   Upload an HTML file to a specific path on your site
--   Add a <span class="Apple-style-span"
+-   Add a<span class="Apple-style-span"
     style="background-color: white; color: white; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px; line-height: 18px;"><span
     class="Apple-style-span"
     style="color: #881280; font-family: monospace; white-space: pre-wrap;">\<meta</span><span
     class="Apple-style-span"
-    style="color: #881280; font-family: monospace; white-space: pre-wrap;">\></span></span> tag
+    style="color: #881280; font-family: monospace; white-space: pre-wrap;">\></span></span>tag
     to your home page
 -   Verify using your Google Analytics tracking code
 
@@ -89,15 +89,15 @@ style="color: lime; font-family: 'Courier New', Courier, monospace;">bossylobste
 to:
 
 ~~~~ {.prettyprint style="background-color: white;"}
-from django.conf.urls.defaults import patternsfrom django.conf.urls.defaults import urlurlpatterns = patterns('',  url(r'^$', 'bossylobster_django.views.index', name='home'),)
+from django.conf.urls.defaults import patternsfrom django.conf.urls.defaults import urlurlpatterns = patterns('', url(r'^$', 'bossylobster_django.views.index', name='home'),)
 ~~~~
 
-​5. Change the file <span class="Apple-style-span"
+5. Change the file <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">bossylobster\_django/views.py</span>
 to:
 
 ~~~~ {.prettyprint style="background-color: white;"}
-from django.http import HttpResponsedef index(request):  content = '\n'.join(['<html>',    '  <head>',    '    <meta name="google-site-verification" content="XXXX" />',    '  </head>',    '  <body>',    '    Hello world!',    '  </body>',    ' </html>'])  return HttpResponse(content)
+from django.http import HttpResponsedef index(request): content = '\n'.join(['<html>',  ' <head>',  '  <meta name="google-site-verification" content="XXXX" />',  ' </head>',  ' <body>',  '  Hello world!',  ' </body>',  ' </html>'])  return HttpResponse(content)
 ~~~~
 
 where XXXX should be replaced by the content value provided by Google.
@@ -109,7 +109,7 @@ address](http://checkip.dyndns.com/) for use in step 8
 7. Set up a [port forwarding rule](http://portforward.com/dyndns/) in
 your router for port 80 ([websites](https://www.grc.com/port_80.htm))
 with the IP address you found in 6a
-8. (After logging in to [1&1](http://1and1.com/)) [change IP for
+8. (After logging in to[1&1](http://1and1.com/)) [change IP for
 bossylobster.com](http://faq.1and1.com/domains/domain_admin/dns_settings/13.html)
 to point to your router (from 6b)
 9. From the <span class="Apple-style-span"
@@ -118,8 +118,8 @@ directory (or whatever you called it), run the server via
 <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">sudo
 python manage.py runserver 192.168.XX.YY:80</span>
-where <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">192.168.XX.YY </span>is
+where<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">192.168.XX.YY</span>is
 the IP you found in 6b.
 10. [Check](http://www.whatsmydns.net/#A/bossylobster.com) to see if
 your change has propagated to DNS servers worldwide (wait until it has)

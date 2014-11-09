@@ -5,7 +5,7 @@ tags: AppEngine, Decorator, GData, gdata-python-client, Google App Engine, Googl
 slug: bridging-oauth-20-objects-between-gdata
 
 My colleague [+Takashi
-Matsuo](http://plus.google.com/110554344789668969711) and I recently
+Matsuo](http://plus.google.com/110554344789668969711)and I recently
 gave a [talk](http://www.youtube.com/watch?v=HoUdWBzUZ-M) about using
 <span
 style="color: lime; font-family: Courier New, Courier, monospace;">OAuth2Decorator</span>
@@ -16,7 +16,7 @@ request handlers in[Google App
 Engine](https://developers.google.com/appengine/). Shortly after, a
 [Stack Overflow question](http://stackoverflow.com/questions/13981641)
 sprung up asking about the right way to use the decorator and, as a
-follow up,  if the decorator could be used with the [Google Apps
+follow up, if the decorator could be used with the [Google Apps
 Provisioning
 API](https://developers.google.com/google-apps/provisioning/). As I
 mentioned in my answer,
@@ -41,13 +41,13 @@ took was that the token subclass should be 100% based on an <span
 style="color: lime; font-family: Courier New, Courier, monospace;">OAuth2Credentials</span>
 object:
 
--   the token constructor simply takes an <span
-    style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
--   the token refresh updates the <span
-    style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
+-   the token constructor simply takes an<span
+    style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object
+-   the token refresh updatesthe<span
+    style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object
     set on the token
--   values of the current token can be updated directly from the <span
-    style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
+-   values of the current tokencan be updated directly from the<span
+    style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object
     set on the token
 
 Starting from the top, we'll use two imports:
@@ -56,16 +56,16 @@ Starting from the top, we'll use two imports:
 import httplib2from gdata.gauth import OAuth2Token
 ~~~~
 
-The first is needed to refresh an <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
-using the mechanics native to <span
+The first is needed to refresh an<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object
+using the mechanics native to<span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">google-api-python-client</span>,
-and the second is needed so we may subclass the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">gdata-python-client</span> native
+and the second is needed so we may subclass the<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">gdata-python-client</span>native
 token class.
 
-As I mentioned, the values should be updated directly from an <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object,
+As I mentioned, the values should be updated directly from an<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object,
 so in our constructor, we first initialize the values to <span
 style="color: lime; font-family: Courier New, Courier, monospace;">None</span>
 and then call our update method to actual set the values. This allows us
@@ -81,33 +81,33 @@ We can get away with passing four <span
 style="color: lime; font-family: Courier New, Courier, monospace;">None</span>s
 to the superclass constructor, as it only has four positional arguments:
 <span
-style="color: lime; font-family: Courier New, Courier, monospace;">client\_id</span>, <span
+style="color: lime; font-family: Courier New, Courier, monospace;">client\_id</span>,<span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">client\_secret</span>,
 <span
 style="color: lime; font-family: Courier New, Courier, monospace;">scope</span>,
- and <span
+and <span
 style="color: lime; font-family: Courier New, Courier, monospace;">user\_agent</span>.
-Three of those have equivalents on the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object,
-but there is no place for <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">scope</span> because that
+Three of those have equivalents on the<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object,
+but there is no place for<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">scope</span>becausethat
 part of the token exchange handled elsewhere (<span
-style="color: lime; font-family: Courier New, Courier, monospace;">OAuth2WebServerFlow</span>) in
-the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">google-api-python-client</span> library.
+style="color: lime; font-family: Courier New, Courier, monospace;">OAuth2WebServerFlow</span>)in
+the<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">google-api-python-client</span>library.
 
 ~~~~ {.prettyprint style="background-color: white;"}
   def UpdateFromCredentials(self):    self.client_id = self.credentials.client_id    self.client_secret = self.credentials.client_secret    self.user_agent = self.credentials.user_agent    ...
 ~~~~
 
-Similarly, the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
+Similarly, the<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object
 only implements the refresh part of the OAuth 2.0 flow, so only has the
-token URI, hence <span
-style="color: lime; font-family: Courier New, Courier, monospace;">auth\_uri</span>, <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">revoke\_uri</span> and <span
+token URI, hence<span
+style="color: lime; font-family: Courier New, Courier, monospace;">auth\_uri</span>,<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">revoke\_uri</span>and<span
 style="color: lime; font-family: Courier New, Courier, monospace;">redirect</span><span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_uri</span> will
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_uri</span>will
 not be set either. However, the token URI and the token data are the
 same for both.
 
@@ -122,11 +122,11 @@ constructor:
     ...    self.token_expiry = self.credentials.token_expiry    self._invalid = self.credentials.invalid
 ~~~~
 
-Since <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> doesn't
+Since<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>doesn't
 deal with all parts of the OAuth 2.0 process, we disable those methods
-from <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Token</span> that
+from<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Token</span>that
 do.
 
 ~~~~ {.prettyprint style="background-color: white;"}
@@ -135,8 +135,8 @@ do.
 
 Finally, the last method which needs to be implemented is <span
 style="color: lime; font-family: Courier New, Courier, monospace;">\_refresh</span>,
-which should refresh the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object
+which should refresh the<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object
 and then update the current GData token after the refresh. Instead of
 using the passed in request object, we use one from <span
 style="color: lime; font-family: Courier New, Courier, monospace;">httplib2</span>
@@ -146,8 +146,8 @@ as we mentioned in imports.
   def _refresh(self, unused_request):    self.credentials._refresh(httplib2.Http().request)    self.UpdateFromCredentials()
 ~~~~
 
-After refreshing the <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span> object,
+After refreshing the<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">OAuth2Credentials</span>object,
 we can update the current token using the same method called in the
 constructor.
 

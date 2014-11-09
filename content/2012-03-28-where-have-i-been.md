@@ -36,9 +36,9 @@ exception:
 </ul>
 In addition, the one that was most confusing to fix didn't make it into
 any set of Release Notes, but I "closed" the
-[issue](http://stackoverflow.com/questions/8304854/gql-query-with-key-in-list-of-keys) that
+[issue](http://stackoverflow.com/questions/8304854/gql-query-with-key-in-list-of-keys)that
 I originally opened on StackOverflow. Checkout the
-[diff](http://code.google.com/p/googleappengine/source/diff?spec=svn241&r=241&format=side&path=/trunk/python/google/appengine/ext/gql/__init__.py&old_path=/trunk/python/google/appengine/ext/gql/__init__.py) to
+[diff](http://code.google.com/p/googleappengine/source/diff?spec=svn241&r=241&format=side&path=/trunk/python/google/appengine/ext/gql/__init__.py&old_path=/trunk/python/google/appengine/ext/gql/__init__.py)to
 see the details. I'll follow up with a summary of each of the fixes in a
 later post.
 

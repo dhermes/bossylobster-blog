@@ -12,7 +12,7 @@ rate, but wasn't sure how. After some badgering from my coworker
 [+Paul](https://plus.google.com/104679465567407024302), I searched the
 web and found a
 [tool](http://www.calcamo.net/loancalculator/quickcalculations/loan-rate.php5)
-from [CALCAmo](http://www.calcamo.net/) (a site just for calculating
+from [CALCAmo](http://www.calcamo.net/)(a site just for calculating
 amortizations).
 
 Problem solved, right? Wrong. I wanted to know why; I had to [go
@@ -38,7 +38,7 @@ off. In this series, \\(P\_0\\) is the principal owed currently and
 term is \\(T\\) periods, then we have \\(P\_T = 0\\).
 
 We have already introduced the term (\\(T\\)); we also need the value
-of the recurring (again, usually monthly) payment \\(R\\), the interest
+ofthe recurring (again, usually monthly) payment \\(R\\), the interest
 rate \\(r\\) and the initial principal owed \\(P\_0 = P\\).
 
 **Time-Relationship between Principal Values**
@@ -58,8 +58,8 @@ Using this, we can actually determine \\(P\_i\\) strictly in terms of
 \\(P\_0 = P\\). We can show inductively that \\[P\_i = P \\cdot m\^i - R
 \\cdot \\sum\_{j = 0}\^{i - 1} m\^j.\\] We already have the base case
 \\(i = 1\\), by definition. Assuming it holds for \\(i\\), we see that
-\\[P\_{i + 1} = P\_i \\cdot m - R =  m \\cdot \\left(P \\cdot m\^i - R
-\\cdot \\sum\_{j = 0}\^{i - 1} m\^j\\right) - R = P \\cdot m\^{i + 1} -
+\\[P\_{i + 1} = P\_i \\cdot m - R = m \\cdot \\left(P \\cdot m\^i - R
+\\cdot \\sum\_{j = 0}\^{i - 1} m\^j\\right) - R =P \\cdot m\^{i + 1} -
 R \\cdot \\sum\_{j = 1}\^{i} m\^j - R,\\] and our induction is complete.
 (We bump the index \\(j\\) since we are multiplying each \\(m\^j\\) by
 \\(m\\).)
@@ -74,22 +74,22 @@ Since we know \\(P\_T = 0\\) and \\(P\_T = P \\cdot m\^T - R \\cdot
 that will let us solve for \\(m\\) and in so doing, solve for \\(r\\).
 
 To make our lives a tad easier, we'll do some rearranging. First, note
-that \\[\\sum\_{j = 0}\^{T - 1} m\^j = m\^{T - 1} + \\cdots + m + 1 =
+that \\[\\sum\_{j = 0}\^{T - 1} m\^j =m\^{T - 1} + \\cdots + m + 1 =
 \\frac{m\^T - 1}{m - 1}.\\] We calculate this sum of a geometric series
 here, but I'll just refer you to the [Wikipedia
 page](http://en.wikipedia.org/wiki/Geometric_series) instead. With this
-reduction we want to solve \\[0 = P \\cdot m\^T - R \\cdot \\frac{m\^T -
-1}{m - 1} \\Longleftrightarrow P \\cdot m\^T \\cdot (m - 1) = R
-\\cdot (m\^T - 1).\\] With that, we have accomplished Step II, we have
+reduction we want to solve \\[0 =P \\cdot m\^T - R \\cdot \\frac{m\^T -
+1}{m - 1} \\LongleftrightarrowP \\cdot m\^T \\cdot (m - 1) =R
+\\cdot(m\^T - 1).\\] With that, we have accomplished Step II, we have
 found a function (parameterized by \\(P, T\\) and \\(R\\) which we can
-use zeroes from to find our interest rate: \\[f\_{P, T, R}(m) = P \\cdot
-m\^T \\cdot (m - 1) - R \\cdot (m\^T - 1) = P \\cdot m\^{T + 1} - (P +
-R) \\cdot m\^T + R.\\] **<span style="font-size: large;">Step III: Write
+use zeroes from to find our interest rate: \\[f\_{P, T, R}(m) =P \\cdot
+m\^T \\cdot (m - 1) -R \\cdot(m\^T - 1) = P \\cdot m\^{T + 1} - (P +
+R) \\cdot m\^T + R.\\] **<span style="font-size: large;">Step III:Write
 some code to implement the [Newton-Raphson
 method](http://en.wikipedia.org/wiki/Newton's_method)</span>**
 
-We use the Newton-Raphson method to get super-duper-close to a zero of
-the function. For in-depth coverage, see the Wikipedia page on the
+We use theNewton-Raphson method to get super-duper-close to a zero of
+the function.For in-depth coverage, see the Wikipedia page on the
 Newton-Raphson method, but I'll give some cursory coverage below. The
 methods used to show that a fixed point is found are not necessary for
 the intuition behind the method.
@@ -99,7 +99,7 @@ the intuition behind the method.
 For the intuition, assume we know (and can compute) a function \\(f\\),
 its derivative \\(f'\\) and a value \\(x\\). Assume there is some zero
 \\(y\\) nearby \\(x\\). Since they are close, we can approximate the
-slope of the line between the points \\((x, f(x)\\) and \\((y, f(y)\\)
+slope of the line between the points \\((x, f(x)\\) and\\((y, f(y)\\)
 with the derivative nearby. Since we know \\(x\\), we use \\(f'(x)\\)
 and intuit that \\[f'(x) = \\text{slope} = \\frac{f(y) - f(x)}{y - x}
 \\Rightarrow y - x = \\frac{f(y) - f(x)}{f'(x)}.\\] But, since we know
@@ -128,10 +128,10 @@ def newton_raphson_method(guess, f, f_prime):    def next_value(value):        r
 
 As you can see, once we have <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">f</span>
- and <span
+and <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">f\_prime</span>,
 everything else is easy because all the work in calculating the next
-value (via <span
+value (via<span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">next\_value</span>)
 is done by the functions.
 
@@ -140,7 +140,7 @@ code to find an Interest Rate</span>**
 
 We first need to implement \\(f\_{P, T, R}(m) = P \\cdot m\^{T + 1} - (P
 + R) \\cdot m\^T + R\\) and \\(f'\_{P, T, R}\\) in Python. Before doing
-so, we do a simple derivative calculation: \\[f\_{P, T, R}'(m) = P
+so, we do a simple derivative calculation: \\[f\_{P, T, R}'(m) =P
 \\cdot (T + 1) \\cdot m\^T - (P + R) \\cdot T \\cdot m\^{T - 1}.\\] With
 these [formulae](http://dictionary.reference.com/browse/formulae) in
 hand, we write a function which will spit out the corresponding <span
@@ -170,8 +170,8 @@ Python.
 In order to solve, we need an initial <span
 style="color: lime; font-family: 'Courier New', Courier, monospace;">guess</span>,
 but we need to know the relationship between \\(m\\) and \\(r\\) before
-we can determine what sort of <span
-style="color: lime; font-family: 'Courier New', Courier, monospace;">guess</span> makes
+we can determine what sort of<span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">guess</span>makes
 sense. In addition, once a value for \\(m\\) is returned from
 Newton-Raphson, we need to be able to turn it into an \\(r\\) value so
 functions <span

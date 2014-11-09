@@ -6,7 +6,7 @@ slug: protecting
 
 On the (much too early) bus to work this morning, I was reading my
 Twitter feed and saw an [interesting
-question](https://twitter.com/#!/robhawkes/status/121593545202216960) from
+question](https://twitter.com/#!/robhawkes/status/121593545202216960)from
 [Rob Hawkes](https://twitter.com/#!/robhawkes):
 
 <center>
@@ -76,18 +76,18 @@ I also wanted to share this with the interwebs.
 <span class="Apple-style-span">Anyhow, this is quick and dirty. First,
 create <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span>
-and <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>in
+and<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>in
 the root directory of your git repository (the same directory that <span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">.git</span>
-lives in). I intend </span><span class="Apple-style-span"
+lives in). I intend</span><span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span><span
-class="Apple-style-span"> to be the local copy with my actual passwords
-and keys and </span><span class="Apple-style-span"
+class="Apple-style-span">to be the local copy with my actual passwords
+and keys and</span><span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>to
 hold the master contents that actually show up in the public repo. For
-example, the contents of <span class="Apple-style-span"
+example, the contents of<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js
 are</span>:
 
@@ -99,8 +99,8 @@ SECRET = 'Nnkrndkmn978489MDkjw';</span>
 
 </div>
 
-and the contents of <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>are:
+and the contents of<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>are:
 
 <div style="text-align: center;">
 
@@ -113,38 +113,38 @@ SECRET = 'SECRET';</span>
 Since I ***don't*** want a duplicate in my repo, I put a rule in my
 <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">.gitignore</span>
-[file](http://progit.org/book/ch2-2.html#ignoring_files) to ignore <span
+[file](http://progit.org/book/ch2-2.html#ignoring_files)to ignore<span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>.
-(For those unfamiliar, this can be done just by including <span
+(For those unfamiliar, this can be done just by including<span
 class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>on
-its own line in the <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">.gitignore </span>file.)
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>on
+its own line in the<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">.gitignore</span>file.)
 After doing so, I set up two [git
 hooks](http://progit.org/book/ch7-3.html), a pre-commit and post-commit
 hook.
 
-To "*install*" the hooks, just add the files <span
+To "*install*" the hooks, just add the files<span
 class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit </span>and <span
+style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>and<span
 class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">post-commit </span>to
+style="color: lime; font-family: 'Courier New', Courier, monospace;">post-commit</span>to
 the <span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">.git/hooks</span>
-subdirectory in your repo. They are nearly identical files, with a
-one-line difference. Both files simply swap the contents of <span
+subdirectory in your repo.They are nearly identical files, with a
+one-line difference. Both files simply swap the contents of<span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span><span
 class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;"> </span>and <span
+style="color: lime; font-family: 'Courier New', Courier, monospace;"></span>and<span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>,
-while <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit </span>also
-adds <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span> to
-the changelist. First I'll give you the contents of <span
+while<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>also
+adds<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span>to
+the changelist. First I'll give you the contents of<span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>,
 and then explain why it's cool/safe:
@@ -153,8 +153,8 @@ and then explain why it's cool/safe:
 #!/usr/bin/env pythonimport oshooks_dir = os.path.dirname(os.path.abspath(__file__))relative_dir = os.path.join(hooks_dir, '../..')project_root = os.path.abspath(relative_dir)git_included_config = os.path.join(project_root, 'config.js')confidential_config = os.path.join(project_root, '_config.js')with open(git_included_config, 'rU') as fh:  git_included_contents = fh.read()with open(confidential_config, 'rU') as fh:  confidential_contents = fh.read()with open(git_included_config, 'w') as fh:  fh.write(confidential_contents)with open(confidential_config, 'w') as fh:  fh.write(git_included_contents)os.system('git add %s' % git_included_config)
 ~~~~
 
-(Also note the contents of <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">post-commit </span>are
+(Also note the contents of<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">post-commit</span>are
 exactly the same, except without the final statement: <span
 class="Apple-style-span"
 style="background-color: white; color: purple; font-family: 'Courier New', Courier, monospace;">os.system('git
@@ -170,40 +170,40 @@ So what is happening in this file:
 2.  Determines the two files which need to swap contents
 3.  Loads the contents into string variables and then writes them to the
     opposite files
-4.  (only in <span class="Apple-style-span"
+4.  (only in<span class="Apple-style-span"
     style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>)
     Adds the included file to the changelist before the commit occurs.
 
 Step 4 is actually the secret sauce. It puts cleaned, non-sensitive data
-into the checked in <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js </span>file
+into the checked in<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span>file
 and then updates the changelist before making a commit, to ensure only
 the non-sensitive data goes in. Though you could do this yourself by
-making an initial commit with clean data and then never <span
+making an initial commit with clean data and then never<span
 class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">git
 add</span>ing the file with your actual data, these hooks prevent an
-accident and allow you to update your local <span
+accident and allow you to update your local<span
 class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>file
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>file
 with more fields as your config spec changes.
 
 But wait bossylobster, you say, what if one of the hooks doesn't occur?
-You are right! As  <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit </span>stands
+You are right! As<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>stands
 above, if the changelist is empty we have problems. Since the pre-commit
-hook changes  <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span> to
+hook changes<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span>to
 the same value in HEAD, git will tell us either "***nothing to
 commit***" or "***no changes added to commit***". In this case, the
 commit will exit and the post-commit hook will never occur. **<span
 class="Apple-style-span" style="font-size: large;">This is very
-bad</span>**, since the contents of <span class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js </span>and <span
+bad</span>**, since the contents of<span class="Apple-style-span"
+style="color: lime; font-family: 'Courier New', Courier, monospace;">config.js</span>and<span
 class="Apple-style-span"
-style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js </span>will
+style="color: lime; font-family: 'Courier New', Courier, monospace;">\_config.js</span>will
 be switched but not switched back. So, to account for this, we need to
-append the following code to the end of <span class="Apple-style-span"
+append the following code to the end of<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">pre-commit</span>:
 
 ~~~~ {.prettyprint style="background-color: white;"}
@@ -211,27 +211,27 @@ with os.popen('git st') as fh:  git_status = fh.read()if ('nothing to commit' in
 ~~~~
 
 For final versions see
-the [pre-commit](http://www.bossylobster.com/scripts/pre-commit) and
-[post-commit](http://www.bossylobster.com/scripts/post-commit) files.
-Thanks again to [Rob Hawkes](https://twitter.com/#!/robhawkes) for the
+the[pre-commit](http://www.bossylobster.com/scripts/pre-commit) and
+[post-commit](http://www.bossylobster.com/scripts/post-commit)files.
+Thanks again to[Rob Hawkes](https://twitter.com/#!/robhawkes)for the
 idea/work break over lunch!
 
 **Update**: *One of Rob's followers, [Paul
 King](https://twitter.com/#!/nrocy), found and
 [tweeted](https://twitter.com/#!/nrocy/status/124468167086051328) a very
 different alternative that is also pretty cool. Check out the
-[post](http://archive.robwilkerson.org/2010/03/02/git-tip-ignore-changes-to-tracked-files/) he
+[post](http://archive.robwilkerson.org/2010/03/02/git-tip-ignore-changes-to-tracked-files/)he
 found by [Rob Wilkerson](https://twitter.com/#!/robwilkerson).*
 
-**Update**: *I swapped out a screen shot of the tweet for a CSS-ified
+**Update**:*I swapped out a screen shot of the tweet for a CSS-ified
 version, inspired by and based on a design used on Mashable.*
 
-**Update**: *Some change in git causes empty commits to be allowed. I
+**Update**: *Some change in gitcauses empty commits to be allowed.I
 either didn't notice this before or it just showed up in git. So I
 added*<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">sys.exit(1)</span>*to
 force the pre-commit script to fail when nothing is changed and added a
-check for the phrase *<span class="Apple-style-span"
+check for the phrase*<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">nothing
 added to commit</span>*as well.*
 
