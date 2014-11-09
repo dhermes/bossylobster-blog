@@ -4,3 +4,11 @@ cache
 output
 _build
 _nb_header.html
+
+# Temporary overspecific ignore, will be replaced with content/*.md
+# once using all templates.
+content/2014-07-29-bayes-law-primer.md
+content/2014-07-29-conditional-probabilities-in-thinking.md
+content/2014-08-22-math-for-humans-second-attempt.md
+content/2014-09-22-quantitative-brain-teaser-brain-only.md
+content/2014-09-28-quantitative-interview-brain-teaser.md

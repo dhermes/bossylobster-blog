@@ -82,14 +82,15 @@ def write_template(template):
     name, ext = os.path.splitext(template.name)
     if ext != '.template':
         raise ValueError(template.name)
+    # This assumes we are running in the root of the repository.
+    new_filename = 'content/%s.md' % (name,)
 
     md5_sum = get_md5_sum(template.filename)
     if md5_sum == TEMPLATE_HASHES.get(template.filename):
-        print 'Already up-to-date:', template.filename
-        return
+        if os.path.exists(new_filename):
+            print 'Already up-to-date:', template.filename
+            return
 
-    # This assumes we are running in the root of the repository.
-    new_filename = 'content/%s.md' % (name,)
     print 'Writing', new_filename
     with open(new_filename, 'wb') as fh:
         rendered_file = template.render(get_katex=get_katex)
