@@ -37,7 +37,7 @@ and then call up Divvy with (a command I set globally) Ctrl-Z
 </div>
 
 and then once Divvy is up, I just hit the letter L (another command I
-made) and voila
+made) and voil&#0224;
 
 <div markdown="1" style="text-align: center;">
   ![After Re-sizing with Divvy](/images/divvy_after.png)

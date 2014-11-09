@@ -1,4 +1,4 @@
-Title: Life of π: Continued Fractions and Infinite Series
+Title: Life of &#0960;: Continued Fractions and Infinite Series
 date: 2012-05-17
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Analysis, Continued Fractions, Math, Pi, Tangent
@@ -28,8 +28,8 @@ at that point. Too many variables!
 <center>
 <div id="__ss_12977566" style="width: 680px;">
 
-**[Life of π: Continued Fractions and Infinite
-Series](http://www.slideshare.net/bossylobster/life-of-continued-fractions-and-infinite-series "Life of π: Continued Fractions and Infinite Series")**
+**[Life of &#0960;: Continued Fractions and Infinite
+Series](http://www.slideshare.net/bossylobster/life-of-continued-fractions-and-infinite-series "Life of &#0960;: Continued Fractions and Infinite Series")**
 <div style="padding: 5px 0 12px;">
 
 View more [presentations](http://www.slideshare.net/) from
