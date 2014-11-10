@@ -15,18 +15,19 @@ Fibonacci number defined by
 Show that for an odd prime {{ get_katex("p \\neq 5") }}, we have
 {{ get_katex("p") }} divides {{ get_katex("F_{p^2 - 1}") }}.
 
-**Proof:** We do this by working inside $\mathbb{F}_p$ instead
-of working in $\mathbb{R}$. The recurrence is given by
+**Proof:** We do this by working inside {{ get_latex_img("\\mathbb{F}_p") }}
+instead of working in {{ get_latex_img("\\mathbb{R}") }}. The recurrence is
+given by
 
-> $$\left(\begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right) \left( \begin{array}{c} F_{n-1} \\ F_{n-2} \end{array} \right) = \left(\begin{array}{c} F_{n-1} + F_{n-2} \\ F_{n-1} \end{array} \right) = \left(\begin{array}{c} F_n \\ F_{n-1} \end{array} \right)$$
+{{ get_latex_img("\\left(\\begin{array}{cc} 1 & 1 \\\\ 1 & 0 \\end{array} \\right) \\left( \\begin{array}{c} F_{n-1} \\\\ F_{n-2} \\end{array} \\right) = \\left(\\begin{array}{c} F_{n-1} + F_{n-2} \\\\ F_{n-1} \\end{array} \\right) = \\left(\\begin{array}{c} F_n \\\\ F_{n-1} \\end{array} \\right)", blockquote=True) }}
 
 and in general
 
-> $$\left( \begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)^{n} \left( \begin{array}{c} 1 \\ 0 \end{array} \right) = \left( \begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)^{n} \left( \begin{array}{c} F_1 \\ F_0 \end{array} \right) = \left(\begin{array}{c} F_{n + 1} \\ F_n \end{array} \right)$$
+{{ get_latex_img("\\left( \\begin{array}{cc} 1 & 1 \\\\ 1 & 0 \\end{array} \\right)^{n} \\left( \\begin{array}{c} 1 \\\\ 0 \\end{array} \\right) = \\left( \\begin{array}{cc} 1 & 1 \\\\ 1 & 0 \\end{array} \\right)^{n} \\left( \\begin{array}{c} F_1 \\\\ F_0 \\end{array} \\right) = \\left(\\begin{array}{c} F_{n + 1} \\\\ F_n \\end{array} \\right)", blockquote=True) }}
 
 The matrix
 
-> $$A = \left(\begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)$$
+{{ get_latex_img("A = \\left(\\begin{array}{cc} 1 & 1 \\\\ 1 & 0 \\end{array} \\right)", blockquote=True) }}
 
 has characteristic polynomial
 
@@ -36,37 +37,40 @@ If this polynomial has distinct roots, then {{ get_katex("A") }} is
 diagonalizable (this is sufficient, but not necessary). Assuming the converse
 we have
 {{ get_katex("\\chi_A(t) = (t - \\alpha)^2") }} for some
-$\alpha \in \mathbb{F}_p$; we can assume $\alpha \in \mathbb{F}_p$
+{{ get_latex_img("\\alpha \\in \\mathbb{F}_p") }}; we can assume
+{{ get_latex_img("\\alpha \\in \\mathbb{F}_p") }}
 since {{ get_katex("-2\\alpha = -1") }} is
 the coefficient of {{ get_katex("t") }}, which means
 {{ get_katex("\\alpha = 2^{-1} ") }} (we are fine with this since
 {{ get_katex("p") }} odd means that {{ get_katex("2^{-1}") }} exists). In
 order for this to be a root of {{ get_katex("\\chi_A") }}, we must have
 
-> $$0 \equiv 4 \cdot \chi_A\left(2^{-1}\right) \equiv 4 \cdot \left(2^{-2} - 2^{-1} - 1\right) \equiv 1 - 2 - 4 \equiv -5 \bmod{p}.$$
+{{ get_latex_img("0 \\equiv 4 \\cdot \\chi_A\\left(2^{-1}\\right) \\equiv 4 \\cdot \\left(2^{-2} - 2^{-1} - 1\\right) \\equiv 1 - 2 - 4 \\equiv -5 \\bmod{p}.", blockquote=True) }}
 
 Since {{ get_katex("p \\neq 5") }} is prime, this is not possible, hence
 we reached a contradiction and {{ get_katex("\\chi_A") }} does not have
 a repeated root.
 
 Thus we may write {{ get_katex("\\chi_A(t) = (t - \\alpha)(t - \\beta)") }} for
-$\alpha, \beta \in \mathbb{F}_{p^2}$ (it's possible that
-{{ get_katex("\\chi_A") }} is irreducible over $\mathbb{F}_p$, but due to degree
-considerations it **must** split completely over $\mathbb{F}_{p^2}$. Using this,
-we may write
+{{ get_latex_img("\\alpha, \\beta \\in \\mathbb{F}_{p^2}") }} (it's possible
+that {{ get_katex("\\chi_A") }} is irreducible over
+{{ get_latex_img("\\mathbb{F}_p") }}, but due to degree considerations it
+**must** split completely over {{ get_latex_img("\\mathbb{F}_{p^2}") }}.
+Using this, we may write
 
-> $$A = P \left(\begin{array}{cc} \alpha & 0 \\ 0 & \beta \end{array} \right) P^{-1}$$
+{{ get_latex_img("A = P \\left(\\begin{array}{cc} \\alpha & 0 \\\\ 0 & \\beta \\end{array} \\right) P^{-1}", blockquote=True) }}
 
-for some $P \in GL_{2} \left(\mathbb{F}_{p^2}\right)$ and so
+for some {{ get_latex_img("P \\in GL_{2} \\left(\\mathbb{F}_{p^2}\\right)") }}
+and so
 
-> $$A^{p^2 - 1} = P \left(\begin{array}{cc} \alpha & 0 \\ 0 & \beta \end{array} \right)^{p^2 - 1} P^{-1} = P \left(\begin{array}{cc} \alpha^{p^2 - 1} & 0 \\ 0 & \beta^{p^2 - 1} \end{array} \right)P^{-1}$$
+{{ get_latex_img("A^{p^2 - 1} = P \\left(\\begin{array}{cc} \\alpha & 0 \\\\ 0 & \\beta \\end{array} \\right)^{p^2 - 1} P^{-1} = P \\left(\\begin{array}{cc} \\alpha^{p^2 - 1} & 0 \\\\ 0 & \\beta^{p^2 - 1} \\end{array} \\right)P^{-1}", blockquote=True) }}
 
 Since {{ get_katex("\\chi_A(0) = 0 - 0 - 1 \\neq 0") }} we know
 {{ get_katex("\\alpha") }} and {{ get_katex("\\beta") }} are nonzero, hence
-$\alpha^{p^2 - 1} = \beta^{p^2 - 1} = 1 \in \mathbb{F}_{p^2}$.
+{{ get_latex_img("\\alpha^{p^2 - 1} = \\beta^{p^2 - 1} = 1 \\in \\mathbb{F}_{p^2}") }}.
 Thus {{ get_katex("A^{p^2 - 1} = P I_2 P^{-1} = I_2") }} and so
 
-> $$\left(\begin{array}{c} F_p \\ F_{p^2 - 1} \end{array} \right) = \left(\begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)^{p^2 - 1} \left(\begin{array}{c} 1 \\ 0 \end{array} \right) = I_2 \left( \begin{array}{c} 1 \\ 0 \end{array} \right) = \left( \begin{array}{c} 1 \\ 0 \end{array} \right)$$
+{{ get_latex_img("\\left(\\begin{array}{c} F_p \\\\ F_{p^2 - 1} \\end{array} \\right) = \\left(\\begin{array}{cc} 1 & 1 \\\\ 1 & 0 \\end{array} \\right)^{p^2 - 1} \\left(\\begin{array}{c} 1 \\\\ 0 \\end{array} \\right) = I_2 \\left( \\begin{array}{c} 1 \\\\ 0 \\end{array} \\right) = \\left( \\begin{array}{c} 1 \\\\ 0 \\end{array} \\right)", blockquote=True) }}
 
-so we have {{ get_katex("F_{p^2 - 1} = 0") }} in $\mathbb{F}_p$
-as desired.
+so we have {{ get_katex("F_{p^2 - 1} = 0") }} in
+{{ get_latex_img("\\mathbb{F}_p") }} as desired.

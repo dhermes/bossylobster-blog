@@ -35,6 +35,7 @@ STATIC_PATHS = [
     'css',
     'images',
     'js',
+    'latex_images',
     # Files.
     'favicon.ico',
     'favicon.png',
@@ -47,7 +48,6 @@ PLUGIN_PATHS = [
 ]
 PLUGINS = [
     'summary',
-    'render_math',
     # These tags currently fail when building with Pelican 3.5.
     # 'liquid_tags.include_code',
     # 'liquid_tags.notebook',

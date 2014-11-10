@@ -8,6 +8,7 @@ import subprocess
 import tempfile
 
 from jinja2 import Environment, PackageLoader
+from make_png_from_latex import convert_equation
 
 
 ENV = Environment(loader=PackageLoader(__name__, 'content'))
@@ -23,6 +24,8 @@ KATEX_BLOCK_TEMPLATE = u"""\
 TEMPLATE_HASHES_FILENAME = 'template_hashes.json'
 with open(TEMPLATE_HASHES_FILENAME, 'r') as fh:
     TEMPLATE_HASHES = json.load(fh)
+
+LATEX_IMG_TEMPLATE = '<img src="%s" alt="%s" class="latex-img"/>'
 
 
 def escape_string(latex_str):
@@ -56,6 +59,15 @@ def get_katex(latex_str, blockquote=False):
         return KATEX_BLOCK_TEMPLATE % (result,)
     else:
         return result
+
+
+def get_latex_img(latex_str, blockquote=False):
+    png_path = convert_equation(latex_str, blockquote=blockquote)
+    png_uri = '/latex_images/%s' % (png_path,)
+    result = LATEX_IMG_TEMPLATE % (png_uri, latex_str)
+    if blockquote:
+        return '<blockquote class="latex-img">%s</blockquote>' % (result,)
+    return result
 
 
 def get_templates():
@@ -93,7 +105,8 @@ def write_template(template):
 
     print 'Writing', new_filename
     with open(new_filename, 'wb') as fh:
-        rendered_file = template.render(get_katex=get_katex)
+        rendered_file = template.render(get_katex=get_katex,
+                                        get_latex_img=get_latex_img)
         fh.write(rendered_file)
         # Make sure the file has a trailing newline.
         if rendered_file[-1] != '\n':
