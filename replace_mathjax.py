@@ -9,12 +9,12 @@ import subprocess
 #    '\\\\\\(stuff\\\\\\)'
 INLINE_MATCHER = re.compile(
     '\\\\\\\\\\((?P<inline>.*?)\\\\\\\\\\)',
-    flags=re.MULTILINE,
+    flags=re.MULTILINE | re.DOTALL,
 )
 INLINE_REPLACE = '{{ get_katex("\g<inline>") }}'
 MATH_MODE_MATCHER = re.compile(
     '\\\\\\\\\\[(?P<mathmode>.*?)\\\\\\\\\\]',
-    flags=re.MULTILINE,
+    flags=re.MULTILINE | re.DOTALL,
 )
 MATH_MODE_REPLACE = (
     '\n\n{{ get_katex("\g<mathmode>", blockquote=True) }}\n\n')
