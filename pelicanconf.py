@@ -36,6 +36,7 @@ STATIC_PATHS = [
     'images',
     'js',
     # Files.
+    'favicon.ico',
     'favicon.png',
 ]
 
