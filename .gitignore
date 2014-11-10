@@ -7,6 +7,7 @@ _nb_header.html
 
 # Temporary overspecific ignore, will be replaced with content/*.md
 # once using all templates.
+content/2013-08-18-some-fibonacci-fun-with-primes.md
 content/2013-09-10-calculating-greatest-common-divisor.md
 content/2013-11-25-trigonometry-and-nested-radicals.md
 content/2014-07-29-bayes-law-primer.md
