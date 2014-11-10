@@ -15,17 +15,19 @@ Fibonacci number defined by
 Show that for an odd prime {{ get_katex("p \\neq 5") }}, we have
 {{ get_katex("p") }} divides {{ get_katex("F_{p^2 - 1}") }}.
 
-**Proof:** We do this by working inside {{ get_katex("Z/pZ") }} instead
-of working in {{ get_katex("R") }}. The recurrence is given by
+**Proof:** We do this by working inside $\mathbb{F}_p$ instead
+of working in $\mathbb{R}$. The recurrence is given by
 
-{{ get_katex("\\text{Array}_1", blockquote=True) }}
+> $$\left(\begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right) \left( \begin{array}{c} F_{n-1} \\ F_{n-2} \end{array} \right) = \left(\begin{array}{c} F_{n-1} + F_{n-2} \\ F_{n-1} \end{array} \right) = \left(\begin{array}{c} F_n \\ F_{n-1} \end{array} \right)$$
 
 and in general
 
-{{ get_katex("\\text{Array}_2", blockquote=True) }}
+> $$\left( \begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)^{n} \left( \begin{array}{c} 1 \\ 0 \end{array} \right) = \left( \begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)^{n} \left( \begin{array}{c} F_1 \\ F_0 \end{array} \right) = \left(\begin{array}{c} F_{n + 1} \\ F_n \end{array} \right)$$
 
 The matrix
-{{ get_katex("\\text{Array}_3") }}
+
+> $$A = \left(\begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)$$
+
 has characteristic polynomial
 
 {{ get_katex("\\chi_A(t) = (1 - t)(0 - t) - (1)(1) = t^2 - t - 1", blockquote=True) }}
@@ -34,39 +36,37 @@ If this polynomial has distinct roots, then {{ get_katex("A") }} is
 diagonalizable (this is sufficient, but not necessary). Assuming the converse
 we have
 {{ get_katex("\\chi_A(t) = (t - \\alpha)^2") }} for some
-{{ get_katex("\\alpha \\in Z/pZ") }}; we can assume
-{{ get_katex("\\alpha \\in Z/pZ") }} since {{ get_katex("-2\\alpha = -1") }} is
+$\alpha \in \mathbb{F}_p$; we can assume $\alpha \in \mathbb{F}_p$
+since {{ get_katex("-2\\alpha = -1") }} is
 the coefficient of {{ get_katex("t") }}, which means
 {{ get_katex("\\alpha = 2^{-1} ") }} (we are fine with this since
 {{ get_katex("p") }} odd means that {{ get_katex("2^{-1}") }} exists). In
 order for this to be a root of {{ get_katex("\\chi_A") }}, we must have
 
-{{ get_katex("0 = 4 \\cdot \\chi_A\\left(2^{-1}\\right) = 4 \\cdot \\left(2^{-2} - 2^{-1} - 1\\right) = 1 - 2 - 4 = -5 \\text{ mod }{p}.", blockquote=True) }}
+> $$0 \equiv 4 \cdot \chi_A\left(2^{-1}\right) \equiv 4 \cdot \left(2^{-2} - 2^{-1} - 1\right) \equiv 1 - 2 - 4 \equiv -5 \bmod{p}.$$
 
 Since {{ get_katex("p \\neq 5") }} is prime, this is not possible, hence
 we reached a contradiction and {{ get_katex("\\chi_A") }} does not have
 a repeated root.
 
 Thus we may write {{ get_katex("\\chi_A(t) = (t - \\alpha)(t - \\beta)") }} for
-{{ get_katex("\\alpha, \\beta \\in Z/pZ\\left[\\xi\\right]") }} (it's
-possible that {{ get_katex("\\chi_A") }} is irreducible over
-{{ get_katex("Z/pZ") }}, but due to degree considerations it **must** split
-completely over {{ get_katex("Z/pZ\\left[\\xi\\right]") }}). Using this,
+$\alpha, \beta \in \mathbb{F}_{p^2}$ (it's possible that
+{{ get_katex("\\chi_A") }} is irreducible over $\mathbb{F}_p$, but due to degree
+considerations it **must** split completely over $\mathbb{F}_{p^2}$. Using this,
 we may write
 
-{{ get_katex("\\text{Array}_4", blockquote=True) }}
+> $$A = P \left(\begin{array}{cc} \alpha & 0 \\ 0 & \beta \end{array} \right) P^{-1}$$
 
-for some {{ get_katex("P \\in GL_{2} \\left(Z/pZ\\left[\\xi\\right]\\right)") }} and
-so
+for some $P \in GL_{2} \left(\mathbb{F}_{p^2}\right)$ and so
 
-{{ get_katex("\\text{Array}_5", blockquote=True) }}
+> $$A^{p^2 - 1} = P \left(\begin{array}{cc} \alpha & 0 \\ 0 & \beta \end{array} \right)^{p^2 - 1} P^{-1} = P \left(\begin{array}{cc} \alpha^{p^2 - 1} & 0 \\ 0 & \beta^{p^2 - 1} \end{array} \right)P^{-1}$$
 
 Since {{ get_katex("\\chi_A(0) = 0 - 0 - 1 \\neq 0") }} we know
 {{ get_katex("\\alpha") }} and {{ get_katex("\\beta") }} are nonzero, hence
-{{ get_katex("\\alpha^{p^2 - 1} = \\beta^{p^2 - 1} = 1 \\in Z/pZ\\left[\\xi\\right] ") }}.
+$\alpha^{p^2 - 1} = \beta^{p^2 - 1} = 1 \in \mathbb{F}_{p^2}$.
 Thus {{ get_katex("A^{p^2 - 1} = P I_2 P^{-1} = I_2") }} and so
 
-{{ get_katex("\\text{Array}_6", blockquote=True) }}
+> $$\left(\begin{array}{c} F_p \\ F_{p^2 - 1} \end{array} \right) = \left(\begin{array}{cc} 1 & 1 \\ 1 & 0 \end{array} \right)^{p^2 - 1} \left(\begin{array}{c} 1 \\ 0 \end{array} \right) = I_2 \left( \begin{array}{c} 1 \\ 0 \end{array} \right) = \left( \begin{array}{c} 1 \\ 0 \end{array} \right)$$
 
-so we have {{ get_katex("F_{p^2 - 1} = 0") }} in
-{{ get_katex("Z/pZ") }} as desired.
+so we have {{ get_katex("F_{p^2 - 1} = 0") }} in $\mathbb{F}_p$
+as desired.
