@@ -17,7 +17,7 @@ MATH_MODE_MATCHER = re.compile(
     flags=re.MULTILINE | re.DOTALL,
 )
 MATH_MODE_REPLACE = (
-    '\n\n{{ get_katex("\g<mathmode>", blockquote=True) }}\n\n')
+    '\n{{ get_katex("\g<mathmode>", blockquote=True) }}\n\n')
 
 
 def replace_mathjax(str_val):

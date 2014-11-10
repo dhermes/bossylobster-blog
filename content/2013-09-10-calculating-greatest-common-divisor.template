@@ -1,0 +1,163 @@
+Title: Calculating a Greatest Common Divisor with Dirichlet's Help
+date: 2013-09-10
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Dirichlet, Math, Mathematics, Number Theory, Prime Number
+slug: calculating-greatest-common-divisor
+
+Having just left Google and started my PhD in Applied Mathematics at
+[Berkeley](http://math.berkeley.edu/), I thought it might be
+appropriate to write some (more) math-related blog posts. Many of these
+posts, I jotted down on napkins and various other places on the web and
+just haven't had time to post until now.
+
+For today, I'm posting a result which was somewhat fun to figure out
+with/for one of my
+[buddies](https://picasaweb.google.com/101796704659729637490/WhereHasYourMathTShirtBeen#5802889644579484306)
+from [Michigan Math](http://www.lsa.umich.edu/math/). I'd also like to point
+out that he is absolutely kicking ass at Brown.
+
+While trying to determine if
+
+{{ get_katex("J(B_n)_{\\text{Tor}}\\left(Q\\right) = Z/2Z", blockquote=True) }}
+
+where {{ get_katex("J(B_n)") }} is the Jacobian of the
+curve {{ get_katex("B_n") }} given by
+{{ get_katex("y^2 = (x + 2) \\cdot f^n(x)") }} where
+{{ get_katex("f^n") }} denotes {{ get_katex("f") }} denotes applied
+{{ get_katex("n") }} times and {{ get_katex("f(x) = x^2 - 2") }}.
+
+Now, his and my interests diverged some time ago, so I can't appreciate
+what steps took him from this to the problem I got to help with.
+However, he was able to show (trivially maybe?) that this was equivalent
+to showing that
+
+{{ get_katex("\\gcd\\left(5^{2^n} + 1, 13^{2^n} + 1, \\ldots, p^{2^n} + 1, \\ldots \\right) = 2 \\qquad (1)", blockquote=True) }}
+
+where the {{ get_katex("n") }} in the exponents is the same as that in
+{{ get_katex("B_n") }} and where the values we are using in our greatest common
+divisor (e.g. {{ get_katex("5, 13") }} and {{ get_katex("p") }} above) are all
+of the primes {{ get_katex("p = 5 \\text{ mod }{8}") }}.
+
+My buddy, being sadistic and for some reason angry with me, passed me
+along the stronger statement:
+
+{{ get_katex("\\gcd\\left(5^{2^n} + 1, 13^{2^n} + 1\\right) = 2 \\qquad (2)", blockquote=True) }}
+
+which I of course struggled with and tried to beat down with tricks like
+{{ get_katex("5^2 + 12^2 = 13^2") }}. After a few days of this struggle, he
+confessed that he was trying to ruin my life and told me about the
+weaker version {{ get_katex("(1)") }}.
+
+When he sent me the email informing me of this, I read it at 8am, drove
+down to Santa Clara for [PyCon](https://us.pycon.org/2013/) and by the
+time I arrived at 8:45am I had figured the weaker case {{ get_katex("(1)") }}
+out. This felt much better than the days of struggle and made me want to
+write about my victory (which I'm doing now). Though, before we actually
+demonstrate the weaker fact {{ get_katex("(1)") }} I will admit that I am not in
+fact tall. Instead I stood on the shoulders of Dirichlet and
+[called myself tall](http://www.youtube.com/watch?v=A6f-6l0W-0o#t=35s).
+Everything else is bookkeeping.
+
+Let's Start the Math
+--------------------
+
+First, if {{ get_katex("n = 0") }}, we see trivially that
+
+{{ get_katex("\\gcd\\left(5^{2^0} + 1, 13^{2^0} + 1\\right) = \\gcd\\left(6, 14\\right) = 2", blockquote=True) }}
+
+and all the remaining terms are divisible by {{ get_katex("2") }} hence the
+{{ get_katex("\\gcd") }} over all the primes must be {{ get_katex("2") }}.
+
+Now, if {{ get_katex("n > 0") }}, we will show that {{ get_katex("2") }} divides
+our {{ get_katex("\\gcd") }}, but {{ get_katex("4") }} does not and that no odd
+prime can divide this {{ get_katex("\\gcd") }}. First, for
+{{ get_katex("2") }}, note that
+
+{{ get_katex("p^{2^n} + 1 = \\left(\\pm 1\\right)^{2^n} + 1 = 2 \\text{ mod }{4}", blockquote=True) }}
+
+since our primes are odd. Thus they are all divisible by
+{{ get_katex("2") }} and none by {{ get_katex("4") }}.
+
+Now assume some odd prime {{ get_katex("p^{*}") }} divides all of the quantities
+in question. We'll show no such {{ get_katex("p^{*}") }} can exist by
+contradiction.
+
+In much the same way we showed the {{ get_katex("\\gcd") }} wasn't divisible by
+{{ get_katex("4") }}, we seek to find a contradiction in some modulus. But since
+we are starting with {{ get_katex("p^{2^n} + 1 = 0 \\text{ mod }{p^{*}}") }}, if
+we can find some such {{ get_katex("p") }} with
+{{ get_katex("p = 1 \\text{ mod }{p^{*}}") }},
+then we'd have our contradiction from
+
+{{ get_katex("0 = p^{2^n} + 1 = 1^{2^n} + 1 = 2 \\text{ mod }{p^{*}}", blockquote=True) }}
+
+which can't occur since {{ get_katex("p^{*}") }} is an odd prime.
+
+With this in mind, along with a subsequence of the arithmetic
+progression {{ get_katex("\\left\\{5, 13, 21, 29, \\ldots\\right\\}") }}, it
+seems that using
+[Dirichlet's theorem on arithmetic progressions](http://en.wikipedia.org/wiki/Dirichlet's_theorem_on_arithmetic_progressions)
+may be a good strategy. However, this sequence only tells us about the
+residue modulo {{ get_katex("8") }}, but we also want to know about the residue
+modulo {{ get_katex("p^{*}") }}. Naturally, we look for a subsequence in
+
+{{ get_katex("Z/8Z \\times Z/p^{*}Z", blockquote=True) }}
+
+corresponding to the residue pair
+{{ get_katex("(5 \\text{ mod }{8}, 1 \\text{ mod }{p^{*}})") }}. Due to the
+[Chinese remainder theorem](http://en.wikipedia.org/wiki/Chinese_remainder_theorem)
+this corresponds to a unique residue modulo {{ get_katex("8p^{*}") }}.
+
+Since this residue {{ get_katex("r") }} has
+{{ get_katex("r = 1 \\text{ mod }{p^{*}}") }}, we must have
+
+{{ get_katex("r \\in \\left\\{1, 1 + p^{*}, 1 + 2p^{*}, \\ldots, 1 + 7p^{*}\\right\\}.", blockquote=True) }}
+
+But since {{ get_katex("1 + kp^{*} = r = 5 \\text{ mod }{8}") }},
+we have {{ get_katex("kp^{*} = 4 \\text{ mod }{8}") }} and
+{{ get_katex("k = 4\\left(p^{*}\\right)^{-1} \\text{ mod }{8}") }} since
+{{ get_katex("p^{*}") }} is odd and invertible mod {{ get_katex("8") }}. But
+this also means its inverse is odd, hence
+{{ get_katex("k = 4\\cdot(2k' + 1) = 4 \\text{ mod }{8}") }}. Thus
+we have {{ get_katex("1 + 4 p^{*} \\in Z/8p^{*}Z") }} corresponding to our
+residue pair. Thus every element in the arithmetic progression
+
+{{ get_katex("\\displaystyle S = \\left\\{(1 + 4p^{*}) + (8p^{*})k \\right\\}_{k=0}^{\\infty}", blockquote=True) }}
+
+is congruent to
+{{ get_katex("1 + 4 p^{*} \\text{ mod }{8p^{*}}") }} and hence
+{{ get_katex("5 \\text{ mod }{8}") }} and
+{{ get_katex("1 \\text{ mod }{p^{*}}") }}.
+
+What's more, since
+{{ get_katex("5 \\in \\left(Z/8Z\\right)^{\\times}") }} and
+{{ get_katex("1 \\in \\left(Z/p^{*}Z\\right)^{\\times}") }},
+we have
+{{ get_katex("1 + 4 p^{*} \\in \\left(Z/8p^{*}Z\\right)^{\\times}") }}
+(again by the Chinese remainder theorem). Thus the arithmetic progression
+{{ get_katex("S") }} satisfies the hypothesis of Dirichlet's theorem. Hence
+there must be at least one prime {{ get_katex("p") }} occurring in the
+progression (since there are infinitely many). But that also means
+{{ get_katex("p") }} occurs in
+{{ get_katex("\\left\\{5, 13, 29, 37, \\ldots\\right\\}") }} hence
+we've reached our desired contradiction. RAA.
+
+Now What
+--------
+
+We still
+[don't know](http://math.stackexchange.com/q/659193/31956)
+if the strong version {{ get_katex("(2)") }}
+
+{{ get_katex("\\gcd\\left(5^{2^n} + 1, 13^{2^n} + 1\\right) = 2", blockquote=True) }}
+
+By similar arguments as above, if any odd prime
+{{ get_katex("p^{*}") }} divides this {{ get_katex("\\gcd") }}, then we have
+
+{{ get_katex("5^{2^n} = -1 \\text{ mod }{p^{*}}", blockquote=True) }}
+
+hence there is an element
+of order {{ get_katex("2^{n+ 1}") }}. This means the order of the multiplicative
+group {{ get_katex("\\varphi\\left(p^{*}\\right) = p^{*} - 1") }} is
+divisible by {{ get_katex("2^{n + 1}") }}. Beyond that, who knows? We're still
+thinking about it (but only passively, more important things to do).
