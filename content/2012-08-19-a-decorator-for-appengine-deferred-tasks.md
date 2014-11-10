@@ -89,5 +89,3 @@ one time failure). Second, I was using a special sentinel in the
 datastore to determine if the current user had any other job in
 progress. Again, I wanted to sleep and try again until the current
 user's other job had completed.*
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

@@ -379,5 +379,3 @@ following up with two posts on the following topics:*
     reducing contention
 -   exploring ways to extend this model to a hierarchical model where
     tasks may have subtasks
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

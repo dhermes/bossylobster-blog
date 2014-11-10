@@ -139,5 +139,3 @@ very helpful.*
     to redo this quick and dirty example with v3.*
 
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

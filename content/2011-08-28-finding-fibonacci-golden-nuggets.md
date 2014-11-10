@@ -485,5 +485,3 @@ of this post.
 1\\),and\\(F\_{n} =F\_{n - 1} +F\_{n - 2}\\).*
 
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

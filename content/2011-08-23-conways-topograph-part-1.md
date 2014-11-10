@@ -199,5 +199,3 @@ Follow along to [Part
 with it, and I'd love to get more technical off the post.*
 
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

@@ -129,5 +129,3 @@ and verify via the meta tag
 <div markdown="1" style="text-align: center;">
   ![Verify Ownership Success](/images/verify1and1_screenshot3.png)
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

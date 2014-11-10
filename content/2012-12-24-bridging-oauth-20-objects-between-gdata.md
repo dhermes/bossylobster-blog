@@ -158,5 +158,3 @@ and a GData API:
 ~~~~ {.prettyprint style="background-color: white;"}
 from apiclient.discovery import buildfrom gdata.contacts.client import ContactsClientservice = build('calendar', 'v3', developerKey='...')class MainHandler(webapp2.RequestHandler):  @decorator.oauth_required  def get(self):    auth_token = OAuth2TokenFromCredentials(decorator.credentials)    contacts_client = ContactsClient()    auth_token.authorize(contacts_client)    contacts = contacts_client.get_contacts()    ...    events = service.events().list(calendarId='primary').execute(        http=decorator.http())    ...
 ~~~~
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

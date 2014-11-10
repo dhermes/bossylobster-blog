@@ -115,5 +115,3 @@ we'll explore the [WSGI
 handlers](https://developers.google.com/appengine/docs/python/tools/webapp/running)
 that run the application and the client side code that handles the
 messages from the workers.
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

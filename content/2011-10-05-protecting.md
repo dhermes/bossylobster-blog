@@ -234,5 +234,3 @@ force the pre-commit script to fail when nothing is changed and added a
 check for the phrase*<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">nothing
 added to commit</span>*as well.*
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

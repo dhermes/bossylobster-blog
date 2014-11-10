@@ -13,5 +13,3 @@ slug: this-lobster-not-so-bossy
 <div class="separator" style="clear: both; text-align: center;">
 
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

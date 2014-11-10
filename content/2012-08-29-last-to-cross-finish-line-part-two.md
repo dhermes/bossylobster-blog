@@ -198,5 +198,3 @@ models](https://developers.google.com/appengine/docs/python/ndb/) and
 [Task
 Queue](https://developers.google.com/appengine/docs/python/taskqueue/)
 operations that make it work.
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

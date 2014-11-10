@@ -132,5 +132,3 @@ of order \\(2\^{n+ 1}\\). This means the order of the multiplicative
 group \\(\\varphi\\left(p\^{\\ast}\\right) = p\^{\\ast} - 1\\) is
 divisible by \\(2\^{n+ 1}\\). Beyond that, who knows? We're still
 thinking about it (but only passively, more important things to do).
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

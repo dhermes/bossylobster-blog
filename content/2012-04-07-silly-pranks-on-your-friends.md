@@ -63,5 +63,3 @@ Voil&#0224;! With that, the prank was complete and the next time she visited
 [nytimes.com](http://nytimes.com/) in her browser.
 
 **Second Prank coming soon.**
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

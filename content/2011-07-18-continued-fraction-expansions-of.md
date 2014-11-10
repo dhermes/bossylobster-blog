@@ -151,5 +151,3 @@ on
 <div markdown="1" style="text-align: center;">
   ![ProofWiki logo](/images/175px-Logo.png)
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

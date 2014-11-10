@@ -93,5 +93,3 @@ Putting it all together we get our answer
 {{ get_katex("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)} = \\frac{0.12}{0.29} \\approx 0.413793103.", blockquote=True) }}
 
 Fantastic! Now we can get back to reading...
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

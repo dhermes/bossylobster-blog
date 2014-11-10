@@ -150,5 +150,3 @@ you should use one:*
     don't need an explanation about why)." -Python Guru Tim Peters*
 -   *"The main use case for a metaclass is creating an API." -Kevin
     Samuel*
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

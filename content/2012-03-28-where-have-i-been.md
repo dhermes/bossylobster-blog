@@ -41,5 +41,3 @@ I originally opened on StackOverflow. Checkout the
 [diff](http://code.google.com/p/googleappengine/source/diff?spec=svn241&r=241&format=side&path=/trunk/python/google/appengine/ext/gql/__init__.py&old_path=/trunk/python/google/appengine/ext/gql/__init__.py)to
 see the details. I'll follow up with a summary of each of the fixes in a
 later post.
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

@@ -100,5 +100,3 @@ style="background-color: white; color: purple; font-family: 'Courier New', Couri
 using*<span class="Apple-style-span"
 style="color: lime; font-family: 'Courier New', Courier, monospace;">deferred:
 on</span>*in your builtins.*
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

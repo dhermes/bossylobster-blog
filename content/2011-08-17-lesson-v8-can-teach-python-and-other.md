@@ -1498,5 +1498,3 @@ MHz DDR3 memory. I used Python version 2.6.1, node version 0.4.9, and
 PyPy version 1.5 (running on top of Python 2.7.1 with GCC 4.0.1).*
 
 </div>
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

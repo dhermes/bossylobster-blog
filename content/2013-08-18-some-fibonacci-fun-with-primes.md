@@ -101,5 +101,3 @@ I\_2 \\left( \\begin{array}{c}
 1 \\\\
 0 \\end{array} \\right)\\] so we have \\(F\_{p\^2 - 1} = 0\\) in
 \\(\\mathbb{F}\_p\\) as desired.
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

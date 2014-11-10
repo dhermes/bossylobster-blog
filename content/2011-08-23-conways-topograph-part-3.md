@@ -201,5 +201,3 @@ with it, and I'd love to get more technical off the post.*
 style="font-style: normal;">**Update**:*All images were created with
 the[tikz](http://www.texample.net/tikz/examples/)LaTeX library and can
 be compiled with native LaTeX if pgf is installed.*</span>*
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>

@@ -210,5 +210,3 @@ sure we are right</span>**
 
 Coming soon. We will analyze the derivate and concavity to make sure
 that our guess yield the correct (and unique) zero.
-
-<a href="https://profiles.google.com/114760865724135687241" rel="author" style="display: none;">About Bossy Lobster</a>
