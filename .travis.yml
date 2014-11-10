@@ -2,6 +2,7 @@ language: python
 
 install:
   - pip install pelican markdown pycrypto jinja2
+  - npm install -g katex
 
 script:
   - ./update_pages_repo.sh
