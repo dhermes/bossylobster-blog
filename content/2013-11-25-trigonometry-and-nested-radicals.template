@@ -11,7 +11,9 @@ the results and proving them with much more powerful tools than I once
 possessed.
 
 Before writing about the problem I had played around with, I want to
-give a <strike>brief</strike> motivation. For as long as humans have been
+give a
+<span style="text-decoration: line-through;">brief</span>
+motivation. For as long as humans have been
 doing mathematics, finding values of {{ get_katex("\\pi") }} has been deemed
 worthwhile (or every generation has just found it worthwhile to waste time
 computing digits).
