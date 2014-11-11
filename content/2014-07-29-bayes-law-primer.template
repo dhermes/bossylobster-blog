@@ -65,7 +65,7 @@ and that they cover all possible events that could occur. For example
 
 In such a case we know that since the {{ get_katex("Y") }}-events are distinct
 
-{{ get_katex("\\text{Pr}(X) = \\text{Pr}(X \\text{ and } Y_1 \\text{ both occur}) + \\text{Pr}(X \\text{ and } Y_2 \\text{ both occur}) + \\text{Pr}(X \\text{ and } Y_3 \\text{ both occur}).", blockquote=True) }}
+{{ get_latex_img("\\begin{align*} \\text{Pr}(X) &= \\text{Pr}(X \\text{ and } Y_1 \\text{ both occur}) + \\text{Pr}(X \\text{ and } Y_2 \\text{ both occur}) \\\\ &+ \\text{Pr}(X \\text{ and } Y_3 \\text{ both occur}). \\end{align*}", blockquote=True, standalone=True) }}
 
 Using Bayes' law, we can reinterpret as
 
@@ -73,7 +73,7 @@ Using Bayes' law, we can reinterpret as
 
 and the above becomes
 
-{{ get_katex("\\text{Pr}(X) = \\text{Pr}(X \\, | \\, Y_1) \\cdot \\text{Pr}(Y_1) + \\text{Pr}(X \\, | \\, Y_2) \\cdot \\text{Pr}(Y_2) + \\text{Pr}(X \\, | \\, Y_3) \\cdot \\text{Pr}(Y_3).", blockquote=True) }}
+{{ get_latex_img("\\begin{align*} \\text{Pr}(X) &= \\text{Pr}(X \\, | \\, Y_1) \\cdot \\text{Pr}(Y_1) + \\text{Pr}(X \\, | \\, Y_2) \\cdot \\text{Pr}(Y_2) \\\\ &+ \\text{Pr}(X \\, | \\, Y_3) \\cdot \\text{Pr}(Y_3). \\end{align*}", blockquote=True, standalone=True) }}
 
 The same is true if we replace {{ get_katex("3") }} with an arbitrary number of
 events {{ get_katex("n") }}.
