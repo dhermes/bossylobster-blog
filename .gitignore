@@ -7,6 +7,9 @@ _nb_header.html
 
 # Temporary overspecific ignore, will be replaced with content/*.md
 # once using all templates.
+content/2011-08-23-conways-topograph-part-1.md
+content/2011-08-23-conways-topograph-part-2.md
+content/2011-08-23-conways-topograph-part-3.md
 content/2011-08-28-finding-fibonacci-golden-nuggets.md
 content/2011-08-29-finding-fibonacci-golden-nuggets-part-2.md
 content/2012-05-15-reverse-calculating-interest-rate.md

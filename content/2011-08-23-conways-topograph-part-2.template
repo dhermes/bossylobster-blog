@@ -1,0 +1,173 @@
+Title: Conway's Topograph Part 2
+date: 2011-08-23 14:00
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
+slug: conways-topograph-part-2
+
+This is the second (continued from
+[Part 1](/2011/08/conways-topograph-part-1.html))
+in a series of three blog posts. In the following we'll investigate a few
+properties of an object called Conway's topograph.
+[John Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) conjured up a
+way to understand a binary quadratic form &ndash; a very important algebraic
+object &ndash; in a geometric context. This is by no means original work, just
+my interpretation of some key points from his
+[The Sensual (Quadratic) Form](http://www.amazon.com/Sensual-Quadratic-Carus-Mathematical-Monographs/dp/0883850303)
+that I'll need for some other posts.
+
+----------------------------------------------------------------
+
+In the following, as mentioned in Part 1,
+
+> when referring to a base/superbase, we are referring to the lax equivalent of
+these notions.
+
+To begin to form the topograph, note each superbase
+{{ get_katex("\\left\\{e_1, e_2, e_3\\right\\}") }} contains only three bases
+
+{{ get_katex("\\left\\{e_1, e_2\\right\\}, \\left\\{e_2, e_3\\right\\}, \\left\\{e_3, e_1\\right\\}", blockquote=True) }}
+
+as subsets. Going the other direction, a base
+{{ get_katex("\\left\\{e_1, e_2\\right\\}") }} can only possibly be contained
+as a subset of two superbases:
+
+{{ get_katex("\\langle e_1, e_2, (e_1 + e_2)\\rangle, \\langle e_1, e_2, (e_1 - e_2)\\rangle.", blockquote=True) }}
+
+With these two facts in hand, we can begin to form the geometric structure of
+the topograph. The interactions between bases and superbases (as well as the
+individual vectors themselves) give us the form. In the graph, we join each
+superbase ({{ get_latex_img("\\bigcirc") }}) to the three bases
+({{ get_latex_img("\\square") }}) in it.
+
+<div markdown="1" style="text-align: center;">
+  ![Conways Edges and Nodes](/images/conway_edges_nodes.png)
+</div>
+
+Each edge connecting two superbases ({{ get_latex_img("\\bigcirc") }})
+represents a base and we mark each of these edges with a
+({{ get_latex_img("\\square") }}) in the middle. Since each base can only be
+in two superbases, we have well-defined endpoints for each base (edge).
+Similarly, since each superbase contains three bases as subsets, each
+superbase (endpoint) has three bases (edges) coming out of it.
+
+<div markdown="1" style="text-align: center;">
+  ![Conway Faces](/images/conway_face.png)
+</div>
+
+As we traverse each edge (base) surrounding a given vector
+({{ get_katex("e_1") }} above), we move from superbase (vertex) to superbase
+(vertex), and form a face. Starting from a base {{ get_katex("e_1, e_2") }},
+traveling along each of the new faces encountered we begin to form the full
+(labeled) topograph below:
+
+<div markdown="1" style="text-align: center;">
+  ![Conway Growing the Topograph](/images/conway_growing_graph.png)
+</div>
+
+Notice the **values** of {{ get_katex("f") }} on the combinations of
+{{ get_katex("e_1") }} and {{ get_katex("e_2") }} is immaterial to the above
+discussion, hence the shape of the topograph doesn't depend on
+{{ get_katex("f") }}.
+
+If we know the values of {{ get_katex("f") }} at some superbase, it is actually
+possible to find the values of {{ get_katex("f") }} at vectors (faces) we
+encounter on the topograph without actually knowing {{ get_katex("f") }}.
+
+#### Claim: {{ "{#claim-arith-prog-rule}" }}
+
+For vectors {{ get_katex("v_1, v_2") }},
+
+{{ get_katex("f(v_1 + v_2) + f(v_1 - v_2) = 2\\left(f(v_1) + f(v_2)\\right)", blockquote=True) }}
+
+#### Proof: {{ "{#proof-arith-prog-rule}" }}
+
+Exercise. (If you really can't get it, let me know in the comments.)
+{{ get_latex_img("\\blacksquare") }}
+
+This implies that if
+
+{{ get_katex("a = f(v_1), \\quad b = f(v_2), \\quad c = f(v_1 + v_2), \\quad d = f(v_1 - v_2)", blockquote=True) }}
+
+then
+
+{{ get_katex("d, \\, a + b, \\, c", blockquote=True) }}
+
+form an arithmetic progression with common difference {{ get_katex("h") }}. This
+so-called **Arithmetic Progression Rule** allows us to mark each edge with a
+direction based on the value of {{ get_katex("h") }}. Hence if
+{{ get_katex("d < a + b < c") }}, we have {{ get_katex("h > 0") }} and the
+following directed edge:
+
+<div markdown="1" style="text-align: center;">
+  ![Conway Directed Edge](/images/conway_directed_edge.png)
+</div>
+
+Obviously starting from a base {{ get_katex("e_1, e_2") }}, one wonders if it is
+possible to move to any pair {{ get_katex("(x, y)") }} with {{ get_katex("x") }}
+and {{ get_katex("y") }} coprime along the topograph. It turns out that we can;
+the topograph forms a structure called a tree, and all nodes are connected.
+
+#### Lemma: (Climbing Lemma) {{ "{#climbing-lemma}" }}
+
+Given a superbase {{ get_katex("Q") }} with the surrounding faces taking values
+{{ get_katex("a") }}, {{ get_katex("b") }}, and {{ get_katex("c") }} as below,
+if {{ get_katex("a") }}, {{ get_katex("b") }} and the common difference
+{{ get_katex("h") }} are all positive, then {{ get_katex("c") }} is positive and
+the other two edges at {{ get_katex("Q") }} point away from {{ get_katex("Q") }}.
+
+<div markdown="1" style="text-align: center;">
+  ![Conway Directed Edge Superbase](/images/conway_directed_edge_superbase.png)
+</div>
+
+#### Proof: {{ "{#proof-climbing-lemma}" }}
+
+First, {{ get_katex("c") }} is positive because
+{{ get_katex("h = c - (a + b)") }}, hence {{ get_katex("c = a + b + h > 0") }}.
+The two other edges at {{ get_katex("Q") }} have common differences
+{{ get_katex("(a + c) - b") }} and {{ get_katex("(b + c) - a") }}. Since
+{{ get_katex("c = a + b + h") }} is greater than both {{ get_katex("a") }} and
+{{ get_katex("b") }}, these differences are positive.
+{{ get_latex_img("\\blacksquare") }}
+
+Notice also that this establishes two new triples
+{{ get_katex("(a, a + b + h, 2 a + h)") }} and
+{{ get_katex("(b, a + b + h, 2 b + h)") }} that continue to point away
+from each successive superbase and hence **climb** the topograph. We can
+use this lemma (along with a specific form) to show that there are no
+cycles in the topograph, i.e. the topograph doesn't loop back on
+itself.
+
+Consider the form which takes the following values at a given
+superbase:
+
+<div markdown="1" style="text-align: center;">
+  ![Conway No Cycle](/images/conway_no_cycle.png)
+</div>
+
+Due to the symmetry, we may consider traveling along an edge in any
+direction from this superbase identically. Picking an arbitrary
+direction, we reach the following superbase:
+
+<div markdown="1" style="text-align: center;">
+  ![Conway Connected](/images/conway_connected.png)
+</div>
+
+Since the values must increase indefinitely as laid out by the climbing
+lemma, the form can't loop back on itself; if it were to, it would need
+to loop back to a smaller value. Since this holds in all directions from
+the original well, there are no cycles.
+
+Follow along to
+[Part 3](/2011/08/conways-topograph-part-3.html).
+
+#### Update 1:
+
+This material is intentionally aimed at an intermediate (think college
+freshman/high school senior) audience. One can go deeper with it, and I'd
+love to get more technical off the post.
+
+#### Update 2:
+
+All images were created with the
+[tikz](http://www.texample.net/tikz/examples/) LaTeX library and can be
+compiled with native LaTeX if `pgf` is installed.
