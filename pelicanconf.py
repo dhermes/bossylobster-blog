@@ -72,9 +72,14 @@ TWITTER_TWEET_COUNT = 3
 TWITTER_SHOW_REPLIES = 'false'
 TWITTER_SHOW_FOLLOWER_COUNT = 'true'
 
-# RSS/Atom feeds intentionally not used.
-# FEED_DOMAIN = None
-# FEED_ATOM = None
+# RSS/Atom feeds intentionally not used. Will revisit.
+# See ('http://docs.getpelican.com/en/latest/faq.html'
+#      '#what-if-i-want-to-disable-feed-generation')
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # Search
 SEARCH_BOX = True
