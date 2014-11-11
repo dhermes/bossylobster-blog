@@ -83,7 +83,7 @@ SEARCH_BOX = True
 SIDEBAR_IMAGE = 'images/bossy_lobster_200_alpha.png'
 
 # Add extra header.
-EXTRA_HEADER = open('katex_header.html').read().decode('utf-8')
+EXTRA_HEADER = open('extra_header.html').read().decode('utf-8')
 # NOTE: The liquid_tags.notebook plugin will also create an
 #       _nb_header.html file so we should add that if
 #       liquid_tags.notebook is to be used.

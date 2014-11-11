@@ -1,0 +1,20 @@
+/* Intentionally a descendent instead of child selector. */
+blockquote code {
+  font-style: normal;
+}
+div.katex-elt {
+    text-align: center;
+}
+div.katex-elt > blockquote {
+  font-size: x-large;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+img.latex-img {
+  border: none;
+  vertical-align: middle;
+  -webkit-box-shadow: none;
+}
+blockquote.latex-img {
+  text-align: center;
+}
