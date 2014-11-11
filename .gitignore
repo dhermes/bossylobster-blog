@@ -7,6 +7,8 @@ _nb_header.html
 
 # Temporary overspecific ignore, will be replaced with content/*.md
 # once using all templates.
+content/2011-08-28-finding-fibonacci-golden-nuggets.md
+content/2011-08-29-finding-fibonacci-golden-nuggets-part-2.md
 content/2012-05-15-reverse-calculating-interest-rate.md
 content/2013-08-18-some-fibonacci-fun-with-primes.md
 content/2013-09-10-calculating-greatest-common-divisor.md
