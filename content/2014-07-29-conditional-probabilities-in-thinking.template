@@ -74,7 +74,7 @@ The only piece of data missing now to finish our computation is
 {{ get_katex("\\text{Pr}(IDB)") }}.
 
 Using the
-[extended form](http://blog.bossylobster.com/2014/07/bayes-law-primer.html#extended)
+[extended form](ster.com/2014/07/bayes-law-primer.html#extended)
 of Bayes' Law, since we know that the events {{ get_katex("B") }} and
 {{ get_katex("G") }} (the cab is Blue or Green) are exclusive and cover all
 possibilities for the cab, we can say that
