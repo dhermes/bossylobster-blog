@@ -1,5 +1,5 @@
 Title: Conway's Topograph Part 2
-date: 2011-08-23
+date: 2011-08-23 14:00
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
 slug: conways-topograph-part-2
