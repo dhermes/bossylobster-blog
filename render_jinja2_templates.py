@@ -61,8 +61,9 @@ def get_katex(latex_str, blockquote=False):
         return result
 
 
-def get_latex_img(latex_str, blockquote=False):
-    png_path = convert_equation(latex_str, blockquote=blockquote)
+def get_latex_img(latex_str, blockquote=False, standalone=False):
+    png_path = convert_equation(latex_str, blockquote=blockquote,
+                                standalone=standalone)
     png_uri = '/latex_images/%s' % (png_path,)
     result = LATEX_IMG_TEMPLATE % (png_uri, latex_str)
     if blockquote:

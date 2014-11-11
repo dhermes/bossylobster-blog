@@ -6,14 +6,15 @@ import subprocess
 import tempfile
 
 
-TEX_FILE_TEMPLATE = r"""\documentclass{article}
+STANDALONE_TEX_FILE_TEMPLATE = r"""\documentclass{article}
 \usepackage{amsthm,amssymb,amsmath}
 \pagestyle{empty}
 
 \begin{document}
-\[%s\]
+%s
 \end{document}
 """
+TEX_FILE_TEMPLATE = STANDALONE_TEX_FILE_TEMPLATE % (r'\[%s\]',)
 SEPARATOR = '\n' + ('=' * 70) + '\n'
 DEFAULT_DENSITY = '160x160'
 BLOCKQUOTE_DENSITY = '200x200'
@@ -53,13 +54,16 @@ def check_exists(latex_str, image_name):
         return png_name
 
 
-def save_equation_to_file(temp_dir, latex_str, image_name):
+def save_equation_to_file(temp_dir, latex_str, image_name, standalone=False):
     print SEPARATOR
+
+    template = (STANDALONE_TEX_FILE_TEMPLATE
+                if standalone else TEX_FILE_TEMPLATE)
 
     tex_file_path = os.path.join(temp_dir, '%d.tex' % (image_name,))
 
     with open(tex_file_path, 'w') as fh:
-        fh.write(TEX_FILE_TEMPLATE % (latex_str,))
+        fh.write(template % (latex_str,))
     print 'Wrote', tex_file_path
 
 
@@ -112,7 +116,7 @@ def convert_ps_to_png_in_repo(temp_dir, image_name, blockquote=False):
     return png_name
 
 
-def convert_equation(latex_str, blockquote=False):
+def convert_equation(latex_str, blockquote=False, standalone=False):
     image_name = get_image_name(latex_str, blockquote=blockquote)
 
     temp_dir = tempfile.mkdtemp()
@@ -120,7 +124,8 @@ def convert_equation(latex_str, blockquote=False):
     if png_name is not None:
         return png_name
 
-    save_equation_to_file(temp_dir, latex_str, image_name)
+    save_equation_to_file(temp_dir, latex_str, image_name,
+                          standalone=standalone)
     convert_tex_to_dvi(temp_dir, image_name)
     convert_dvi_to_ps(temp_dir, image_name)
 
