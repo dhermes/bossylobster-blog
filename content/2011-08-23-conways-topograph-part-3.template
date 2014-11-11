@@ -58,7 +58,7 @@ A superbase {{ get_katex("W") }} is called a well if all the edges at
 {{ get_latex_img("\\blacksquare") }}
 
 <div markdown="1" style="text-align: center;">
-  ![](/images/conway_well.png)
+  ![Conway Well](/images/conway_well.png)
 </div>
 
 Notice a well is dependent on the values, hence depends on the form

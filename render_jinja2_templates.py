@@ -25,7 +25,7 @@ TEMPLATE_HASHES_FILENAME = 'template_hashes.json'
 with open(TEMPLATE_HASHES_FILENAME, 'r') as fh:
     TEMPLATE_HASHES = json.load(fh)
 
-LATEX_IMG_TEMPLATE = '<img src="%s" alt="%s" class="latex-img"/>'
+LATEX_IMG_TEMPLATE = '<img src="%s" alt="%s" class="latex-img"></img>'
 
 
 def escape_string(latex_str):
