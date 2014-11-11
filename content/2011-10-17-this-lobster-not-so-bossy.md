@@ -4,12 +4,6 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags:
 slug: this-lobster-not-so-bossy
 
-<div class="separator" style="clear: both; text-align: center;">
-
-[![](http://www.bossylobster.com/images/blog/baby_lobster_collegehumor.jpg)](http://www.bossylobster.com/images/blog/baby_lobster_collegehumor.jpg)
-
-</div>
-
-<div class="separator" style="clear: both; text-align: center;">
-
+<div markdown="1" style="text-align: center;">
+  ![Baby Lobster](/images/baby_lobster_collegehumor.jpg)
 </div>
