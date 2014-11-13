@@ -1,4 +1,4 @@
-Title: Last to Cross the Finish Line: Part Three
+title: Last to Cross the Finish Line: Part Three
 date: 2012-09-10
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Deferred Library, Google App Engine, Google Codesite, Javascript, jQuery, Python, Task Queue API

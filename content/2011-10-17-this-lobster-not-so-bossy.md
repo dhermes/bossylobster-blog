@@ -1,4 +1,4 @@
-Title: This Lobster, not so Bossy
+title: This Lobster, not so Bossy
 date: 2011-10-17
 author: Danny Hermes (dhermes@bossylobster.com)
 slug: this-lobster-not-so-bossy

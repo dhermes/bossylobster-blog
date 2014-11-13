@@ -1,4 +1,4 @@
-Title: Birth Rates and Family Size
+title: Birth Rates and Family Size
 date: 2011-05-18
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Birth Rates, Family Size, Inferior Goods, Social Economics

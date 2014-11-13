@@ -1,4 +1,4 @@
-Title: Where have I been?
+title: Where have I been?
 date: 2012-03-28
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Google App Engine, Google Codesite, Open Source, Python, Stack Overflow

@@ -1,4 +1,4 @@
-Title: The Lesson V8 Can Teach Python and Other Dynamic Languages
+title: The Lesson V8 Can Teach Python and Other Dynamic Languages
 date: 2011-08-17
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Benchmark, Comparison, Dynamic Language, Javascript, Javascript Engine, JIT, Just-in Time Compile, node.js, Performance, Project Euler, PyPy, Python, V8

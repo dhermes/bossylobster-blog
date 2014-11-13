@@ -1,4 +1,4 @@
-Title: Verifying 1and1 Site Ownership with Google Apps
+title: Verifying 1and1 Site Ownership with Google Apps
 date: 2011-07-03
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: 1and1.com, Django, Google Apps, Verification

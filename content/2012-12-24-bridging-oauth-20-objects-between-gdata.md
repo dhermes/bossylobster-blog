@@ -1,4 +1,4 @@
-Title: Bridging OAuth 2.0 objects between GData and Discovery
+title: Bridging OAuth 2.0 objects between GData and Discovery
 date: 2012-12-24
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Decorator, GData, gdata-python-client, Google App Engine, Google Calendar, google-api-python-client, OAuth, OAuth2.0, Python

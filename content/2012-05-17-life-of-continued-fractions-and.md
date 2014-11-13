@@ -1,4 +1,4 @@
-Title: Life of &#0960;: Continued Fractions and Infinite Series
+title: Life of &#0960;: Continued Fractions and Infinite Series
 date: 2012-05-17
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Analysis, Continued Fractions, Math, Pi, Tangent

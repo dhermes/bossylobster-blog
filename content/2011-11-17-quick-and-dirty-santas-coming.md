@@ -1,4 +1,4 @@
-Title: Quick and Dirty: Santa's Coming
+title: Quick and Dirty: Santa's Coming
 date: 2011-11-17
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: API, Christmas, GCal, GData, Google Calendar, OAuth, OAuth2.0, Python, Santa
