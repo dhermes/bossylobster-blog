@@ -18,8 +18,9 @@ ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
 # Title menu options
+ARCHIVES_SAVE_AS = 'all_posts.html'
 MENUITEMS = [
-    ('All Posts', '/archives.html'),
+    ('All Posts', '/%s' % ARCHIVES_SAVE_AS),
     ('GitHub Profile', 'http://github.com/dhermes/'),
     ('Berkeley Page', 'http://math.berkeley.edu/~dhermes/'),
 ]
@@ -96,3 +97,10 @@ EXTRA_HEADER = open('extra_header.html').read().decode('utf-8')
 # Paths to ignore. These are custom files used to render actual
 # posts. The `.template` files are Jinja2 templates.
 IGNORE_FILES = ['*.template']
+
+# Adding Disqus comments to page.
+DISQUS_SITENAME = 'bossylobster'
+
+# GitHub ribbon test. Fairly certain not supported in Octopress theme.
+# Also not certain if I want it.
+GITHUB_URL = 'https://github.com/dhermes/dhermes.github.io'
