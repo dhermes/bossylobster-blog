@@ -3,6 +3,7 @@ date: 2012-05-17
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Analysis, Continued Fractions, Math, Pi, Tangent
 slug: life-of-continued-fractions-and
+comments: true
 
 This is from a talk I gave to the
 [UC Santa Cruz Math](http://www.math.ucsc.edu/) Club back in February.

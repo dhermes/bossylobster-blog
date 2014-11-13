@@ -3,6 +3,7 @@ date: 2012-03-28
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Google App Engine, Google Codesite, Open Source, Python, Stack Overflow
 slug: where-have-i-been
+comments: true
 
 Well, it's been a bit crazy and I haven't written a blog post in ages. I
 have several brewing, but had just been too busy at work (and a ton of

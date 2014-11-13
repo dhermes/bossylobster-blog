@@ -100,7 +100,3 @@ IGNORE_FILES = ['*.template']
 
 # Adding Disqus comments to page.
 DISQUS_SITENAME = 'bossylobster'
-
-# GitHub ribbon test. Fairly certain not supported in Octopress theme.
-# Also not certain if I want it.
-GITHUB_URL = 'https://github.com/dhermes/dhermes.github.io'

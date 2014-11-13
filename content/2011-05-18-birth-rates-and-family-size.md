@@ -3,6 +3,7 @@ date: 2011-05-18
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Birth Rates, Family Size, Inferior Goods, Social Economics
 slug: birth-rates-and-family-size
+comments: true
 
 [Family Size][1] and [Birth Rates][2],
 disproportionate in the wrong direction. Anyone know what this looks

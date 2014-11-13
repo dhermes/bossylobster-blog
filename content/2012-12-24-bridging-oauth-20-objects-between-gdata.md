@@ -3,6 +3,7 @@ date: 2012-12-24
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Decorator, GData, gdata-python-client, Google App Engine, Google Calendar, google-api-python-client, OAuth, OAuth2.0, Python
 slug: bridging-oauth-20-objects-between-gdata
+comments: true
 
 My colleague
 [+Takashi Matsuo](http://plus.google.com/110554344789668969711) and I recently

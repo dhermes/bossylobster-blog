@@ -3,6 +3,7 @@ date: 2011-08-17
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Benchmark, Comparison, Dynamic Language, Javascript, Javascript Engine, JIT, Just-in Time Compile, node.js, Performance, Project Euler, PyPy, Python, V8
 slug: lesson-v8-can-teach-python-and-other
+comments: true
 
 Being unable to completely give up math for computers, I am naturally
 drawn to [Project Euler](http://projecteuler.net/) and as a result

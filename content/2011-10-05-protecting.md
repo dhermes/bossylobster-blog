@@ -3,6 +3,7 @@ date: 2011-10-05
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Commit Hook, Config Files, Git, Private Key, Protect, Python
 slug: protecting
+comments: true
 
 On the (much too early) bus to work this morning, I was reading my
 Twitter feed and saw an
