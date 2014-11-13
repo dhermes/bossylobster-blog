@@ -101,3 +101,7 @@ IGNORE_FILES = ['*.template']
 
 # Adding Disqus comments to page.
 DISQUS_SITENAME = 'bossylobster'
+
+# Put pages in root. This is primarily for the 404 page.
+PAGE_URL = '{slug}.html'
+PAGE_SAVE_AS = '{slug}.html'
