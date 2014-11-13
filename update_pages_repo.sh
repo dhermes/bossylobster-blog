@@ -1,6 +1,15 @@
 #!/bin/bash
 set -ev
 
+#######################################################
+# Only push new build on a commit (non PR) to master. #
+#######################################################
+if ! ([[ "${TRAVIS_BRANCH}" == "master" ]] && \
+      [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]); then
+  echo "Not in master on a non-pull request. Doing nothing."
+  exit;
+fi
+
 #################################
 # Build static site in output/. #
 #################################
