@@ -5,7 +5,8 @@ AUTHOR = u'Danny Hermes'
 SITENAME = u'Bossylobster Blog'
 SITESUBTITLE = (u'Musings on humor/tech/mathematics/sports '
                 'from the bossiest lobster')
-SITEURL = ''  # This will make all links relative.
+# Required to turn on comments.
+SITEURL = 'https://dhermes.github.io'
 PATH = 'content'  # Directory containing posts.
 
 # Times and dates
