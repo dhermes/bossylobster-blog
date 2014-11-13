@@ -112,4 +112,4 @@ PAGE_SAVE_AS = '{slug}.html'
 # If building on Travis. This is essentially a `publishconf.py`.
 if os.getenv('TRAVIS') == 'true':
     # Required to turn on comments.
-    SITEURL = 'https://dhermes.github.io'
+    SITEURL = 'http://blog.bossylobster.com'
