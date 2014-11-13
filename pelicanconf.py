@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 
+import os
+
+
 AUTHOR = u'Danny Hermes'
 
 SITENAME = u'Bossylobster Blog'
 SITESUBTITLE = (u'Musings on humor/tech/mathematics/sports '
                 'from the bossiest lobster')
-# Required to turn on comments.
-SITEURL = 'https://dhermes.github.io'
+# Default is empty string unless building on Travis.
+SITEURL = ''
 PATH = 'content'  # Directory containing posts.
 
 # Times and dates
@@ -105,3 +108,8 @@ DISQUS_SITENAME = 'bossylobster'
 # Put pages in root. This is primarily for the 404 page.
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
+
+# If building on Travis. This is essentially a `publishconf.py`.
+if os.getenv('TRAVIS') == 'true':
+    # Required to turn on comments.
+    SITEURL = 'https://dhermes.github.io'
