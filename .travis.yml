@@ -1,7 +1,4 @@
 language: python
 
-install:
-  - ./install.sh
-
 script:
-  - ./update_pages_repo.sh
+  - ./build.sh
