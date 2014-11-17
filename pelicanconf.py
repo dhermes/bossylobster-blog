@@ -114,7 +114,7 @@ if os.getenv('TRAVIS') == 'true':
     # Required to turn on comments.
     SITEURL = 'https://dhermes.github.io'
     # Add Google Analytics support.
-    GOOGLE_ANALYTICS = 'UA-56716324-1'
+    GOOGLE_ANALYTICS = 'UA-56739367-1'
 
 
 GOOGLE_ADSENSE_CODE = """\
