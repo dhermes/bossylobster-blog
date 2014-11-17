@@ -113,3 +113,16 @@ PAGE_SAVE_AS = '{slug}.html'
 if os.getenv('TRAVIS') == 'true':
     # Required to turn on comments.
     SITEURL = 'https://dhermes.github.io'
+
+GOOGLE_ADSENSE_CODE = """\
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive-blog-ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4173900012268590"
+     data-ad-slot="9363500864"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+"""
