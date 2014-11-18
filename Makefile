@@ -21,6 +21,7 @@ help:
 	@echo '   make clean                       remove the generated files         '
 	@echo '   make regenerate                  regenerate files upon modification '
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
+	@echo '   make serve-local [PORT=8000]     serve at http://192.168.XX.YY:8000 '
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
 	@echo '   make stopserver                  stop local server                  '
 	@echo '                                                                       '
@@ -50,6 +51,13 @@ ifdef PORT
 	cd $(OUTPUTDIR) && $(PY) ../pelican_server.py $(PORT)
 else
 	cd $(OUTPUTDIR) && $(PY) ../pelican_server.py
+endif
+
+serve-local:
+ifdef PORT
+	cd $(OUTPUTDIR) && $(PY) ../pelican_server.py $(PORT) $(shell ./get_local_ip.py)
+else
+	@echo 'No port defined. Run as "make serve-local PORT=8000".'
 endif
 
 devserver:
