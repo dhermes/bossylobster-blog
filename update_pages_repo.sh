@@ -36,7 +36,9 @@ git status  # To see what has changed.
 
 # H/T: http://stackoverflow.com/a/5139346/1068170
 if [[ -n "$(git status --porcelain)" ]]; then
-  git commit -m "Update ${PAGES_REPO} after blog commit in ${GH_PROJECT_NAME}."
+  git commit \
+      -m "Update ${PAGES_REPO} after blog commit in ${GH_PROJECT_NAME}." \
+      -m "Added in https://travis-ci.org/${TRAVIS_REPO_SLUG}/${TRAVIS_BUILD_ID}"
   git status
   git push origin master
 else
