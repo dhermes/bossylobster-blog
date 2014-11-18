@@ -90,7 +90,8 @@ AUTHOR_FEED_RSS = None
 SEARCH_BOX = True
 
 # Sidebar for the octopress theme, a relative path (to the root).
-SIDEBAR_IMAGE = 'images/bossy_lobster_200_alpha.png'
+SIDEBAR_IMAGE = 'images/bossy_lobster_350_alpha.png'
+SECOND_SIDEBAR_IMAGE = 'images/dhermes_headshot.jpg'
 
 # Add extra header.
 EXTRA_HEADER = open('extra_header.html').read().decode('utf-8')
