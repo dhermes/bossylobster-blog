@@ -32,6 +32,12 @@ render:
 
 html: render
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	rm -f $(OUTPUTDIR)/authors.html
+	rm -fr $(OUTPUTDIR)/author/
+	rm -f $(OUTPUTDIR)/categories.html
+	rm -fr $(OUTPUTDIR)/category/
+	rm -f $(OUTPUTDIR)/tags.html
+	python rewrite_custom_pagination.py
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
