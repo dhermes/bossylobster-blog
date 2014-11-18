@@ -5,6 +5,8 @@ import os
 import re
 import shutil
 
+from pelicanconf import SITEURL
+
 
 PAGE_DIR = os.path.join('output', 'page')
 MATCHER = re.compile(r'^index(?P<page>\d+).html$')
@@ -20,19 +22,19 @@ def rewrite_links(page_num, filename=None):
     with open(filename, 'r') as fh:
         content = fh.read()
 
-    prev_link = 'href="/index%d.html"' % (page_num - 1,)
+    prev_link = 'href="%s/index%d.html"' % (SITEURL, page_num - 1)
     if content.count(prev_link) > 1:
         raise ValueError(('Link occurred more than once.',
                           prev_link, filename))
 
-    next_link = 'href="/index%d.html"' % (page_num + 1,)
+    next_link = 'href="%s/index%d.html"' % (SITEURL, page_num + 1)
     if content.count(next_link) > 1:
         raise ValueError(('Link occurred more than once.',
                           next_link, filename))
 
-    prev_link_new = 'href="/page/%d"' % (page_num - 1,)
+    prev_link_new = 'href="%s/page/%d"' % (SITEURL, page_num - 1)
     content = content.replace(prev_link, prev_link_new)
-    next_link_new = 'href="/page/%d"' % (page_num + 1,)
+    next_link_new = 'href="%s/page/%d"' % (SITEURL, page_num + 1)
     content = content.replace(next_link, next_link_new)
     with open(filename, 'w') as fh:
         fh.write(content)
