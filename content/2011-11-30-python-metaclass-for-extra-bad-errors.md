@@ -86,7 +86,7 @@ because heck, only seven are supported in
 [`RequestHandler`](http://code.google.com/appengine/docs/python/tools/webapp/requesthandlerclass.html),
 and we're not that crazy. If the class has one of the verbs as an
 attribute **and if** the attribute is a function, we
-[decorate](/images/try-decorate-spiderman.jpg)
+[decorate](/images/try-decorate-spiderman.png)
 it with `deadline_decorator`.
 
 Now, we can rewrite our subclass of `RequestHandler`
