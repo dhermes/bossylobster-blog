@@ -14,7 +14,7 @@ the app, I set out to find such a way. I set out to find a
 
 Since I knew the
 [App Engine Mail API](http://code.google.com/appengine/docs/python/mail/) was
-[super easy](/images/too-easy.jpg) to configure, I figured I would just
+super easy to configure, I figured I would just
 email myself every time there was an exception, before serving my
 default 500 error page. To do so, I just needed to subclass the default
 [`RequestHandler`](http://code.google.com/appengine/docs/python/tools/webapp/requesthandlerclass.html)
@@ -108,7 +108,6 @@ Make sure to enable the deferred library in your `app.yaml`
 by  using `deferred: on` in your builtins.
 
 <!-- Images not my own but included here for hosting reasons -->
-<!-- /images/too-easy.jpg                          -> http://t.qkme.me/355773.jpg -->
 <!-- /images/prepare-yourself-for-war.jpg          -> http://www.troll.me/images/war-cat/prepare-yourself-for-war.jpg -->
 <!-- /images/your_argument_is_invalid_seahorse.jpg -> http://gagnamite.com/wp-content/uploads/2013/05/your_argument_is_invalid_seahorse.jpg -->
 <!-- /images/gasp_by_dokuro-png.jpg                -> http://vipdictionary.com/img/gasp_by_dokuro-png.jpg -->
