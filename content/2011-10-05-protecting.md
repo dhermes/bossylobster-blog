@@ -10,36 +10,8 @@ Twitter feed and saw an
 [interesting question](https://twitter.com/#!/robhawkes/status/121593545202216960)
 from [Rob Hawkes](https://twitter.com/#!/robhawkes):
 
-<center>
-  <div id="post-container">
-    <div id="container-bg">
-      <div id="post-bg">
-        <span id="top-span">
-          <span id="follow-span">
-            <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/follow_button.html#_=1319487235961&amp;align=right&amp;button=blue&amp;id=twitter_tweet_button_2&amp;lang=en&amp;link_color=%230084B4&amp;screen_name=robhawkes&amp;show_count=false&amp;show_screen_name=&amp;text_color="></iframe>
-          </span>
-          <span id="name-span">
-            <a class="anchor-twitter" href="http://twitter.com/intent/user?screen_name=robhawkes" title="Rob Hawkes">
-              <img alt="Rob Hawkes" id="id-img" src="/images/robhawkes.jpg" />
-            </a>
-            <strong>
-              <a class="anchor-twitter" href="http://twitter.com/intent/user?screen_name=robhawkes" style="color: #0084b4;" title="Rob Hawkes">@robhawkes</a>
-            </strong>
-            <span style="color: #999999; font-size: 14px;"><br />Rob Hawkes</span>
-          </span>
-        </span>
-        <br />
-        <div style="margin: 1em 0em .5em 0em;">How do you handle config files in your apps when you use Git? I keep accidentally adding config files with sensitive data to Git. :(
-        </div>
-        <div style="font-size: 12px;">
-          <a class="anchor-twitter" href="https://twitter.com/#!/robhawkes/status/121593545202216960" style="color: #0084b4;" target="_blank" title="tweeted on October 5, 2011 7:32 am">October 5, 2011 7:32 am</a>
-          via
-          <a class="anchor-twitter" href="http://www.tweetdeck.com/" rel="nofollow" style="color: #0084b4;" target="blank">TweetDeck</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</center>
+<blockquote class="twitter-tweet tw-align-center" lang="en"><p>How do you handle config files in your apps when you use Git? I keep accidentally adding config files with sensitive data to Git. :(</p>&mdash; Robin Hawkes (@robhawkes) <a href="https://twitter.com/robhawkes/status/121593545202216960">October 5, 2011</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Rob's Twitter followers made all kinds of recommendations and Rob
 eventually decided it was a solved problem, declaring
@@ -215,77 +187,3 @@ Some change in `git` causes empty commits to be allowed. I either didn't
 notice this before or it just showed up in `git`. So I added `sys.exit(1)`
 to force the pre-commit script to fail when nothing is changed and added
 a check for the phrase **nothing added to commit** as well.
-
-<style type="text/css">
-  a.anchor-twitter, a:visited.anchor-twitter {
-    font-weight: bolder;
-    font-style: normal;
-    text-decoration: none;
-    outline: none;
-  }
-
-  iframe {
-    width: 300px;
-    height: 20px;
-  }
-
-  .bump-left {
-    margin-left: 1em;
-  }
-
-  #post-container {
-    font: 14px/1.231 helvetica,arial,clean,sans-serif;
-    display: inline-block;
-    position: relative;
-    width: 640px;
-    text-align: left;
-  }
-
-  #container-bg {
-    background: url(/images/twitter-bg.png) no-repeat #EBEBEB;
-    padding: 20px;
-    margin: 8px 0;
-  }
-
-  #post-bg {
-    background: #fff;
-    color: #000;
-    padding: 10px 12px 2px 12px;
-    margin: 0;
-    min-height: 60px;
-    font-size: 18px;
-    line-height: 22px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius:5px;
-    -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    box-shadow:0 2px 2px rgba(0,0,0,0.2);
-  }
-
-  #top-span {
-    width: 100%;
-    margin-bottom: 12px;
-    padding-top: 8px;
-    height: 40px;
-  }
-
-  #follow-span {
-    float: right;
-    width: 300px;
-    font-size: 12px;
-    text-align: right;
-  }
-
-  #name-span {
-    line-height: 19px;
-  }
-
-  #id-img {
-    float: left;
-    margin: 0px 7px 0px 0px;
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    border: none;
-  }
-</style>
