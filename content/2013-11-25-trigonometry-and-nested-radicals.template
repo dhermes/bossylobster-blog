@@ -171,7 +171,7 @@ or maybe the slightly more difficult
 
 {{ get_katex("\\sqrt{2 -\\sqrt{2 + \\sqrt{2 -\\sqrt{2 +\\cdots}}}}.", blockquote=True) }}
 
-[Armed](/images/armed-cartoon-moose.jpg) with my [TI-83](/images/TI-83.jpg),
+Armed with my [TI-83](/images/TI-83.png),
 I set out to do some hardcore programming and figure it out. It took me
 around a month of off-and-on tinkering. This second time around as a
 mathematical grown-up, it took me the first half of a plane ride from
@@ -184,5 +184,3 @@ and what other questions I have.
 {#- Images not my own but included here for hosting reasons -#}
 {#- /images/fantasia-mickey.jpg     -> http://imgs.tuts.dragoart.com/how-to-draw-fantasia-wizard-mickey_1_000000008546_5.jpg -#}
 {#- /images/nerd-out.jpg            -> http://blog.verdebmx.com/wp-content/uploads/2008/07/computer.jpg -#}
-{#- /images/armed-cartoon-moose.jpg -> http://www.search-best-cartoon.com/cartoon-moose/armed-cartoon-moose.jpg -#}
-{#- /images/TI-83.jpg               ->http://img1.targetimg1.com/wcsstore/TargetSAS//img/p/93/50/93505.jpg -#}

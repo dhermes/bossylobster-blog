@@ -68,6 +68,7 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 
 - `abraham-de-moivre.jpg` - From [Wikipedia Commons][11]
 - `abraham-lincoln.jpg` - From [Wikipedia Commons][12]
+- `TI-83.png` - From [Wikipedia Commons][13]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: http://dhermes.github.io/
@@ -81,3 +82,4 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 [10]: https://twitter.com/jakevdp
 [11]: http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_de_moivre.jpg
 [12]: http://en.wikipedia.org/wiki/File:Abraham_Lincoln_November_1863.jpg
+[13]: http://en.wikipedia.org/wiki/File:TI-83.png
