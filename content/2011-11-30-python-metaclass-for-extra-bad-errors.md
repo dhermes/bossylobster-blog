@@ -18,7 +18,7 @@ catch a `DeadlineExceededError`. To do so, we can use a
 [decorator](http://stackoverflow.com/questions/739654/understanding-python-decorators#1594484)
 (hey, that's Pythonic) in each and every handler for each and every HTTP
 verb. (Again,
-[prepare yourselves](/images/prepare-yourself-for-war.jpg),
+[prepare yourselves](/images/prepare-yourself.jpg),
 a bunch of code is about to happen. See the necessary [imports](#imports)
 at the bottom of the post.)
 
@@ -82,8 +82,7 @@ because heck, only seven are supported in
 [`RequestHandler`](http://code.google.com/appengine/docs/python/tools/webapp/requesthandlerclass.html),
 and we're not that crazy. If the class has one of the verbs as an
 attribute **and if** the attribute is a function, we
-[decorate](/images/try-decorate-spiderman.png)
-it with `deadline_decorator`.
+decorate it with `deadline_decorator`.
 
 Now, we can rewrite our subclass of `RequestHandler`
 with one extra line:
@@ -148,7 +147,3 @@ from LAST_POST import email_admins
     don't need an explanation about why)."* - Python Guru Tim Peters
 -   *"The main use case for a metaclass is creating an API."* -Kevin
     Samuel
-
-<!-- Images not my own but included here for hosting reasons -->
-<!-- /images/prepare-yourself-for-war.jpg -> http://www.troll.me/images/war-cat/prepare-yourself-for-war.jpg -->
-<!-- /images/try-decorate-spiderman.jpg   -> http://troll.me/images/misc-corrupted-husband/i-try-to-decorate-the-house-he-puts-spiderman-images-everywhere.jpg -->

@@ -17,9 +17,9 @@ from [CALCAmo](http://www.calcamo.net/) (a site just for calculating
 amortizations).
 
 Problem solved, right? Wrong. I wanted to know why; I had to
-[go deeper](/images/deeper.jpg). So I did a bit of math and a bit
-of programming and I was where I needed to be. I'll break the following
-down into parts before going on full steam.
+[go deeper](http://knowyourmeme.com/memes/we-need-to-go-deeper). So I did a
+bit of math and a bit of programming and I was where I needed to be. I'll
+break the following down into parts before going on full steam.
 
 -   Break down the amortization schedule in terms of the variables we
     have and the one we want
@@ -253,6 +253,3 @@ that our guess yield the correct (and unique) zero.
 
 [amort-sched]: http://en.wikipedia.org/wiki/Amortization_schedule
 [newton-raph]: http://en.wikipedia.org/wiki/Newton's_method
-
-{#- Images not my own but included here for hosting reasons -#}
-{#- /images/deeper.jpg -> http://t.qkme.me/35co7h.jpg -#}

@@ -127,7 +127,7 @@ which lets us compute
 {{ get_katex("A_5 = 16 \\sqrt{\\frac{1 - \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}}{2}} = 8 \\sqrt{2 - \\sqrt{2 + \\sqrt{2}}}.", blockquote=True) }}
 
 So why have I put you through all this? If we wave our hands like a
-[magician](/images/fantasia-mickey.jpg),
+[magician](/images/magician.jpg),
 we can see this pattern continues and for the general {{ get_katex("n") }}
 
 {{ get_katex("A_n = 2^{n - 2} \\sqrt{2 - \\sqrt{2 + \\sqrt{2 + \\sqrt{\\cdots + \\sqrt{2}}}}}", blockquote=True) }}
@@ -182,5 +182,4 @@ including math, proofs and some real code on what answers I came up with
 and what other questions I have.
 
 {#- Images not my own but included here for hosting reasons -#}
-{#- /images/fantasia-mickey.jpg     -> http://imgs.tuts.dragoart.com/how-to-draw-fantasia-wizard-mickey_1_000000008546_5.jpg -#}
 {#- /images/nerd-out.jpg            -> http://blog.verdebmx.com/wp-content/uploads/2008/07/computer.jpg -#}

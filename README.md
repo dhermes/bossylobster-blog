@@ -68,6 +68,9 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 
 - `abraham-de-moivre.jpg` - From [Wikipedia Commons][11]
 - `abraham-lincoln.jpg` - From [Wikipedia Commons][12]
+- `horse.jpg` - From [Flickr][16], via [Creative Commons][17]
+- `magician.jpg` - From [Flickr][18], via [Creative Commons][17]
+- `prepare-yourself.jpg` - From [Flickr][15], via [Creative Commons][14]
 - `TI-83.png` - From [Wikipedia Commons][13]
 
 [1]: https://github.com/dhermes/dhermes.github.io
@@ -83,3 +86,8 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 [11]: http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_de_moivre.jpg
 [12]: http://en.wikipedia.org/wiki/File:Abraham_Lincoln_November_1863.jpg
 [13]: http://en.wikipedia.org/wiki/File:TI-83.png
+[14]: https://creativecommons.org/licenses/by/2.0/
+[15]: https://flic.kr/p/65i1j
+[16]: https://flic.kr/p/5ccWFq
+[17]: https://creativecommons.org/licenses/by-sa/2.0/
+[18]: https://flic.kr/p/9hBrtv

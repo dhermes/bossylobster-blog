@@ -20,7 +20,7 @@ default 500 error page. To do so, I just needed to subclass the default
 [`RequestHandler`](http://code.google.com/appengine/docs/python/tools/webapp/requesthandlerclass.html)
 with my own
 [`handle_exception`](http://code.google.com/appengine/docs/python/tools/webapp/requesthandlerclass.html#RequestHandler_handle_exception)
-method. (OK, [prepare yourselves](/images/prepare-yourself-for-war.jpg),
+method. (OK, [prepare yourselves](/images/prepare-yourself.jpg),
 a bunch of code is about to happen. See the necessary
 [imports](#imports) at the bottom of the post.)
 
@@ -66,8 +66,7 @@ Unfortunately, `handle_exception`
 [only handles](http://code.google.com/p/googleappengine/issues/detail?id=2110)
 the "right" kind of exceptions. That is, exceptions which inherit
 directly from Python's ``Exception``.
-From the
-[horse](/images/your_argument_is_invalid_seahorse.jpg)'s
+From the [horse](/images/horse.jpg)'s
 [mouth](http://docs.python.org/tutorial/errors.html#user-defined-exceptions):
 
 > Exceptions should typically be derived from the
@@ -79,7 +78,6 @@ because a request times out, a `DeadlineExceededError` is thrown and
 `handle_exception` falls on its face. Why? Because `DeadlineExceededError`
 [inherits](https://code.google.com/p/googleappengine/source/browse/trunk/python/google/appengine/runtime/__init__.py?r=491#33)
 directly from `Exception`'s parent class:`BaseException`.
-([Gasp](/images/gasp_by_dokuro-png.jpg))
 
 It's OK little ones, in my
 [next post](/2011/11/python-metaclass-for-extra-bad-errors.html)
@@ -106,8 +104,3 @@ from SOME_APP_SPECIFIC_LIBRARY import serve_500
 
 Make sure to enable the deferred library in your `app.yaml`
 by  using `deferred: on` in your builtins.
-
-<!-- Images not my own but included here for hosting reasons -->
-<!-- /images/prepare-yourself-for-war.jpg          -> http://www.troll.me/images/war-cat/prepare-yourself-for-war.jpg -->
-<!-- /images/your_argument_is_invalid_seahorse.jpg -> http://gagnamite.com/wp-content/uploads/2013/05/your_argument_is_invalid_seahorse.jpg -->
-<!-- /images/gasp_by_dokuro-png.jpg                -> http://vipdictionary.com/img/gasp_by_dokuro-png.jpg -->
