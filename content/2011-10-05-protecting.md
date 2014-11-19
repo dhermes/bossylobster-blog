@@ -10,80 +10,6 @@ Twitter feed and saw an
 [interesting question](https://twitter.com/#!/robhawkes/status/121593545202216960)
 from [Rob Hawkes](https://twitter.com/#!/robhawkes):
 
-<style type="text/css">
-  a.anchor-twitter, a:visited.anchor-twitter {
-    font-weight: bolder;
-    font-style: normal;
-    text-decoration: none;
-    outline: none;
-  }
-
-  iframe {
-    width: 300px;
-    height: 20px;
-  }
-
-  .bump-left {
-    margin-left: 1em;
-  }
-
-  #post-container {
-    font: 14px/1.231 helvetica,arial,clean,sans-serif;
-    display: inline-block;
-    position: relative;
-    width: 640px;
-    text-align: left;
-  }
-
-  #container-bg {
-    background: url(/images/twitter-bg.png) no-repeat #EBEBEB;
-    padding: 20px;
-    margin: 8px 0;
-  }
-
-  #post-bg {
-    background: #fff;
-    color: #000;
-    padding: 10px 12px 2px 12px;
-    margin: 0;
-    min-height: 60px;
-    font-size: 18px;
-    line-height: 22px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius:5px;
-    -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
-    box-shadow:0 2px 2px rgba(0,0,0,0.2);
-  }
-
-  #top-span {
-    width: 100%;
-    margin-bottom: 12px;
-    padding-top: 8px;
-    height: 40px;
-  }
-
-  #follow-span {
-    float: right;
-    width: 300px;
-    font-size: 12px;
-    text-align: right;
-  }
-
-  #name-span {
-    line-height: 19px;
-  }
-
-  #id-img {
-    float: left;
-    margin: 0px 7px 0px 0px;
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    border: none;
-  }
-</style>
-
 <center>
   <div id="post-container">
     <div id="container-bg">
@@ -289,3 +215,77 @@ Some change in `git` causes empty commits to be allowed. I either didn't
 notice this before or it just showed up in `git`. So I added `sys.exit(1)`
 to force the pre-commit script to fail when nothing is changed and added
 a check for the phrase **nothing added to commit** as well.
+
+<style type="text/css">
+  a.anchor-twitter, a:visited.anchor-twitter {
+    font-weight: bolder;
+    font-style: normal;
+    text-decoration: none;
+    outline: none;
+  }
+
+  iframe {
+    width: 300px;
+    height: 20px;
+  }
+
+  .bump-left {
+    margin-left: 1em;
+  }
+
+  #post-container {
+    font: 14px/1.231 helvetica,arial,clean,sans-serif;
+    display: inline-block;
+    position: relative;
+    width: 640px;
+    text-align: left;
+  }
+
+  #container-bg {
+    background: url(/images/twitter-bg.png) no-repeat #EBEBEB;
+    padding: 20px;
+    margin: 8px 0;
+  }
+
+  #post-bg {
+    background: #fff;
+    color: #000;
+    padding: 10px 12px 2px 12px;
+    margin: 0;
+    min-height: 60px;
+    font-size: 18px;
+    line-height: 22px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-box-shadow:0 2px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow:0 2px 2px rgba(0,0,0,0.2);
+    box-shadow:0 2px 2px rgba(0,0,0,0.2);
+  }
+
+  #top-span {
+    width: 100%;
+    margin-bottom: 12px;
+    padding-top: 8px;
+    height: 40px;
+  }
+
+  #follow-span {
+    float: right;
+    width: 300px;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  #name-span {
+    line-height: 19px;
+  }
+
+  #id-img {
+    float: left;
+    margin: 0px 7px 0px 0px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: none;
+  }
+</style>
