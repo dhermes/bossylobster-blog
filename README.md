@@ -68,9 +68,13 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 
 - `abraham-de-moivre.jpg` - From [Wikipedia Commons][11]
 - `abraham-lincoln.jpg` - From [Wikipedia Commons][12]
+- `baby_lobster.jpg` - From [Flickr][19], via [Creative Commons][14]
+- `cluttered_desk.jpg` - From [Flicker][20], via [Creative Commons][17]
 - `horse.jpg` - From [Flickr][16], via [Creative Commons][17]
 - `magician.jpg` - From [Flickr][18], via [Creative Commons][17]
+- `nerd-out.jpg` - From [Flickr][22], via [Creative Commons][17]
 - `prepare-yourself.jpg` - From [Flickr][15], via [Creative Commons][14]
+- `sleeping_in_class.jpg` - From [Flickr][21], via [Creative Commons][17]
 - `TI-83.png` - From [Wikipedia Commons][13]
 
 [1]: https://github.com/dhermes/dhermes.github.io
@@ -91,3 +95,7 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 [16]: https://flic.kr/p/5ccWFq
 [17]: https://creativecommons.org/licenses/by-sa/2.0/
 [18]: https://flic.kr/p/9hBrtv
+[19]: https://flic.kr/p/h9PhFv
+[20]: https://flic.kr/p/n4XLG
+[21]: https://flic.kr/p/E8Mz7
+[22]: https://flic.kr/p/EWAVi

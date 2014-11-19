@@ -27,7 +27,3 @@ an audience's collective head just because they have
 at that point. Too many variables!
 
 <center><iframe src="//www.slideshare.net/slideshow/embed_code/12977566" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe></center>
-
-<!-- Images not my own but included here for hosting reasons -->
-<!-- /images/cluttered_desk.jpg    -> http://brucefong.files.wordpress.com/2008/09/cluttered_desk.jpg -->
-<!-- /images/sleeping_in_class.jpg -> http://ellay2013.files.wordpress.com/2009/09/sleeping_in_class.jpg -->

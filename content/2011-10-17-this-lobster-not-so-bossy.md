@@ -5,5 +5,5 @@ slug: this-lobster-not-so-bossy
 comments: true
 
 <div markdown="1" style="text-align: center;">
-  ![Baby Lobster](/images/baby_lobster_collegehumor.jpg)
+  ![Baby Lobster](/images/baby_lobster.jpg)
 </div>
