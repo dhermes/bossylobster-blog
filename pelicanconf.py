@@ -116,9 +116,9 @@ PAGE_SAVE_AS = '{slug}.html'
 # If building on Travis. This is essentially a `publishconf.py`.
 if os.getenv('TRAVIS') == 'true':
     # Required to turn on comments.
-    SITEURL = 'https://dhermes.github.io'
+    SITEURL = 'https://blog.bossylobster.com'
     # Add Google Analytics support.
-    GOOGLE_ANALYTICS = 'UA-56739367-1'
+    GOOGLE_ANALYTICS = 'UA-56716324-1'
 
 
 GOOGLE_ADSENSE_CODE = """\
