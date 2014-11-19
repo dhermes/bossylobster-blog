@@ -10,4 +10,4 @@ I hope this can become easily searchable from a Google
 Search and can be an easy description of how to do it.
 
 Details in folder
-drafst/figure_out_lapack/
+drafts/figure_out_lapack/
