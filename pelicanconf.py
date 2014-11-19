@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import json
 import os
 
 
@@ -133,3 +134,11 @@ GOOGLE_ADSENSE_CODE = """\
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 """
+
+# NOTE: This is not secure for actually serving requests, but
+#       is fine for static, trusted and known content.
+#       See http://stackoverflow.com/a/12340004/1068170.
+def escapejs(val):
+    return json.dumps(str(val))
+
+JINJA_FILTERS = {'escapejs': escapejs}
