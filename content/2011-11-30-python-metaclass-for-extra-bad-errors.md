@@ -37,12 +37,8 @@ def deadline_decorator(method):
     return wrapped_method
 ```
 
-Unfortunately, having to manually
-
-<div markdown="1" style="text-align: center;">
-  [![Decorate All](/images/decorate_all_the_functions.jpg)]
-</div>
-
+Unfortunately, having to manually decorate
+[all the functions](http://knowyourmeme.com/memes/x-all-the-y)
 is not so Pythonic. At this point I was stuck and wanted to give up, but
 [asked for some advice](https://plus.google.com/u/0/114760865724135687241/posts/GJjXjq5zXhU)
 on [G+](http://www.google.com/+) and actually got what I needed from the
