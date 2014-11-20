@@ -127,6 +127,22 @@ def escapejs(val):
 
 JINJA_FILTERS = {'escapejs': escapejs}
 
+# Turn off feeds for translations, author, categories and tags.
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+CATEGORY_FEED_ATOM = None
+CATEGORY_FEED_RSS = None
+TAG_FEED_ATOM = None
+TAG_FEED_RSS = None
+TRANSLATION_FEED_ATOM = None
+TRANSLATION_FEED_RSS = None
+# Some feed settings can be optionally turned on.
+FEED_DOMAIN = None
+FEED_ALL_ATOM = None
+FEED_ALL_RSS = None
+FEED_ATOM = None
+FEED_RSS = None
+
 # If building on Travis. This is essentially a `publishconf.py`.
 if os.getenv('TRAVIS') == 'true':
     # Required to turn on comments.
@@ -140,13 +156,3 @@ if os.getenv('TRAVIS') == 'true':
     FEED_ALL_ATOM = 'feeds/atom.all.xml'
     FEED_RSS = 'feeds/rss.xml'
     FEED_ALL_RSS = 'feeds/rss.all.xml'
-
-# Turn off feeds for translations, author, categories and tags.
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-CATEGORY_FEED_ATOM = None
-CATEGORY_FEED_RSS = None
-TAG_FEED_ATOM = None
-TAG_FEED_RSS = None
-TRANSLATION_FEED_ATOM = None
-TRANSLATION_FEED_RSS = None
