@@ -81,15 +81,6 @@ TWITTER_TWEET_COUNT = 3
 TWITTER_SHOW_REPLIES = 'false'
 TWITTER_SHOW_FOLLOWER_COUNT = 'true'
 
-# RSS/Atom feeds intentionally not used. Will revisit.
-# See ('http://docs.getpelican.com/en/latest/faq.html'
-#      '#what-if-i-want-to-disable-feed-generation')
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-
 # Search
 SEARCH_BOX = True
 
@@ -110,18 +101,11 @@ IGNORE_FILES = ['*.template']
 # Adding Disqus comments to page.
 DISQUS_SITENAME = 'bossylobster'
 
-# Put pages in root. This is primarily for the 404 page.
+# Put pages in root. This is strictly for the 404 page.
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
 
-# If building on Travis. This is essentially a `publishconf.py`.
-if os.getenv('TRAVIS') == 'true':
-    # Required to turn on comments.
-    SITEURL = 'https://blog.bossylobster.com'
-    # Add Google Analytics support.
-    GOOGLE_ANALYTICS = 'UA-56716324-1'
-
-
+# Add Google AdSense.
 GOOGLE_ADSENSE_CODE = """\
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- responsive-blog-ad -->
@@ -142,3 +126,27 @@ def escapejs(val):
     return json.dumps(str(val))
 
 JINJA_FILTERS = {'escapejs': escapejs}
+
+# If building on Travis. This is essentially a `publishconf.py`.
+if os.getenv('TRAVIS') == 'true':
+    # Required to turn on comments.
+    SITEURL = 'https://blog.bossylobster.com'
+    # Add Google Analytics support.
+    GOOGLE_ANALYTICS = 'UA-56716324-1'
+
+    # RSS/Atom feeds
+    FEED_DOMAIN = SITEURL
+    FEED_ATOM = 'feeds/atom.xml'
+    FEED_ALL_ATOM = 'feeds/atom.all.xml'
+    FEED_RSS = 'feeds/rss.xml'
+    FEED_ALL_RSS = 'feeds/rss.all.xml'
+
+# Turn off feeds for translations, author, categories and tags.
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+CATEGORY_FEED_ATOM = None
+CATEGORY_FEED_RSS = None
+TAG_FEED_ATOM = None
+TAG_FEED_RSS = None
+TRANSLATION_FEED_ATOM = None
+TRANSLATION_FEED_RSS = None
