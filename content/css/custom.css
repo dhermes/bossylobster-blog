@@ -16,12 +16,12 @@ div.katex-elt > blockquote::-webkit-scrollbar {
 }
 div.katex-elt > blockquote::-webkit-scrollbar-thumb:horizontal {
   background: rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 img.latex-img {
   border: none;
   vertical-align: middle;
+  box-shadow: none;
   -webkit-box-shadow: none;
 }
 blockquote.latex-img {
