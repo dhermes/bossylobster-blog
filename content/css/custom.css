@@ -3,7 +3,7 @@ blockquote code {
   font-style: normal;
 }
 div.katex-elt {
-    text-align: center;
+  text-align: center;
 }
 div.katex-elt > blockquote {
   font-size: x-large;
