@@ -6,6 +6,9 @@ BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
+ALT_CONFFILE=$(BASEDIR)/pelicanconf_with_pagination.py
+
+PRINT_SEP='============================================================'
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -31,13 +34,38 @@ help:
 render:
 	$(PY) render_jinja2_templates.py
 
-html: render
+html:
+	@echo 'Rendering templates...'
+	@echo $(PRINT_SEP)
+	@make render
+	@echo $(PRINT_SEP)
+	@echo 'Making first pass with paging'
+	@echo $(PRINT_SEP)
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(ALT_CONFFILE) $(PELICANOPTS)
+	@echo $(PRINT_SEP)
+	@echo 'Storing paging index*.html files for re-use and removing paged output'
+	@echo $(PRINT_SEP)
+	mv $(OUTPUTDIR)/index*.html $(BASEDIR)
+	make clean
+	@echo $(PRINT_SEP)
+	@echo 'Making second pass without paging'
+	@echo $(PRINT_SEP)
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	@echo $(PRINT_SEP)
+	@echo 'Putting back paging index*.html files'
+	@echo $(PRINT_SEP)
+	mv -f $(BASEDIR)/index*.html $(OUTPUTDIR)
+	@echo $(PRINT_SEP)
+	@echo 'Removing unwanted pages'
+	@echo $(PRINT_SEP)
 	rm -f $(OUTPUTDIR)/authors.html
 	rm -fr $(OUTPUTDIR)/author/
 	rm -f $(OUTPUTDIR)/categories.html
 	rm -fr $(OUTPUTDIR)/category/
 	rm -f $(OUTPUTDIR)/tags.html
+	@echo $(PRINT_SEP)
+	@echo 'Rewriting paths for paging index*.html files'
+	@echo $(PRINT_SEP)
 	python rewrite_custom_pagination.py
 
 clean:
