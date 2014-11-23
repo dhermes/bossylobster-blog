@@ -173,7 +173,11 @@ Since {{ get_katex("a_0") }} is the floor, we know
 Since {{ get_latex_img("D \\in \\mathbf{Z} \\Rightarrow \\sqrt{D} > 1") }} and
 {{ get_katex("\\sqrt{D} > a_0") }}, we have
 
-{{ get_latex_img("1 < \\sqrt{D} + a_0 \\Rightarrow\\sqrt{D} - a_0 < D - a_0^2\\Rightarrow a_0 - \\sqrt{D} > -(D - a_0^2) \\Rightarrow \\widetilde{\\alpha_0} > -1.", blockquote=True) }}
+{{ get_latex_img("1 < \\sqrt{D} + a_0 \\Rightarrow\\sqrt{D} - a_0 < D - a_0^2", blockquote=True) }}
+
+hence
+
+{{ get_latex_img("a_0 - \\sqrt{D} > -(D - a_0^2) \\Rightarrow \\widetilde{\\alpha_0} > -1.", blockquote=True) }}
 
 Thus {{ get_katex("\\alpha_0") }} is a reduced quadratic irrational. Since
 {{ get_katex("P_0 = a_0") }} and {{ get_katex("Q_0 = D - a_0^2 = D - P_0^2") }},
