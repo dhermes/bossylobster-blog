@@ -105,20 +105,6 @@ DISQUS_SITENAME = 'bossylobster'
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
 
-# Add Google AdSense.
-GOOGLE_ADSENSE_CODE = """\
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- responsive-blog-ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4173900012268590"
-     data-ad-slot="9363500864"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-"""
-
 # NOTE: This is not secure for actually serving requests, but
 #       is fine for static, trusted and known content.
 #       See http://stackoverflow.com/a/12340004/1068170.
@@ -149,6 +135,9 @@ if os.getenv('TRAVIS') == 'true':
     SITEURL = 'https://blog.bossylobster.com'
     # Add Google Analytics support.
     GOOGLE_ANALYTICS = 'UA-56716324-1'
+    # Add Google AdSense.
+    with open('google_adsense_code.html', 'r') as fh:
+        GOOGLE_ADSENSE_CODE = fh.read()
 
     # RSS/Atom feeds
     FEED_DOMAIN = SITEURL
