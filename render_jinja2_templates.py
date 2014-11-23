@@ -115,7 +115,7 @@ def write_template(template):
 
     TEMPLATE_HASHES[template.filename] = md5_sum
     with open(TEMPLATE_HASHES_FILENAME, 'w') as fh:
-        json.dump(TEMPLATE_HASHES, fh, indent=2)
+        json.dump(TEMPLATE_HASHES, fh, indent=2, sort_keys=True)
 
 
 if __name__ == '__main__':
