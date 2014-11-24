@@ -1,0 +1,15 @@
+<form action="//google.com/search" method="get" id="site-search">
+  <fieldset role="search">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<script>
+function site_search_submit(submit_event) {
+  var form_element = submit_event.srcElement;
+  var query_elt = form_element.elements['q'];
+  {% if SITEURL %}
+  query_elt.value = 'site:{{SITEURL}} ' + query_elt.value;
+  {% endif %}
+}
+document.getElementById('site-search').onsubmit = site_search_submit;
+</script>

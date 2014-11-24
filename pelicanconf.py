@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import jinja2
 import json
 import os
 
@@ -82,7 +83,10 @@ TWITTER_SHOW_REPLIES = 'false'
 TWITTER_SHOW_FOLLOWER_COUNT = 'true'
 
 # Search
-SEARCH_BOX = True
+with open('custom_search.html', 'r') as fh:
+    CUSTOM_SEARCH_TEMPLATE = fh.read()
+CUSTOM_SEARCH = jinja2.Template(
+    CUSTOM_SEARCH_TEMPLATE).render(SITEURL=SITEURL)
 
 # Sidebar for the octopress theme, a relative path (to the root).
 SIDEBAR_IMAGE = 'images/bossy_lobster_350_alpha.png'
