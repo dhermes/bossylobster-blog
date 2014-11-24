@@ -82,12 +82,6 @@ TWITTER_TWEET_COUNT = 3
 TWITTER_SHOW_REPLIES = 'false'
 TWITTER_SHOW_FOLLOWER_COUNT = 'true'
 
-# Search
-with open('custom_search.html', 'r') as fh:
-    CUSTOM_SEARCH_TEMPLATE = fh.read()
-CUSTOM_SEARCH = jinja2.Template(
-    CUSTOM_SEARCH_TEMPLATE).render(SITEURL=SITEURL)
-
 # Sidebar for the octopress theme, a relative path (to the root).
 SIDEBAR_IMAGE = 'images/bossy_lobster_350_alpha.png'
 SECOND_SIDEBAR_IMAGE = 'images/dhermes_headshot.jpg'
@@ -149,3 +143,9 @@ if os.getenv('TRAVIS') == 'true':
     FEED_ALL_ATOM = 'feeds/atom.all.xml'
     FEED_RSS = 'feeds/rss.xml'
     FEED_ALL_RSS = 'feeds/rss.all.xml'
+
+# Search
+with open('custom_search.html', 'r') as fh:
+    CUSTOM_SEARCH_TEMPLATE = fh.read()
+CUSTOM_SEARCH = jinja2.Template(
+    CUSTOM_SEARCH_TEMPLATE).render(SITEURL=SITEURL)
