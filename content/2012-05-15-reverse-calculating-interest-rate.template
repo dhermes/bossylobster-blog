@@ -97,7 +97,7 @@ We calculate this sum of a geometric series here, but I'll just refer you to the
 [Wikipedia page](http://en.wikipedia.org/wiki/Geometric_series) instead. With
 this reduction we want to solve
 
-{{ get_latex_img("0 = P \\cdot m^T - R \\cdot \\frac{m^T - 1}{m - 1} \\Longleftrightarrow P \\cdot m^T \\cdot (m - 1) =R \\cdot(m^T - 1).", blockquote=True) }}
+{{ get_latex_img("\\begin{align*} & 0 = P \\cdot m^T - R \\cdot \\frac{m^T - 1}{m - 1} \\\\ & \\Longleftrightarrow P \\cdot m^T \\cdot (m - 1) =R \\cdot(m^T - 1). \\end{align*}", blockquote=True, standalone=True) }}
 
 With that, we have accomplished Step II, we have found a function (parameterized
 by {{ get_katex("P, T") }} and {{ get_katex("R") }} which we can

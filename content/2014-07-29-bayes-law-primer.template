@@ -66,7 +66,7 @@ and that they cover all possible events that could occur. For example
 
 In such a case we know that since the {{ get_katex("Y") }}-events are distinct
 
-{{ get_latex_img("\\begin{align*} \\text{Pr}(X) &= \\text{Pr}(X \\text{ and } Y_1 \\text{ both occur}) + \\text{Pr}(X \\text{ and } Y_2 \\text{ both occur}) \\\\ &+ \\text{Pr}(X \\text{ and } Y_3 \\text{ both occur}). \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_latex_img("\\begin{align*} \\text{Pr}(X) &= \\text{Pr}(X \\text{ and } Y_1 \\text{ both occur}) \\\\ &+ \\text{Pr}(X \\text{ and } Y_2 \\text{ both occur}) \\\\ &+ \\text{Pr}(X \\text{ and } Y_3 \\text{ both occur}). \\end{align*}", blockquote=True, standalone=True) }}
 
 Using Bayes' law, we can reinterpret as
 

@@ -39,7 +39,7 @@ def get_image_name(latex_str, blockquote=False):
     # Save image names after updating.
     IMAGE_NAMES[str_as_b64] = new_name_value
     with open(LATEX_IMG_NAMES_FILE, 'w') as fh:
-        json.dump(IMAGE_NAMES, fh)
+        json.dump(IMAGE_NAMES, fh, indent=2, sort_keys=True)
 
     return new_name_value
 

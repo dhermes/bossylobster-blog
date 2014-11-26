@@ -19,6 +19,7 @@ div.katex-elt > blockquote::-webkit-scrollbar-thumb:horizontal {
   border-radius: 3px;
 }
 img.latex-img {
+  max-width: none;
   border: none;
   vertical-align: middle;
   box-shadow: none;
@@ -26,4 +27,14 @@ img.latex-img {
 }
 blockquote.latex-img {
   text-align: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+blockquote.latex-img::-webkit-scrollbar {
+  height: .5em;
+  background: rgba(0, 0, 0, 0.15);
+}
+blockquote.latex-img::-webkit-scrollbar-thumb:horizontal {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
 }
