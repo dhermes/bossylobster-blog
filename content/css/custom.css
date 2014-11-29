@@ -2,6 +2,14 @@
 blockquote code {
   font-style: normal;
 }
+section.sidebar-img {
+  text-align: center;
+}
+@media only screen and (max-width: 750px) {
+  section.sidebar-img > img {
+    width: 48%;
+  }
+}
 div.katex-elt {
   text-align: center;
 }
