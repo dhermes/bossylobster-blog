@@ -8,7 +8,7 @@ import subprocess
 import tempfile
 
 from jinja2 import Environment, PackageLoader
-from make_png_from_latex import convert_equation
+from make_svg_from_latex import convert_equation
 
 
 ENV = Environment(loader=PackageLoader(__name__, 'content'))
