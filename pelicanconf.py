@@ -7,9 +7,8 @@ import os
 
 AUTHOR = u'Danny Hermes'
 
-SITENAME = u'Bossylobster Blog'
-SITESUBTITLE = (u'Musings on humor/tech/mathematics/sports '
-                'from the bossiest lobster')
+SITENAME = u'Bossy Lobster'
+SITESUBTITLE = u'A blog by Danny Hermes; musing on tech, mathematics, etc.'
 # Default is empty string unless building on Travis.
 SITEURL = ''
 PATH = 'content'  # Directory containing posts.
