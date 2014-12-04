@@ -5,10 +5,8 @@ tags: Pelican, Octopress, GitHub Pages
 slug: brand-new-blog
 comments: true
 
-After a happy 3-year run with [blogger][1], I've moved on.
-I am now hand-crafting HTML for my posts and using a static site
-generator for my content. It feels so 90's, but I wasn't using the
-internet then, so what do I know?
+After a happy 3-year run with [Blogger][1], I've decided to
+revamp my blog with viewers in mind.
 
 ## Why?
 
@@ -16,9 +14,9 @@ When I [started][3] my blog, I was still learning the ropes as a
 programmer. I was happy to have a place to share the things I learned,
 but didn't have much context for the things I was writing.
 However, as I started to develop a voice, I became acutely aware
-that the look and feel of my blog was not good.
+that the look and feel of my blog was bad.
 
-After a good [friend][5] of mine told me something along the lines
+After a good [friend][5] of mine asked me something along the lines
 of "Danny, are you blind?", it was clear I needed to make a change.
 He solidified what I had known for some time:
 
@@ -26,19 +24,22 @@ He solidified what I had known for some time:
 
 I needed to respect my viewers taste by providing a quality visual
 experience. This was not clear to me as a freshly minted math nerd from
-the University of Michigan. However, after two and a half years at Google
-spent building plenty of slide decks, I knew better.
+the University of Michigan.
 
-The presentation of a message has a large impact on its reception. By not
-writing with viewers in mind, I was weakening my work by increasing the
-effort required to consume it.
+However, after spending two and a half years at Google building plenty of
+slide decks, I knew better. By not writing with viewers in mind, I was
+weakening my work by increasing the effort required to consume it.
 
-Thanks for reading! I hope you're enjoying a more visually pleasing blog
+I hope you're enjoying a more visually pleasing blog
 experience and welcome any [feedback][18] you may have.
 
 Feel free to continue on if you are a nerd like me.
 
 ## How?
+
+I am now hand-crafting HTML for my posts and using a static site
+generator for my content. It feels so 90's, but I wasn't using the
+internet then, so what do I know?
 
 Inspired by my old buddy [Brian][6] and by the insanely productive
 [Jake Vanderplas][7], I decided to port my old content by hand.
