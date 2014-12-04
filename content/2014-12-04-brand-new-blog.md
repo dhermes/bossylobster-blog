@@ -22,7 +22,7 @@ He solidified what I had known for some time:
 
 > In order to have a voice, I needed more than just content.
 
-I needed to respect my viewers' taste by providing a quality visual
+I needed to respect my viewers' tastes by providing a quality visual
 experience. This was not clear to me as a freshly minted math nerd from
 the University of Michigan.
 
