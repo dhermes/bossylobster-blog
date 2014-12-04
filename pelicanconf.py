@@ -23,7 +23,7 @@ ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
 # Title menu options
-ARCHIVES_SAVE_AS = 'all_posts.html'
+ARCHIVES_SAVE_AS = 'all-posts.html'
 MENUITEMS = [
     ('All Posts', '/%s' % ARCHIVES_SAVE_AS),
     ('GitHub Profile', 'http://github.com/dhermes/'),
