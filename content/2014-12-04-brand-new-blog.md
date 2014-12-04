@@ -1,7 +1,7 @@
 title: Brand New Blog
-date: 2014-12-03
+date: 2014-12-04
 author: Danny Hermes (dhermes@bossylobster.com)
-tags: Pelican, Octopress, GitHub Pages
+tags: Pelican, Octopress, GitHub Pages, Blogger, Presentation
 slug: brand-new-blog
 comments: true
 
