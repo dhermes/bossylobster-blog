@@ -5,56 +5,55 @@ tags: Pelican, Octopress, GitHub Pages
 slug: brand-new-blog
 comments: true
 
-After a happy 3-year run with [blogger][1], I've taken the plunge.
+After a happy 3-year run with [blogger][1], I've moved on.
 I am now hand-crafting HTML for my posts and using a static site
-generator for my content. It feels so 90's, but I didn't know
-anything about the internet then, so maybe not quite.
+generator for my content. It feels so 90's, but I wasn't using the
+internet then, so what do I know?
 
 ## Why?
 
-When I [started][3] my blog, I was still a greenhorn. I was happy to
-have a place to share the things I learned, but still had plenty to
-learn. However, as I started to develop a voice, I became acutely aware
+When I [started][3] my blog, I was still learning the ropes as a
+programmer. I was happy to have a place to share the things I learned,
+but didn't have much context for the things I was writing.
+However, as I started to develop a voice, I became acutely aware
 that the look and feel of my blog was not good.
 
-It came to a head when I wanted to make some parts stand out in
-a [post][4] about an interview brain teaser. A good [friend][5] of mine
-took me to task; it was something along the lines of "Danny, this
-looks like shit".
-
+After a good [friend][5] of mine told me something along the lines
+of "Danny, are you blind?", it was clear I needed to make a change.
 He solidified what I had known for some time:
 
 > In order to have a voice, I needed more than just content.
 
-I needed to respect my viewers taste in a quality viewing experience.
-As a freshly minted math nerd from the University of Michigan, I had
-no appreciation for the look and feel of things. However, after two
-and a half years in a job that required plenty of public speaking,
-it became clear that the presentation of a message has a large impact
-on its reception.
+I needed to respect my viewers taste by providing a quality visual
+experience. This was not clear to me as a freshly minted math nerd from
+the University of Michigan. However, after two and a half years at Google
+spent building plenty of slide decks, I knew better.
 
-Thanks for reading! Feel free to continue on if you are a
-nerd like me.
+The presentation of a message has a large impact on its reception. By not
+writing with viewers in mind, I was weakening my work by increasing the
+effort required to consume it.
+
+Thanks for reading! I hope you're enjoying a more visually pleasing blog
+experience and welcome any [feedback][18] you may have.
+
+Feel free to continue on if you are a nerd like me.
 
 ## How?
 
-Inspired by my old pal [Brian][6] and by the insanely productive
+Inspired by my old buddy [Brian][6] and by the insanely productive
 [Jake Vanderplas][7], I decided to port my old content by hand.
 
 The current blog you see here is due to a few main ingredients:
 
--   The [Pelican][2] static site generator, for the Python hacker in me.
--   The [`octopress`][8] theme for Pelican. This is arguably the most
-    important part. Big thanks to the [original][9] theme, I love it!
--   Static content hosting via [GitHub Pages][10]. Luckily it's a breeze
-    to [set up][12] a [custom domain][11].
--   HTTPS always on and other perks from [CloudFlare][13]. Their slogan
+- The [Pelican][2] static site generator, for the Python hacker in me.
+- The [`octopress`][8] theme for Pelican. This is arguably the most
+  important part. Big thanks to the [original][9] theme, I love it!
+- Static content hosting via [GitHub Pages][10]. Luckily it's a breeze
+  to [set up][12] a [custom domain][11].
+- HTTPS always on and other perks from [CloudFlare][13]. They claim they
+  only need five minutes and it is not an exaggeration!
 
-    > "Give us five minutes and we'll supercharge your website."
-
-    is spot on; CloudFlare is so easy to use!
-
-Beyond that, I "enhanced" the Pelican dev experience by [adding][14]
+Beyond that, I **enhanced** the Pelican dev experience by [adding][14]
 a way to broadcast within my local network for local testing on
 mobile devices. In addition, via [Travis][15], my blog has a [build][16]
 stage just like real software. This allows the new static content
@@ -80,3 +79,4 @@ to make the switch, but I'll save that for another post.
 [15]: https://travis-ci.org/
 [16]: https://github.com/dhermes/bossylobster-blog/blob/master/.travis.yml
 [17]: https://travis-ci.org/dhermes/bossylobster-blog/
+[18]: https://github.com/dhermes/bossylobster-blog/issues/new
