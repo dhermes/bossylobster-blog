@@ -17,7 +17,9 @@ def remove_key_from_cache(image_id):
     matching_key = matches[0]
     IMAGE_NAMES.pop(matching_key)
     with open(LATEX_IMG_NAMES_FILE, 'w') as fh:
-        json.dump(IMAGE_NAMES, fh, indent=2, sort_keys=True)
+        json.dump(IMAGE_NAMES, fh, indent=2, sort_keys=True,
+                  separators=(',', ': '))
+        fh.write('\n')
 
 
 def remove_image_file(image_id):
