@@ -13,16 +13,20 @@ For the purposes of this post, let's imagine a hypothetical person. **Jeff**
 calls himself a **hard worker**. He describes himself in this way to
 friends, family and job interviewers.
 
-Unfortunately for Jeff, his claim of hardworking-ness is extremely
-ambiguous. He has now left it up to the listener to determine if he
-meant:
+Jeff, along with many other people, is worried that he may be mistaken
+for a medium or soft worker. But if a majority of people are hard
+workers, aren't they just workers?
 
-- I continue to work when I [hate it](#hate-it).
-- I have no way to [differentiate](#not-different) my contributions.
-- I am very [productive](#productive).
+Unfortunately for Jeff, in addition to being immune to self-description,
+hardworking-ness is extremely ambiguous. He has now left it up to the
+listener to determine if he meant:
+
 - I am not **lazy**.
 - I do work that is hard.
+- I continue to work when I [hate it](#hate-it).
+- I have no way to [differentiate](#not-different) my contributions.
 - I go above the call of duty.
+- I am very [productive](#productive).
 
 Let's cover each of them to help Jeff be certain what he means.
 
