@@ -1,15 +1,11 @@
-title: Hard Work Does Not Exist
+title: There Is No Such Thing As Hard Work
 date: 2014-12-10
 author: Danny Hermes (dhermes@bossylobster.com)
 tags:
-slug: hard-work-does-not-exist
+slug: there-is-no-such-thing-as-hard-work
 comments: true
 
-ALTERNATE TITLE: "Hard Work Is Not"
-
-There is no such thing as hard work.
-
-For the purposes of this post, let's imagine a hypothetical person. **Jeff**
+Let's imagine a hypothetical person. **Jeff**
 calls himself a **hard worker**. He describes himself in this way to
 friends, family and job interviewers.
 
