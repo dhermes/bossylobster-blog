@@ -1,9 +1,16 @@
 title: Constantly Seek Criticism
+description: Seeking out criticism for growth and success
 date: 2014-12-29
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Self-Improvement, Advice, Elon Musk, Business Idol
 slug: constantly-seek-criticism
 comments: true
+use_twitter_card: true
+use_open_graph: true
+use_schema_org: true
+twitter_site: @bossylobster
+twitter_creator: @bossylobster
+social_image: /images/elon-musk-criticism-thumbnail.jpg
 
 My mother often reminds me that I am wrong. She points out that from her
 perspective, it appears I believe myself to be incapable of being wrong.
@@ -40,7 +47,7 @@ tackle such grand challenges &mdash; still **seeks out criticism**:
 > It doesn't mean your friends are right ... you at least want to listen very
 > carefully to what they say, and to everyone...
 > Basically, you should take the approach that you're wrong...Your
-> goal is to be less wrong. <br>
+> goal is to be less wrong. <br/>
 > - Elon Musk
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/NU7W7qe2R0A?rel=0&amp;controls=0&amp;showinfo=0&amp;start=640&amp;end=709" frameborder="0" allowfullscreen></iframe>
