@@ -1,5 +1,5 @@
 title: Constantly Seek Criticism
-description: Seeking out criticism for growth and success
+description: Why you should seek out criticism
 date: 2014-12-31
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Feedback, Criticism, Self-Improvement, Advice, Elon Musk
