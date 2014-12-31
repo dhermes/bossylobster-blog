@@ -2,7 +2,7 @@ title: Constantly Seek Criticism
 description: Seeking out criticism for growth and success
 date: 2014-12-31
 author: Danny Hermes (dhermes@bossylobster.com)
-tags: Self-Improvement, Advice, Elon Musk, Business Idol
+tags: Feedback, Criticism, Self-Improvement, Advice, Elon Musk
 slug: constantly-seek-criticism
 comments: true
 use_twitter_card: true
@@ -30,7 +30,7 @@ Many close to me can attest that I greatly admire Elon both as an entrepreneur
 and as a scientist. He has proven as a founder of PayPal, SpaceX, and Tesla
 that his talent, technical breadth, and sheer persistence are unparalleled.
 
-But this man &mdash; more prepared than many (than any?) on this earth to
+But this man &mdash; more prepared than most on this earth to
 tackle such grand challenges &mdash; still **seeks out criticism**.
 
 ## The Feedback Mindset
