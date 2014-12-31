@@ -76,6 +76,8 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 - `prepare-yourself.jpg` - From [Flickr][15], via [Creative Commons][14]
 - `sleeping_in_class.jpg` - From [Flickr][21], via [Creative Commons][17]
 - `TI-83.png` - From [Wikipedia Commons][13]
+- `elon-musk-criticism-thumbnail.jpg` - From [YouTube][23],
+  via [Standard YouTube License][24]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: http://dhermes.github.io/
@@ -99,3 +101,5 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
 [20]: https://flic.kr/p/n4XLG
 [21]: https://flic.kr/p/E8Mz7
 [22]: https://flic.kr/p/EWAVi
+[23]: http://img.youtube.com/vi/NU7W7qe2R0A/0.jpg
+[24]: https://www.youtube.com/static?template=terms
