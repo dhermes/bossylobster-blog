@@ -2,7 +2,7 @@
 
 [![Travis Build Status](https://travis-ci.org/dhermes/bossylobster-blog.svg)](https://travis-ci.org/dhermes/bossylobster-blog/)
 
-This repository houses the content of my [blog][1] [posts][2]
+This repository houses the [content][1] of my blog [posts][2]
 as markdown. The blog is built with [Pelican][8] and I followed
 [jakevdp][10]'s [`PythonicPerambulations`][9] while getting started.
 
@@ -21,8 +21,8 @@ This depends on locally installing
 [sudo] pip install --upgrade pelican markdown
 ```
 
-This relies on heavily on the [`pelican-octopress-theme`][7] with
-a few of my own [tweaks][8]. (Hopefully they will just land in
+This relies on heavily on the [`pelican-octopress-theme`][6] with
+a few of my own [tweaks][7]. (Hopefully they will just land in
 `master`.)
 
 ## [Travis][3] Instructions
@@ -80,7 +80,7 @@ a few of my own [tweaks][8]. (Hopefully they will just land in
   via [Standard YouTube License][24]
 
 [1]: https://github.com/dhermes/dhermes.github.io
-[2]: http://dhermes.github.io/
+[2]: https://blog.bossylobster.com
 [3]: https://travis-ci.org
 [4]: https://github.com/settings/tokens/new
 [5]: https://github.com/travis-ci/travis.rb#installation
