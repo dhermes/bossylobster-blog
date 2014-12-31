@@ -12,15 +12,6 @@ from make_svg_from_latex import convert_equation
 
 
 ENV = Environment(loader=PackageLoader(__name__, 'content'))
-NODE_SCRIPT_TEMPLATE = u"""\
-katex = require('katex');
-value = katex.renderToString("%s");
-console.log(value);
-"""
-KATEX_BLOCK_TEMPLATE = u"""\
-<div class="katex-elt"><blockquote>
-%s
-</blockquote></div>"""
 TEMPLATE_HASHES_FILENAME = 'template_hashes.json'
 with open(TEMPLATE_HASHES_FILENAME, 'r') as fh:
     TEMPLATE_HASHES = json.load(fh)
@@ -42,23 +33,6 @@ def utf8_to_html_entity(char_val):
 def utf8_to_html_entities(str_val):
     chars = [utf8_to_html_entity(char_val) for char_val in str_val]
     return ''.join(chars)
-
-
-def get_katex(latex_str, blockquote=False):
-    escaped = escape_string(latex_str)
-    script_content = NODE_SCRIPT_TEMPLATE % (escaped,)
-
-    temp_script = tempfile.mktemp()
-    with open(temp_script, 'w') as fh:
-        fh.write(script_content)
-
-    node_result = subprocess.check_output(['node', temp_script])
-    result = node_result.strip().decode('utf8')
-    result = utf8_to_html_entities(result)
-    if blockquote:
-        return KATEX_BLOCK_TEMPLATE % (result,)
-    else:
-        return result
 
 
 def get_latex_img(latex_str, blockquote=False, standalone=False):
@@ -106,8 +80,7 @@ def write_template(template):
 
     print 'Writing', new_filename
     with open(new_filename, 'wb') as fh:
-        rendered_file = template.render(get_katex=get_katex,
-                                        get_latex_img=get_latex_img)
+        rendered_file = template.render(get_latex_img=get_latex_img)
         fh.write(rendered_file)
         # Make sure the file has a trailing newline.
         if rendered_file[-1] != '\n':

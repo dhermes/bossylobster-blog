@@ -10,24 +10,9 @@ section.sidebar-img {
     width: 48%;
   }
 }
-div.katex-elt {
-  text-align: center;
-}
-div.katex-elt > blockquote {
-  font-size: x-large;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-div.katex-elt > blockquote::-webkit-scrollbar {
-  height: .4em;
-  background: rgba(0, 0, 0, 0.15);
-}
-div.katex-elt > blockquote::-webkit-scrollbar-thumb:horizontal {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
 img.latex-img {
-  max-width: none;
+  height: auto;
+  max-width: 100%;
   border: none;
   vertical-align: middle;
   box-shadow: none;
