@@ -20,25 +20,25 @@ that I'll need for some other posts.
 
 #### Definition: {{ "{#define-discriminant}" }}
 
-For the form {{ get_katex("f(x, y) = a x^2 + h x y + b y^2") }}, we define the
+For the form {{ get_latex_img("f(x, y) = a x^2 + h x y + b y^2") }}, we define the
 **discriminant** as the value
-{{ get_katex("ab - \\left(\\frac{1}{2}h\\right)^2") }}.
+{{ get_latex_img("ab - \\left(\\frac{1}{2}h\\right)^2") }}.
 {{ get_latex_img("\\blacksquare") }}
 
-The base {{ get_katex("(1, 0)") }} and {{ get_katex("(0, 1)") }}
-take values {{ get_katex("a") }} and {{ get_katex("b") }} on the form in the
+The base {{ get_latex_img("(1, 0)") }} and {{ get_latex_img("(0, 1)") }}
+take values {{ get_latex_img("a") }} and {{ get_latex_img("b") }} on the form in the
 Definition above and are part of a sequence with common difference
-{{ get_katex("h") }}. In fact, if we know the values {{ get_katex("a'") }},
-{{ get_katex("b'") }} and the difference {{ get_katex("h'") }} at any base (edge
+{{ get_latex_img("h") }}. In fact, if we know the values {{ get_latex_img("a'") }},
+{{ get_latex_img("b'") }} and the difference {{ get_latex_img("h'") }} at any base (edge
 in the topograph), the value
-{{ get_katex("a'b' - \\left(\\frac{1}{2}h'\\right)^2") }} is independent of the
+{{ get_latex_img("a'b' - \\left(\\frac{1}{2}h'\\right)^2") }} is independent of the
 base and the direction (left or right) which determines the sign of
-{{ get_katex("h'") }} and hence equal to the discriminant. To see this, first
-note the sign of {{ get_katex("h'") }} is immaterial since it is squared. Also,
+{{ get_latex_img("h'") }} and hence equal to the discriminant. To see this, first
+note the sign of {{ get_latex_img("h'") }} is immaterial since it is squared. Also,
 consider the two other bases (edges) in the superbase. As in the proof of the
-climbing lemma, one base takes values {{ get_katex("a' = a") }} and
-{{ get_katex("b' = a + b + h") }} with common difference
-{{ get_katex("h' = 2a + h") }} which gives
+climbing lemma, one base takes values {{ get_latex_img("a' = a") }} and
+{{ get_latex_img("b' = a + b + h") }} with common difference
+{{ get_latex_img("h' = 2a + h") }} which gives
 
 {{ get_latex_img("\\begin{align*} a'b' - \\left(\\frac{1}{2}h'\\right)^2 &= a(a + b + h) - \\frac{1}{4}\\left(2a + h\\right)^2 \\\\ &= a^2 + a b + a h - \\left(a^2 + a h + \\frac{1}{4} h^2\\right) \\\\ &= ab - \\left(\\frac{1}{2}h\\right)^2. \\end{align*}", blockquote=True, standalone=True) }}
 
@@ -54,8 +54,8 @@ discriminant and the following.
 
 #### Definition: {{ "{#define-well}" }}
 
-A superbase {{ get_katex("W") }} is called a well if all the edges at
-{{ get_katex("W") }} point away from {{ get_katex("W") }}.
+A superbase {{ get_latex_img("W") }} is called a well if all the edges at
+{{ get_latex_img("W") }} point away from {{ get_latex_img("W") }}.
 {{ get_latex_img("\\blacksquare") }}
 
 <div markdown="1" style="text-align: center;">
@@ -63,7 +63,7 @@ A superbase {{ get_katex("W") }} is called a well if all the edges at
 </div>
 
 Notice a well is dependent on the values, hence depends on the form
-{{ get_katex("f") }}. In a positive-valued topograph, we may find a well by
+{{ get_latex_img("f") }}. In a positive-valued topograph, we may find a well by
 traveling along the topograph in the opposite direction of the edges.
 Eventually, we must encounter a superbase where all arrows point out (as
 above), leaving us nowhere to travel and thus becoming our well. This is
@@ -73,64 +73,64 @@ minimum).
 
 #### Lemma: (The Well Lemma) {{ "{#well-lemma}" }}
 
-For a positive-valued form {{ get_katex("f") }} and a well (with respect to
-{{ get_katex("f") }}) {{ get_katex("W") }}, the three values
-{{ get_katex("f") }} takes on the faces in {{ get_katex("W") }} are the smallest
-values that {{ get_katex("f") }} takes on the topograph.
+For a positive-valued form {{ get_latex_img("f") }} and a well (with respect to
+{{ get_latex_img("f") }}) {{ get_latex_img("W") }}, the three values
+{{ get_latex_img("f") }} takes on the faces in {{ get_latex_img("W") }} are the smallest
+values that {{ get_latex_img("f") }} takes on the topograph.
 
 #### Proof: {{ "{#proof-well-lemma}" }}
 
 Using the labels from the well in the definition above, the
 **Arithmetic Progression Rule** for our differences gives
 
-{{ get_katex("2\\alpha = b + c - a, \\quad 2\\beta = c + a - b, \\quad 2\\gamma = a + b - c", blockquote=True) }}
+{{ get_latex_img("2\\alpha = b + c - a, \\quad 2\\beta = c + a - b, \\quad 2\\gamma = a + b - c", blockquote=True) }}
 
 and solving,
 
-{{ get_katex("a = \\beta + \\gamma, \\quad b = \\alpha + \\gamma, \\quad c = \\beta + \\alpha.", blockquote=True) }}
+{{ get_latex_img("a = \\beta + \\gamma, \\quad b = \\alpha + \\gamma, \\quad c = \\beta + \\alpha.", blockquote=True) }}
 
-Let the superbase {{ get_katex("W = \\left\\{e_1, e_2, e_3\\right\\}") }}. Since
-{{ get_katex("W") }} is a superbase, we may write any vector as
+Let the superbase {{ get_latex_img("W = \\left\\{e_1, e_2, e_3\\right\\}") }}. Since
+{{ get_latex_img("W") }} is a superbase, we may write any vector as
 
-{{ get_katex("v = m_1 e_1 + m_2 e_2 + m_3 e_3", blockquote=True) }}
+{{ get_latex_img("v = m_1 e_1 + m_2 e_2 + m_3 e_3", blockquote=True) }}
 
-for {{ get_katex("m_1") }}, {{ get_katex("m_2") }},
+for {{ get_latex_img("m_1") }}, {{ get_latex_img("m_2") }},
 {{ get_latex_img("m_3 \\in \\mathbf{Z}") }}. Also due to the fact that
-{{ get_katex("W") }} is a superbase, {{ get_katex("e_1 + e_2 + e_3 = (0, 0)") }}
+{{ get_latex_img("W") }} is a superbase, {{ get_latex_img("e_1 + e_2 + e_3 = (0, 0)") }}
 and so we may also write
 
-{{ get_katex("v = (m_1 - k) e_1 + (m_2 - k) e_2 + (m_3 - k) e_3", blockquote=True) }}
+{{ get_latex_img("v = (m_1 - k) e_1 + (m_2 - k) e_2 + (m_3 - k) e_3", blockquote=True) }}
 
 for {{ get_latex_img("k \\in \\mathbf{Z}") }}. From this it is clear only the
-differences of the {{ get_katex("m_i") }} matter. With this as our inspiration
+differences of the {{ get_latex_img("m_i") }} matter. With this as our inspiration
 we write
 
-{{ get_katex("f(v) = \\alpha(m_2 - m_3)^2 + \\beta(m_1 - m_3)^2 + \\gamma(m_1 - m_2)^2,", blockquote=True) }}
+{{ get_latex_img("f(v) = \\alpha(m_2 - m_3)^2 + \\beta(m_1 - m_3)^2 + \\gamma(m_1 - m_2)^2,", blockquote=True) }}
 
 a formula discovered by Selling.
 
 To verify this, notice both sides of the equation are quadratic forms in
-{{ get_katex("v") }} and
+{{ get_latex_img("v") }} and
 
 {{ get_latex_img("\\begin{align*} f(e_1) = a &= \\beta + \\gamma = \\alpha \\cdot 0^2 + \\beta \\cdot 1^2 + \\gamma \\cdot 1^2 \\\\ f(e_2) = b &= \\alpha + \\gamma = \\alpha \\cdot 1^2 + \\beta \\cdot 0^2 + \\gamma \\cdot (-1)^2 \\\\ f(e_3) = c &= \\beta + \\alpha = \\alpha \\cdot (-1)^2 + \\beta \\cdot (-1)^2 + \\gamma \\cdot 0^2. \\end{align*}", blockquote=True, standalone=True) }}
 
 hence they must be equal since both sides are quadratics that agree on
 more than two points.
 
-If two of the {{ get_katex("m_i") }} are equal, then {{ get_katex("v") }}
+If two of the {{ get_latex_img("m_i") }} are equal, then {{ get_latex_img("v") }}
 must be an integral multiple of the third vector, hence the value
-{{ get_katex("f(v)") }} will be at least as largeas the value of
-{{ get_katex("f") }} on the third vector. If not, all the differences must be
-non-zero (hence greater than or equal to {{ get_katex("1") }} in absolute value,
+{{ get_latex_img("f(v)") }} will be at least as largeas the value of
+{{ get_latex_img("f") }} on the third vector. If not, all the differences must be
+non-zero (hence greater than or equal to {{ get_latex_img("1") }} in absolute value,
 since integers), thus
 
-{{ get_katex("f(v) \\geq \\alpha \\cdot 1^2 + \\beta \\cdot 1^2 + \\gamma \\cdot 1^2", blockquote=True) }}
+{{ get_latex_img("f(v) \\geq \\alpha \\cdot 1^2 + \\beta \\cdot 1^2 + \\gamma \\cdot 1^2", blockquote=True) }}
 
 which is greater than or equal to each of
-{{ get_katex("a = \\beta + \\gamma") }},
-{{ get_katex("b = \\alpha + \\gamma") }}, and
-{{ get_katex("c = \\beta + \\alpha") }} since all of {{ get_katex("\\alpha") }},
-{{ get_katex("\\beta") }}, and {{ get_katex("\\gamma") }} are non-negative.
+{{ get_latex_img("a = \\beta + \\gamma") }},
+{{ get_latex_img("b = \\alpha + \\gamma") }}, and
+{{ get_latex_img("c = \\beta + \\alpha") }} since all of {{ get_latex_img("\\alpha") }},
+{{ get_latex_img("\\beta") }}, and {{ get_latex_img("\\gamma") }} are non-negative.
 {{ get_latex_img("\\blacksquare") }}
 
 #### Corollary: {{ "{#corollary-well-lemma}" }}
@@ -140,26 +140,26 @@ superbase to any other.
 
 #### Proof: {{ "{#proof-corollary-well-lemma}" }}
 
-Using the same quadratic form {{ get_katex("f") }} as we did to show the
+Using the same quadratic form {{ get_latex_img("f") }} as we did to show the
 topograph had no cycles, we can show it is connected. Any arbitrary
 superbase is on the topograph, hence must be in some connected component
 of the topograph, but there may be more than one component. Since
-{{ get_katex("f") }} is positive-valued, we must have some well in this
+{{ get_latex_img("f") }} is positive-valued, we must have some well in this
 component. But, by the above, the values at a well must be the absolute lowest
-values {{ get_katex("f") }} takes on the topograph. This implies the well must
-take the values {{ get_katex("1") }}, {{ get_katex("1") }},
-{{ get_katex("1") }} and shows all superbases must be in the same component.
+values {{ get_latex_img("f") }} takes on the topograph. This implies the well must
+take the values {{ get_latex_img("1") }}, {{ get_latex_img("1") }},
+{{ get_latex_img("1") }} and shows all superbases must be in the same component.
 {{ get_latex_img("\\blacksquare") }}
 
 From this point, we will concentrate on a special type of form relevant
-to our discussion. For a form {{ get_katex("f") }} which takes both positive and
-negative values, but never {{ get_katex("0") }}, the topograph has a special
+to our discussion. For a form {{ get_latex_img("f") }} which takes both positive and
+negative values, but never {{ get_latex_img("0") }}, the topograph has a special
 path thatseparates the which separates the faces where takes a positive
-value and those where {{ get_katex("f") }} takes a negative value.
+value and those where {{ get_latex_img("f") }} takes a negative value.
 
 #### Claim: {{ "{#claim-river}" }}
 
-If a form {{ get_katex("f") }} takes both positive and negative values,
+If a form {{ get_latex_img("f") }} takes both positive and negative values,
 but not zero, then there is a unique path of connected edges separating
 the positive and negative values. What's more, the values that occur on
 this river do so periodically.
@@ -186,28 +186,28 @@ the path. Hence nowhere above the path can positive and negative values
 meet and similarly below. Thus the path must be unique.
 
 To show this path is periodic, we must utilize the discriminant. For
-each edge along the path, we have some positive value {{ get_katex("a") }} and a
-negative {{ get_katex("b") }} (by definition of the path) and the common
-difference {{ get_katex("h") }}. Thus the determinant {{ get_katex("D") }} must
-be negative since the product {{ get_katex("ab") }} is, hence
+each edge along the path, we have some positive value {{ get_latex_img("a") }} and a
+negative {{ get_latex_img("b") }} (by definition of the path) and the common
+difference {{ get_latex_img("h") }}. Thus the determinant {{ get_latex_img("D") }} must
+be negative since the product {{ get_latex_img("ab") }} is, hence
 
-{{ get_katex("\\left|D\\right| = \\left|ab\\right| + \\left(\\frac{1}{2}h\\right)^2.", blockquote=True) }}
+{{ get_latex_img("\\left|D\\right| = \\left|ab\\right| + \\left(\\frac{1}{2}h\\right)^2.", blockquote=True) }}
 
-Thus, both {{ get_katex("\\left(\\frac{1}{2}h\\right)^2") }} and
-{{ get_katex("\\left|ab\\right|") }} are bounded by
-{{ get_katex("\\left|D\\right|") }}. So {{ get_katex("a") }},
-{{ get_katex("b") }} and {{ get_katex("h") }} are bounded
-(by {{ get_katex("\\left|D\\right|") }}). Thus we have finitely many possible
-triples {{ get_katex("(a, b, h)") }}, hence some value must be repeated in the
+Thus, both {{ get_latex_img("\\left(\\frac{1}{2}h\\right)^2") }} and
+{{ get_latex_img("\\left|ab\\right|") }} are bounded by
+{{ get_latex_img("\\left|D\\right|") }}. So {{ get_latex_img("a") }},
+{{ get_latex_img("b") }} and {{ get_latex_img("h") }} are bounded
+(by {{ get_latex_img("\\left|D\\right|") }}). Thus we have finitely many possible
+triples {{ get_latex_img("(a, b, h)") }}, hence some value must be repeated in the
 path. This forces the path to be periodic since the triple starting from one
-triple {{ get_katex("(a, b, h)") }} determines next triple along the path and
+triple {{ get_latex_img("(a, b, h)") }} determines next triple along the path and
 hence the entire path.
 
 This path is so crucial that we give it it's own name.
 
 #### Definition: {{ "{#define-river}" }}
 
-If a form {{ get_katex("f") }} takes both positive and negative values, but not
+If a form {{ get_latex_img("f") }} takes both positive and negative values, but not
 zero, we call the path separating the positive and negative values the
 **river**. {{ get_latex_img("\\blacksquare") }}
 

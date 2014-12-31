@@ -41,56 +41,56 @@ Putting Bayes' Law to Use
 
 We need to understand what 41% even corresponds to before we can compute
 it. What's actually happened is that we know the event
-{{ get_katex("IDB") }} has occurred -- the cab has been identified
-({{ get_katex("ID") }}) as Blue ({{ get_katex("B") }}).
+{{ get_latex_img("IDB") }} has occurred -- the cab has been identified
+({{ get_latex_img("ID") }}) as Blue ({{ get_latex_img("B") }}).
 What we want is the probability that the cab **is Blue** given we know
 it has been identified -- we want:
 
-{{ get_katex("\\text{Pr}(B \\, | \\, IDB).", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(B \\, | \\, IDB).", blockquote=True) }}
 
 Using Bayes' Law, we can write
 
-{{ get_katex("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)}", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)}", blockquote=True) }}
 
 and
 
-{{ get_katex("\\text{Pr}(IDB \\, | \\, B) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(B)}.", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(IDB \\, | \\, B) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(B)}.", blockquote=True) }}
 
 identified 80% of the time hence
 
-{{ get_katex("\\text{Pr}(IDB \\, | \\, B) = 0.8", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(IDB \\, | \\, B) = 0.8", blockquote=True) }}
 
 (i.e. the probability of correct ID
 as Blue given it is actually Blue). We're also told that 15% of the cabs
 are Blue hence
 
-{{ get_katex("\\text{Pr}(B) = 0.15.", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(B) = 0.15.", blockquote=True) }}
 
  We can combine these with the second
 application of Bayes' Law above to show that
 
-{{ get_katex("\\text{Pr}(B \\text{ and } IDB \\text{ both occur}) = \\text{Pr}(IDB \\, | \\, B) \\cdot \\text{Pr}(B) = 0.12.", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(B \\text{ and } IDB \\text{ both occur}) = \\text{Pr}(IDB \\, | \\, B) \\cdot \\text{Pr}(B) = 0.12.", blockquote=True) }}
 
 The only piece of data missing now to finish our computation is
-{{ get_katex("\\text{Pr}(IDB)") }}.
+{{ get_latex_img("\\text{Pr}(IDB)") }}.
 
 Using the
 [extended form](ster.com/2014/07/bayes-law-primer.html#extended)
-of Bayes' Law, since we know that the events {{ get_katex("B") }} and
-{{ get_katex("G") }} (the cab is Blue or Green) are exclusive and cover all
+of Bayes' Law, since we know that the events {{ get_latex_img("B") }} and
+{{ get_latex_img("G") }} (the cab is Blue or Green) are exclusive and cover all
 possibilities for the cab, we can say that
 
-{{ get_katex("\\text{Pr}(IDB) = \\text{Pr}(IDB \\, | \\, B) \\cdot \\text{Pr}(B) + \\text{Pr}(IDB \\, | \\, G) \\cdot \\text{Pr}(G).", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(IDB) = \\text{Pr}(IDB \\, | \\, B) \\cdot \\text{Pr}(B) + \\text{Pr}(IDB \\, | \\, G) \\cdot \\text{Pr}(G).", blockquote=True) }}
 
 Since there is only an 80% chance of correct identification, we know that
-{{ get_katex("\\text{Pr}(IDB \\, | \\, G) = 0.2") }} (the probability of
+{{ get_latex_img("\\text{Pr}(IDB \\, | \\, G) = 0.2") }} (the probability of
 misidentifying a Green cab as Blue). We also know that 85% of the cabs are
 Green hence we can plug these in (along with numbers already computed) to get
 
-{{ get_katex("\\text{Pr}(IDB) = 0.8 \\cdot 0.15 + 0.2 \\cdot 0.85 = 0.12 + 0.17 = 0.29.", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(IDB) = 0.8 \\cdot 0.15 + 0.2 \\cdot 0.85 = 0.12 + 0.17 = 0.29.", blockquote=True) }}
 
 Putting it all together we get our answer
 
-{{ get_katex("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)} = \\frac{0.12}{0.29} \\approx 0.413793103.", blockquote=True) }}
+{{ get_latex_img("\\text{Pr}(B \\, | \\, IDB) = \\frac{\\text{Pr}(B \\text{ and } IDB \\text{ both occur})}{\\text{Pr}(IDB)} = \\frac{0.12}{0.29} \\approx 0.413793103.", blockquote=True) }}
 
 Fantastic! Now we can get back to reading...

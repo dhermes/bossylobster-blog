@@ -8,13 +8,13 @@ comments: true
 I haven't written in way too long and just wanted to post this fun
 little proof.
 
-**Assertion:** Let {{ get_katex("F_n") }} be the {{ get_katex("n") }}th
+**Assertion:** Let {{ get_latex_img("F_n") }} be the {{ get_latex_img("n") }}th
 Fibonacci number defined by
 
-{{ get_katex("F_n = F_{n-1} + F_{n-2}, \quad F_0 = 0, F_1 = 1.", blockquote=True) }}
+{{ get_latex_img("F_n = F_{n-1} + F_{n-2}, \quad F_0 = 0, F_1 = 1.", blockquote=True) }}
 
-Show that for an odd prime {{ get_katex("p \\neq 5") }}, we have
-{{ get_katex("p") }} divides {{ get_katex("F_{p^2 - 1}") }}.
+Show that for an odd prime {{ get_latex_img("p \\neq 5") }}, we have
+{{ get_latex_img("p") }} divides {{ get_latex_img("F_{p^2 - 1}") }}.
 
 **Proof:** We do this by working inside {{ get_latex_img("\\mathbb{F}_p") }}
 instead of working in {{ get_latex_img("\\mathbb{R}") }}. The recurrence is
@@ -32,29 +32,29 @@ The matrix
 
 has characteristic polynomial
 
-{{ get_katex("\\chi_A(t) = (1 - t)(0 - t) - (1)(1) = t^2 - t - 1", blockquote=True) }}
+{{ get_latex_img("\\chi_A(t) = (1 - t)(0 - t) - (1)(1) = t^2 - t - 1", blockquote=True) }}
 
-If this polynomial has distinct roots, then {{ get_katex("A") }} is
+If this polynomial has distinct roots, then {{ get_latex_img("A") }} is
 diagonalizable (this is sufficient, but not necessary). Assuming the converse
 we have
-{{ get_katex("\\chi_A(t) = (t - \\alpha)^2") }} for some
+{{ get_latex_img("\\chi_A(t) = (t - \\alpha)^2") }} for some
 {{ get_latex_img("\\alpha \\in \\mathbb{F}_p") }}; we can assume
 {{ get_latex_img("\\alpha \\in \\mathbb{F}_p") }}
-since {{ get_katex("-2\\alpha = -1") }} is
-the coefficient of {{ get_katex("t") }}, which means
-{{ get_katex("\\alpha = 2^{-1} ") }} (we are fine with this since
-{{ get_katex("p") }} odd means that {{ get_katex("2^{-1}") }} exists). In
-order for this to be a root of {{ get_katex("\\chi_A") }}, we must have
+since {{ get_latex_img("-2\\alpha = -1") }} is
+the coefficient of {{ get_latex_img("t") }}, which means
+{{ get_latex_img("\\alpha = 2^{-1} ") }} (we are fine with this since
+{{ get_latex_img("p") }} odd means that {{ get_latex_img("2^{-1}") }} exists). In
+order for this to be a root of {{ get_latex_img("\\chi_A") }}, we must have
 
 {{ get_latex_img("\\begin{align*} 0 \\equiv 4 \\cdot \\chi_A\\left(2^{-1}\\right) &\\equiv 4 \\cdot \\left(2^{-2} - 2^{-1} - 1\\right) \\\\ &\\equiv 1 - 2 - 4 \\equiv -5 \\bmod{p}. \\end{align*}", blockquote=True, standalone=True) }}
 
-Since {{ get_katex("p \\neq 5") }} is prime, this is not possible, hence
-we reached a contradiction and {{ get_katex("\\chi_A") }} does not have
+Since {{ get_latex_img("p \\neq 5") }} is prime, this is not possible, hence
+we reached a contradiction and {{ get_latex_img("\\chi_A") }} does not have
 a repeated root.
 
-Thus we may write {{ get_katex("\\chi_A(t) = (t - \\alpha)(t - \\beta)") }} for
+Thus we may write {{ get_latex_img("\\chi_A(t) = (t - \\alpha)(t - \\beta)") }} for
 {{ get_latex_img("\\alpha, \\beta \\in \\mathbb{F}_{p^2}") }} (it's possible
-that {{ get_katex("\\chi_A") }} is irreducible over
+that {{ get_latex_img("\\chi_A") }} is irreducible over
 {{ get_latex_img("\\mathbb{F}_p") }}, but due to degree considerations it
 **must** split completely over {{ get_latex_img("\\mathbb{F}_{p^2}") }}.
 Using this, we may write
@@ -66,12 +66,12 @@ and so
 
 {{ get_latex_img("A^{p^2 - 1} = P \\left(\\begin{array}{cc} \\alpha & 0 \\\\ 0 & \\beta \\end{array} \\right)^{p^2 - 1} P^{-1} = P \\left(\\begin{array}{cc} \\alpha^{p^2 - 1} & 0 \\\\ 0 & \\beta^{p^2 - 1} \\end{array} \\right)P^{-1}", blockquote=True) }}
 
-Since {{ get_katex("\\chi_A(0) = 0 - 0 - 1 \\neq 0") }} we know
-{{ get_katex("\\alpha") }} and {{ get_katex("\\beta") }} are nonzero, hence
+Since {{ get_latex_img("\\chi_A(0) = 0 - 0 - 1 \\neq 0") }} we know
+{{ get_latex_img("\\alpha") }} and {{ get_latex_img("\\beta") }} are nonzero, hence
 {{ get_latex_img("\\alpha^{p^2 - 1} = \\beta^{p^2 - 1} = 1 \\in \\mathbb{F}_{p^2}") }}.
-Thus {{ get_katex("A^{p^2 - 1} = P I_2 P^{-1} = I_2") }} and so
+Thus {{ get_latex_img("A^{p^2 - 1} = P I_2 P^{-1} = I_2") }} and so
 
 {{ get_latex_img("\\left(\\begin{array}{c} F_p \\\\ F_{p^2 - 1} \\end{array} \\right) = \\left(\\begin{array}{cc} 1 & 1 \\\\ 1 & 0 \\end{array} \\right)^{p^2 - 1} \\left(\\begin{array}{c} 1 \\\\ 0 \\end{array} \\right) = I_2 \\left( \\begin{array}{c} 1 \\\\ 0 \\end{array} \\right) = \\left( \\begin{array}{c} 1 \\\\ 0 \\end{array} \\right)", blockquote=True) }}
 
-so we have {{ get_katex("F_{p^2 - 1} = 0") }} in
+so we have {{ get_latex_img("F_{p^2 - 1} = 0") }} in
 {{ get_latex_img("\\mathbb{F}_p") }} as desired.

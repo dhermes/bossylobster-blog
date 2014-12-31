@@ -22,7 +22,7 @@ binary quadratic forms.
 
 In the very specific solution, I was able to use one picture to completely
 classify all integer solutions to the equation
-{{ get_katex("5 x^2 - y^2 = 4") }} due to some dumb luck. In the solution, we
+{{ get_latex_img("5 x^2 - y^2 = 4") }} due to some dumb luck. In the solution, we
 were able to use
 
 > Since every edge protruding from the river on the positive side has a
@@ -30,9 +30,9 @@ were able to use
 > those on the river have value greater than 4
 
 but this is no help when trying to find solutions to
-{{ get_katex("5 x^2 - y^2 = 9") }}, for example.
+{{ get_latex_img("5 x^2 - y^2 = 9") }}, for example.
 
-To answer the question {{ get_katex("5 x^2 - y^2 = 9") }}, we'll use the same
+To answer the question {{ get_latex_img("5 x^2 - y^2 = 9") }}, we'll use the same
 pretty picture, but emphasize different parts of it. As you can see
 below, to classify all the values, we only need to travel from the
 initial base
@@ -49,7 +49,7 @@ indicate below:
 </div>
 
 As noted above,for problem 137, we luckily were concerned about finding
-values {{ get_katex("4") }} or {{ get_katex("1") }}, and the climbing lemma
+values {{ get_latex_img("4") }} or {{ get_latex_img("1") }}, and the climbing lemma
 saved us from leaving the river. However, as I've noted above with
 <span class="Apple-style-span" style="color: #6fa8dc;">#1</span>,
 <span class="Apple-style-span" style="color: #6fa8dc;">#2</span>,
@@ -57,12 +57,12 @@ saved us from leaving the river. However, as I've noted above with
 <span class="Apple-style-span" style="color: #6fa8dc;">#4</span>, there
 are four **tributaries** coming from the river where we can consider larger
 values. Using the **Arithmetic Progression Rule**, we find values
-{{ get_katex("19") }}, {{ get_katex("11") }}, {{ get_katex("11") }}, and
-{{ get_katex("19") }} as the first set of values above the river. From this
-point, we can stop checking for solutions to {{ get_katex("f(x, y) = 9") }}
+{{ get_latex_img("19") }}, {{ get_latex_img("11") }}, {{ get_latex_img("11") }}, and
+{{ get_latex_img("19") }} as the first set of values above the river. From this
+point, we can stop checking for solutions to {{ get_latex_img("f(x, y) = 9") }}
 since the climbing lemma says all further values above the tributaries will be
-{{ get_katex("11") }} or greater. Thus, the only solutions come via scaling
-solutions of {{ get_katex("f(x, y) = 1") }} by a factor of {{ get_katex("3") }}
+{{ get_latex_img("11") }} or greater. Thus, the only solutions come via scaling
+solutions of {{ get_latex_img("f(x, y) = 1") }} by a factor of {{ get_latex_img("3") }}
 (using homogeneity of a quadratic form).
 
 Now for the (Python) code.
@@ -71,32 +71,32 @@ First, the data structure will be representative of a base along the
 river, but will also include the previous and next faces (on the shared
 superbases) and so we'll call it a **juncture** (my term, not Conway's).
 Each face in a juncture needs to be represented by both the pair
-{{ get_katex("(x, y)") }} and the value that {{ get_katex("f") }} takes on this
+{{ get_latex_img("(x, y)") }} and the value that {{ get_latex_img("f") }} takes on this
 face. For our sanity, we organize a juncture as a tuple
-{{ get_katex("(B, P, N, F)") }}, (in that order)
+{{ get_latex_img("(B, P, N, F)") }}, (in that order)
 
 <div markdown="1" style="text-align: center;">
   ![Golden Nugget Juncture](/images/juncture.png)
 </div>
 
-where {{ get_katex("P") }} and {{ get_katex("N") }} form a base straddling the
-river, with {{ get_katex("P") }} taking the positive value and
-{{ get_katex("N") }} negative, as well as {{ get_katex("B") }} the face "back"
-according to our orientation and {{ get_katex("F") }} the face "forward". Note,
-depending on the value of the form at {{ get_katex("F") }}, the river may
-"turn left" or "turn right" at the superbase formed by {{ get_katex("P") }},
-{{ get_katex("N") }} and {{ get_katex("F") }}.
+where {{ get_latex_img("P") }} and {{ get_latex_img("N") }} form a base straddling the
+river, with {{ get_latex_img("P") }} taking the positive value and
+{{ get_latex_img("N") }} negative, as well as {{ get_latex_img("B") }} the face "back"
+according to our orientation and {{ get_latex_img("F") }} the face "forward". Note,
+depending on the value of the form at {{ get_latex_img("F") }}, the river may
+"turn left" or "turn right" at the superbase formed by {{ get_latex_img("P") }},
+{{ get_latex_img("N") }} and {{ get_latex_img("F") }}.
 
 To move "along the river until we arrive at an identical base", we need
 a way to move "forward" (according to our imposed orientation) to the
 next juncture on the river. Moving along the river, we'll often come to
-superbases {{ get_katex("(B, N, P)") }} and need to calculate the forward face
-{{ get_katex("F") }}. To calculate {{ get_katex("F") }}, assume we have
+superbases {{ get_latex_img("(B, N, P)") }} and need to calculate the forward face
+{{ get_latex_img("F") }}. To calculate {{ get_latex_img("F") }}, assume we have
 [already written](https://github.com/dhermes/project-euler/blob/31b005fe346927bc64e30f63381c7f675533752a/python/conway_topograph.py#L33)
 a `plus`
-function that determines the vector at {{ get_katex("F") }}
-by adding the vectors from {{ get_katex("P") }} and {{ get_katex("N") }} and
-determines the value at {{ get_katex("F") }} by using the arithmetic
+function that determines the vector at {{ get_latex_img("F") }}
+by adding the vectors from {{ get_latex_img("P") }} and {{ get_latex_img("N") }} and
+determines the value at {{ get_latex_img("F") }} by using the arithmetic
 progression rule with the values at all three faces in the superbase.
 Using this helper function, we can define a way to get the next juncture
 by turning left or right:
@@ -131,18 +131,18 @@ def juncture_ident(juncture1, juncture2):
 Using these functions, we can first find the recurrence that will take
 us from a base of solutions to all solutions and second, keep track of
 the positive faces on the river to generalize the solution of
-{{ get_katex("f(x, y) = z") }}. For both of these problems, we impose a
+{{ get_latex_img("f(x, y) = z") }}. For both of these problems, we impose a
 simplification for the sake of illustration. We will only be considering
 quadratic forms
 
-{{ get_katex("f(x, y) = a x^2 + b y^2", blockquote=True) }}
+{{ get_latex_img("f(x, y) = a x^2 + b y^2", blockquote=True) }}
 
-where {{ get_katex("a > 0") }}, {{ get_katex("b < 0") }} and
-{{ get_katex("\\sqrt{\\left|\\frac{a}{b}\\right|}") }} is not rational. This
+where {{ get_latex_img("a > 0") }}, {{ get_latex_img("b < 0") }} and
+{{ get_latex_img("\\sqrt{\\left|\\frac{a}{b}\\right|}") }} is not rational. This
 guarantees the existence of a river. We will pass such forms as an
 argument `form=(a, b)`
 to our functions. We start our river at the juncture defined by the trivial base
-{{ get_katex("(1, 0), (0, 1)") }}
+{{ get_latex_img("(1, 0), (0, 1)") }}
 
 <div markdown="1" style="text-align: center;">
   ![Golden Nugget Trivial Base](/images/trivial_base.png)
@@ -150,26 +150,26 @@ to our functions. We start our river at the juncture defined by the trivial base
 
 and crawl the river using the functions defined above.
 
-> **NOTE**: {{ get_katex("f(1, -1) = a(1)^2 + b(-1)^2 = a + b") }}, etc.
+> **NOTE**: {{ get_latex_img("f(1, -1) = a(1)^2 + b(-1)^2 = a + b") }}, etc.
 
 To find the recurrence, we need just walk along the river until we get
 an identical juncture where the trivial base is replaced by the base
-{{ get_katex("(p, q), (r, s)") }}. Using the same terminology as in
+{{ get_latex_img("(p, q), (r, s)") }}. Using the same terminology as in
 [part one](/2011/08/finding-fibonacci-golden-nuggets.html),
 let the base vectors define a sequence
-{{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
-{{ get_katex("u_0 = (1, 0)") }} and{{ get_katex("v_0 = (0, 1)") }}, then we
+{{ get_latex_img("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
+{{ get_latex_img("u_0 = (1, 0)") }} and{{ get_latex_img("v_0 = (0, 1)") }}, then we
 have a recurrence
 
 {{ get_latex_img("\\begin{align*}u_{k + 1} &= p u_k + q v_k \\\\ v_{k + 1} &= r u_k + s v_k. \\end{align*}", blockquote=True, standalone=True) }}
 
 Using this
 
-{{ get_katex("u_{k + 2} - p u_{k + 1} - s(u_{k + 1} - p u_k) = q v_{k + 1} - s (q v_k) = q(r u_k)", blockquote=True) }}
+{{ get_latex_img("u_{k + 2} - p u_{k + 1} - s(u_{k + 1} - p u_k) = q v_{k + 1} - s (q v_k) = q(r u_k)", blockquote=True) }}
 
-hence {{ get_katex("u") }} satisfies the recurrence
-{{ get_katex("u_{k + 2} = (r q - p s)u_k + (p + s)u_{k + 1}") }}. (You
-can check that {{ get_katex("v") }} satisfies this as well.) Hence our function
+hence {{ get_latex_img("u") }} satisfies the recurrence
+{{ get_latex_img("u_{k + 2} = (r q - p s)u_k + (p + s)u_{k + 1}") }}. (You
+can check that {{ get_latex_img("v") }} satisfies this as well.) Hence our function
 to spit out the recurrence coefficients is:
 
 ```python
@@ -190,10 +190,10 @@ def get_recurrence(form):
     return (r*q - p*s, p + s)
 ```
 
-For solving {{ get_katex("f(x, y) = z") }}, ({{ get_katex("z") }} positive)
+For solving {{ get_latex_img("f(x, y) = z") }}, ({{ get_latex_img("z") }} positive)
 we need to consider all the positive tributaries coming out of the river and
 let them grow and grow until the climbing lemma tells us we no longer need
-to consider values larger than {{ get_katex("z") }}. In order to consider
+to consider values larger than {{ get_latex_img("z") }}. In order to consider
 tributaries, we describe a new kind of juncture. Instead of having a
 positive/negative base in the center of the juncture, we have two consecutive
 faces from the positive side
@@ -255,11 +255,11 @@ def seek_up_to_val(juncture, max_value):
 ```
 
 Finally, we can combine these two helper functions into a function which
-will find all solutions to {{ get_katex("f(x, y) = z") }} above the river. We
-may have a pair (or pairs) {{ get_katex("(x, y)") }} on the topograph where
-{{ get_katex("f(x, y) = \\frac{z}{k^2}") }} for some integer
-{{ get_katex("k") }}; if so, this gives rise to a solution
-{{ get_katex("(kx, ky)") }} which we'll be sure to account for in our function.
+will find all solutions to {{ get_latex_img("f(x, y) = z") }} above the river. We
+may have a pair (or pairs) {{ get_latex_img("(x, y)") }} on the topograph where
+{{ get_latex_img("f(x, y) = \\frac{z}{k^2}") }} for some integer
+{{ get_latex_img("k") }}; if so, this gives rise to a solution
+{{ get_latex_img("(kx, ky)") }} which we'll be sure to account for in our function.
 
 ```python
 def all_values_on_form(form, value):

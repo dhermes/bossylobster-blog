@@ -24,15 +24,15 @@ In the following, as mentioned in Part 1,
 these notions.
 
 To begin to form the topograph, note each superbase
-{{ get_katex("\\left\\{e_1, e_2, e_3\\right\\}") }} contains only three bases
+{{ get_latex_img("\\left\\{e_1, e_2, e_3\\right\\}") }} contains only three bases
 
-{{ get_katex("\\left\\{e_1, e_2\\right\\}, \\left\\{e_2, e_3\\right\\}, \\left\\{e_3, e_1\\right\\}", blockquote=True) }}
+{{ get_latex_img("\\left\\{e_1, e_2\\right\\}, \\left\\{e_2, e_3\\right\\}, \\left\\{e_3, e_1\\right\\}", blockquote=True) }}
 
 as subsets. Going the other direction, a base
-{{ get_katex("\\left\\{e_1, e_2\\right\\}") }} can only possibly be contained
+{{ get_latex_img("\\left\\{e_1, e_2\\right\\}") }} can only possibly be contained
 as a subset of two superbases:
 
-{{ get_katex("\\langle e_1, e_2, (e_1 + e_2)\\rangle, \\langle e_1, e_2, (e_1 - e_2)\\rangle.", blockquote=True) }}
+{{ get_latex_img("\\langle e_1, e_2, (e_1 + e_2)\\rangle, \\langle e_1, e_2, (e_1 - e_2)\\rangle.", blockquote=True) }}
 
 With these two facts in hand, we can begin to form the geometric structure of
 the topograph. The interactions between bases and superbases (as well as the
@@ -56,8 +56,8 @@ superbase (endpoint) has three bases (edges) coming out of it.
 </div>
 
 As we traverse each edge (base) surrounding a given vector
-({{ get_katex("e_1") }} above), we move from superbase (vertex) to superbase
-(vertex), and form a face. Starting from a base {{ get_katex("e_1, e_2") }},
+({{ get_latex_img("e_1") }} above), we move from superbase (vertex) to superbase
+(vertex), and form a face. Starting from a base {{ get_latex_img("e_1, e_2") }},
 traveling along each of the new faces encountered we begin to form the full
 (labeled) topograph below:
 
@@ -65,20 +65,20 @@ traveling along each of the new faces encountered we begin to form the full
   ![Conway Growing the Topograph](/images/conway_growing_graph.png)
 </div>
 
-Notice the **values** of {{ get_katex("f") }} on the combinations of
-{{ get_katex("e_1") }} and {{ get_katex("e_2") }} is immaterial to the above
+Notice the **values** of {{ get_latex_img("f") }} on the combinations of
+{{ get_latex_img("e_1") }} and {{ get_latex_img("e_2") }} is immaterial to the above
 discussion, hence the shape of the topograph doesn't depend on
-{{ get_katex("f") }}.
+{{ get_latex_img("f") }}.
 
-If we know the values of {{ get_katex("f") }} at some superbase, it is actually
-possible to find the values of {{ get_katex("f") }} at vectors (faces) we
-encounter on the topograph without actually knowing {{ get_katex("f") }}.
+If we know the values of {{ get_latex_img("f") }} at some superbase, it is actually
+possible to find the values of {{ get_latex_img("f") }} at vectors (faces) we
+encounter on the topograph without actually knowing {{ get_latex_img("f") }}.
 
 #### Claim: {{ "{#claim-arith-prog-rule}" }}
 
-For vectors {{ get_katex("v_1, v_2") }},
+For vectors {{ get_latex_img("v_1, v_2") }},
 
-{{ get_katex("f(v_1 + v_2) + f(v_1 - v_2) = 2\\left(f(v_1) + f(v_2)\\right)", blockquote=True) }}
+{{ get_latex_img("f(v_1 + v_2) + f(v_1 - v_2) = 2\\left(f(v_1) + f(v_2)\\right)", blockquote=True) }}
 
 #### Proof: {{ "{#proof-arith-prog-rule}" }}
 
@@ -87,34 +87,34 @@ Exercise. (If you really can't get it, let me know in the comments.)
 
 This implies that if
 
-{{ get_katex("a = f(v_1), \\quad b = f(v_2), \\quad c = f(v_1 + v_2), \\quad d = f(v_1 - v_2)", blockquote=True) }}
+{{ get_latex_img("a = f(v_1), \\quad b = f(v_2), \\quad c = f(v_1 + v_2), \\quad d = f(v_1 - v_2)", blockquote=True) }}
 
 then
 
-{{ get_katex("d, \\, a + b, \\, c", blockquote=True) }}
+{{ get_latex_img("d, \\, a + b, \\, c", blockquote=True) }}
 
-form an arithmetic progression with common difference {{ get_katex("h") }}. This
+form an arithmetic progression with common difference {{ get_latex_img("h") }}. This
 so-called **Arithmetic Progression Rule** allows us to mark each edge with a
-direction based on the value of {{ get_katex("h") }}. Hence if
-{{ get_katex("d < a + b < c") }}, we have {{ get_katex("h > 0") }} and the
+direction based on the value of {{ get_latex_img("h") }}. Hence if
+{{ get_latex_img("d < a + b < c") }}, we have {{ get_latex_img("h > 0") }} and the
 following directed edge:
 
 <div markdown="1" style="text-align: center;">
   ![Conway Directed Edge](/images/conway_directed_edge.png)
 </div>
 
-Obviously starting from a base {{ get_katex("e_1, e_2") }}, one wonders if it is
-possible to move to any pair {{ get_katex("(x, y)") }} with {{ get_katex("x") }}
-and {{ get_katex("y") }} coprime along the topograph. It turns out that we can;
+Obviously starting from a base {{ get_latex_img("e_1, e_2") }}, one wonders if it is
+possible to move to any pair {{ get_latex_img("(x, y)") }} with {{ get_latex_img("x") }}
+and {{ get_latex_img("y") }} coprime along the topograph. It turns out that we can;
 the topograph forms a structure called a tree, and all nodes are connected.
 
 #### Lemma: (Climbing Lemma) {{ "{#climbing-lemma}" }}
 
-Given a superbase {{ get_katex("Q") }} with the surrounding faces taking values
-{{ get_katex("a") }}, {{ get_katex("b") }}, and {{ get_katex("c") }} as below,
-if {{ get_katex("a") }}, {{ get_katex("b") }} and the common difference
-{{ get_katex("h") }} are all positive, then {{ get_katex("c") }} is positive and
-the other two edges at {{ get_katex("Q") }} point away from {{ get_katex("Q") }}.
+Given a superbase {{ get_latex_img("Q") }} with the surrounding faces taking values
+{{ get_latex_img("a") }}, {{ get_latex_img("b") }}, and {{ get_latex_img("c") }} as below,
+if {{ get_latex_img("a") }}, {{ get_latex_img("b") }} and the common difference
+{{ get_latex_img("h") }} are all positive, then {{ get_latex_img("c") }} is positive and
+the other two edges at {{ get_latex_img("Q") }} point away from {{ get_latex_img("Q") }}.
 
 <div markdown="1" style="text-align: center;">
   ![Conway Directed Edge Superbase](/images/conway_directed_edge_superbase.png)
@@ -122,17 +122,17 @@ the other two edges at {{ get_katex("Q") }} point away from {{ get_katex("Q") }}
 
 #### Proof: {{ "{#proof-climbing-lemma}" }}
 
-First, {{ get_katex("c") }} is positive because
-{{ get_katex("h = c - (a + b)") }}, hence {{ get_katex("c = a + b + h > 0") }}.
-The two other edges at {{ get_katex("Q") }} have common differences
-{{ get_katex("(a + c) - b") }} and {{ get_katex("(b + c) - a") }}. Since
-{{ get_katex("c = a + b + h") }} is greater than both {{ get_katex("a") }} and
-{{ get_katex("b") }}, these differences are positive.
+First, {{ get_latex_img("c") }} is positive because
+{{ get_latex_img("h = c - (a + b)") }}, hence {{ get_latex_img("c = a + b + h > 0") }}.
+The two other edges at {{ get_latex_img("Q") }} have common differences
+{{ get_latex_img("(a + c) - b") }} and {{ get_latex_img("(b + c) - a") }}. Since
+{{ get_latex_img("c = a + b + h") }} is greater than both {{ get_latex_img("a") }} and
+{{ get_latex_img("b") }}, these differences are positive.
 {{ get_latex_img("\\blacksquare") }}
 
 Notice also that this establishes two new triples
-{{ get_katex("(a, a + b + h, 2 a + h)") }} and
-{{ get_katex("(b, a + b + h, 2 b + h)") }} that continue to point away
+{{ get_latex_img("(a, a + b + h, 2 a + h)") }} and
+{{ get_latex_img("(b, a + b + h, 2 b + h)") }} that continue to point away
 from each successive superbase and hence **climb** the topograph. We can
 use this lemma (along with a specific form) to show that there are no
 cycles in the topograph, i.e. the topograph doesn't loop back on

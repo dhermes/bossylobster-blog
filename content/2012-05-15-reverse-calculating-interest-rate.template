@@ -31,67 +31,67 @@ break the following down into parts before going on full steam.
 Step I: Break Down the [Amortization Schedule][amort-sched]
 -----------------------------------------------------------
 
-We can do this using the series {{ get_katex("\\left\\{P_i\\right\\}_i") }} of
+We can do this using the series {{ get_latex_img("\\left\\{P_i\\right\\}_i") }} of
 principal owed, which varies over time and will go to zero once paid
-off. In this series, {{ get_katex("P_0") }} is the principal owed currently and
-{{ get_katex("P_i") }} is the principal owed after {{ get_katex("i") }}
+off. In this series, {{ get_latex_img("P_0") }} is the principal owed currently and
+{{ get_latex_img("P_i") }} is the principal owed after {{ get_latex_img("i") }}
 payments have been made. (Assuming monthly payments, this will be after
-{{ get_katex("i") }} months.) If the term is {{ get_katex("T") }} periods,
-then we have {{ get_katex("P_T = 0") }}.
+{{ get_latex_img("i") }} months.) If the term is {{ get_latex_img("T") }} periods,
+then we have {{ get_latex_img("P_T = 0") }}.
 
-We have already introduced the term ({{ get_katex("T") }}); we also need the
-value of the recurring (again, usually monthly) payment {{ get_katex("R") }},
-the interest rate {{ get_katex("r") }} and the initial principal owed
-{{ get_katex("P_0 = P") }}.
+We have already introduced the term ({{ get_latex_img("T") }}); we also need the
+value of the recurring (again, usually monthly) payment {{ get_latex_img("R") }},
+the interest rate {{ get_latex_img("r") }} and the initial principal owed
+{{ get_latex_img("P_0 = P") }}.
 
 #### Time-Relationship between Principal Values
 
-If after {{ get_katex("i") }} periods, {{ get_katex("P_i") }} is owed, then
-after one period has elapsed, we will owe {{ get_katex("P_i \\cdot m") }}
-where {{ get_katex("m = m(r)") }} is some multiplier based on the length of the
+If after {{ get_latex_img("i") }} periods, {{ get_latex_img("P_i") }} is owed, then
+after one period has elapsed, we will owe {{ get_latex_img("P_i \\cdot m") }}
+where {{ get_latex_img("m = m(r)") }} is some multiplier based on the length of the
 term. For example if each period is one month, then we divide our rate by
-{{ get_katex("12") }} for the interest and add {{ get_katex("1") }} to note
+{{ get_latex_img("12") }} for the interest and add {{ get_latex_img("1") }} to note
 that we are adding to existing principal:
 
-{{ get_katex("m(r) = 1 + \\frac{r}{12}.", blockquote=True) }}
+{{ get_latex_img("m(r) = 1 + \\frac{r}{12}.", blockquote=True) }}
 
-In addition to the interest, we will have paid off {{ get_katex("R") }} hence
+In addition to the interest, we will have paid off {{ get_latex_img("R") }} hence
 
-{{ get_katex("P_{i + 1} = P_i \\cdot m - R.", blockquote=True) }}
+{{ get_latex_img("P_{i + 1} = P_i \\cdot m - R.", blockquote=True) }}
 
-#### Formula for {{ get_katex("P_i") }}
+#### Formula for {{ get_latex_img("P_i") }}
 
-Using this, we can actually determine {{ get_katex("P_i") }} strictly in terms
-of {{ get_katex("m, R") }} and {{ get_katex("P") }}. First, note that
+Using this, we can actually determine {{ get_latex_img("P_i") }} strictly in terms
+of {{ get_latex_img("m, R") }} and {{ get_latex_img("P") }}. First, note that
 
 {{ get_latex_img("\\begin{align*} P_2 = P_1 \\cdot m - R &= (P_0 \\cdot m - R) \\cdot m - R \\\\ &= P \\cdot m^2 - R(m + 1) \\end{align*}", blockquote=True, standalone=True) }}
 
-since {{ get_katex("P_0 = P") }}. We can show inductively that
+since {{ get_latex_img("P_0 = P") }}. We can show inductively that
 
-{{ get_katex("\\displaystyle P_i = P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j.", blockquote=True) }}
+{{ get_latex_img("\\displaystyle P_i = P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j.", blockquote=True) }}
 
-We already have the base case {{ get_katex("i = 1") }}, by definition.
-Assuming it holds for {{ get_katex("i") }}, we see that
+We already have the base case {{ get_latex_img("i = 1") }}, by definition.
+Assuming it holds for {{ get_latex_img("i") }}, we see that
 
 {{ get_latex_img("\\begin{align*} P_{i + 1} = P_i \\cdot m - R &= m \\cdot \\left(P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j\\right) - R \\\\ &= P \\cdot m^{i + 1} - R \\cdot \\sum_{j = 1}^{i} m^j - R, \\end{align*}", blockquote=True, standalone=True) }}
 
-and our induction is complete. (We bump the index {{ get_katex("j") }} since
-we are multiplying each {{ get_katex("m^j") }} by {{ get_katex("m") }}.)
+and our induction is complete. (We bump the index {{ get_latex_img("j") }} since
+we are multiplying each {{ get_latex_img("m^j") }} by {{ get_latex_img("m") }}.)
 Each term in the series is related to the previous one (except
-{{ get_katex("P_0") }}, since time can't be negative in this case).
+{{ get_latex_img("P_0") }}, since time can't be negative in this case).
 
 Step II: Determine a Function we want to find Zeros of
 ------------------------------------------------------
 
-Since we know {{ get_katex("P_T = 0") }} and
-{{ get_katex("\\displaystyle P_T = P \\cdot m^T - R \\cdot \\sum_{j = 0}^{T - 1} m^j") }},
+Since we know {{ get_latex_img("P_T = 0") }} and
+{{ get_latex_img("\\displaystyle P_T = P \\cdot m^T - R \\cdot \\sum_{j = 0}^{T - 1} m^j") }},
 we actually have a polynomial in place that will let us solve for
-{{ get_katex("m") }} and in so doing, solve for {{ get_katex("r") }}.
+{{ get_latex_img("m") }} and in so doing, solve for {{ get_latex_img("r") }}.
 
 To make our lives a tad easier, we'll do some rearranging. First, note
 that
 
-{{ get_katex("\\displaystyle \\sum_{j = 0}^{T - 1} m^j =m^{T - 1} + \\cdots + m + 1 = \\frac{m^T - 1}{m - 1}.", blockquote=True) }}
+{{ get_latex_img("\\displaystyle \\sum_{j = 0}^{T - 1} m^j =m^{T - 1} + \\cdots + m + 1 = \\frac{m^T - 1}{m - 1}.", blockquote=True) }}
 
 We calculate this sum of a geometric series here, but I'll just refer you to the
 [Wikipedia page](http://en.wikipedia.org/wiki/Geometric_series) instead. With
@@ -100,7 +100,7 @@ this reduction we want to solve
 {{ get_latex_img("\\begin{align*} & 0 = P \\cdot m^T - R \\cdot \\frac{m^T - 1}{m - 1} \\\\ & \\Longleftrightarrow P \\cdot m^T \\cdot (m - 1) =R \\cdot(m^T - 1). \\end{align*}", blockquote=True, standalone=True) }}
 
 With that, we have accomplished Step II, we have found a function (parameterized
-by {{ get_katex("P, T") }} and {{ get_katex("R") }} which we can
+by {{ get_latex_img("P, T") }} and {{ get_latex_img("R") }} which we can
 use zeros from to find our interest rate:
 
 {{ get_latex_img("\\begin{align*} f_{P, T, R}(m) &= P \\cdot m^T \\cdot (m - 1) -R \\cdot(m^T - 1) \\\\ &= P \\cdot m^{T + 1} - (P + R) \\cdot m^T + R. \\end{align*}", blockquote=True, standalone=True) }}
@@ -117,29 +117,29 @@ the intuition behind the method.
 #### Intuition behind the method
 
 For the intuition, assume we know (and can compute) a function
-{{ get_katex("f") }}, its derivative {{ get_katex("f'") }} and a value
-{{ get_katex("x") }}. Assume there is some zero {{ get_katex("y") }} nearby
-{{ get_katex("x") }}. Since they are close, we can approximate the
-slope of the line between the points {{ get_katex("(x, f(x)") }} and
-{{ get_katex("(y, f(y)") }} with the derivative nearby. Since we know
-{{ get_katex("x") }}, we use {{ get_katex("f'(x)") }} and intuit that
+{{ get_latex_img("f") }}, its derivative {{ get_latex_img("f'") }} and a value
+{{ get_latex_img("x") }}. Assume there is some zero {{ get_latex_img("y") }} nearby
+{{ get_latex_img("x") }}. Since they are close, we can approximate the
+slope of the line between the points {{ get_latex_img("(x, f(x))") }} and
+{{ get_latex_img("(y, f(y))") }} with the derivative nearby. Since we know
+{{ get_latex_img("x") }}, we use {{ get_latex_img("f'(x)") }} and intuit that
 
 {{ get_latex_img("f'(x) = \\text{slope} = \\frac{f(y) - f(x)}{y - x} \\Rightarrow y - x = \\frac{f(y) - f(x)}{f'(x)}.", blockquote=True) }}
 
-But, since we know that {{ get_katex("y") }} is a zero,
-{{ get_katex("f(y) - f(x) = -f(x)") }} hence
+But, since we know that {{ get_latex_img("y") }} is a zero,
+{{ get_latex_img("f(y) - f(x) = -f(x)") }} hence
 
 {{ get_latex_img("y - x = \\frac{-f(x)}{f'(x)} \\Rightarrow y = x - \\frac{f(x)}{f'(x)}.", blockquote=True) }}
 
-Using this method, one can start with a given value {{ get_katex("x_0 = x") }}
+Using this method, one can start with a given value {{ get_latex_img("x_0 = x") }}
 and  compute better and better approximations of a zero via the iteration above
-that determines {{ get_katex("y") }}. We use a sequence to do so:
+that determines {{ get_latex_img("y") }}. We use a sequence to do so:
 
-{{ get_katex("x_{i + 1} = x_i - \\frac{f(x_i)}{f'(x_i)}", blockquote=True) }}
+{{ get_latex_img("x_{i + 1} = x_i - \\frac{f(x_i)}{f'(x_i)}", blockquote=True) }}
 
-and stop calculating the {{ get_katex("x_i") }} either after
-{{ get_katex("f(x_i)") }} is below a preset threshold or after the fineness of
-the approximation {{ get_katex("\\left|x_i - x_{i + 1}\\right|") }} goes below a
+and stop calculating the {{ get_latex_img("x_i") }} either after
+{{ get_latex_img("f(x_i)") }} is below a preset threshold or after the fineness of
+the approximation {{ get_latex_img("\\left|x_i - x_{i + 1}\\right|") }} goes below a
 (likely different) preset threshold. Again, there is much that can be
 said about these approximations, but we are trying to accomplish things
 today, not theorize.
@@ -147,10 +147,10 @@ today, not theorize.
 **Programming Newton-Raphson**
 
 To perform Newton-Raphson, we'll implement a Python function that takes
-the initial guess ({{ get_katex("x_0") }}) and the functions
-{{ get_katex("f") }} and {{ get_katex("f'") }}. We'll also (arbitrarily) stop
-after the value {{ get_katex("f(x_i)") }} drops below
-{{ get_katex("10^{-8}") }} in absolute value.
+the initial guess ({{ get_latex_img("x_0") }}) and the functions
+{{ get_latex_img("f") }} and {{ get_latex_img("f'") }}. We'll also (arbitrarily) stop
+after the value {{ get_latex_img("f(x_i)") }} drops below
+{{ get_latex_img("10^{-8}") }} in absolute value.
 
 ```python
 def newton_raphson_method(guess, f, f_prime):
@@ -172,16 +172,16 @@ Step IV: Utilize the Newton-Raphson code to find an Interest Rate
 -----------------------------------------------------------------
 
 We first need to implement
-{{ get_katex("f_{P, T, R}(m) = P \\cdot m^{T + 1} - (P + R) \\cdot m^T + R") }}
-and {{ get_katex("f'_{P, T, R}") }} in Python. Before doing so, we do a simple
+{{ get_latex_img("f_{P, T, R}(m) = P \\cdot m^{T + 1} - (P + R) \\cdot m^T + R") }}
+and {{ get_latex_img("f'_{P, T, R}") }} in Python. Before doing so, we do a simple
 derivative calculation:
 
-{{ get_katex("f_{P, T, R}'(m) = P \\cdot (T + 1) \\cdot m^T - (P + R) \\cdot T \\cdot m^{T - 1}.", blockquote=True) }}
+{{ get_latex_img("f_{P, T, R}'(m) = P \\cdot (T + 1) \\cdot m^T - (P + R) \\cdot T \\cdot m^{T - 1}.", blockquote=True) }}
 
 With these [formulae](http://dictionary.reference.com/browse/formulae) in
 hand, we write a function which will spit out the corresponding `f`
-and `f_prime` given the parameters {{ get_katex("P") }} (`principal`),
-{{ get_katex("T") }} (`term`) and {{ get_katex("R") }} (`payment`):
+and `f_prime` given the parameters {{ get_latex_img("P") }} (`principal`),
+{{ get_latex_img("T") }} (`term`) and {{ get_latex_img("R") }} (`payment`):
 
 ```python
 def generate_polynomials(principal, term, payment):
@@ -202,10 +202,10 @@ to `generate_polynomials` due to
 [closure](http://en.wikipedia.org/wiki/Closure_(computer_science)) in Python.
 
 In order to solve, we need an initial `guess`, but we need to know the
-relationship between {{ get_katex("m") }} and {{ get_katex("r") }} before
+relationship between {{ get_latex_img("m") }} and {{ get_latex_img("r") }} before
 we can determine what sort of`guess`makes sense. In addition, once a value for
-{{ get_katex("m") }} is returned from Newton-Raphson, we need to be able to
-turn it into an {{ get_katex("r") }} value so functions `m` and `m_inverse`
+{{ get_latex_img("m") }} is returned from Newton-Raphson, we need to be able to
+turn it into an {{ get_latex_img("r") }} value so functions `m` and `m_inverse`
 should be implemented. For our dummy case here, we'll assume monthly
 payments (and compounding):
 
@@ -231,7 +231,7 @@ def solve_for_interest_rate(principal, term, payment, m, m_inverse):
 
 To check that this makes sense, let's plug in some values. Using the
 [bankrate.com loan calculator](http://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx),
-if we have a 30-year loan (with {{ get_katex("12 \\cdot 30 = 360") }} months of
+if we have a 30-year loan (with {{ get_latex_img("12 \\cdot 30 = 360") }} months of
 payments) of $100,000 with an interest rate of 7%, the monthly payment
 would be $665.30. Plugging this into our pipeline:
 

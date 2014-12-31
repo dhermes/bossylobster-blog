@@ -15,18 +15,18 @@ Before writing about the problem I had played around with, I want to
 give a
 <span style="text-decoration: line-through;">brief</span>
 motivation. For as long as humans have been
-doing mathematics, finding values of {{ get_katex("\\pi") }} has been deemed
+doing mathematics, finding values of {{ get_latex_img("\\pi") }} has been deemed
 worthwhile (or every generation has just found it worthwhile to waste time
 computing digits).
 
 One such way the Greeks (particularly
 [Archimedes](http://www.math.utah.edu/~alfeld/Archimedes/Archimedes.html))
-computed {{ get_katex("\\pi") }} was by approximating a circle by a regular polygon
+computed {{ get_latex_img("\\pi") }} was by approximating a circle by a regular polygon
 and letting the number of sides grow large enough so that the error
-between the area of the unit circle ({{ get_katex("\\pi \\cdot 1^2") }}) and the
+between the area of the unit circle ({{ get_latex_img("\\pi \\cdot 1^2") }}) and the
 area of the polygon would be smaller than some fixed threshold. Usually
-these thresholds were picked to ensure that the first {{ get_katex("k") }} digits
-were fully accurate (for some appropriate value of {{ get_katex("k") }}).
+these thresholds were picked to ensure that the first {{ get_latex_img("k") }} digits
+were fully accurate (for some appropriate value of {{ get_latex_img("k") }}).
 
 In many introductory Calculus courses, this problem is introduced
 exactly when the limit is introduced and students are forced to think
@@ -37,48 +37,48 @@ regular polygon:
   ![Compute pi from polygons](/images/p045.png)
 </div>
 
-Given {{ get_katex("N") }} sides, the area is {{ get_katex("N \\cdot T_N") }}
-where {{ get_katex("T_N") }} is the area of each individual triangle given by
+Given {{ get_latex_img("N") }} sides, the area is {{ get_latex_img("N \\cdot T_N") }}
+where {{ get_latex_img("T_N") }} is the area of each individual triangle given by
 one side of the polygon and the circumcenter.
 
-Call one such triangle {{ get_katex("\\Delta ABC") }} and let
-{{ get_katex("BC") }} be the side that is also a side of the polygon while the
-other sides have {{ get_katex("\\left|AB\\right| = \\left|AC\\right| = 1") }}
+Call one such triangle {{ get_latex_img("\\Delta ABC") }} and let
+{{ get_latex_img("BC") }} be the side that is also a side of the polygon while the
+other sides have {{ get_latex_img("\\left|AB\\right| = \\left|AC\\right| = 1") }}
 since the polygon is inscribed in a unit circle. The angle
-{{ get_katex("\\angle BAC = \\frac{2\\pi}{N}") }} since each of the triangles
+{{ get_latex_img("\\angle BAC = \\frac{2\\pi}{N}") }} since each of the triangles
 has the same internal
-angle and there are {{ get_katex("N") }} of them. If we can find the
-perpendicular height {{ get_katex("h") }} from {{ get_katex("AB") }} to
-{{ get_katex("C") }}, the area will be
-{{ get_katex("\\frac{1}{2} h \\left|AB\\right| = \\frac{h}{2}") }}. But we also
+angle and there are {{ get_latex_img("N") }} of them. If we can find the
+perpendicular height {{ get_latex_img("h") }} from {{ get_latex_img("AB") }} to
+{{ get_latex_img("C") }}, the area will be
+{{ get_latex_img("\\frac{1}{2} h \\left|AB\\right| = \\frac{h}{2}") }}. But we also
 know that
 
-{{ get_katex("\\sin\\left(\\angle BAC\\right) = \\frac{h}{\\left|AC\\right|}", blockquote=True) }}
+{{ get_latex_img("\\sin\\left(\\angle BAC\\right) = \\frac{h}{\\left|AC\\right|}", blockquote=True) }}
 
 hence
 
-{{ get_katex("h = \\sin\\left(\\frac{2\\pi}{N}\\right).", blockquote=True) }}
+{{ get_latex_img("h = \\sin\\left(\\frac{2\\pi}{N}\\right).", blockquote=True) }}
 
-Combining all of these, we can approximate {{ get_katex("\\pi") }} with
+Combining all of these, we can approximate {{ get_latex_img("\\pi") }} with
 the area:
 
-{{ get_katex("\\pi \\approx \\frac{N}{2} \\sin\\left(\\frac{2\\pi}{N}\\right) = \\pi \\frac{\\sin\\left(2\\pi / N\\right)}{2 \\pi / N}.", blockquote=True) }}
+{{ get_latex_img("\\pi \\approx \\frac{N}{2} \\sin\\left(\\frac{2\\pi}{N}\\right) = \\pi \\frac{\\sin\\left(2\\pi / N\\right)}{2 \\pi / N}.", blockquote=True) }}
 
 As I've shown my
 [Math 1A](http://math.berkeley.edu/courses/choosing/lowerdivcourses/math1A)
 students, we see that
 
-{{ get_katex("\\displaystyle \\lim_{N \\to \\infty} \\pi \\frac{\\sin\\left(2\\pi / N\\right)}{2 \\pi / N} = \\pi \\lim_{x \\to 0} \\frac{\\sin(x)}{x} = \\pi", blockquote=True) }}
+{{ get_latex_img("\\displaystyle \\lim_{N \\to \\infty} \\pi \\frac{\\sin\\left(2\\pi / N\\right)}{2 \\pi / N} = \\pi \\lim_{x \\to 0} \\frac{\\sin(x)}{x} = \\pi", blockquote=True) }}
 
 so these are indeed good approximations.
 
 ### Theory is Nice, But I Thought We Were Computing Something
 
 Unfortunately for us (and Archimedes), computing
-{{ get_katex("\\sin\\left(\\frac{2\\pi}{N}\\right)") }} is not quite as simple
-as dividing by {{ get_katex("N") }}, so often special values of
-{{ get_katex("N") }} were chosen. In fact, starting from {{ get_katex("N") }}
-and then using {{ get_katex("2N") }}, the areas could be computed via a special
+{{ get_latex_img("\\sin\\left(\\frac{2\\pi}{N}\\right)") }} is not quite as simple
+as dividing by {{ get_latex_img("N") }}, so often special values of
+{{ get_latex_img("N") }} were chosen. In fact, starting from {{ get_latex_img("N") }}
+and then using {{ get_latex_img("2N") }}, the areas could be computed via a special
 way of averaging the previous areas. Lucky for us, such a method is equivalent
 to the trusty
 [half angle identities](http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Double-angle.2C_triple-angle.2C_and_half-angle_formulae)
@@ -87,62 +87,62 @@ to the trusty
 To keep track of these polygons with a power of two as the number of
 sides, we call
 
-{{ get_katex("A_n = \\frac{2^n}{2} \\sin\\left(\\frac{2\\pi}{2^n}\\right).", blockquote=True) }}
+{{ get_latex_img("A_n = \\frac{2^n}{2} \\sin\\left(\\frac{2\\pi}{2^n}\\right).", blockquote=True) }}
 
 Starting out with the simplest polygon, the square with
-{{ get_katex("N = 2^2") }} sides, we have
+{{ get_latex_img("N = 2^2") }} sides, we have
 
-{{ get_katex("A_2 = 2 \\sin\\left(\\frac{\\pi}{2}\\right) = 2.", blockquote=True) }}
+{{ get_latex_img("A_2 = 2 \\sin\\left(\\frac{\\pi}{2}\\right) = 2.", blockquote=True) }}
 
 Jumping to the
 [octagon](http://en.wikipedia.org/wiki/Octagon) (no not that
 "[The Octagon](https://www.google.com/search?q=%22the+octagon%22&tbm=isch)"),
 we have
 
-{{ get_katex("A_3 = 4 \\sin\\left(\\frac{\\pi}{4}\\right) = 4 \\frac{\\sqrt{2}}{2} = 2 \\sqrt{2}.", blockquote=True) }}
+{{ get_latex_img("A_3 = 4 \\sin\\left(\\frac{\\pi}{4}\\right) = 4 \\frac{\\sqrt{2}}{2} = 2 \\sqrt{2}.", blockquote=True) }}
 
 So far, the toughest thing we've had to deal with is a
-{{ get_katex("45^{\\circ}") }} angle and haven't yet had to lean on Abraham
+{{ get_latex_img("45^{\\circ}") }} angle and haven't yet had to lean on Abraham
 ([him](/images/abraham-de-moivre.jpg), [not him](/images/abraham-lincoln.jpg))
 for help. The [hexadecagon](http://en.wikipedia.org/wiki/Hexadecagon) wants
 to change that:
 
-{{ get_katex("A_4 = 8 \\sin\\left(\\frac{\\pi}{8}\\right) = 8 \\sqrt{\\frac{1 - \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = 8 \\sqrt{\\frac{2 - \\sqrt{2}}{4}} = 4 \\sqrt{2 - \\sqrt{2}}.", blockquote=True) }}
+{{ get_latex_img("A_4 = 8 \\sin\\left(\\frac{\\pi}{8}\\right) = 8 \\sqrt{\\frac{1 - \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = 8 \\sqrt{\\frac{2 - \\sqrt{2}}{4}} = 4 \\sqrt{2 - \\sqrt{2}}.", blockquote=True) }}
 
 To really drill home the point (and motivate my next post) we'll compute
-this for the {{ get_katex("32") }}-gon (past the point where polygons
+this for the {{ get_latex_img("32") }}-gon (past the point where polygons
 have worthwhile names):
 
-{{ get_katex("A_5 = 16 \\sin\\left(\\frac{\\pi}{16}\\right) = 16 \\sqrt{\\frac{1 - \\cos\\left(\\frac{\\pi}{8}\\right)}{2}}.", blockquote=True) }}
+{{ get_latex_img("A_5 = 16 \\sin\\left(\\frac{\\pi}{16}\\right) = 16 \\sqrt{\\frac{1 - \\cos\\left(\\frac{\\pi}{8}\\right)}{2}}.", blockquote=True) }}
 
 Before, we could rely on the fact that we know that a
 45-45-90 triangle looked like, but now, we come across
-{{ get_katex("\\cos\\left(\\frac{\\pi}{8}\\right)") }}, a value
+{{ get_latex_img("\\cos\\left(\\frac{\\pi}{8}\\right)") }}, a value
 which we haven't seen before. Luckily, Abraham has help here as well:
 
-{{ get_katex("\\cos\\left(\\frac{\\pi}{8}\\right) = \\sqrt{\\frac{1 + \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = \\sqrt{\\frac{2 + \\sqrt{2}}{4}} = \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}", blockquote=True) }}
+{{ get_latex_img("\\cos\\left(\\frac{\\pi}{8}\\right) = \\sqrt{\\frac{1 + \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = \\sqrt{\\frac{2 + \\sqrt{2}}{4}} = \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}", blockquote=True) }}
 
 which lets us compute
 
-{{ get_katex("A_5 = 16 \\sqrt{\\frac{1 - \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}}{2}} = 8 \\sqrt{2 - \\sqrt{2 + \\sqrt{2}}}.", blockquote=True) }}
+{{ get_latex_img("A_5 = 16 \\sqrt{\\frac{1 - \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}}{2}} = 8 \\sqrt{2 - \\sqrt{2 + \\sqrt{2}}}.", blockquote=True) }}
 
 So why have I put you through all this? If we wave our hands like a
 [magician](/images/magician.jpg),
-we can see this pattern continues and for the general {{ get_katex("n") }}
+we can see this pattern continues and for the general {{ get_latex_img("n") }}
 
-{{ get_katex("A_n = 2^{n - 2} \\sqrt{2 - \\sqrt{2 + \\sqrt{2 + \\sqrt{\\cdots + \\sqrt{2}}}}}", blockquote=True) }}
+{{ get_latex_img("A_n = 2^{n - 2} \\sqrt{2 - \\sqrt{2 + \\sqrt{2 + \\sqrt{\\cdots + \\sqrt{2}}}}}", blockquote=True) }}
 
-where there are {{ get_katex("n - 3") }} nested radicals with the
-{{ get_katex("\\oplus") }} sign and only one minus sign at the beginning.
+where there are {{ get_latex_img("n - 3") }} nested radicals with the
+{{ get_latex_img("\\oplus") }} sign and only one minus sign at the beginning.
 
 This motivates us to study two questions, what is the limiting behavior
 of such a nested radical:
 
-{{ get_katex("\\sqrt{2 + s_1 \\sqrt{2 + s_2 \\sqrt{ \\cdots }}}", blockquote=True) }}
+{{ get_latex_img("\\sqrt{2 + s_1 \\sqrt{2 + s_2 \\sqrt{ \\cdots }}}", blockquote=True) }}
 
-as the signs {{ get_katex("s_1, s_2, \\ldots") }} take values in
-{{ get_katex("\\left\\{-1, 1\\right\\}") }}. Recasting in terms of the
-discussion above, we want to know how close we are to {{ get_katex("\\pi") }}
+as the signs {{ get_latex_img("s_1, s_2, \\ldots") }} take values in
+{{ get_latex_img("\\left\\{-1, 1\\right\\}") }}. Recasting in terms of the
+discussion above, we want to know how close we are to {{ get_latex_img("\\pi") }}
 as we increase the number of sides.
 
 When I was in high school, I just loved to
@@ -156,7 +156,7 @@ with infinitely
 [nested radicals](http://en.wikipedia.org/wiki/Nested_radical),
 I wanted to examine which sequences of signs
 
-{{ get_katex("(s_1, s_2, \\ldots)", blockquote=True) }}
+{{ get_latex_img("(s_1, s_2, \\ldots)", blockquote=True) }}
 
 produced an infinite radical that converged and what the convergence
 behavior was.
@@ -165,11 +165,11 @@ I'm fairly certain my original questions came from an Illinois Council
 of Teachers of Mathematics ([ICTM](http://www.ictm.org/contest.html))
 contest problem along the lines of
 
-{{ get_katex("\\text{Find the value of the infinite nested radical } \\sqrt{2 + \\sqrt{2 + \\cdots}}", blockquote=True) }}
+{{ get_latex_img("\\text{Find the value of the infinite nested radical } \\sqrt{2 + \\sqrt{2 + \\cdots}}", blockquote=True) }}
 
 or maybe the slightly more difficult
 
-{{ get_katex("\\sqrt{2 -\\sqrt{2 + \\sqrt{2 -\\sqrt{2 +\\cdots}}}}.", blockquote=True) }}
+{{ get_latex_img("\\sqrt{2 -\\sqrt{2 + \\sqrt{2 -\\sqrt{2 +\\cdots}}}}.", blockquote=True) }}
 
 Armed with my [TI-83](/images/TI-83.png),
 I set out to do some hardcore programming and figure it out. It took me

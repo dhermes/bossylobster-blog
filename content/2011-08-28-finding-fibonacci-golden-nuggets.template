@@ -20,120 +20,120 @@ of this post has a pretty useful abstraction.
 
 The problems asks us to consider
 
-{{ get_katex("A_F(z) = z F_1 + z^2 F_2 + z^3 F_3 + \\ldots,", blockquote=True) }}
+{{ get_latex_img("A_F(z) = z F_1 + z^2 F_2 + z^3 F_3 + \\ldots,", blockquote=True) }}
 
 the generating polynomial for the [Fibonacci sequence](#footnote)
 The problem defines (without stating so), a sequence
-{{ get_katex("\\left\\{z_n\\right\\}_{n > 0}") }} where
-{{ get_katex("A_F(z_n) = n") }} and asks us to find the values
-{{ get_katex("n") }} for which {{ get_katex("z_n") }} is rational.
-Such a value {{ get_katex("n") }} is called a **golden nugget**. As noted in
+{{ get_latex_img("\\left\\{z_n\\right\\}_{n > 0}") }} where
+{{ get_latex_img("A_F(z_n) = n") }} and asks us to find the values
+{{ get_latex_img("n") }} for which {{ get_latex_img("z_n") }} is rational.
+Such a value {{ get_latex_img("n") }} is called a **golden nugget**. As noted in
 the problem statement,
-{{ get_katex("\\displaystyle A_F\\left(\\frac{1}{2}\\right) = 2") }},
-hence {{ get_katex("\\displaystyle z_2 = \\frac{1}{2}") }} is rational and
-{{ get_katex("2") }} is the first golden nugget.
+{{ get_latex_img("\\displaystyle A_F\\left(\\frac{1}{2}\\right) = 2") }},
+hence {{ get_latex_img("\\displaystyle z_2 = \\frac{1}{2}") }} is rational and
+{{ get_latex_img("2") }} is the first golden nugget.
 
-As a first step, we determine a criterion for {{ get_katex("n") }} to be a
-golden nugget by analyzing the equation {{ get_katex("A_F(z) = n") }}. With
+As a first step, we determine a criterion for {{ get_latex_img("n") }} to be a
+golden nugget by analyzing the equation {{ get_latex_img("A_F(z) = n") }}. With
 the recurrence relation given by the Fibonacci sequence as inspiration, we
 consider
 
 {{ get_latex_img("\\begin{align*}(z + z^2)A_F(z) = z^2 F_1 &+ z^3 F_2 + z^4 F_3 + \\ldots\\\\ &+z^3 F_1 + z^4 F_2 + z^5 F_3 + \\ldots. \\end{align*}", blockquote=True, standalone=True) }}
 
-Due to the fact that {{ get_katex("F_2 = F_1 = 1") }} and the nature
+Due to the fact that {{ get_latex_img("F_2 = F_1 = 1") }} and the nature
 of the recurrence relation, we have
 
-{{ get_katex("(z +z^2)A_F(z) = z^2 F_2 + z^3 F_3 + z^4 F_4 + \\ldots = A_F(z) -z", blockquote=True) }}
+{{ get_latex_img("(z +z^2)A_F(z) = z^2 F_2 + z^3 F_3 + z^4 F_4 + \\ldots = A_F(z) -z", blockquote=True) }}
 
 which implies
 
-{{ get_katex("A_F(z) = \\frac{z}{1 - z -z^2}.", blockquote=True) }}
+{{ get_latex_img("A_F(z) = \\frac{z}{1 - z -z^2}.", blockquote=True) }}
 
-Now solving{{ get_katex("A_F(z) = n") }}, we have
+Now solving{{ get_latex_img("A_F(z) = n") }}, we have
 
 {{ get_latex_img("z = n - n z - n z^2 \\Rightarrow n z^2 + (n + 1)z - n = 0.", blockquote=True) }}
 
-In order for {{ get_katex("n") }} to be a golden nugget, we must have the
-solutions {{ get_katex("z") }} rational. This only occurs if the discriminant
+In order for {{ get_latex_img("n") }} to be a golden nugget, we must have the
+solutions {{ get_latex_img("z") }} rational. This only occurs if the discriminant
 
-{{ get_katex("(n + 1)^2 - 4(n)(-n) = 5 n^2 + 2 n + 1", blockquote=True) }}
+{{ get_latex_img("(n + 1)^2 - 4(n)(-n) = 5 n^2 + 2 n + 1", blockquote=True) }}
 
 in the quadratic is the square of a rational.
 
-So we now positive seek values {{ get_katex("n") }} such that
-{{ get_katex("5 n^2 + 2 n + 1 = m^2") }} for some integer {{ get_katex("m") }}
-(the value {{ get_katex("m") }} must be an integer since a rational square root
+So we now positive seek values {{ get_latex_img("n") }} such that
+{{ get_latex_img("5 n^2 + 2 n + 1 = m^2") }} for some integer {{ get_latex_img("m") }}
+(the value {{ get_latex_img("m") }} must be an integer since a rational square root
 of an integer can only be an integer.) This equation is equivalent to
 
-{{ get_katex("25n^2 + 10n + 5 = 5m^2", blockquote=True) }}
+{{ get_latex_img("25n^2 + 10n + 5 = 5m^2", blockquote=True) }}
 
 which is equivalent to
 
-{{ get_katex("5m^2 - (5 n + 1)^2 = 4.", blockquote=True) }}
+{{ get_latex_img("5m^2 - (5 n + 1)^2 = 4.", blockquote=True) }}
 
 This is where Conway's topograph comes in. We'll use the topograph with the
 quadratic form
 
-{{ get_katex("f(x, y) = 5 x^2 - y^2", blockquote=True) }}
+{{ get_latex_img("f(x, y) = 5 x^2 - y^2", blockquote=True) }}
 
 to find our solutions. Note
 - A solution is only valuable if {{ get_latex_img("y \\equiv 1 \\bmod{5}") }}
-  since {{ get_katex("y = 5 n + 1") }} must hold.
-- Since {{ get_katex("\\sqrt{5}") }} is irrational, {{ get_katex("f") }} can
-  never take the value {{ get_katex("0") }}
-- Since {{ get_katex("f(1, 0) = 5") }} and {{ get_katex("f(0, 1) = -1") }},
-  there is a river on the topograph and the values of {{ get_katex("f") }} occur
+  since {{ get_latex_img("y = 5 n + 1") }} must hold.
+- Since {{ get_latex_img("\\sqrt{5}") }} is irrational, {{ get_latex_img("f") }} can
+  never take the value {{ get_latex_img("0") }}
+- Since {{ get_latex_img("f(1, 0) = 5") }} and {{ get_latex_img("f(0, 1) = -1") }},
+  there is a river on the topograph and the values of {{ get_latex_img("f") }} occur
   in a periodic fashion.
-- Finally, since we take pairs {{ get_katex("(x, y)") }} that occur on the
-  topograph, we know {{ get_katex("x") }} and {{ get_katex("y") }} share no
+- Finally, since we take pairs {{ get_latex_img("(x, y)") }} that occur on the
+  topograph, we know {{ get_latex_img("x") }} and {{ get_latex_img("y") }} share no
   factors.
 
-Hence solutions {{ get_katex("f(x, y) = 4") }} can come either come from pairs
+Hence solutions {{ get_latex_img("f(x, y) = 4") }} can come either come from pairs
 on the topograph or by taking a pair which satisfies
-{{ get_katex("f(x, y) = 1") }} and scaling up by a factor of
-{{ get_katex("2") }} (we will have
-{{ get_katex("f(2x, 2y) = 2^2 \\cdot 1 = 4") }} due to the homogeneity of
-{{ get_katex("f") }}).
+{{ get_latex_img("f(x, y) = 1") }} and scaling up by a factor of
+{{ get_latex_img("2") }} (we will have
+{{ get_latex_img("f(2x, 2y) = 2^2 \\cdot 1 = 4") }} due to the homogeneity of
+{{ get_latex_img("f") }}).
 
-Starting from the trivial base {{ get_katex("u = (1, 0)") }} and
-{{ get_katex("v = (0, 1)") }}, the full period of the river has length
-{{ get_katex("8") }} as seen below:
+Starting from the trivial base {{ get_latex_img("u = (1, 0)") }} and
+{{ get_latex_img("v = (0, 1)") }}, the full period of the river has length
+{{ get_latex_img("8") }} as seen below:
 
 <div markdown="1" style="text-align: center;">
   ![Golden Nugget](/images/golden_nugget.png)
 </div>
 
 > **NOTE**: In the above, the values denoted as combinations of
-> {{ get_katex("u") }} and {{ get_katex("v") }} are the vectors for each face
-> on the topograph while the numbers are the values of {{ get_katex("f") }} on
+> {{ get_latex_img("u") }} and {{ get_latex_img("v") }} are the vectors for each face
+> on the topograph while the numbers are the values of {{ get_latex_img("f") }} on
 > these vectors.
 
 Since every edge protruding from the river on the positive side has a value of
-{{ get_katex("4") }} on a side (the value pairs are {{ get_katex("(5, 4)") }},
-{{ get_katex("(4, 1)") }}, {{ get_katex("(1, 4)") }}, and
-{{ get_katex("(4, 5)") }}), by the climbing lemma, we know all values above
-those on the river have value greater than {{ get_katex("4") }}. Thus, the only
+{{ get_latex_img("4") }} on a side (the value pairs are {{ get_latex_img("(5, 4)") }},
+{{ get_latex_img("(4, 1)") }}, {{ get_latex_img("(1, 4)") }}, and
+{{ get_latex_img("(4, 5)") }}), by the climbing lemma, we know all values above
+those on the river have value greater than {{ get_latex_img("4") }}. Thus, the only
 solutions we are concerned with
 
-{{ get_katex("f(x, y) = 1 \\quad \\text{or} \\quad 4", blockquote=True) }}
+{{ get_latex_img("f(x, y) = 1 \\quad \\text{or} \\quad 4", blockquote=True) }}
 
 must appear on the river. Notice on the river, the
-trivial base {{ get_katex("(u, v)") }} is replaced by the base
-{{ get_katex("(9 u + 20 v, 4 u + 9 v)") }}. This actually gives us a concrete
+trivial base {{ get_latex_img("(u, v)") }} is replaced by the base
+{{ get_latex_img("(9 u + 20 v, 4 u + 9 v)") }}. This actually gives us a concrete
 recurrence for the river and with it we can get a complete understanding of our
 solution set.
 
 When we start from the trivial base, we only need consider moving to the right
 (orientation provided by the above picture) along the river since we only care
-about the absolute value of the coordinates ({{ get_katex("n") }} comes from
-{{ get_katex("y") }}, so it must be positive). As such, we have a sequence of
-bases {{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
-{{ get_katex("u_0 = (1, 0)") }}, {{ get_katex("v_0 = (0, 1)") }} and recurrence
+about the absolute value of the coordinates ({{ get_latex_img("n") }} comes from
+{{ get_latex_img("y") }}, so it must be positive). As such, we have a sequence of
+bases {{ get_latex_img("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
+{{ get_latex_img("u_0 = (1, 0)") }}, {{ get_latex_img("v_0 = (0, 1)") }} and recurrence
 
 {{ get_latex_img("\\begin{align*}u_{k + 1} &= 9 u_k + 20 v_k \\\\ v_{k + 1} &= 4 u_k + 9 v_k. \\end{align*}", blockquote=True, standalone=True) }}
 
-This implies that both {{ get_katex("\\left\\{u_k\\right\\}") }} and
-{{ get_katex("\\left\\{v_k\\right\\}") }} satisfy the same relation
+This implies that both {{ get_latex_img("\\left\\{u_k\\right\\}") }} and
+{{ get_latex_img("\\left\\{v_k\\right\\}") }} satisfy the same relation
 
 {{ get_latex_img("\\begin{align*}u_{k + 2} - 9 u_{k + 1} - 9(u_{k + 1} - 9 u_k) &= 20 v_{k + 1} - 9(20 v_k) = 20(4 u_k) \\\\v_{k + 2} - 9 v_{k + 1} - 9(v_{k + 1} - 9 v_k) &=4 u_{k + 1} - 9(4 u_k) = 4(20 v_k). \\end{align*}", blockquote=True, standalone=True) }}
 
@@ -141,19 +141,19 @@ With these recurrences, you can take the three base solutions on the river and
 quickly find each successive golden nugget. Since each value is a coordinate in
 a vector, it satisfies the same linear recurrence as the vector. Also, since
 each of the solution vectors occur as linear combinations of
-{{ get_katex("u_k") }} and {{ get_katex("v_k") }}, they must satisfy the same
+{{ get_latex_img("u_k") }} and {{ get_latex_img("v_k") }}, they must satisfy the same
 recurrence as well.
 
 Since the recurrence is degree two, we need the first two values to determine
 the entire sequence. For the first solution we start with
-{{ get_katex("u_0 + v_0 = (1, 1)") }} and
-{{ get_katex("u_1 + v_1 = (13, 29)") }}; for the second solution we start with
-{{ get_katex("u_0 + 2 v_0 = (2, 4)") }} and
-{{ get_katex("u_1 + 2 v_1 = (17, 38)") }}; and for the third solution we start
-with {{ get_katex("5 u_0 + 11 v_0 = (5, 11)") }} and
-{{ get_katex("5 u_1 + 11 v_1 = (89, 199)") }}. For the second solution, since
-{{ get_katex("f(1, 2) = 1") }}, we use homogeneity to scale up to
-{{ get_katex("(2, 4)") }} and {{ get_katex("(34, 76)") }} to start us off. With
+{{ get_latex_img("u_0 + v_0 = (1, 1)") }} and
+{{ get_latex_img("u_1 + v_1 = (13, 29)") }}; for the second solution we start with
+{{ get_latex_img("u_0 + 2 v_0 = (2, 4)") }} and
+{{ get_latex_img("u_1 + 2 v_1 = (17, 38)") }}; and for the third solution we start
+with {{ get_latex_img("5 u_0 + 11 v_0 = (5, 11)") }} and
+{{ get_latex_img("5 u_1 + 11 v_1 = (89, 199)") }}. For the second solution, since
+{{ get_latex_img("f(1, 2) = 1") }}, we use homogeneity to scale up to
+{{ get_latex_img("(2, 4)") }} and {{ get_latex_img("(34, 76)") }} to start us off. With
 these values, we take the second coordinate along the recurrence and get the
 following values:
 
@@ -237,10 +237,10 @@ following values:
 </center>
 
 We don't get our fifteenth golden nugget candidate (value must be one
-more than a multiple of {{ get_katex("5") }}) until
-{{ get_katex("5600748293801") }}, which yields
+more than a multiple of {{ get_latex_img("5") }}) until
+{{ get_latex_img("5600748293801") }}, which yields
 
-{{ get_katex("n = 1120149658760.", blockquote=True) }}
+{{ get_latex_img("n = 1120149658760.", blockquote=True) }}
 
 By no means did I do this by hand in real life; I didn't make a pretty
 representation of the river either. I just wanted to make the idea clear
@@ -253,4 +253,4 @@ of this post.
 
 The Fibonacci sequence is given by
 
-{{ get_katex("F_n = F_{n-1} + F_{n-2}, \quad F_0 = 0, F_1 = 1.", blockquote=True) }}
+{{ get_latex_img("F_n = F_{n-1} + F_{n-2}, \quad F_0 = 0, F_1 = 1.", blockquote=True) }}

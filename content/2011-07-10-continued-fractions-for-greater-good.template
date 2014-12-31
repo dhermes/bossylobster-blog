@@ -15,30 +15,30 @@ courtesy of Wikipedia:
 
 > ...decimal representation has some problems. One problem is that many
 > rational numbers lack finite representations in this system. For
-> example, the number {{ get_katex("\\frac{1}{3}") }} is represented by the
-> infinite sequence {{ get_katex("(0, 3, 3, 3, 3, \\ldots )") }}. Another
-> problem is that the constant {{ get_katex("10") }} is an essentially arbitrary
+> example, the number {{ get_latex_img("\\frac{1}{3}") }} is represented by the
+> infinite sequence {{ get_latex_img("(0, 3, 3, 3, 3, \\ldots )") }}. Another
+> problem is that the constant {{ get_latex_img("10") }} is an essentially arbitrary
 > choice, and one which  biases the resulting representation toward numbers that
-> have some relation to the integer {{ get_katex("10") }}. For example,
-> {{ get_katex("\\frac{137}{1600}") }} has a finite decimal representation,
-> while {{ get_katex("\\frac{1}{3}") }} does not, not because
-> {{ get_katex("\\frac{137}{1600}") }} is simpler than
-> {{ get_katex("\\frac{1}{3}") }}, but because {{ get_katex("1600") }} happens
-> to divide a power of {{ get_katex("10") }}
-> ({{ get_katex("10^6 = 1600 \\times 625") }}). Continued fraction
+> have some relation to the integer {{ get_latex_img("10") }}. For example,
+> {{ get_latex_img("\\frac{137}{1600}") }} has a finite decimal representation,
+> while {{ get_latex_img("\\frac{1}{3}") }} does not, not because
+> {{ get_latex_img("\\frac{137}{1600}") }} is simpler than
+> {{ get_latex_img("\\frac{1}{3}") }}, but because {{ get_latex_img("1600") }} happens
+> to divide a power of {{ get_latex_img("10") }}
+> ({{ get_latex_img("10^6 = 1600 \\times 625") }}). Continued fraction
 > notation is a representation of the real numbers that avoids both
 > these problems. Let us consider how we might describe a number like
-> {{ get_katex("\\frac{415}{93}") }}, which is around {{ get_katex("4.4624") }}.
-> This is approximately {{ get_katex("4") }}. Actually it is a little bit more
-> than {{ get_katex("4") }}, about {{ get_katex("4 + \\frac{1}{2}") }}. But the
-> {{ get_katex("2") }} in the denominator is not correct; the correct
-> denominator is a little bit more than {{ get_katex("2") }} about
-> {{ get_katex("2 + \\frac{1}{6}") }}, so {{ get_katex("\\frac{415}{93}") }} is
+> {{ get_latex_img("\\frac{415}{93}") }}, which is around {{ get_latex_img("4.4624") }}.
+> This is approximately {{ get_latex_img("4") }}. Actually it is a little bit more
+> than {{ get_latex_img("4") }}, about {{ get_latex_img("4 + \\frac{1}{2}") }}. But the
+> {{ get_latex_img("2") }} in the denominator is not correct; the correct
+> denominator is a little bit more than {{ get_latex_img("2") }} about
+> {{ get_latex_img("2 + \\frac{1}{6}") }}, so {{ get_latex_img("\\frac{415}{93}") }} is
 > approximately
 > {{ get_latex_img("4 + \\cfrac{1}{2+\\cfrac{1}{6}}.", blockquote=True) }}
-> But the {{ get_katex("6") }} in the denominator is not correct; the correct
-> denominator is a little bit more than {{ get_katex("6") }}, actually
-> {{ get_katex("6+\\frac{1}{7}") }}. So {{ get_katex("\\frac{415}{93}") }} is
+> But the {{ get_latex_img("6") }} in the denominator is not correct; the correct
+> denominator is a little bit more than {{ get_latex_img("6") }}, actually
+> {{ get_latex_img("6+\\frac{1}{7}") }}. So {{ get_latex_img("\\frac{415}{93}") }} is
 > actually
 > {{ get_latex_img("4 + \\cfrac{1}{2+\\cfrac{1}{6 +\\cfrac{1}{7}}}.", blockquote=True) }}
 > This is exact...
@@ -47,56 +47,56 @@ With this in mind, one can define an infinite continued fraction to be
 
 {{ get_latex_img("a_0 + \\cfrac{1}{a_1 +\\cfrac{1}{a_2 +\\ddots}}.", blockquote=True) }}
 
-With the denominators {{ get_katex("a_0, a_1, a_2, \\ldots") }}, we can define
+With the denominators {{ get_latex_img("a_0, a_1, a_2, \\ldots") }}, we can define
 a recurrence for the finite approximations (convergents) of this value. For
-example, the zeroth is {{ get_katex("a_0") }} and the first is
+example, the zeroth is {{ get_latex_img("a_0") }} and the first is
 
-{{ get_katex("\\displaystyle a_0 + \\frac{1}{a_1} = \\frac{a_0 a_1 + 1}{a_1}.", blockquote=True) }}
+{{ get_latex_img("\\displaystyle a_0 + \\frac{1}{a_1} = \\frac{a_0 a_1 + 1}{a_1}.", blockquote=True) }}
 
 The other motivation (the one I actually learned first in real life) for
-continued fractions comes from {{ get_katex("\\sqrt{2}") }} being represented by
+continued fractions comes from {{ get_latex_img("\\sqrt{2}") }} being represented by
 an infinite continued fraction. (Instead of saying a probability of
-{{ get_katex("0.01876") }}, people would rather say a {{ get_katex("1") }} in
-{{ get_katex("53") }} chance.) So we try to write
-{{ get_katex("\\sqrt{2} = 1.41421356\\ldots") }} as
-{{ get_katex("1 + \\frac{1}{2.414}") }}. But, instead, notice that
+{{ get_latex_img("0.01876") }}, people would rather say a {{ get_latex_img("1") }} in
+{{ get_latex_img("53") }} chance.) So we try to write
+{{ get_latex_img("\\sqrt{2} = 1.41421356\\ldots") }} as
+{{ get_latex_img("1 + \\frac{1}{2.414}") }}. But, instead, notice that
 
-{{ get_katex("\\sqrt{2} = 1 + (\\sqrt{2} - 1) = 1 + \\frac{1}{\\sqrt{2} + 1}.", blockquote=True) }}
+{{ get_latex_img("\\sqrt{2} = 1 + (\\sqrt{2} - 1) = 1 + \\frac{1}{\\sqrt{2} + 1}.", blockquote=True) }}
 
 Plugging this into itself, we have
 
 {{ get_latex_img("\\sqrt{2} = 1 + \\cfrac{1}{1 +1 + \\cfrac{1}{\\sqrt{2} + 1}} =1 + \\cfrac{1}{1 +1 + \\cfrac{1}{1 + 1 + \\cfrac{1}{\\sqrt{2} + 1}}}", blockquote=True) }}
 
-and notice it can be represented by {{ get_katex("(1; 2, 2, 2, \\ldots)") }}.
+and notice it can be represented by {{ get_latex_img("(1; 2, 2, 2, \\ldots)") }}.
 
-Define the {{ get_katex("n") }}th convergent to be
-{{ get_katex("\\frac{h_n}{k_n}") }}, so above we have
-{{ get_katex("h_0 = a_0, k_0 = 1") }} and
-{{ get_katex("h_1 = a_0 a_1 + 1, k_0 = a_1") }}.
+Define the {{ get_latex_img("n") }}th convergent to be
+{{ get_latex_img("\\frac{h_n}{k_n}") }}, so above we have
+{{ get_latex_img("h_0 = a_0, k_0 = 1") }} and
+{{ get_latex_img("h_1 = a_0 a_1 + 1, k_0 = a_1") }}.
 
 #### Claim: {{ "{#claim}" }}
 
-{{ get_katex("h_n") }} and {{ get_katex("k_n") }} satisfy
+{{ get_latex_img("h_n") }} and {{ get_latex_img("k_n") }} satisfy
 
 {{ get_latex_img("\\begin{align*}h_n &= a_n h_{n - 1} + h_{n - 2} \\\\k_n &= a_n k_{n - 1} + k_{n - 2}\\end{align*}", blockquote=True, standalone=True) }}
 
-along with {{ get_katex("h_{-1} = 1, h_{-2} = 0") }} and
-{{ get_katex("k_{-1} = 0, k_{-2} = 1") }}.
+along with {{ get_latex_img("h_{-1} = 1, h_{-2} = 0") }} and
+{{ get_latex_img("k_{-1} = 0, k_{-2} = 1") }}.
 
 #### Proof:  {{ "{#claim-proof}" }}
 
-The fraction {{ get_katex("\\displaystyle \\frac{h_n}{k_n}") }} is converted
-into {{ get_katex("\\displaystyle \\frac{h_{n + 1}}{k_{n + 1}}") }} simply by
-changing {{ get_katex("a_n") }} to {{ get_katex("a_n + \\frac{1}{a_{n + 1}}") }}
+The fraction {{ get_latex_img("\\displaystyle \\frac{h_n}{k_n}") }} is converted
+into {{ get_latex_img("\\displaystyle \\frac{h_{n + 1}}{k_{n + 1}}") }} simply by
+changing {{ get_latex_img("a_n") }} to {{ get_latex_img("a_n + \\frac{1}{a_{n + 1}}") }}
 in the final denominator. Since
 
-{{ get_katex("\\frac{h_n}{k_n} = \\frac{a_n h_{n - 1} + h_{n - 2}}{a_n k_{n - 1} + k_{n - 2}}", blockquote=True) }}
+{{ get_latex_img("\\frac{h_n}{k_n} = \\frac{a_n h_{n - 1} + h_{n - 2}}{a_n k_{n - 1} + k_{n - 2}}", blockquote=True) }}
 
 we similarly have
 
 {{ get_latex_img("\\begin{align*}\\frac{h_{n + 1}}{k_{n + 1}} &= \\frac{\\left(a_n + \\frac{1}{a_{n + 1}}\\right)h_{n - 1} + h_{n - 2}}{\\left(a_n + \\frac{1}{a_{n + 1}}\\right)k_{n - 1} + k_{n - 2}} \\\\ &= \\frac{a_{n + 1}(a_n h_{n - 1} + h_{n - 2}) + h_{n - 1}}{a_{n + 1}(a_n k_{n - 1} + k_{n - 2}) + k_{n - 1}} \\\\&= \\frac{a_{n + 1} h_n + h_{n - 1}}{a_{n + 1} k_n + k_{n - 1}}\\end{align*}", blockquote=True, standalone=True) }}
 
-Thus {{ get_katex("h_{n + 1}") }} and {{ get_katex("k_{n + 1}") }} satisfy
+Thus {{ get_latex_img("h_{n + 1}") }} and {{ get_latex_img("k_{n + 1}") }} satisfy
 the same recurrence.
 
 It remains to check the initial conditions work, but note

@@ -18,74 +18,74 @@ that I'll need for some other posts.
 
 #### Definition: {{ "{#define-quadratic-form}" }}
 
-A binary quadratic form {{ get_katex("f") }} is an equation of
+A binary quadratic form {{ get_latex_img("f") }} is an equation of
 the form:
 
-{{ get_katex("f(x, y) = A x^2 + H x y + B y^2.", blockquote=True) }}
+{{ get_latex_img("f(x, y) = A x^2 + H x y + B y^2.", blockquote=True) }}
 
 That is, a function of two variables which is homogeneous of degree two.
-The coefficients {{ get_katex("A") }}, {{ get_katex("H") }}, and
-{{ get_katex("B") }} and variables {{ get_katex("x") }} and
-{{ get_katex("y") }} are often real numbers, rational numbers or integers.
+The coefficients {{ get_latex_img("A") }}, {{ get_latex_img("H") }}, and
+{{ get_latex_img("B") }} and variables {{ get_latex_img("x") }} and
+{{ get_latex_img("y") }} are often real numbers, rational numbers or integers.
 {{ get_latex_img("\\blacksquare") }}
 
-When we require the coefficients {{ get_katex("A") }}, {{ get_katex("H") }}, and
-{{ get_katex("B") }} as well as the variables {{ get_katex("x, y") }} to be
+When we require the coefficients {{ get_latex_img("A") }}, {{ get_latex_img("H") }}, and
+{{ get_latex_img("B") }} as well as the variables {{ get_latex_img("x, y") }} to be
 integers, we get an integer-valued form. In his **Disquisitiones Arithmeticae**,
 Gauss asked (and largely answered) the fundamental question: what
 integer values can each form take? For example, you may have seen the
 form
 
-{{ get_katex("f(x, y) = x^2 + y^2,", blockquote=True) }}
+{{ get_latex_img("f(x, y) = x^2 + y^2,", blockquote=True) }}
 
 where it was determined that the only primes (Gaussian primes) occuring were
-{{ get_katex("2") }} and those odd primes congruent to 1 modulo 4.
+{{ get_latex_img("2") }} and those odd primes congruent to 1 modulo 4.
 
-As each form {{ get_katex("f") }} is homogenous degree two,
-{{ get_katex("f(\\lambda x, \\lambda y) = \\lambda^2 f(x, y)") }}. As a result,
-if we can understand the values of {{ get_katex("f") }} for pairs
-{{ get_katex("(x, y)") }} which don't share any factors, we can understand the
-entire set of values that {{ get_katex("f") }} takes. Also, letting
-{{ get_katex("\\lambda = -1") }}, there is no change in the value of
-{{ get_katex("f") }} since {{ get_katex("\\lambda^2 = 1") }}, hence it suffices
-to think of {{ get_katex("v = (x, y)") }} as {{ get_katex("\\pm v") }}, i.e.
-{{ get_katex("\\left\\{(x, y), (-x, -y)\\right\\}") }}.
+As each form {{ get_latex_img("f") }} is homogenous degree two,
+{{ get_latex_img("f(\\lambda x, \\lambda y) = \\lambda^2 f(x, y)") }}. As a result,
+if we can understand the values of {{ get_latex_img("f") }} for pairs
+{{ get_latex_img("(x, y)") }} which don't share any factors, we can understand the
+entire set of values that {{ get_latex_img("f") }} takes. Also, letting
+{{ get_latex_img("\\lambda = -1") }}, there is no change in the value of
+{{ get_latex_img("f") }} since {{ get_latex_img("\\lambda^2 = 1") }}, hence it suffices
+to think of {{ get_latex_img("v = (x, y)") }} as {{ get_latex_img("\\pm v") }}, i.e.
+{{ get_latex_img("\\left\\{(x, y), (-x, -y)\\right\\}") }}.
 
-For integers {{ get_katex("x") }} and {{ get_katex("y") }}, any point
-{{ get_katex("(x, y)") }} can be expressed as an integral linear combination of
-the vectors {{ get_katex("e_1 = (1, 0)") }} and
-{{ get_katex("e_2 = (0, 1)") }}. So if we like, we can express all relevant
-inputs for {{ get_katex("f") }} in terms of two vectors. However, instead
-considering {{ get_katex("e_2 = (1, 1)") }}, we have
+For integers {{ get_latex_img("x") }} and {{ get_latex_img("y") }}, any point
+{{ get_latex_img("(x, y)") }} can be expressed as an integral linear combination of
+the vectors {{ get_latex_img("e_1 = (1, 0)") }} and
+{{ get_latex_img("e_2 = (0, 1)") }}. So if we like, we can express all relevant
+inputs for {{ get_latex_img("f") }} in terms of two vectors. However, instead
+considering {{ get_latex_img("e_2 = (1, 1)") }}, we have
 
-{{ get_katex("(x - y) \\cdot e_1 + y \\cdot e_2 = (x, y)", blockquote=True) }}
+{{ get_latex_img("(x - y) \\cdot e_1 + y \\cdot e_2 = (x, y)", blockquote=True) }}
 
-and realize a different pair {{ get_katex("e_1, e_2") }} which again yield all
+and realize a different pair {{ get_latex_img("e_1, e_2") }} which again yield all
 possible integer valued vectors as integral linear combinations.
 
 #### Definition: {{ "{#define-base}" }}
 
-A **strict base** is an ordered pair {{ get_katex("(e_1, e_2)") }} whose
+A **strict base** is an ordered pair {{ get_latex_img("(e_1, e_2)") }} whose
 integral linear combinations are exactly all vectors with integer coordinates.
-A **lax base** is a set {{ get_katex("\\left\\{\\pm e_1, \\pm e_2\\right\\}") }}
+A **lax base** is a set {{ get_latex_img("\\left\\{\\pm e_1, \\pm e_2\\right\\}") }}
 obtained from a strict base.
 {{ get_latex_img("\\blacksquare") }}
 
 #### Definition: {{ "{#define-superbase}" }}
 
-A **strict superbase** is an ordered triple {{ get_katex("(e_1, e_2, e_3)") }},
-for which {{ get_katex("e_1 + e_2 + e_3 = (0, 0)") }} and
-{{ get_katex("(e_1, e_2)") }} is a strict base (i.e., with strict vectors), and
+A **strict superbase** is an ordered triple {{ get_latex_img("(e_1, e_2, e_3)") }},
+for which {{ get_latex_img("e_1 + e_2 + e_3 = (0, 0)") }} and
+{{ get_latex_img("(e_1, e_2)") }} is a strict base (i.e., with strict vectors), and
 a **lax superbase** is a set
-{{ get_katex("\\langle\\pm e_1, \\pm e_2, \\pm e_3\\rangle") }} where
-{{ get_katex("(e_1, e_2, e_3)") }} is a strict superbase.
+{{ get_latex_img("\\langle\\pm e_1, \\pm e_2, \\pm e_3\\rangle") }} where
+{{ get_latex_img("(e_1, e_2, e_3)") }} is a strict superbase.
 {{ get_latex_img("\\blacksquare") }}
 
 For our (and Conway's) purposes, it is useful to consider the lax notions and
 leave the strict notions as an afterthought since a binary quadratic form is
 unchanged given a sign change. From here forward, for a vector
-{{ get_katex("v") }}, we use the notation {{ get_katex("v") }} interchangeably
-with {{ get_katex("\\pm v") }} and when referring to a base/superbase, we are
+{{ get_latex_img("v") }}, we use the notation {{ get_latex_img("v") }} interchangeably
+with {{ get_latex_img("\\pm v") }} and when referring to a base/superbase, we are
 referring to the lax equivalent of these notions.
 
 Follow along to
