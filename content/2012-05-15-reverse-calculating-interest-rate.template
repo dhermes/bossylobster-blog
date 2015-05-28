@@ -117,11 +117,11 @@ the intuition behind the method.
 #### Intuition behind the method
 
 For the intuition, assume we know (and can compute) a function
-{{ get_katex("f") }}, its derivative {{ get_katex("f'") }} and a value
+{{ get_katex("f") }}, its derivative {{ get_katex("f'") }} at a value
 {{ get_katex("x") }}. Assume there is some zero {{ get_katex("y") }} nearby
 {{ get_katex("x") }}. Since they are close, we can approximate the
-slope of the line between the points {{ get_katex("(x, f(x)") }} and
-{{ get_katex("(y, f(y)") }} with the derivative nearby. Since we know
+slope of the line between the points {{ get_katex("(x, f(x))") }} and
+{{ get_katex("(y, f(y))") }} with the derivative nearby. Since we know
 {{ get_katex("x") }}, we use {{ get_katex("f'(x)") }} and intuit that
 
 {{ get_latex_img("f'(x) = \\text{slope} = \\frac{f(y) - f(x)}{y - x} \\Rightarrow y - x = \\frac{f(y) - f(x)}{f'(x)}.", blockquote=True) }}
