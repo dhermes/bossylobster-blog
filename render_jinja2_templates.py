@@ -12,11 +12,12 @@ from make_png_from_latex import convert_equation
 
 
 ENV = Environment(loader=PackageLoader(__name__, 'content'))
+KATEX_PATH = os.path.join(os.getcwd(), 'node_modules', 'katex')
 NODE_SCRIPT_TEMPLATE = u"""\
-katex = require('katex');
-value = katex.renderToString("%s");
+katex = require(%(katex_path)s);
+value = katex.renderToString("%%s");
 console.log(value);
-"""
+""" % {'katex_path': json.dumps(KATEX_PATH)}
 KATEX_BLOCK_TEMPLATE = u"""\
 <div class="katex-elt"><blockquote>
 %s

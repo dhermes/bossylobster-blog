@@ -1,4 +1,8 @@
 language: python
 
+install:
+  - pip install pelican==3.5 markdown pycrypto jinja2
+  - npm install katex@">=0.3.0"
+
 script:
   - ./build.sh
