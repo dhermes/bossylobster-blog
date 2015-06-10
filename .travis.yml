@@ -1,4 +1,9 @@
 language: python
+sudo: false
+
+cache:
+  directories:
+  - content/rendered
 
 install:
   - pip install pelican==3.5 markdown pycrypto jinja2

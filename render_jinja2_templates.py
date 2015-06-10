@@ -27,6 +27,7 @@ with open(TEMPLATE_HASHES_FILENAME, 'r') as fh:
     TEMPLATE_HASHES = json.load(fh)
 
 LATEX_IMG_TEMPLATE = '<img src="%s" alt="%s" class="latex-img"></img>'
+RENDERED_DIR = os.path.join('content', 'rendered')
 
 
 def escape_string(latex_str):
@@ -74,7 +75,7 @@ def get_latex_img(latex_str, blockquote=False, standalone=False):
 
 def get_templates():
     result = []
-    for match in glob.glob('content/*.template'):
+    for match in glob.glob(os.path.join('content', '*.template')):
         directory, template_name = os.path.split(match)
         if directory != 'content':
             raise ValueError(match)
@@ -97,7 +98,7 @@ def write_template(template):
     if ext != '.template':
         raise ValueError(template.name)
     # This assumes we are running in the root of the repository.
-    new_filename = 'content/%s.md' % (name,)
+    new_filename = os.path.join(RENDERED_DIR, '%s.md' % (name,))
 
     md5_sum = get_md5_sum(template.filename)
     if md5_sum == TEMPLATE_HASHES.get(template.filename):
@@ -106,6 +107,8 @@ def write_template(template):
             return
 
     print 'Writing', new_filename
+    if not os.path.isdir(RENDERED_DIR):
+        os.mkdir(RENDERED_DIR)
     with open(new_filename, 'wb') as fh:
         rendered_file = template.render(get_katex=get_katex,
                                         get_latex_img=get_latex_img)
