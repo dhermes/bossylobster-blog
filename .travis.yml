@@ -4,6 +4,7 @@ sudo: false
 cache:
   directories:
   - content/rendered
+  - $HOME/.cache/pip
 
 install:
   - pip install pelican==3.5 markdown pycrypto jinja2

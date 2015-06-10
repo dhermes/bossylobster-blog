@@ -5,25 +5,6 @@ output
 _build
 _nb_header.html
 
-# Temporary overspecific ignore, will be replaced with content/*.md
-# once using all templates.
-content/2011-07-10-continued-fractions-for-greater-good.md
-content/2011-07-18-continued-fraction-expansions-of.md
-content/2011-08-23-conways-topograph-part-1.md
-content/2011-08-23-conways-topograph-part-2.md
-content/2011-08-23-conways-topograph-part-3.md
-content/2011-08-28-finding-fibonacci-golden-nuggets.md
-content/2011-08-29-finding-fibonacci-golden-nuggets-part-2.md
-content/2012-05-15-reverse-calculating-interest-rate.md
-content/2013-08-18-some-fibonacci-fun-with-primes.md
-content/2013-09-10-calculating-greatest-common-divisor.md
-content/2013-11-25-trigonometry-and-nested-radicals.md
-content/2014-07-29-bayes-law-primer.md
-content/2014-07-29-conditional-probabilities-in-thinking.md
-content/2014-08-22-math-for-humans-second-attempt.md
-content/2014-09-22-quantitative-brain-teaser-brain-only.md
-content/2014-09-28-quantitative-interview-brain-teaser.md
-
 # Node dependencies
 node_modules/
 
