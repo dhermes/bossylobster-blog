@@ -78,6 +78,8 @@ a few of my own [tweaks][7]. (Hopefully they will just land in
 - `TI-83.png` - From [Wikipedia Commons][13]
 - `elon-musk-criticism-thumbnail.jpg` - From [YouTube][23],
   via [Standard YouTube License][24]
+- `generic-football.png` - From [openclipart][26] via
+  [Unlimited Commerical Use][25]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -103,3 +105,5 @@ a few of my own [tweaks][7]. (Hopefully they will just land in
 [22]: https://flic.kr/p/EWAVi
 [23]: http://img.youtube.com/vi/NU7W7qe2R0A/0.jpg
 [24]: https://www.youtube.com/static?template=terms
+[25]: https://openclipart.org/unlimited-commercial-use-clipart
+[26]: https://openclipart.org/detail/102853/football

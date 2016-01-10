@@ -10,6 +10,7 @@ use_open_graph: true
 use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
+social_image: images/generic-football.png
 
 While watching today's [Seahawks-Vikings game][1], my wife asked:
 
