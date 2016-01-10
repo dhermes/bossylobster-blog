@@ -32,7 +32,7 @@ for any score (not just **9**). Enjoy
 
 ### Give me a score, I'll count the ways
 
-<div>Score: <input type="text" id="num-points" name="numPoints" value="9" style="width: 25px; font-size: 18px;" onchange="bossylobsterBlog.FBScore.updatePage();"></div>
+<div>Score: <input type="text" id="num-points" name="numPoints" value="9" style="width: 35px; font-size: 18px;" onchange="bossylobsterBlog.FBScore.updatePage();"></div>
 <ol id="scores-list">
   <li>1 x Field Goal, 1 x TD with missed PAT</li>
   <li>3 x Field Goal</li>
