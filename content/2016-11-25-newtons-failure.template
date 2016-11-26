@@ -1,0 +1,165 @@
+title: Newton's (Method's) Failure
+description: Numerical Loss of Precision with Multiple Roots
+date: 2016-11-24
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Math, Floating Point, Programming
+slug: newtons-failure
+comments: true
+use_twitter_card: true
+use_open_graph: true
+use_schema_org: true
+twitter_site: @bossylobster
+twitter_creator: @bossylobster
+social_image: images/newton_at_work.png
+
+Finding zeros of any old function is a common task, and using
+[Newton's method][1] is one of the best tools for carrying
+out this task. I've even [written][2] an old post that used this
+method.
+
+However, Newton's method loses some of it's luster around
+repeated roots. Consider the iteration
+
+{{ get_katex("x_{n + 1} = x_n - \\frac{f(x_n)}{f'(x_n)}", blockquote=True) }}
+
+On inspection, points where {{ get_katex("f'(x_n) = 0") }} seem to be
+problematic. However, when these points are also roots, the division
+{{ get_katex("0 / 0") }} may no longer be a problem. The case where
+
+{{ get_katex("f(x_n) = f'(x_n) = 0", blockquote=True) }}
+
+is **exactly** the case of a repeated root.
+
+For a practical example, consider {{ get_katex("f(x) = (x - 1)^2") }}
+which has corresponding iteration function
+
+{{ get_katex("g(x) = x - \\frac{(x - 1)^2}{2(x - 1)} = \\frac{x + 1}{2}.", blockquote=True) }}
+
+Starting with {{ get_katex("x_0 = 1 + 2^{-0} = 2") }}, in exact
+arithmetic (i.e. no rounding) we'll always have
+{{ get_katex("x_n = 1 + 2^{-n}") }} since
+
+{{ get_katex("\\frac{1 + x_n}{2} = \\frac{2 + 2^{-n}}{2} = 1 + 2^{-n-1}.", blockquote=True) }}
+
+This sequence converges to {{ get_katex("1") }} and
+the error halves every term. However, in [double precision][3], the
+sequence stops once {{ get_katex("n = 53") }}: at that
+point {{ get_katex("1 \oplus 2^{-53} = 0") }}.
+
+However, if we told the computer that {{ get_katex("f(x) = (x - 1)^2") }},
+there would be no reason to use Newton's method, the roots are clearly
+{{ get_katex("1") }} and {{ get_katex("1") }}. Instead, the "data"
+the computer is given are the coefficients in
+{{ get_katex("x^2 - 2x + 1") }} and each term is
+computed in floating point
+
+{{ get_katex("x_{n + 1} = x_n \\ominus \\left(N_n \\oslash D_n\\right).", blockquote=True) }}
+
+where the numerator and denominator are given
+(with the help of [Horner's method][4]) by
+
+{{ get_katex("N_n = \\left((x_n \\ominus 2) \\otimes x_n\\right) \\oplus 1, \\quad D_n = \\left(2 \\otimes x_n\\right) \\ominus 2.", blockquote=True) }}
+
+Each floating point operation
+({{ get_katex("\\otimes, \\oslash, \\oplus, \\ominus") }}) rounds the
+"exact" result to the nearest floating point number. For
+{{ get_katex("x_1, \\, \\ldots, \\, x_{27}") }}, there is no rounding
+needed and we get the same values that we got in exact
+arithmetic.
+
+The **real problem** happens when {{ get_katex("n = 27") }}. At that
+point
+
+{{ get_katex("(x_n \\ominus 2) \\otimes x_n = \\left(-\\left(1 - 2^{-27}\\right)\\right) \\otimes \\left(1 + 2^{-27}\\right)", blockquote=True) }}
+
+and the exact result {{ get_katex("1 - 2^{-54}") }} needs to be
+rounded into floating point:
+
+{{ get_katex("N_{27} = \\left(-(1 \\ominus 2^{-54})\\right) \\oplus 1 = \\left(-1\\right) \\oplus 1 = 0", blockquote=True) }}
+
+which forces {{ get_katex("x_{28} = x_{27} \\ominus 0") }}.
+After this point, the iteration stalls and every term after is equal
+to {{ get_katex("x_{27}") }}.
+
+Thus when the algorithm terminates on a computer (since two consecutive
+terms are identical), the actual error is {{ get_katex("2^{-27}") }}.
+This error is **much too large**! Using the standard floating point
+type (`double`), the [machine precision][5] is
+{{ get_katex("\\varepsilon = 2^{-52}") }} and our error is approximately
+{{ get_katex("\\sqrt{\\varepsilon}") }}. In other words, we **expected**
+52 bits of precision and **only get** 27!
+
+<hr />
+
+In general, a root repeated {{ get_katex("m") }} times (i.e. with
+**multiplicity** {{ get_katex("m") }}) will only be accurate to
+{{ get_katex("\\frac{52}{m}") }} bits, a very large penalty!
+
+We can see this phenomenon in action, we define the
+following function to do one Newton step using Horner's
+method:
+
+```python
+def horner_newton(coeffs, val):
+    degree = len(coeffs) - 1
+    deriv_factor = float(degree)
+    fx = fpx = 0.0
+    for i in range(degree):
+        fx = val * fx + coeffs[i]
+        fpx = val * fpx + deriv_factor * coeffs[i]
+        deriv_factor -= 1.0
+    # Add the last term to fx.
+    fx = val * fx + coeffs[-1]
+    return val - fx / fpx
+```
+
+Applying it to {{ get_katex("(x^2 - 2)^2 = x^4 - 4x^2 + 4") }} &mdash; which
+has two double roots &mdash; we get
+
+```python
+>>> values = [1.0]
+>>> coeffs = [1, 0, -4, 0, 4]
+>>> next_val = horner_newton(coeffs, values[-1])
+>>> while next_val not in values:
+...     values.append(next_val)
+...     next_val = horner_newton(coeffs, values[-1])
+...
+>>> len(values)
+28
+>>> values[-1]
+1.4142135634821
+>>> math.log(abs(values[-1] - math.sqrt(2)), 2)
+-29.74808712981571
+```
+
+i.e. the error is around
+{{ get_katex("2^{-29} \\approx \\sqrt{\\varepsilon}") }}.
+
+Trying out with a triple root
+{{ get_katex("(x - 1)^3 = x^3 - 3 x^2 + 3x - 1") }} we get
+
+```python
+>>> values = [2.0]
+>>> coeffs = [1, -3, 3, -1]
+>>> next_val = horner_newton(coeffs, values[-1])
+>>> while next_val not in values:
+...     values.append(next_val)
+...     next_val = horner_newton(coeffs, values[-1])
+...
+>>> len(values)
+31
+>>> values[-1]
+1.0000046685597561
+>>> math.log(abs(values[-1] - 1), 2)
+-17.70859102007032
+```
+
+with an error around
+{{ get_katex("2^{-17} \\approx \\sqrt[3]{\\varepsilon}") }}
+as predicted.
+
+[1]: https://en.wikipedia.org/wiki/Newton's_method
+[2]: /2012/05/reverse-calculating-interest-rate
+[3]: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+[4]: https://en.wikipedia.org/wiki/Horner's_method
+[5]: https://en.wikipedia.org/wiki/Machine_epsilon
