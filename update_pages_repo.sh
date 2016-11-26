@@ -10,7 +10,7 @@ make clean && make html
 # Checkout the repository Pages repo. #
 #######################################
 PAGES_REPO="${GH_OWNER}.github.io"
-git clone --branch=master \
+git clone -q --branch=master \
     "https://${GH_OAUTH_TOKEN}@github.com//${GH_OWNER}/${PAGES_REPO}" \
     "${PAGES_REPO}"
 
@@ -45,7 +45,7 @@ if [[ -n "$(git status --porcelain)" ]]; then
       -m "Update ${PAGES_REPO} after blog commit in ${GH_PROJECT_NAME}." \
       -m "Added in https://travis-ci.org/${TRAVIS_REPO_SLUG}/builds/${TRAVIS_BUILD_ID}"
   git status
-  git push origin master
+  git push -q origin master
 else
   echo "Nothing to commit. Exiting without pushing changes."
 fi
