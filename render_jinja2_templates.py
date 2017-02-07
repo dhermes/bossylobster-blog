@@ -7,7 +7,8 @@ import re
 import subprocess
 import tempfile
 
-from jinja2 import Environment, PackageLoader
+from jinja2 import Environment
+from jinja2 import PackageLoader
 from make_png_from_latex import convert_equation
 
 

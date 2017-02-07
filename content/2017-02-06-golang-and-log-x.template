@@ -1,0 +1,143 @@
+title: How Does Go Compute a Logarithm
+description: Source Diving and Math
+date: 2017-02-06
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Math, Programming, Logarithm, Approximation, Remez
+slug: golang-and-log-x
+comments: true
+use_twitter_card: true
+use_open_graph: true
+use_schema_org: true
+twitter_site: @bossylobster
+twitter_creator: @bossylobster
+social_image: images/remez_equioscillating_error.png
+
+About a year ago, I was reading the Go [source][1] for computing
+{{ get_katex("\\log(x)") }} and was very surprised by the
+implementation.[ref]Why would anyone look in this source? I was
+trying to explain to a student that a computer would compute
+this with minimal error when I realized I didn't know **how**.[/ref]
+
+Even three years into a PhD in Applied Math (i.e. numerics), I still
+managed to learn something by diving in and trying to understand what
+was going on.
+
+### (Almost-)Correctness
+
+Really I just wanted a chance to share a neat error plot:
+
+<div markdown="1" style="text-align: center;">
+  ![Equioscillating Error](/images/remez_equioscillating_error.png)
+</div>
+
+The high-level:
+
+- The computation {{ get_katex("\\log(x)") }} can be
+  reduced to computing a related function {{ get_katex("R(s)") }}
+  (where the value {{ get_katex("s") }} can be obtained from
+  {{ get_katex("x") }} on a computer in some straightforward way)
+- {{ get_katex("R(s)") }} can be approximated by a function that
+  we can actually compute with simple floating point operations:
+  {{ get_katex("f(s)") }}
+- The error {{ get_katex("R(s) - f(s)") }} is ["equioscillating"][5],
+  i.e. it minimizes the maximum error, a so-called
+  [minimax][4] solution
+
+If you're still interested in some mathematical details, stick
+around. If not, I hope you enjoyed the pretty picture.
+
+### Doing the Obvious
+
+The "obvious" idea that comes to mind is to use a [Taylor series][2]
+approximation. But {{ get_katex("\\log(x)") }} is not defined at
+{{ get_katex("x = 0") }}, so a Taylor series of a related function is
+typically used[ref]This series is typically learned and forgotten by
+those who have made it through "Calc II".[/ref]:
+
+{{ get_latex_img("\\log\\left(1 + x\\right) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + \\cdots", blockquote=True) }}
+
+But, the implementation doesn't do the obvious thing. Instead
+it breaks down the argument into an exponent and a fractional part
+
+{{ get_katex("x = 2^k \\left(\\frac{1 + s}{1 - s}\\right)", blockquote=True) }}
+
+which transforms the computation to:
+
+{{ get_katex("\\log(x) = k \\log(2) + \\left[\\log\\left(1 + s\\right) - \\log\\left(1 - s\\right)\\right].", blockquote=True) }}
+
+The first part {{ get_katex("k \\log(2)") }} can be handled in maximal
+precision for the limited set of integer values that {{ get_katex("k") }}
+can be.
+
+### Finding a Function to Approximate
+
+For the other part
+
+{{ get_latex_img("\\begin{align*}\\log\\left(1 + s\\right) - \\log\\left(1 - s\\right) &= 2 s + \\frac{2}{3} s^3 + \\frac{2}{5} s^5 + \\cdots \\\\ &= 2 s + s R(s). \\end{align*}", blockquote=True, standalone=True) }}
+
+From here, I expected a polynomial approximation that just takes the first
+few terms in {{ get_katex("R(s)") }}.
+However, coefficients that are close (but not equal) are given:
+
+{{ get_katex("R(z) \\approx L_1 s^2 + L_2 s^4 + \\cdots + L_6 s^{12} + L_7 s^{14}", blockquote=True) }}
+
+```
+L1    = 6.666666666666735130e-01   /* 3FE55555 55555593 */
+L2    = 3.999999999940941908e-01   /* 3FD99999 9997FA04 */
+L3    = 2.857142874366239149e-01   /* 3FD24924 94229359 */
+L4    = 2.222219843214978396e-01   /* 3FCC71C5 1D8E78AF */
+L5    = 1.818357216161805012e-01   /* 3FC74664 96CB03DE */
+L6    = 1.531383769920937332e-01   /* 3FC39A09 D078C69F */
+L7    = 1.479819860511658591e-01   /* 3FC2F112 DF3E5244 */
+```
+
+For example:
+{{ get_katex("L_1 = 2^{-1} \\cdot 1.5555555555593_{16} = \\frac{2}{3} + 2^{-53} \\cdot \\frac{185}{3} \\approx \\frac{2}{3}.", blockquote=True) }}
+
+### Not Go, Sun
+
+You may have noted my typo above: I used {{ get_katex("R(z)") }}
+when I should've used {{ get_katex("R(s)") }}. This typo is
+directly from the source; not my copy-paste error, but a
+copy-paste error in the original source.
+
+The original authors aren't the Golang devs:
+
+```
+// The original C code, the long comment, and the constants
+// below are from FreeBSD's /usr/src/lib/msun/src/e_log.c
+// and came with this notice. The go code is a simpler
+// version of the original C.
+```
+
+It seems they copied **everything**, even the typos. Another
+typo can be found when the description mentions
+"a special Reme algorithm" used to compute the coefficients
+{{ get_katex("L_j") }}.
+
+This typo is a bit more egregious: it actually uses a
+[**Remez** algorithm][3].
+
+### Remez Algorithm
+
+This algorithm takes a polynomial approximation like
+{{ get_katex("R(s) \\approx \\frac{2}{3} s^2 + \\frac{2}{5} s^4 + \\cdots + \\frac{2}{15} s^{14}", blockquote=True) }}
+and systematically modifies the coefficients until the error is
+["equioscillating"][5]:
+
+<div markdown="1" style="text-align: center;">
+  ![Equioscillating Error](/images/remez_equioscillating_error.png)
+</div>
+
+### Is That All You've Got?
+
+I hope to follow this post up with [some code][6] to actually compute
+the coefficients that give an equioscillating error (and to show some
+coefficients that do slightly better).
+
+[1]: https://golang.org/src/math/log.go
+[2]: https://en.wikipedia.org/wiki/Taylor_series
+[3]: https://en.wikipedia.org/wiki/Remez_algorithm
+[4]: https://en.wikipedia.org/wiki/Minimax_approximation_algorithm
+[5]: https://en.wikipedia.org/wiki/Equioscillation_theorem
+[6]: https://gist.github.com/dhermes/105da2a3c9861c90ea39

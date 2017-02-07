@@ -54,6 +54,7 @@ PLUGIN_PATHS = [
 ]
 PLUGINS = [
     'summary',
+    'simple_footnotes',
     # These tags currently fail when building with Pelican 3.5.
     # 'liquid_tags.include_code',
     # 'liquid_tags.notebook',
