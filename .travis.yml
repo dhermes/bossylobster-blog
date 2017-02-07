@@ -8,7 +8,7 @@ cache:
 
 install:
   - pip install six
-  - pip install pelican==3.5 markdown pycrypto jinja2 html5lib
+  - pip install pelican markdown pycrypto jinja2 html5lib
   - npm install katex@">=0.6.0"
 
 script:
