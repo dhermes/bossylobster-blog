@@ -1,6 +1,6 @@
 import binascii
-from Crypto.Hash import MD5
 import glob
+import hashlib
 import json
 import os
 import re
@@ -89,8 +89,9 @@ def get_templates():
 
 def get_md5_sum(filename):
     with open(filename, 'rb') as fh:
-        hash = MD5.new(data=fh.read())
-    digest_bytes = hash.digest()
+        hash_ = hashlib.md5()
+        hash_.update(fh.read())
+    digest_bytes = hash_.digest()
     return binascii.hexlify(digest_bytes)
 
 
