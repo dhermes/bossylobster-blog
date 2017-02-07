@@ -7,9 +7,7 @@ cache:
   - $HOME/.cache/pip
 
 install:
-  - git submodule update --init --recursive
-  - git pull --recurse-submodules
-  - pip install pelican==3.5 markdown pycrypto jinja2
+  - pip install pelican==3.5 markdown pycrypto jinja2 html5lib
   - npm install katex@">=0.6.0"
 
 script:
