@@ -87,7 +87,9 @@ SIDEBAR_IMAGE = 'images/bossy_lobster_350_alpha.png'
 SECOND_SIDEBAR_IMAGE = 'images/dhermes_headshot.jpg'
 
 # Add extra header.
-EXTRA_HEADER = open('extra_header.html').read().decode('utf-8')
+with open('extra_header.html', 'r') as file_obj:
+    EXTRA_HEADER = file_obj.read()
+del file_obj
 # NOTE: The liquid_tags.notebook plugin will also create an
 #       _nb_header.html file so we should add that if
 #       liquid_tags.notebook is to be used.

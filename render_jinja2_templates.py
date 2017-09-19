@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import binascii
 import glob
 import hashlib
@@ -92,7 +94,7 @@ def get_md5_sum(filename):
         hash_ = hashlib.md5()
         hash_.update(fh.read())
     digest_bytes = hash_.digest()
-    return binascii.hexlify(digest_bytes)
+    return binascii.hexlify(digest_bytes).decode('ascii')
 
 
 def write_template(template):
@@ -105,13 +107,13 @@ def write_template(template):
     md5_sum = get_md5_sum(template.filename)
     if md5_sum == TEMPLATE_HASHES.get(template.filename):
         if os.path.exists(new_filename):
-            print 'Already up-to-date:', template.filename
+            print('Already up-to-date: {}'.format(template.filename))
             return
 
-    print 'Writing', new_filename
+    print('Writing {}'.format(new_filename))
     if not os.path.isdir(RENDERED_DIR):
         os.mkdir(RENDERED_DIR)
-    with open(new_filename, 'wb') as fh:
+    with open(new_filename, 'w') as fh:
         rendered_file = template.render(get_katex=get_katex,
                                         get_latex_img=get_latex_img)
         fh.write(rendered_file)

@@ -1,6 +1,8 @@
 # Manually handling pagination since it is broken in Pelican:
 #     https://github.com/getpelican/pelican/issues/1223
 
+from __future__ import print_function
+
 import os
 import re
 import shutil
@@ -45,7 +47,7 @@ def move_page(page_num):
     new_page = os.path.join(PAGE_DIR, '%d.html' % (page_num,))
     make_page_dir()
     shutil.move(old_page, new_page)
-    print 'Moved %s to %s' % (old_page, new_page)
+    print('Moved {} to {}'.format(old_page, new_page))
     rewrite_links(page_num, filename=new_page)
 
 
