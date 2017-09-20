@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
+
 # H/T: http://stackoverflow.com/a/10350424/1068170
 import socket
 import subprocess
@@ -23,4 +25,4 @@ def get_ipv4_address():
 
 
 if __name__ == '__main__':
-    print get_ipv4_address()
+    print(get_ipv4_address())
