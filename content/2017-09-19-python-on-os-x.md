@@ -85,7 +85,7 @@ OS X Python binaries are worth having.
 
 ### Spinning Wheels
 
-I recently decided I should be a "good citizen" and provide built Python
+I decided I should be a "good citizen" and provide built Python
 wheels for a [package][5] of mine. Along the process, I came across
 [Matthew Brett][2]'s wonderful [Spinning Wheels][1].
 
@@ -96,15 +96,16 @@ The primary difference between a `pyenv` installed Python and an official
 one can be seen in the platform tag:
 
 ```
-$ ${HOME}/.pyenv/versions/3.6.2/bin/python -c \
->   'import distutils.util; print(distutils.util.get_platform())'
+$ cat get_platform.py
+import distutils.util
+print(distutils.util.get_platform())
+$ ${HOME}/.pyenv/versions/3.6.2/bin/python get_platform.py
 macosx-10.11-x86_64
-$ /Library/Frameworks/Python.framework/Versions/3.6/bin/python3 -c \
->   'import distutils.util; print(distutils.util.get_platform())'
+$ /Library/Frameworks/Python.framework/Versions/3.6/bin/python3 get_platform.py
 macosx-10.6-intel
 ```
 
-First, the Python.org Python[ref]the one that starts with `/Library/...`[/ref]
+First, the Python.org Python[ref]The one that starts with `/Library/...`[/ref]
 supports an older SDK (10.6) which gives **forward compatibility** of any
 binaries produced for any SDK after 10.6.
 
