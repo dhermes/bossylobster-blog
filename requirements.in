@@ -1,0 +1,7 @@
+# pip install --upgrade pip-tools
+# pip-compile --upgrade --output-file requirements.txt requirements.in
+html5lib==0.9999999
+jinja2
+markdown
+pelican
+six
