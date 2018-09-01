@@ -22,7 +22,7 @@ He was trying to determine if
 {{ get_katex("J(B_n)_{\\text{Tor}}\\left(\\mathbb{Q}\\right) \\stackrel{?}{=} \\mathbb{Z}/2\\mathbb{Z}.", blockquote=True) }}
 
 WAT? In the above, {{ get_katex("J(B_n)") }} is the Jacobian of the
-a curve {{ get_katex("B_n") }} given by
+curve {{ get_katex("B_n") }} given by
 {{ get_katex("y^2 = (x + 2) \\cdot f^n(x)") }}. Here
 {{ get_katex("f^n") }} denotes
 

@@ -1,4 +1,14 @@
-#!/usr/bin/env python
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 """Command line tool to assist with staging posts during edit.
 
@@ -10,7 +20,7 @@ the live site (blog.bossylobster.com).
 For example, while working on "constantly-seek-criticism.html",
 running
 
-$ ./make_standalone_html.py --year 2014 --month 12 \
+$ python make_standalone_html.py --year 2014 --month 12 \
 > --filename constantly-seek-criticism.html
 
 resulted in the creation of $GIT_ROOT/constantly-seek-criticism.html
@@ -23,23 +33,21 @@ import os
 from BeautifulSoup import BeautifulSoup
 
 
-PUBLIC_ROOT = 'https://blog.bossylobster.com'
-BASE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                         'output')
+PUBLIC_ROOT = "https://blog.bossylobster.com"
+BASE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 
 
 def make_tag_checker(attr_name):
-
     def check_tag(tag):
         if not tag.has_key(attr_name):
             return False
 
         actual_attr_val = tag[attr_name]
         # Only accept relative URI, but not protocol relative.
-        if not actual_attr_val.startswith('/'):
+        if not actual_attr_val.startswith("/"):
             return False
 
-        return (not actual_attr_val.startswith('//'))
+        return not actual_attr_val.startswith("//")
 
     return check_tag
 
@@ -65,38 +73,46 @@ def replace_attributes(html, soup, attr_name):
 
 def load_soup(year, month, filename):
     path = os.path.join(BASE_PATH, str(year), str(month), filename)
-    with open(path, 'r') as fh:
+    with open(path, "r") as fh:
         html = fh.read()
     return html, BeautifulSoup(html)
 
 
 def update_links(year, month, filename):
     html, soup = load_soup(year, month, filename)
-    html = replace_attributes(html, soup, 'href')
-    html = replace_attributes(html, soup, 'src')
+    html = replace_attributes(html, soup, "href")
+    html = replace_attributes(html, soup, "src")
 
     return html
 
 
 def write_cleaned_html(year, month, filename):
     new_html = update_links(year, month, filename)
-    new_file = os.path.abspath(os.path.join(BASE_PATH, '..', filename))
-    with open(new_file, 'w') as fh:
+    new_file = os.path.abspath(os.path.join(BASE_PATH, "..", filename))
+    with open(new_file, "w") as fh:
         fh.write(new_html)
-        if new_html[-1] != '\n':
-            fh.write('\n')
+        if new_html[-1] != "\n":
+            fh.write("\n")
 
 
 def get_parser():
     parser = argparse.ArgumentParser(
-        description=('Format compiled post HTML to be standalone by '
-                     're-writing relative links.'))
-    parser.add_argument('--year', type=int, required=True,
-                        help='Year post was published.')
-    parser.add_argument('--month', type=int, required=True,
-                        help='Month post was published.')
-    parser.add_argument('--filename', required=True,
-                        help='Name of the post within the year/month.')
+        description=(
+            "Format compiled post HTML to be standalone by "
+            "re-writing relative links."
+        )
+    )
+    parser.add_argument(
+        "--year", type=int, required=True, help="Year post was published."
+    )
+    parser.add_argument(
+        "--month", type=int, required=True, help="Month post was published."
+    )
+    parser.add_argument(
+        "--filename",
+        required=True,
+        help="Name of the post within the year/month.",
+    )
     return parser
 
 
@@ -106,5 +122,5 @@ def main():
     write_cleaned_html(args.year, args.month, args.filename)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

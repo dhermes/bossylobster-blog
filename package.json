@@ -1,0 +1,14 @@
+{
+  "name": "bossylobster-blog",
+  "version": "0.0.0",
+  "dependencies": {
+    "katex": "0.10.0-rc.1",
+    "commander": "2.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhermes/bossylobster-blog.git"
+  },
+  "author": "Danny Hermes",
+  "license": "Apache 2.0"
+}

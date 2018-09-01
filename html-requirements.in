@@ -1,0 +1,5 @@
+html5lib==0.9999999  # For plugin `simple_footnotes`
+jinja2
+markdown
+pelican
+py
