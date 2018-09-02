@@ -10,6 +10,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Account for cases when Markdown and HTML don't play well together.
+
+When HTML is embedded in Markdown, certain `elements`_ do not behave
+very well. This is to account for issues when the KaTeX-generated
+HTML contains characters that are valid Markdown (e.g. ``*`` and
+``_``).
+
+.. _elements: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#inline-html
+"""
+
 import os
 
 
