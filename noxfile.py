@@ -103,19 +103,29 @@ def html(session):
     env = {"PYTHONPATH": get_path()}
     _generate(session, pelican_opts, conf_file=ALT_CONF_FILE, env=env)
     print(PRINT_SEP)
-    # 3. Build HTML without paging.
+    # 3. Keep around the paged index files and nothing else.
+    print("Storing paging index*.html files for re-use")
+    print("    and removing paged output.")
+    print(PRINT_SEP)
+    index_files = glob.glob(os.path.join(OUTPUT_DIR, "index*.html"))
+    for filename in index_files:
+        session.run(shutil.move, filename, BASE_DIR)
+    session.run(shutil.rmtree, OUTPUT_DIR, ignore_errors=True)
+    print(PRINT_SEP)
+    # 4. Build HTML without paging.
     print("Making second pass without paging")
     print(PRINT_SEP)
     _generate(session, pelican_opts)
     print(PRINT_SEP)
-    # 4. Add back paging information.
+    # 5. Add back paging information.
     print("Putting back paging index*.html files")
     print(PRINT_SEP)
+    session.run(os.remove, os.path.join(OUTPUT_DIR, "index.html"))
     index_files = glob.glob(os.path.join(BASE_DIR, "index*.html"))
     for filename in index_files:
-        shutil.move(filename, OUTPUT_DIR)
+        session.run(shutil.move, filename, OUTPUT_DIR)
     print(PRINT_SEP)
-    # 5. Delete generated pages that are unused
+    # 6. Delete generated pages that are unused
     print("Removing unwanted pages")
     print(PRINT_SEP)
     session.run(remove_file, os.path.join(OUTPUT_DIR, "authors.html"))
@@ -128,13 +138,13 @@ def html(session):
     )
     session.run(remove_file, os.path.join(OUTPUT_DIR, "tags.html"))
     print(PRINT_SEP)
-    # 6. Rewrite URL paths for the pagination feature.
+    # 7. Rewrite URL paths for the pagination feature.
     print("Rewriting paths for paging index*.html files.")
     print(PRINT_SEP)
     script = get_path("rewrite_custom_pagination.py")
     session.run("python", script)
     print(PRINT_SEP)
-    # 7. Hack to fix a rendering bug in a few posts.
+    # 8. Hack to fix a rendering bug in a few posts.
     print("Modifying HTML mangling.")
     print(PRINT_SEP)
     script = get_path("scripts", "modify_mangled_html.py")
