@@ -7,7 +7,7 @@
 blinker==1.4              # via pelican
 docutils==0.14            # via pelican
 feedgenerator==1.9        # via pelican
-html5lib==0.9999999
+html5lib==1.0.1
 jinja2==2.10
 markdown==2.6.11
 markupsafe==1.0           # via jinja2
@@ -18,3 +18,4 @@ python-dateutil==2.7.3    # via pelican
 pytz==2018.5              # via feedgenerator, pelican
 six==1.11.0               # via feedgenerator, html5lib, pelican, python-dateutil
 unidecode==1.0.22         # via pelican
+webencodings==0.5.1       # via html5lib

@@ -1,4 +1,4 @@
-html5lib==0.9999999  # For plugin `simple_footnotes`
+html5lib
 jinja2
 markdown
 pelican
