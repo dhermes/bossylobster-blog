@@ -261,6 +261,11 @@ def blacken(session):
 @nox.session(py=False)
 def clean(session):
     """Remove the generated files."""
-    dir_paths = (OUTPUT_DIR, get_path("__pycache__"), get_path("node_modules"))
+    dir_paths = (
+        OUTPUT_DIR,
+        get_path("__pycache__"),
+        get_path("node_modules"),
+        get_path("pelican-plugins", "__pycache__"),
+    )
     for dir_path in dir_paths:
         session.run(shutil.rmtree, dir_path, ignore_errors=True)
