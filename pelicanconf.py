@@ -16,6 +16,13 @@ import os
 import jinja2
 
 
+CURR_DIR = os.path.abspath(os.path.dirname(__file__))
+
+
+def get_path(*names):
+    return os.path.join(CURR_DIR, *names)
+
+
 AUTHOR = u"Danny Hermes"
 
 SITENAME = u"Bossy Lobster"
@@ -96,9 +103,8 @@ SIDEBAR_IMAGE = "images/bossy_lobster_350_alpha.png"
 SECOND_SIDEBAR_IMAGE = "images/dhermes_headshot.jpg"
 
 # Add extra header.
-with open("extra_header.html", "r") as file_obj:
+with open(get_path("extra_header.html"), "r") as file_obj:
     EXTRA_HEADER = file_obj.read()
-del file_obj
 # NOTE: The liquid_tags.notebook plugin will also create an
 #       _nb_header.html file so we should add that if
 #       liquid_tags.notebook is to be used.
@@ -146,8 +152,8 @@ if os.environ.get("PUBLISH") == "true":
     # Add Google Analytics support.
     GOOGLE_ANALYTICS = "UA-56716324-1"
     # Add Google AdSense.
-    with open("google_adsense_code.html", "r") as fh:
-        GOOGLE_ADSENSE_CODE = fh.read()
+    with open(get_path("google_adsense_code.html"), "r") as file_obj:
+        GOOGLE_ADSENSE_CODE = file_obj.read()
 
     # RSS/Atom feeds
     FEED_DOMAIN = SITEURL
@@ -157,6 +163,16 @@ if os.environ.get("PUBLISH") == "true":
     FEED_ALL_RSS = "feeds/rss.all.xml"
 
 # Search
-with open("custom_search.html", "r") as fh:
-    CUSTOM_SEARCH_TEMPLATE = fh.read()
+with open(get_path("custom_search.html"), "r") as file_obj:
+    CUSTOM_SEARCH_TEMPLATE = file_obj.read()
 CUSTOM_SEARCH = jinja2.Template(CUSTOM_SEARCH_TEMPLATE).render(SITEURL=SITEURL)
+
+# Header
+with open(get_path("custom_header.html"), "r") as file_obj:
+    CUSTOM_HEADER_TEMPLATE = jinja2.Template(file_obj.read())
+
+# Remove local variables that aren't meant to be used in templates.
+del CURR_DIR
+del get_path
+del file_obj
+del CUSTOM_SEARCH_TEMPLATE
