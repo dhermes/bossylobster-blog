@@ -83,9 +83,9 @@ different.
   prerequisite, this made the amount of **computing** in the class
   a small fraction of the course.
 - I was continually frustrated by the prevalence of MATLAB usage in the
-  math department. MATLAB certainly has strengths, but it's kitchen sink
+  math department. MATLAB certainly has strengths, but its kitchen sink
   approach to namespaces (similar to that of PHP) really makes it hard to
-  teach. It's lack of a packaging story and reliance on a proprietary IDE
+  teach. Its lack of a packaging story and reliance on a proprietary IDE
   makes it hard for students to understand what code "is" (or even **where**
   it is on their filesystem). The IPython notebook was created at UC
   Berkeley and I wish the math department would get on board. Perhaps more
