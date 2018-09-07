@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Pelican, Octopress, GitHub Pages, Blogger, Presentation
 slug: brand-new-blog
 comments: true
+github_slug: content/2014-12-04-brand-new-blog.md
 
 After a happy 3-year run with [Blogger][1], I've decided to
 revamp my blog with viewers in mind.

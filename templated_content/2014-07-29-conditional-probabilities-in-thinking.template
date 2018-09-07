@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Bayes, Bayesian, Kahneman, Layman, Mathematics, Probability
 slug: conditional-probabilities-in-thinking
 comments: true
+github_slug: templated_content/2014-07-29-conditional-probabilities-in-thinking.template
 
 I'm currently reading
 <a href="http://www.amazon.com/gp/product/0374533555/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0374533555&linkCode=as2&tag=boslobblo-20&linkId=FMJCYK4RKIVWRNFH">Thinking, Fast and Slow</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=boslobblo-20&l=as2&o=1&a=0374533555" width="1" height="1" border="0" alt="AMZN Affiliate Ad" style="border:none !important; margin:0px !important;" />

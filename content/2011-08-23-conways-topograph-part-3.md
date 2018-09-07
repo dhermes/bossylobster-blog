@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory
 slug: conways-topograph-part-3
 comments: true
+github_slug: templated_content/2011-08-23-conways-topograph-part-3.template
 
 This is the second (continued from
 [Part 2](/2011/08/conways-topograph-part-2.html))

@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Algebra, Continued, Fractions, Math
 slug: continued-fractions-for-greater-good
 comments: true
+github_slug: templated_content/2011-07-10-continued-fractions-for-greater-good.template
 
 OK, maybe not for the greater good, but still fun. This first post will
 be relatively short and sweet, intended to give an introduction for the

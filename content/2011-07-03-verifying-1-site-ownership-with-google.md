@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: 1and1.com, Django, Google Apps, Verification
 slug: verifying-1-site-ownership-with-google
 comments: true
+github_slug: content/2011-07-03-verifying-1-site-ownership-with-google.md
 
 Hello freens. I purchased bossylobster.com from [1&1](http://1and1.com/)
 recently with the intent of hosting it on Google App Engine. I soon

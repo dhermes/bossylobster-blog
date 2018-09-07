@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Compiz, Divvy, Linux, Mac OS X, Window Manager
 slug: i-love-divvy-as-im-sure-many-do-but-its
 comments: true
+github_slug: content/2011-07-01-i-love-divvy-as-im-sure-many-do-but-its.md
 
 I **love** my [Divvy](http://mizage.com/divvy), as I'm sure many do, but
 it's not available for Linux. (I completely understand why it isn't,

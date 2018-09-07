@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Bayes, Layman, Mathematics, Probability
 slug: bayes-law-primer
 comments: true
+github_slug: templated_content/2014-07-29-bayes-law-primer.template
 
 I'm currently writing a blog post that uses
 [Bayes' Law](http://en.wikipedia.org/wiki/Bayes%27_law)

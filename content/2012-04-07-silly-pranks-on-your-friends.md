@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: DNS, DNS Lookup, Domain Name System, Hosts file, Internet Protocol, Internet Service Provider, IP Address, ISP, Macbook, nytimes.com, people.com, Practical Joke, Prank, UNIX
 slug: silly-pranks-on-your-friends
 comments: true
+github_slug: content/2012-04-07-silly-pranks-on-your-friends.md
 
 ## Disclaimer: These are silly little pranks, but I don't encourage messing with someone's computing environment without letting them know you have done so.
 

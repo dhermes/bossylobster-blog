@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Finance, Interest Rate, Mortgage, Newton-Raphson Method, Numerical Analysis, Python
 slug: reverse-calculating-interest-rate
 comments: true
+github_slug: templated_content/2012-05-15-reverse-calculating-interest-rate.template
 
 I was recently playing around with some loan data and only happened to
 have the term (or length, or duration) of the loan, the amount of the

@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Approximation, Infinite Nested Radical, Math, Nested Radical, Pi, Radical, Root Two, Square Root
 slug: trigonometry-and-nested-radicals
 comments: true
+github_slug: templated_content/2013-11-25-trigonometry-and-nested-radicals.template
 
 Early last month, I was chatting with one of my officemates about a
 curious problem I had studied in high school. I hadn't written any of

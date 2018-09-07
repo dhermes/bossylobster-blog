@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: App Engine, Deferred Library, Google App Engine, Google Codesite, Javascript, jQuery, Python, Task Queue API
 slug: last-to-cross-finish-line-part-two
 comments: true
+github_slug: content/2012-08-29-last-to-cross-finish-line-part-two.md
 
 Recently, my colleague
 [+Fred Sauer](https://plus.google.com/115640166224745944209) and I gave a tech

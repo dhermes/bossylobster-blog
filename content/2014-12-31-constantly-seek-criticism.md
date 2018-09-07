@@ -11,6 +11,7 @@ use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/elon-musk-criticism-thumbnail.jpg
+github_slug: content/2014-12-31-constantly-seek-criticism.md
 
 I was recently catching up on articles and videos I'd been putting off
 and came across a great quote from [Elon Musk][1]:

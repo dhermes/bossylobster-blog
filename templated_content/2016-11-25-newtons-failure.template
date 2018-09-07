@@ -11,6 +11,7 @@ use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/newton_at_work.png
+github_slug: templated_content/2016-11-25-newtons-failure.template
 
 Finding zeros of any old function is a common task, and using
 [Newton's method][1] is one of the best tools for carrying

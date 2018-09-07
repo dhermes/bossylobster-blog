@@ -11,6 +11,7 @@ use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/graduation.png
+github_slug: content/2018-09-07-graduated.md
 
 After five years, I'm excited to say I've finished [my PhD][1]. I certainly
 learned a lot and met a lot of great people along the way.

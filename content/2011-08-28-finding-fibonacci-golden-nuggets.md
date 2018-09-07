@@ -4,6 +4,7 @@ author: Danny Hermes (dhermes@bossylobster.com)
 tags: Binary Quadratic Form, Conway, Conway's Topograph, Math, Number Theory, Project Euler
 slug: finding-fibonacci-golden-nuggets
 comments: true
+github_slug: templated_content/2011-08-28-finding-fibonacci-golden-nuggets.template
 
 As I mentioned in my last set ofposts, the content would go somewhere
 and this post will be the first to deliver on that. In fact this is the
