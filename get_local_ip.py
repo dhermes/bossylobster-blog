@@ -10,28 +10,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# H/T: http://stackoverflow.com/a/10350424/1068170
+import contextlib
 import socket
-import subprocess
-import re
-
-
-PATTERN = re.compile(r"inet\s*\w*\S*:\s*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})")
 
 
 def get_ipv4_address():
-    proc = subprocess.Popen(["ifconfig"], stdout=subprocess.PIPE)
-    ifconfig_resp, stderr = proc.communicate()
-    if stderr is not None:
-        raise ValueError("ifconfig failed")
-    inet_addrs = [
-        match
-        for match in PATTERN.findall(ifconfig_resp)
-        if not match.startswith("127.")
-    ]
-    if len(inet_addrs) != 1:
-        raise ValueError(("Non-unique result", inet_addrs))
-    return inet_addrs[0]
+    # H/T: https://stackoverflow.com/a/166589/1068170
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    with contextlib.closing(sock):
+        sock.connect(("8.8.8.8", 80))
+        return sock.getsockname()[0]
 
 
 if __name__ == "__main__":

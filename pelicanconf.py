@@ -36,7 +36,7 @@ ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{slug}.html"
 # Title menu options
 ARCHIVES_SAVE_AS = "all-posts.html"
 MENUITEMS = [
-    ("All Posts", "/%s" % ARCHIVES_SAVE_AS),
+    ("All Posts", "/{}".format(ARCHIVES_SAVE_AS)),
     ("GitHub Profile", "http://github.com/dhermes/"),
     ("Berkeley Page", "http://math.berkeley.edu/~dhermes/"),
 ]

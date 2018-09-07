@@ -168,6 +168,8 @@ def regenerate(session):
     content when files are updated.
     """
     pelican_opts = get_pelican_opts()
+    session.install("--requirement", "html-requirements.txt")
+
     _generate(session, pelican_opts, regenerate=True)
 
 
@@ -186,11 +188,13 @@ def serve(session):
 def serve_local(session):
     """Serve at http://192.168.XX.YY."""
     script = get_path("get_local_ip.py")
-    local_ip = session.run("python", script)
+    local_ip = session.run("python", script, silent=True)
     script = get_path("pelican_server.py")
 
     session.cd(OUTPUT_DIR)
-    session.run("python", script, "80", local_ip)
+    # ``root`` doesn't know about our virtualenv.
+    py_exe = os.path.join(session.bin, "python")
+    session.run("sudo", py_exe, script, "80", local_ip.strip())
 
 
 @nox.session(py=DEFAULT_INTERPRETER)

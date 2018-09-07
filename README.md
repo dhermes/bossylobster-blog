@@ -39,6 +39,8 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   via [Standard YouTube License][24]
 - `generic-football.png` - From [openclipart][26] via
   [Unlimited Commerical Use][25]
+- `graduation.png` - From [openclipart][27] via
+  [Unlimited Commerical Use][25]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -64,3 +66,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [24]: https://www.youtube.com/static?template=terms
 [25]: https://openclipart.org/unlimited-commercial-use-clipart
 [26]: https://openclipart.org/detail/102853/football
+[27]: https://openclipart.org/detail/178476/graduation-penguin
