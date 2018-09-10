@@ -48,6 +48,7 @@ blockquote.latex-img::-webkit-scrollbar-thumb:horizontal {
 }
 h1.entry-title {
   display: inline-block;
+  max-width: 75%;
 }
 /*!
  * Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
@@ -61,4 +62,7 @@ h1.entry-title {
 a.fab{text-decoration: none; float: right;}
 @media only screen and (max-width: 450px) {
   a.fab { visibility: hidden; }
+  h1.entry-title {
+    max-width: 100%;
+  }
 }
