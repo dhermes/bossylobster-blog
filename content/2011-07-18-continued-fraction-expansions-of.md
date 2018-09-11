@@ -1,3 +1,4 @@
+---
 title: Continued fraction expansions of irrational square roots
 date: 2011-07-18
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Algebra, Continued Fractions, Math, Quadratic Irrational, Square Root
 slug: continued-fraction-expansions-of
 comments: true
 github_slug: templated_content/2011-07-18-continued-fraction-expansions-of.template
+---
 
 I had no idea (until this Thursday, July 16 2011) that I had never seen a
 proof of the fact that the continued fraction expansion of

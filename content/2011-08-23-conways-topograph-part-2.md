@@ -1,3 +1,4 @@
+---
 title: Conway's Topograph Part 2
 date: 2011-08-23 14:00
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Algebra, Binary Quadratic Form, Conway, Conway's Topograph, Math, Number T
 slug: conways-topograph-part-2
 comments: true
 github_slug: templated_content/2011-08-23-conways-topograph-part-2.template
+---
 
 This is the second (continued from
 [Part 1](/2011/08/conways-topograph-part-1.html))

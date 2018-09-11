@@ -1,3 +1,4 @@
+---
 title: How Does Go Compute a Logarithm
 description: Source Diving and Math
 date: 2017-02-06
@@ -12,6 +13,7 @@ twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/remez_equioscillating_error.png
 github_slug: templated_content/2017-02-06-golang-and-log-x.template
+---
 
 About a year ago, I was reading the Go [source][1] for computing
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>&#8289;</mo><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\log(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span> and was very surprised by the
