@@ -18,7 +18,7 @@ learned a lot and met a lot of great people along the way.
 
 One of the biggest lessons I learned was about myself: I need to **say no**
 more often. I continued to say yes, to [side projects][6], to coffee in SF, to
-doing Python training on the side, etc. Saying no a bit more frequently
+teaching Python training on the side, etc. Saying no a bit more frequently
 would have allowed me to spend more time on research and to finish sooner as
 I'd originally hoped.
 
