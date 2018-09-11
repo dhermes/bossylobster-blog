@@ -1,3 +1,5 @@
-{%- if article.github_slug -%}
+{%- if article and article.github_slug -%}
 <a href="https://github.com/dhermes/bossylobster-blog/blob/master/{{ article.github_slug }}" class="fab fa-github"> Edit on GitHub</a>
+{%- elif page and page.github_slug -%}
+<a href="https://github.com/dhermes/bossylobster-blog/blob/master/{{ page.github_slug }}" class="fab fa-github"> Edit on GitHub</a>
 {%- endif -%}

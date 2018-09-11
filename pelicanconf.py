@@ -44,8 +44,8 @@ ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{slug}.html"
 ARCHIVES_SAVE_AS = "all-posts.html"
 MENUITEMS = [
     ("All Posts", "/{}".format(ARCHIVES_SAVE_AS)),
-    ("GitHub Profile", "http://github.com/dhermes/"),
-    ("Berkeley Page", "http://math.berkeley.edu/~dhermes/"),
+    ("GitHub", "http://github.com/dhermes/"),
+    ("Mathematics", "/mathematics"),
     ("Testimonials", "/testimonials"),
 ]
 
