@@ -46,6 +46,7 @@ MENUITEMS = [
     ("All Posts", "/{}".format(ARCHIVES_SAVE_AS)),
     ("GitHub Profile", "http://github.com/dhermes/"),
     ("Berkeley Page", "http://math.berkeley.edu/~dhermes/"),
+    ("Testimonials", "/testimonials"),
 ]
 
 # Archive customizations.
