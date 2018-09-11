@@ -1,3 +1,4 @@
+---
 title: How Does Go Compute a Logarithm
 description: Source Diving and Math
 date: 2017-02-06
@@ -12,6 +13,7 @@ twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/remez_equioscillating_error.png
 github_slug: templated_content/2017-02-06-golang-and-log-x.template
+---
 
 About a year ago, I was reading the Go [source][1] for computing
 {{ get_katex("\\log(x)") }} and was very surprised by the

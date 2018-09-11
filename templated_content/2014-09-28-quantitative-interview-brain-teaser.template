@@ -1,3 +1,4 @@
+---
 title: Quantitative Interview Brain Teaser: Computer Assistance
 date: 2014-09-28
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, itertool
 slug: quantitative-interview-brain-teaser
 comments: true
 github_slug: templated_content/2014-09-28-quantitative-interview-brain-teaser.template
+---
 
 In a [previous post](/2014/09/quantitative-brain-teaser-brain-only.html)
 I discussed a recent brain teaser I had come across:

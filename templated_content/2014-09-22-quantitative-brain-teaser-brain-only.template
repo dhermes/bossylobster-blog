@@ -1,3 +1,4 @@
+---
 title: Quantitative Brain Teaser: Brain Only
 date: 2014-09-22
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Brain Teaser, Combinatorics, Digit Counting, Interview Questions, Mathemat
 slug: quantitative-brain-teaser-brain-only
 comments: true
 github_slug: templated_content/2014-09-22-quantitative-brain-teaser-brain-only.template
+---
 
 I've recently been working some atrophied mental muscles and came across
 a brain teaser that was pretty nifty:

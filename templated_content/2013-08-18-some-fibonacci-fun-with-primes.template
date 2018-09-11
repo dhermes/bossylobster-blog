@@ -1,3 +1,4 @@
+---
 title: Some Fibonacci Fun with Primes
 date: 2013-08-18
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Algebra, Fibonacci, Finite Field, Linear Algebra, Math, Number Theory
 slug: some-fibonacci-fun-with-primes
 comments: true
 github_slug: templated_content/2013-08-18-some-fibonacci-fun-with-primes.template
+---
 
 I haven't written in way too long and just wanted to post this fun
 little proof.

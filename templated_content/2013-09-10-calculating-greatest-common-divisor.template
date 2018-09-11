@@ -1,3 +1,4 @@
+---
 title: Calculating a Greatest Common Divisor with Dirichlet's Help
 date: 2013-09-10
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Dirichlet, Math, Mathematics, Number Theory, Prime Number
 slug: calculating-greatest-common-divisor
 comments: true
 github_slug: templated_content/2013-09-10-calculating-greatest-common-divisor.template
+---
 
 Having just left Google and started my PhD in Applied Mathematics at
 [Berkeley](http://math.berkeley.edu/), I thought it might be
