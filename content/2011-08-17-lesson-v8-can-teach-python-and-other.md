@@ -1,3 +1,4 @@
+---
 title: The Lesson V8 Can Teach Python and Other Dynamic Languages
 date: 2011-08-17
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: Benchmark, Comparison, Dynamic Language, Javascript, Javascript Engine, JI
 slug: lesson-v8-can-teach-python-and-other
 comments: true
 github_slug: content/2011-08-17-lesson-v8-can-teach-python-and-other.md
+---
 
 Being unable to completely give up math for computers, I am naturally
 drawn to [Project Euler](http://projecteuler.net/) and as a result

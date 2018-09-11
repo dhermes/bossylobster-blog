@@ -1,6 +1,8 @@
+---
 slug: mathematics
 title: Mathematics
 github_slug: content/pages/mathematics.md
+---
 
 For as long as I can remember, I have had a love of learning math and problem
 solving. In 7th grade, I participated in my first math competition (MathCounts)

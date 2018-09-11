@@ -1,3 +1,4 @@
+---
 title: Silly Pranks on your Friends
 date: 2012-04-07
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: DNS, DNS Lookup, Domain Name System, Hosts file, Internet Protocol, Intern
 slug: silly-pranks-on-your-friends
 comments: true
 github_slug: content/2012-04-07-silly-pranks-on-your-friends.md
+---
 
 ## Disclaimer: These are silly little pranks, but I don't encourage messing with someone's computing environment without letting them know you have done so.
 

@@ -1,3 +1,4 @@
+---
 title: Last to Cross the Finish Line: Part Three
 date: 2012-09-10
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: App Engine, Deferred Library, Google App Engine, Google Codesite, Javascri
 slug: last-to-cross-finish-line-part-three
 comments: true
 github_slug: content/2012-09-10-last-to-cross-finish-line-part-three.md
+---
 
 Recently, my colleague
 [+Fred Sauer](https://plus.google.com/115640166224745944209) and I gave a tech

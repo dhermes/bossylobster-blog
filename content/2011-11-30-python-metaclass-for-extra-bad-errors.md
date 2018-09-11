@@ -1,3 +1,4 @@
+---
 title: A Python Metaclass for "extra bad" errors in Google App Engine
 date: 2011-11-30
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: App Engine, Class as Object, Decorator, Exception, Google App Engine, Meta
 slug: python-metaclass-for-extra-bad-errors
 comments: true
 github_slug: content/2011-11-30-python-metaclass-for-extra-bad-errors.md
+---
 
 So now here we are, having tried to
 [handle errors in Google App Engine...and failed](/2011/11/handling-errors-in-google-app-engineand.html)

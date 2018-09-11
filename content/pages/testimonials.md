@@ -1,6 +1,8 @@
+---
 slug: testimonials
 title: Testimonials
 github_slug: content/pages/testimonials.md
+---
 
 * Danny manages to be relaxed, funny, and watchable AND very knowledgeable
   about the material AND a stickler about teaching it AND good at explaining it

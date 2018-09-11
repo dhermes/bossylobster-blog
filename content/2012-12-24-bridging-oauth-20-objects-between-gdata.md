@@ -1,3 +1,4 @@
+---
 title: Bridging OAuth 2.0 objects between GData and Discovery
 date: 2012-12-24
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: App Engine, Decorator, GData, gdata-python-client, Google App Engine, Goog
 slug: bridging-oauth-20-objects-between-gdata
 comments: true
 github_slug: content/2012-12-24-bridging-oauth-20-objects-between-gdata.md
+---
 
 My colleague
 [+Takashi Matsuo](http://plus.google.com/110554344789668969711) and I recently

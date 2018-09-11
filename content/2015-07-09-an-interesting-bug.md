@@ -1,3 +1,4 @@
+---
 title: An Interesting Bug
 description: Buggy Interview Question; Set for Life
 date: 2015-07-09
@@ -11,6 +12,7 @@ use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
 github_slug: content/2015-07-09-an-interesting-bug.md
+---
 
 A fairly [common][1] interview [question][2] is
 

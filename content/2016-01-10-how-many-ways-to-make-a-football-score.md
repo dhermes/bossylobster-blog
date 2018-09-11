@@ -1,3 +1,4 @@
+---
 title: How Many Ways to Make a (Football) Score
 description: Describing all the ways a football score can be obtained
 date: 2016-01-10
@@ -12,6 +13,7 @@ twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/generic-football.png
 github_slug: content/2016-01-10-how-many-ways-to-make-a-football-score.md
+---
 
 While watching today's [Seahawks-Vikings game][1], my wife asked:
 

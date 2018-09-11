@@ -1,3 +1,4 @@
+---
 title: Handling errors in Google App Engine...and failing
 date: 2011-11-27
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: App Engine, Deferred Library, Exception, Google App Engine, Mail API, Meta
 slug: handling-errors-in-google-app-engineand
 comments: true
 github_slug: content/2011-11-27-handling-errors-in-google-app-engineand.md
+---
 
 After spending a nontrivial amount of my nights and weekends working on
 an App Engine app, I wanted a good way to monitor the logs without

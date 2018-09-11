@@ -1,3 +1,4 @@
+---
 title: Installing Python on OS X
 description: The Hows and Whys of Python versions
 date: 2017-09-19
@@ -12,6 +13,7 @@ twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/python-logo.png
 github_slug: content/2017-09-19-python-on-os-x.md
+---
 
 > **Caveat**: I stopped using a Mac for my development machine way
 > back in the fall of 2014. You probably shouldn't listen to me.

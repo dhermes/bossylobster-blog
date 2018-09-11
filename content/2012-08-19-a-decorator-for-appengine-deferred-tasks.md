@@ -1,3 +1,4 @@
+---
 title: A Decorator for App Engine Deferred Tasks
 date: 2012-08-19
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -5,6 +6,7 @@ tags: App Engine, Decorator, Deferred Library, Environment Variables, Google App
 slug: a-decorator-for-appengine-deferred-tasks
 comments: true
 github_slug: content/2012-08-19-a-decorator-for-appengine-deferred-tasks.md
+---
 
 I happen to be a big fan of the
 [deferred library](https://developers.google.com/appengine/articles/deferred)
