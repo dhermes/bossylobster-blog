@@ -40,16 +40,16 @@ as a subset of two superbases:
 With these two facts in hand, we can begin to form the geometric structure of
 the topograph. The interactions between bases and superbases (as well as the
 individual vectors themselves) give us the form. In the graph, we join each
-superbase ({{ get_latex_img("\\bigcirc") }}) to the three bases
-({{ get_latex_img("\\square") }}) in it.
+superbase ({{ get_katex("\\bigcirc") }}) to the three bases
+({{ get_katex("\\square") }}) in it.
 
 <div markdown="1" style="text-align: center;">
   ![Conways Edges and Nodes](/images/conway_edges_nodes.png)
 </div>
 
-Each edge connecting two superbases ({{ get_latex_img("\\bigcirc") }})
+Each edge connecting two superbases ({{ get_katex("\\bigcirc") }})
 represents a base and we mark each of these edges with a
-({{ get_latex_img("\\square") }}) in the middle. Since each base can only be
+({{ get_katex("\\square") }}) in the middle. Since each base can only be
 in two superbases, we have well-defined endpoints for each base (edge).
 Similarly, since each superbase contains three bases as subsets, each
 superbase (endpoint) has three bases (edges) coming out of it.
@@ -86,7 +86,7 @@ For vectors {{ get_katex("v_1, v_2") }},
 #### Proof: {{ "{#proof-arith-prog-rule}" }}
 
 Exercise. (If you really can't get it, let me know in the comments.)
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\blacksquare") }}
 
 This implies that if
 
@@ -131,7 +131,7 @@ The two other edges at {{ get_katex("Q") }} have common differences
 {{ get_katex("(a + c) - b") }} and {{ get_katex("(b + c) - a") }}. Since
 {{ get_katex("c = a + b + h") }} is greater than both {{ get_katex("a") }} and
 {{ get_katex("b") }}, these differences are positive.
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\blacksquare") }}
 
 Notice also that this establishes two new triples
 {{ get_katex("(a, a + b + h, 2 a + h)") }} and
