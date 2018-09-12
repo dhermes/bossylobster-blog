@@ -19,16 +19,16 @@ is not a perfect square. But have no fear, I found out about something called a
 An irrational root {{ get_katex("\\alpha") }} of a quadratic equation
 with integer coefficients is called **reduced** if
 {{ get_katex("\\alpha > 1") }} and its conjugate
-{{ get_latex_img("\\widetilde{\\alpha}") }} satisfies
-{{ get_latex_img("-1 < \\widetilde{\\alpha} < 0") }}.
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\widetilde{\\alpha}") }} satisfies
+{{ get_katex("-1 < \\widetilde{\\alpha} < 0") }}.
+{{ get_katex("\\blacksquare") }}
 
 Solutions (since assumed real) of such quadratics can be written
 as
 
 {{ get_katex("\\alpha = \\frac{\\sqrt{D} + P}{Q}", blockquote=True) }}
 
-where {{ get_latex_img("D, P, Q \\in \\mathbf{Z}") }} and
+where {{ get_katex("D, P, Q \\in \\mathbf{Z}") }} and
 {{ get_katex("D, Q > 0") }}. It is also possible (though not required) to ensure
 that {{ get_katex("Q") }} divides {{ get_katex("D - P^2") }}. This is
 actually a necessary assumption for some of the stuff I do, is mentioned
@@ -50,7 +50,7 @@ We say a reduced quadratic irrational {{ get_katex("\\alpha") }} is
 {{ get_katex("\\alpha = \\frac{P + \\sqrt{D}}{Q}", blockquote=True) }}
 
 and {{ get_katex("Q") }} divides {{ get_katex("D - P^2") }}.
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\blacksquare") }}
 
 #### Lemma 1: {{ "{#lemma-1}" }}
 
@@ -80,7 +80,7 @@ and {{ get_katex("X =\\lfloor \\alpha \\rfloor") }}, we have
     {{ get_katex("\\frac{1}{\\alpha'} > 0") }} and since
     {{ get_katex("\\frac{1}{\\alpha'}") }} is the fractional part we know
 
-    {{ get_latex_img("0 < \\frac{1}{\\alpha'} < 1 \\Rightarrow\\alpha' > 1.", blockquote=True) }}
+    {{ get_katex("0 < \\frac{1}{\\alpha'} < 1 \\Rightarrow\\alpha' > 1.", blockquote=True) }}
 
 -   Transforming
 
@@ -88,8 +88,8 @@ and {{ get_katex("X =\\lfloor \\alpha \\rfloor") }}, we have
 
     we have {{ get_katex("P' = QX - P") }} and
     {{ get_katex("Q' = \\frac{1}{Q}\\left(D - (QX - P)^2\\right)") }} and need
-    to show {{ get_latex_img("Q' \\in \\mathbf{Z}") }}. But
-    {{ get_latex_img("D - (QX - P)^2 \\equiv D - P^2 \\bmod{Q}") }} and since
+    to show {{ get_katex("Q' \\in \\mathbf{Z}") }}. But
+    {{ get_katex("D - (QX - P)^2 \\equiv D - P^2 \\bmod{Q}") }} and since
     {{ get_katex("\\alpha") }} is associated to {{ get_katex("D") }},
     {{ get_katex("Q") }} must divide this quantity, hence {{ get_katex("Q'") }}
     is an integer.
@@ -98,24 +98,24 @@ and {{ get_katex("X =\\lfloor \\alpha \\rfloor") }}, we have
     integer and {{ get_katex("\\alpha") }} is irrational, we know
     {{ get_katex("X < \\frac{\\sqrt{D} + P}{Q}") }} hence
     {{ get_katex("P' = QX - P < \\sqrt{D}") }} forcing
-    {{ get_latex_img("\\widetilde{\\alpha}' < 0") }}.
+    {{ get_katex("\\widetilde{\\alpha}' < 0") }}.
 
 -   Since {{ get_katex("\\alpha > 1") }} we know
-    {{ get_latex_img("X \\geq 1 \\Leftrightarrow 0 \\leq X - 1") }}. Thus
+    {{ get_katex("X \\geq 1 \\Leftrightarrow 0 \\leq X - 1") }}. Thus
 
-    {{ get_latex_img("\\begin{align*}\\widetilde{\\alpha} = \\frac{P - \\sqrt{D}}{Q} &< 0 \\leq X - 1 \\\\ \\Rightarrow Q &< \\sqrt{D} + (QX - P) \\\\\\Rightarrow Q(\\sqrt{D} - (QX - P))&< D - (QX - P)^2 \\\\\\Rightarrow -\\widetilde{\\alpha}' = \\frac{\\sqrt{D} - (QX - P)}{\\frac{1}{Q}\\left(D - (QX - P)^2\\right)} &< 1\\end{align*}", blockquote=True, standalone=True) }}
+    {{ get_katex("\\begin{aligned}\\widetilde{\\alpha} = \\frac{P - \\sqrt{D}}{Q} &< 0 \\leq X - 1 \\\\ \\Rightarrow Q &< \\sqrt{D} + (QX - P) \\\\\\Rightarrow Q(\\sqrt{D} - (QX - P))&< D - (QX - P)^2 \\\\\\Rightarrow -\\widetilde{\\alpha}' = \\frac{\\sqrt{D} - (QX - P)}{\\frac{1}{Q}\\left(D - (QX - P)^2\\right)} &< 1\\end{aligned}", blockquote=True) }}
 
-    hence {{ get_latex_img("\\widetilde{\\alpha}' > -1") }}
+    hence {{ get_katex("\\widetilde{\\alpha}' > -1") }}
     and {{ get_katex("\\alpha'") }} is reduced.
 
 -   Since {{ get_katex("Q' = \\frac{1}{Q}\\left(D - (P')^2\\right)") }}, we know
 
-    {{ get_latex_img("D - (P')^2 \\equiv Q Q' \\equiv 0 \\bmod{Q'}", blockquote=True) }}
+    {{ get_katex("D - (P')^2 \\equiv Q Q' \\equiv 0 \\bmod{Q'}", blockquote=True) }}
 
     hence {{ get_katex("\\alpha'") }} is associated to {{ get_katex("D") }}.
 
 Thus {{ get_katex("\\alpha'") }} is both reduced and associated to
-{{ get_katex("D") }}. {{ get_latex_img("\\blacksquare") }}
+{{ get_katex("D") }}. {{ get_katex("\\blacksquare") }}
 
 #### Lemma 2: {{ "{#lemma-2}" }}
 
@@ -127,16 +127,16 @@ fixed {{ get_katex("D") }}.
 As above write an arbitrary reduced irrational as
 {{ get_katex("\\alpha = \\frac{\\sqrt{D} + P}{Q}") }}. Since
 {{ get_katex("\\alpha > 1") }} and
-{{ get_latex_img("\\widetilde{\\alpha} > -1") }}, we know
-{{ get_latex_img("\\alpha + \\widetilde{\\alpha} = \\frac{2P}{Q} > 0") }} hence
+{{ get_katex("\\widetilde{\\alpha} > -1") }}, we know
+{{ get_katex("\\alpha + \\widetilde{\\alpha} = \\frac{2P}{Q} > 0") }} hence
 with the assumption {{ get_katex("Q > 0") }} we have {{ get_katex("P > 0") }}.
-Since {{ get_latex_img("\\widetilde{\\alpha} < 0") }} we also have
+Since {{ get_katex("\\widetilde{\\alpha} < 0") }} we also have
 {{ get_katex("P < \\sqrt{D}") }}. Also, since {{ get_katex("\\alpha > 1") }}
 by assumption we have {{ get_katex("Q < P + \\sqrt{D} < 2\\sqrt{D}") }} thus
 there are finitely many choices for both {{ get_katex("P") }} and
 {{ get_katex("Q") }}, forcing finitely many reduced quadratic irrationals
 associated to a fixed {{ get_katex("D") }} (this amount is strictly bounded
-above by {{ get_katex("2D") }}). {{ get_latex_img("\\blacksquare") }}
+above by {{ get_katex("2D") }}). {{ get_katex("\\blacksquare") }}
 
 #### Claim: {{ "{#claim-periodic}" }}
 
@@ -165,22 +165,22 @@ prove
 Since {{ get_katex("\\frac{1}{\\alpha_0}") }} is the fractional part of the
 irrational {{ get_katex("\\sqrt{D}") }}, we have
 
-{{ get_latex_img("0 < \\frac{1}{\\alpha_0} < 1 \\Rightarrow \\alpha_0 > 1.", blockquote=True) }}
+{{ get_katex("0 < \\frac{1}{\\alpha_0} < 1 \\Rightarrow \\alpha_0 > 1.", blockquote=True) }}
 
 By simple algebra, we have
 
-{{ get_latex_img("\\alpha_0 = \\frac{a_0 + \\sqrt{D}}{D - a_0^2}, \\qquad \\widetilde{\\alpha_0} = \\frac{a_0 - \\sqrt{D}}{D - a_0^2}.", blockquote=True) }}
+{{ get_katex("\\alpha_0 = \\frac{a_0 + \\sqrt{D}}{D - a_0^2}, \\qquad \\widetilde{\\alpha_0} = \\frac{a_0 - \\sqrt{D}}{D - a_0^2}.", blockquote=True) }}
 
 Since {{ get_katex("a_0") }} is the floor, we know
-{{ get_latex_img("a_0 - \\sqrt{D} < 0 \\Rightarrow\\widetilde{\\alpha_0} < 0") }}.
-Since {{ get_latex_img("D \\in \\mathbf{Z} \\Rightarrow \\sqrt{D} > 1") }} and
+{{ get_katex("a_0 - \\sqrt{D} < 0 \\Rightarrow\\widetilde{\\alpha_0} < 0") }}.
+Since {{ get_katex("D \\in \\mathbf{Z} \\Rightarrow \\sqrt{D} > 1") }} and
 {{ get_katex("\\sqrt{D} > a_0") }}, we have
 
-{{ get_latex_img("1 < \\sqrt{D} + a_0 \\Rightarrow\\sqrt{D} - a_0 < D - a_0^2", blockquote=True) }}
+{{ get_katex("1 < \\sqrt{D} + a_0 \\Rightarrow\\sqrt{D} - a_0 < D - a_0^2", blockquote=True) }}
 
 hence
 
-{{ get_latex_img("a_0 - \\sqrt{D} > -(D - a_0^2) \\Rightarrow \\widetilde{\\alpha_0} > -1.", blockquote=True) }}
+{{ get_katex("a_0 - \\sqrt{D} > -(D - a_0^2) \\Rightarrow \\widetilde{\\alpha_0} > -1.", blockquote=True) }}
 
 Thus {{ get_katex("\\alpha_0") }} is a reduced quadratic irrational. Since
 {{ get_katex("P_0 = a_0") }} and {{ get_katex("Q_0 = D - a_0^2 = D - P_0^2") }},
@@ -201,9 +201,9 @@ hence the {{ get_katex("\\alpha_i") }} are periodic. Similarly, as the
 {{ get_katex("\\alpha_{i - 1}") }}, the {{ get_katex("a_i") }} must be periodic
 as well, forcing the continued fraction expansion
 
-{{ get_latex_img("\\sqrt{D} = a_0 + \\cfrac{1}{a_1 +\\cfrac{1}{a_2 +\\ddots}}", blockquote=True) }}
+{{ get_katex("\\sqrt{D} = a_0 + \\cfrac{1}{a_1 +\\cfrac{1}{a_2 +\\ddots}}", blockquote=True) }}
 
-to be periodic.{{ get_latex_img("\\blacksquare") }}
+to be periodic.{{ get_katex("\\blacksquare") }}
 
 #### Update:
 
