@@ -164,7 +164,7 @@ let the base vectors define a sequence
 {{ get_katex("u_0 = (1, 0)") }} and{{ get_katex("v_0 = (0, 1)") }}, then we
 have a recurrence
 
-{{ get_latex_img("\\begin{align*}u_{k + 1} &= p u_k + q v_k \\\\ v_{k + 1} &= r u_k + s v_k. \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}u_{k + 1} &= p u_k + q v_k \\\\ v_{k + 1} &= r u_k + s v_k. \\end{aligned}", blockquote=True) }}
 
 Using this
 
