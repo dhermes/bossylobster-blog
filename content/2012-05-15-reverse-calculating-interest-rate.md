@@ -190,7 +190,7 @@ def newton_raphson_method(guess, f, f_prime):
 ```
 
 As you can see, once we have `f` and `f_prime`, everything else is easy
-because all the work in calculating the next value (via`next_value`)
+because all the work in calculating the next value (via `next_value`)
 is done by the functions.
 
 Step IV: Utilize the Newton-Raphson code to find an Interest Rate
