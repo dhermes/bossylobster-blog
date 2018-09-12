@@ -38,17 +38,17 @@ courtesy of Wikipedia:
 > denominator is a little bit more than {{ get_katex("2") }} about
 > {{ get_katex("2 + \\frac{1}{6}") }}, so {{ get_katex("\\frac{415}{93}") }} is
 > approximately
-> {{ get_latex_img("4 + \\cfrac{1}{2+\\cfrac{1}{6}}.", blockquote=True) }}
+> {{ get_katex("4 + \\cfrac{1}{2+\\cfrac{1}{6}}.", blockquote=True) }}
 > But the {{ get_katex("6") }} in the denominator is not correct; the correct
 > denominator is a little bit more than {{ get_katex("6") }}, actually
 > {{ get_katex("6+\\frac{1}{7}") }}. So {{ get_katex("\\frac{415}{93}") }} is
 > actually
-> {{ get_latex_img("4 + \\cfrac{1}{2+\\cfrac{1}{6 +\\cfrac{1}{7}}}.", blockquote=True) }}
+> {{ get_katex("4 + \\cfrac{1}{2+\\cfrac{1}{6 +\\cfrac{1}{7}}}.", blockquote=True) }}
 > This is exact...
 
 With this in mind, one can define an infinite continued fraction to be
 
-{{ get_latex_img("a_0 + \\cfrac{1}{a_1 +\\cfrac{1}{a_2 +\\ddots}}.", blockquote=True) }}
+{{ get_katex("a_0 + \\cfrac{1}{a_1 +\\cfrac{1}{a_2 +\\ddots}}.", blockquote=True) }}
 
 With the denominators {{ get_katex("a_0, a_1, a_2, \\ldots") }}, we can define
 a recurrence for the finite approximations (convergents) of this value. For
@@ -68,7 +68,7 @@ an infinite continued fraction. (Instead of saying a probability of
 
 Plugging this into itself, we have
 
-{{ get_latex_img("\\sqrt{2} = 1 + \\cfrac{1}{1 +1 + \\cfrac{1}{\\sqrt{2} + 1}} =1 + \\cfrac{1}{1 +1 + \\cfrac{1}{1 + 1 + \\cfrac{1}{\\sqrt{2} + 1}}}", blockquote=True) }}
+{{ get_katex("\\sqrt{2} = 1 + \\cfrac{1}{1 +1 + \\cfrac{1}{\\sqrt{2} + 1}} =1 + \\cfrac{1}{1 +1 + \\cfrac{1}{1 + 1 + \\cfrac{1}{\\sqrt{2} + 1}}}", blockquote=True) }}
 
 and notice it can be represented by {{ get_katex("(1; 2, 2, 2, \\ldots)") }}.
 
@@ -81,7 +81,7 @@ Define the {{ get_katex("n") }}th convergent to be
 
 {{ get_katex("h_n") }} and {{ get_katex("k_n") }} satisfy
 
-{{ get_latex_img("\\begin{align*}h_n &= a_n h_{n - 1} + h_{n - 2} \\\\k_n &= a_n k_{n - 1} + k_{n - 2}\\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}h_n &= a_n h_{n - 1} + h_{n - 2} \\\\k_n &= a_n k_{n - 1} + k_{n - 2}\\end{aligned}", blockquote=True) }}
 
 along with {{ get_katex("h_{-1} = 1, h_{-2} = 0") }} and
 {{ get_katex("k_{-1} = 0, k_{-2} = 1") }}.
@@ -97,20 +97,20 @@ in the final denominator. Since
 
 we similarly have
 
-{{ get_latex_img("\\begin{align*}\\frac{h_{n + 1}}{k_{n + 1}} &= \\frac{\\left(a_n + \\frac{1}{a_{n + 1}}\\right)h_{n - 1} + h_{n - 2}}{\\left(a_n + \\frac{1}{a_{n + 1}}\\right)k_{n - 1} + k_{n - 2}} \\\\ &= \\frac{a_{n + 1}(a_n h_{n - 1} + h_{n - 2}) + h_{n - 1}}{a_{n + 1}(a_n k_{n - 1} + k_{n - 2}) + k_{n - 1}} \\\\&= \\frac{a_{n + 1} h_n + h_{n - 1}}{a_{n + 1} k_n + k_{n - 1}}\\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}\\frac{h_{n + 1}}{k_{n + 1}} &= \\frac{\\left(a_n + \\frac{1}{a_{n + 1}}\\right)h_{n - 1} + h_{n - 2}}{\\left(a_n + \\frac{1}{a_{n + 1}}\\right)k_{n - 1} + k_{n - 2}} \\\\ &= \\frac{a_{n + 1}(a_n h_{n - 1} + h_{n - 2}) + h_{n - 1}}{a_{n + 1}(a_n k_{n - 1} + k_{n - 2}) + k_{n - 1}} \\\\&= \\frac{a_{n + 1} h_n + h_{n - 1}}{a_{n + 1} k_n + k_{n - 1}}\\end{aligned}", blockquote=True) }}
 
 Thus {{ get_katex("h_{n + 1}") }} and {{ get_katex("k_{n + 1}") }} satisfy
 the same recurrence.
 
 It remains to check the initial conditions work, but note
 
-{{ get_latex_img("\\begin{align*}h_0 &= a_0 h_{-1} + h_{-2} = a_0 \\cdot 1 + 0 = a_0 \\\\k_0 &= a_0 k_{-1} + k_{-2} = a_0 \\cdot 0 + 1 = 1 \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}h_0 &= a_0 h_{-1} + h_{-2} = a_0 \\cdot 1 + 0 = a_0 \\\\k_0 &= a_0 k_{-1} + k_{-2} = a_0 \\cdot 0 + 1 = 1 \\end{aligned}", blockquote=True) }}
 
 and
 
-{{ get_latex_img("\\begin{align*}h_1 &= a_1 h_{0} + h_{-1} = a_0 a_1 + 1 \\\\k_1 &= a_1 k_{0} + k_{-1} = a_1 \\cdot 1 + 0 = a_1 \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}h_1 &= a_1 h_{0} + h_{-1} = a_0 a_1 + 1 \\\\k_1 &= a_1 k_{0} + k_{-1} = a_1 \\cdot 1 + 0 = a_1 \\end{aligned}", blockquote=True) }}
 
-as we checked above. {{ get_latex_img("\\blacksquare") }}
+as we checked above. {{ get_katex("\\blacksquare") }}
 
 Check out my
 [next post](/2011/07/continued-fraction-expansions-of.html),
