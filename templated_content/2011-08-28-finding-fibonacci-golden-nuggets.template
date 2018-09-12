@@ -41,7 +41,7 @@ golden nugget by analyzing the equation {{ get_katex("A_F(z) = n") }}. With
 the recurrence relation given by the Fibonacci sequence as inspiration, we
 consider
 
-{{ get_latex_img("\\begin{align*}(z + z^2)A_F(z) = z^2 F_1 &+ z^3 F_2 + z^4 F_3 + \\ldots\\\\ &+z^3 F_1 + z^4 F_2 + z^5 F_3 + \\ldots. \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}(z + z^2)A_F(z) = z^2 F_1 &+ z^3 F_2 + z^4 F_3 + \\ldots\\\\ &+z^3 F_1 + z^4 F_2 + z^5 F_3 + \\ldots. \\end{aligned}", blockquote=True) }}
 
 Due to the fact that {{ get_katex("F_2 = F_1 = 1") }} and the nature
 of the recurrence relation, we have
@@ -54,7 +54,7 @@ which implies
 
 Now solving{{ get_katex("A_F(z) = n") }}, we have
 
-{{ get_latex_img("z = n - n z - n z^2 \\Rightarrow n z^2 + (n + 1)z - n = 0.", blockquote=True) }}
+{{ get_katex("z = n - n z - n z^2 \\Rightarrow n z^2 + (n + 1)z - n = 0.", blockquote=True) }}
 
 In order for {{ get_katex("n") }} to be a golden nugget, we must have the
 solutions {{ get_katex("z") }} rational. This only occurs if the discriminant
@@ -80,7 +80,7 @@ quadratic form
 {{ get_katex("f(x, y) = 5 x^2 - y^2", blockquote=True) }}
 
 to find our solutions. Note
-- A solution is only valuable if {{ get_latex_img("y \\equiv 1 \\bmod{5}") }}
+- A solution is only valuable if {{ get_katex("y \\equiv 1 \\bmod{5}") }}
   since {{ get_katex("y = 5 n + 1") }} must hold.
 - Since {{ get_katex("\\sqrt{5}") }} is irrational, {{ get_katex("f") }} can
   never take the value {{ get_katex("0") }}
@@ -133,12 +133,12 @@ about the absolute value of the coordinates ({{ get_katex("n") }} comes from
 bases {{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
 {{ get_katex("u_0 = (1, 0)") }}, {{ get_katex("v_0 = (0, 1)") }} and recurrence
 
-{{ get_latex_img("\\begin{align*}u_{k + 1} &= 9 u_k + 20 v_k \\\\ v_{k + 1} &= 4 u_k + 9 v_k. \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}u_{k + 1} &= 9 u_k + 20 v_k \\\\ v_{k + 1} &= 4 u_k + 9 v_k. \\end{aligned}", blockquote=True) }}
 
 This implies that both {{ get_katex("\\left\\{u_k\\right\\}") }} and
 {{ get_katex("\\left\\{v_k\\right\\}") }} satisfy the same relation
 
-{{ get_latex_img("\\begin{align*}u_{k + 2} - 9 u_{k + 1} - 9(u_{k + 1} - 9 u_k) &= 20 v_{k + 1} - 9(20 v_k) = 20(4 u_k) \\\\v_{k + 2} - 9 v_{k + 1} - 9(v_{k + 1} - 9 v_k) &=4 u_{k + 1} - 9(4 u_k) = 4(20 v_k). \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}u_{k + 2} - 9 u_{k + 1} - 9(u_{k + 1} - 9 u_k) &= 20 v_{k + 1} - 9(20 v_k) = 20(4 u_k) \\\\v_{k + 2} - 9 v_{k + 1} - 9(v_{k + 1} - 9 v_k) &=4 u_{k + 1} - 9(4 u_k) = 4(20 v_k). \\end{aligned}", blockquote=True) }}
 
 With these recurrences, you can take the three base solutions on the river and
 quickly find each successive golden nugget. Since each value is a coordinate in
