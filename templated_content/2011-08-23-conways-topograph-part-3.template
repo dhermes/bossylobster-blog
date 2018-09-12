@@ -76,8 +76,8 @@ minimum).
 
 #### Lemma: (The Well Lemma) {{ "{#well-lemma}" }}
 
-For a positive-valued form {{ get_katex("f") }} and a well (with respect to
-{{ get_katex("f") }}) {{ get_katex("W") }}, the three values
+For a positive-valued form {{ get_katex("f") }} and a well
+{{ get_katex("W") }}, the three values
 {{ get_katex("f") }} takes on the faces in {{ get_katex("W") }} are the smallest
 values that {{ get_katex("f") }} takes on the topograph.
 
@@ -200,7 +200,7 @@ Thus, both {{ get_katex("\\left(\\frac{1}{2}h\\right)^2") }} and
 {{ get_katex("\\left|ab\\right|") }} are bounded by
 {{ get_katex("\\left|D\\right|") }}. So {{ get_katex("a") }},
 {{ get_katex("b") }} and {{ get_katex("h") }} are bounded
-(by {{ get_katex("\\left|D\\right|") }}). Thus we have finitely many possible
+by {{ get_katex("\\left|D\\right|") }}. Thus we have finitely many possible
 triples {{ get_katex("(a, b, h)") }}, hence some value must be repeated in the
 path. This forces the path to be periodic since the triple starting from one
 triple {{ get_katex("(a, b, h)") }} determines next triple along the path and

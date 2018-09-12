@@ -28,7 +28,7 @@ courtesy of Wikipedia:
 > {{ get_katex("\\frac{137}{1600}") }} is simpler than
 > {{ get_katex("\\frac{1}{3}") }}, but because {{ get_katex("1600") }} happens
 > to divide a power of {{ get_katex("10") }}
-> ({{ get_katex("10^6 = 1600 \\times 625") }}). Continued fraction
+> {{ get_katex("(10^6 = 1600 \\times 625)") }}. Continued fraction
 > notation is a representation of the real numbers that avoids both
 > these problems. Let us consider how we might describe a number like
 > {{ get_katex("\\frac{415}{93}") }}, which is around {{ get_katex("4.4624") }}.

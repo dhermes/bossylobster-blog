@@ -40,16 +40,16 @@ as a subset of two superbases:
 With these two facts in hand, we can begin to form the geometric structure of
 the topograph. The interactions between bases and superbases (as well as the
 individual vectors themselves) give us the form. In the graph, we join each
-superbase ({{ get_katex("\\bigcirc") }}) to the three bases
-({{ get_katex("\\square") }}) in it.
+superbase {{ get_katex("(\\bigcirc)") }} to the three bases
+{{ get_katex("(\\square)") }} in it.
 
 <div markdown="1" style="text-align: center;">
   ![Conways Edges and Nodes](/images/conway_edges_nodes.png)
 </div>
 
-Each edge connecting two superbases ({{ get_katex("\\bigcirc") }})
+Each edge connecting two superbases {{ get_katex("(\\bigcirc)") }}
 represents a base and we mark each of these edges with a
-({{ get_katex("\\square") }}) in the middle. Since each base can only be
+{{ get_katex("(\\square)") }} in the middle. Since each base can only be
 in two superbases, we have well-defined endpoints for each base (edge).
 Similarly, since each superbase contains three bases as subsets, each
 superbase (endpoint) has three bases (edges) coming out of it.
@@ -59,7 +59,7 @@ superbase (endpoint) has three bases (edges) coming out of it.
 </div>
 
 As we traverse each edge (base) surrounding a given vector
-({{ get_katex("e_1") }} above), we move from superbase (vertex) to superbase
+{{ get_katex("(e_1)") }}, we move from superbase (vertex) to superbase
 (vertex), and form a face. Starting from a base {{ get_katex("e_1, e_2") }},
 traveling along each of the new faces encountered we begin to form the full
 (labeled) topograph below:

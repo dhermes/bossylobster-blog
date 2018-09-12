@@ -193,7 +193,7 @@ def get_recurrence(form):
     return (r*q - p*s, p + s)
 ```
 
-For solving {{ get_katex("f(x, y) = z") }}, ({{ get_katex("z") }} positive)
+For solving {{ get_katex("f(x, y) = z") }}, {{ get_katex("(z > 0)") }}
 we need to consider all the positive tributaries coming out of the river and
 let them grow and grow until the climbing lemma tells us we no longer need
 to consider values larger than {{ get_katex("z") }}. In order to consider

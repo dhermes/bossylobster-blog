@@ -96,11 +96,23 @@ def get_katex(latex_str, blockquote=False):
         return wrapped_element
 
 
+def verify_template(filename):
+    with open(filename, "r") as file_obj:
+        content = file_obj.read()
+    # Don't allow templated content to be on the boundary of a
+    # parenthetical expression.
+    if "({{" in content:
+        raise ValueError("Invalid content", filename)
+    if "}})" in content:
+        raise ValueError("Invalid content", filename)
+
+
 def get_templates():
     result = []
     for match in glob.glob(os.path.join(TEMPLATES_DIR, "*.template")):
         _, template_name = os.path.split(match)
         template = ENV.get_template(template_name)
+        verify_template(template.filename)
         result.append(template)
 
     return result

@@ -135,8 +135,8 @@ Since {{ get_katex("\\widetilde{\\alpha} < 0") }} we also have
 by assumption we have {{ get_katex("Q < P + \\sqrt{D} < 2\\sqrt{D}") }} thus
 there are finitely many choices for both {{ get_katex("P") }} and
 {{ get_katex("Q") }}, forcing finitely many reduced quadratic irrationals
-associated to a fixed {{ get_katex("D") }} (this amount is strictly bounded
-above by {{ get_katex("2D") }}). {{ get_katex("\\blacksquare") }}
+associated to a fixed {{ get_katex("D") }}; the number of choices is strictly
+bounded above by {{ get_katex("2D") }}. {{ get_katex("\\blacksquare") }}
 
 #### Claim: {{ "{#claim-periodic}" }}
 

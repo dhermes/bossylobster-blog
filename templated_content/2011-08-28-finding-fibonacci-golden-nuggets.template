@@ -95,9 +95,11 @@ to find our solutions. Note
 Hence solutions {{ get_katex("f(x, y) = 4") }} can come either come from pairs
 on the topograph or by taking a pair which satisfies
 {{ get_katex("f(x, y) = 1") }} and scaling up by a factor of
-{{ get_katex("2") }} (we will have
-{{ get_katex("f(2x, 2y) = 2^2 \\cdot 1 = 4") }} due to the homogeneity of
-{{ get_katex("f") }}).
+{{ get_katex("2") }}. We will have
+
+{{ get_katex("f(2x, 2y) = 2^2 \\cdot 1 = 4", blockquote=True) }}
+
+due to the homogeneity of {{ get_katex("f") }}.
 
 Starting from the trivial base {{ get_katex("u = (1, 0)") }} and
 {{ get_katex("v = (0, 1)") }}, the full period of the river has length
@@ -113,9 +115,10 @@ Starting from the trivial base {{ get_katex("u = (1, 0)") }} and
 > these vectors.
 
 Since every edge protruding from the river on the positive side has a value of
-{{ get_katex("4") }} on a side (the value pairs are {{ get_katex("(5, 4)") }},
-{{ get_katex("(4, 1)") }}, {{ get_katex("(1, 4)") }}, and
-{{ get_katex("(4, 5)") }}), by the climbing lemma, we know all values above
+{{ get_katex("4") }} on a side &mdash; the value pairs are
+{{ get_katex("(5, 4)") }}, {{ get_katex("(4, 1)") }},
+{{ get_katex("(1, 4)") }}, and {{ get_katex("(4, 5)") }} &mdash; by the
+climbing lemma, we know all values above
 those on the river have value greater than {{ get_katex("4") }}. Thus, the only
 solutions we are concerned with
 
@@ -129,9 +132,9 @@ solution set.
 
 When we start from the trivial base, we only need consider moving to the right
 (orientation provided by the above picture) along the river since we only care
-about the absolute value of the coordinates ({{ get_katex("n") }} comes from
-{{ get_katex("y") }}, so it must be positive). As such, we have a sequence of
-bases {{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
+about the absolute value of the coordinates &mdash; {{ get_katex("n") }} comes
+from {{ get_katex("y") }}, so it must be positive. As such, we have a sequence
+of bases {{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
 {{ get_katex("u_0 = (1, 0)") }}, {{ get_katex("v_0 = (0, 1)") }} and recurrence
 
 {{ get_katex("\\begin{aligned}u_{k + 1} &= 9 u_k + 20 v_k \\\\ v_{k + 1} &= 4 u_k + 9 v_k. \\end{aligned}", blockquote=True) }}

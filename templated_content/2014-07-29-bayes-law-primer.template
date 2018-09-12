@@ -29,8 +29,8 @@ easily be computed. It is written as
 vertical bar is meant like the word "given", in other words, the event
 {{ get_katex("X") }}
 is distinct from the event
-{{ get_katex("(X \\, | \\, Y)") }}
-({{ get_katex("X") }} given {{ get_katex("Y") }}).
+{{ get_katex("(X \\, | \\, Y)") }}, i.e.
+{{ get_katex("X") }} given {{ get_katex("Y") }}.
 Bayes' law, states that
 
 {{ get_katex("\\text{Pr}(X \\, | \\, Y) = \\frac{\\text{Pr}(X \\text{ and } Y \\text{ both occur})}{\\text{Pr}(Y)}.", blockquote=True) }}

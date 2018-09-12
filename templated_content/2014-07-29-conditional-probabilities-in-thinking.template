@@ -44,10 +44,10 @@ Putting Bayes' Law to Use
 
 We need to understand what 41% even corresponds to before we can compute
 it. What's actually happened is that we know the event
-{{ get_katex("IDB") }} has occurred -- the cab has been identified
-({{ get_katex("ID") }}) as Blue ({{ get_katex("B") }}).
+{{ get_katex("IDB") }} has occurred &mdash; the cab has been identified
+{{ get_katex("(ID)") }} as Blue {{ get_katex("(B)") }}.
 What we want is the probability that the cab **is Blue** given we know
-it has been identified -- we want:
+it has been identified &mdash; we want:
 
 {{ get_katex("\\text{Pr}(B \\, | \\, IDB).", blockquote=True) }}
 

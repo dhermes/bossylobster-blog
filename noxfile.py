@@ -165,7 +165,8 @@ def regenerate(session):
     pelican_opts = get_pelican_opts()
     session.install("--requirement", "html-requirements.txt")
 
-    _generate(session, pelican_opts, regenerate=True)
+    env = {"PYTHONPATH": get_path()}
+    _generate(session, pelican_opts, regenerate=True, env=env)
 
 
 @nox.session(py=DEFAULT_INTERPRETER)

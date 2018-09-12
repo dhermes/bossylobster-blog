@@ -64,7 +64,7 @@ where the numerator and denominator are given
 {{ get_katex("N_n = \\left((x_n \\ominus 2) \\otimes x_n\\right) \\oplus 1, \\quad D_n = \\left(2 \\otimes x_n\\right) \\ominus 2.", blockquote=True) }}
 
 Each floating point operation
-({{ get_katex("\\otimes, \\oslash, \\oplus, \\ominus") }}) rounds the
+{{ get_katex("(\\otimes, \\oslash, \\oplus, \\ominus)") }} rounds the
 "exact" result to the nearest floating point number. For
 {{ get_katex("x_1, \\, \\ldots, \\, x_{27}") }}, there is no rounding
 needed and we get the same values that we got in exact
@@ -94,8 +94,8 @@ type (`double`), the [machine precision][5] is
 
 <hr />
 
-In general, a root repeated {{ get_katex("m") }} times (i.e. with
-**multiplicity** {{ get_katex("m") }}) will only be accurate to
+In general, a root repeated {{ get_katex("m") }} times &mdash; i.e. with
+**multiplicity** {{ get_katex("m") }} &mdash; will only be accurate to
 {{ get_katex("\\frac{52}{m}") }} bits, a very large penalty!
 
 We can see this phenomenon in action, we define the

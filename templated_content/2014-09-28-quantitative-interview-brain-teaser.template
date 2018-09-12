@@ -24,8 +24,7 @@ computer).
 #### Making the Problem Smaller
 
 Without any thinking, there are 9 billion
-({{ get_katex("9 \\cdot 10^9") }})
-
+{{ get_katex("(9 \\cdot 10^9)") }}
 total choices. This is not only intractable for the human brain, but
 becomes difficult for a computer too. A 3 GHz processor in the most
 optimal case can only perform 3 billion operations per second but there
@@ -61,13 +60,13 @@ we'd also have
 meaning
 {{ get_katex("2 d_2 + 5 d_5 = 2 d_2 + 10 > 10") }}.
 Thus to brute force the problem we can choose digits 5 through
-9 (5 digits in total) from the 32 ({{ get_katex("2^5") }})
+9 (5 digits in total) from the 32 {{ get_katex("(2^5)") }}
 different possible ways to make them 0 or 1.
 
 #### Listing All Choices
 
 Now for the fun part: programming (in Python). We now have 90,000
-({{ get_katex("9 \\cdot 10^4") }}) choices for our first 5 digits
+{{ get_katex("(9 \\cdot 10^4)") }} choices for our first 5 digits
 and 32 choices for our last 5 digits.
 
 We can use Python's `range(10**4, 10**5)` to represent the 5-digit

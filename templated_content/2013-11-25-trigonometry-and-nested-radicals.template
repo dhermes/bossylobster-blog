@@ -26,10 +26,10 @@ One such way the Greeks (particularly
 [Archimedes](http://www.math.utah.edu/~alfeld/Archimedes/Archimedes.html))
 computed {{ get_katex("\\pi") }} was by approximating a circle by a regular polygon
 and letting the number of sides grow large enough so that the error
-between the area of the unit circle ({{ get_katex("\\pi \\cdot 1^2") }}) and the
+between the area of the unit circle {{ get_katex("(\\pi \\cdot 1^2)") }} and the
 area of the polygon would be smaller than some fixed threshold. Usually
 these thresholds were picked to ensure that the first {{ get_katex("k") }} digits
-were fully accurate (for some appropriate value of {{ get_katex("k") }}).
+were fully accurate &mdash; for some appropriate value of {{ get_katex("k") }}.
 
 In many introductory Calculus courses, this problem is introduced
 exactly when the limit is introduced and students are forced to think

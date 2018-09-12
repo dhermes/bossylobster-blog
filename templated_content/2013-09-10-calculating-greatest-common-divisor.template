@@ -116,7 +116,7 @@ modulo {{ get_katex("p^{*}") }}. Naturally, we look for a subsequence in
 {{ get_katex("\\mathbb{Z}/8\\mathbb{Z} \\times \\mathbb{Z}/p^{*}\\mathbb{Z}", blockquote=True) }}
 
 corresponding to the residue pair
-{{ get_katex("(5 \\text{ mod }{8}, 1 \\text{ mod }{p^{*}})") }}. Due to the
+{{ get_katex("(5 \\text{ mod }{8}, 1 \\text{ mod }{p^{*}} )") }}. Due to the
 [Chinese remainder theorem](http://en.wikipedia.org/wiki/Chinese_remainder_theorem)
 this corresponds to a unique residue modulo {{ get_katex("8p^{*}") }}.
 

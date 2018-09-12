@@ -42,7 +42,7 @@ payments have been made. (Assuming monthly payments, this will be after
 {{ get_katex("i") }} months.) If the term is {{ get_katex("T") }} periods,
 then we have {{ get_katex("P_T = 0") }}.
 
-We have already introduced the term ({{ get_katex("T") }}); we also need the
+We have already introduced the term {{ get_katex("T") }}; we also need the
 value of the recurring (again, usually monthly) payment {{ get_katex("R") }},
 the interest rate {{ get_katex("r") }} and the initial principal owed
 {{ get_katex("P_0 = P") }}.
@@ -150,7 +150,7 @@ today, not theorize.
 **Programming Newton-Raphson**
 
 To perform Newton-Raphson, we'll implement a Python function that takes
-the initial guess ({{ get_katex("x_0") }}) and the functions
+the initial guess {{ get_katex("x_0") }} and the functions
 {{ get_katex("f") }} and {{ get_katex("f'") }}. We'll also (arbitrarily) stop
 after the value {{ get_katex("f(x_i)") }} drops below
 {{ get_katex("10^{-8}") }} in absolute value.
