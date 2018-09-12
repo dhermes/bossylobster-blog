@@ -80,6 +80,7 @@ quadratic form
 {{ get_katex("f(x, y) = 5 x^2 - y^2", blockquote=True) }}
 
 to find our solutions. Note
+
 - A solution is only valuable if {{ get_katex("y \\equiv 1 \\bmod{5}") }}
   since {{ get_katex("y = 5 n + 1") }} must hold.
 - Since {{ get_katex("\\sqrt{5}") }} is irrational, {{ get_katex("f") }} can
@@ -240,7 +241,7 @@ following values:
 </center>
 
 We don't get our fifteenth golden nugget candidate (value must be one
-more than a multiple of {{ get_katex("5") }}) until
+more than a multiple of 5) until
 {{ get_katex("5600748293801") }}, which yields
 
 {{ get_katex("n = 1120149658760.", blockquote=True) }}
