@@ -37,7 +37,7 @@ Bayes' law, states that
 
 This effectively is a re-scaling of the events by the total probability
 of the given event:
-({{ get_katex("\\text{Pr}(Y)") }}.
+{{ get_katex("\\text{Pr}(Y)") }}.
 
 For example, if {{ get_katex("X") }} is the event that a {{ get_katex("3") }}
 is rolled on a fair die and {{ get_katex("Y") }} is the event that the roll
