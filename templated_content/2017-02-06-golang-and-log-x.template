@@ -57,7 +57,7 @@ approximation. But {{ get_katex("\\log(x)") }} is not defined at
 typically used[ref]This series is typically learned and forgotten by
 those who have made it through "Calc II".[/ref]:
 
-{{ get_latex_img("\\log\\left(1 + x\\right) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + \\cdots", blockquote=True) }}
+{{ get_katex("\\log\\left(1 + x\\right) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + \\cdots", blockquote=True) }}
 
 But, the implementation doesn't do the obvious thing. Instead
 it breaks down the argument into an exponent and a fractional part
@@ -76,7 +76,7 @@ can be.
 
 For the other part
 
-{{ get_latex_img("\\begin{align*}\\log\\left(1 + s\\right) - \\log\\left(1 - s\\right) &= 2 s + \\frac{2}{3} s^3 + \\frac{2}{5} s^5 + \\cdots \\\\ &= 2 s + s R(s). \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned}\\log\\left(1 + s\\right) - \\log\\left(1 - s\\right) &= 2 s + \\frac{2}{3} s^3 + \\frac{2}{5} s^5 + \\cdots \\\\ &= 2 s + s R(s). \\end{aligned}", blockquote=True) }}
 
 From here, I expected a polynomial approximation that just takes the first
 few terms in {{ get_katex("R(s)") }}.
