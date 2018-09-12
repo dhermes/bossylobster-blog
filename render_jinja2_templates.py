@@ -22,8 +22,6 @@ import tempfile
 import jinja2
 import py.path
 
-from make_png_from_latex import convert_equation
-
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 FORCE_RENDER = "FORCE_RENDER" in os.environ
@@ -47,7 +45,6 @@ TEMPLATE_HASHES_FILENAME = os.path.join(TEMPLATES_DIR, "template_hashes.json")
 with open(TEMPLATE_HASHES_FILENAME, "r") as fh:
     TEMPLATE_HASHES = json.load(fh)
 
-LATEX_IMG_TEMPLATE = '<img src="%s" alt="%s" class="latex-img"></img>'
 RENDERED_DIR = os.path.join(BASE_DIR, "content")
 
 
@@ -87,17 +84,6 @@ def get_katex(latex_str, blockquote=False):
         return result
 
 
-def get_latex_img(latex_str, blockquote=False, standalone=False):
-    png_path = convert_equation(
-        latex_str, blockquote=blockquote, standalone=standalone
-    )
-    png_uri = "/latex_images/%s" % (png_path,)
-    result = LATEX_IMG_TEMPLATE % (png_uri, latex_str)
-    if blockquote:
-        return '<blockquote class="latex-img">%s</blockquote>' % (result,)
-    return result
-
-
 def get_templates():
     result = []
     for match in glob.glob(os.path.join(TEMPLATES_DIR, "*.template")):
@@ -134,9 +120,7 @@ def write_template(template):
     if not os.path.isdir(RENDERED_DIR):
         os.mkdir(RENDERED_DIR)
     with open(new_filename, "w") as fh:
-        rendered_file = template.render(
-            get_katex=get_katex, get_latex_img=get_latex_img
-        )
+        rendered_file = template.render(get_katex=get_katex)
         fh.write(rendered_file)
         # Make sure the file has a trailing newline.
         if rendered_file[-1] != "\n":

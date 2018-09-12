@@ -61,7 +61,6 @@ STATIC_PATHS = [
     "css",
     "images",
     "js",
-    "latex_images",
     # Files.
     "favicon.ico",
     "favicon.png",
