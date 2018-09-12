@@ -15,6 +15,8 @@ import os
 
 import jinja2
 
+import expand_html_literal
+
 
 CURR_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -82,6 +84,22 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 HIDE_TAGS_IN_SIDEBAR = True
 HIDE_CATEGORIES_IN_SIDEBAR = True
+
+# Markdown Extension
+# See https://github.com/getpelican/pelican/issues/2091#issue-202323613
+# and http://docs.getpelican.com/en/3.7.0/settings.html
+MARKDOWN = {
+    "extensions": [
+        "markdown.extensions.codehilite",
+        "markdown.extensions.extra",
+        "markdown.extensions.meta",
+        expand_html_literal.ExpandLiteral(),
+    ],
+    "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class": "highlight"}
+    },
+    "output_format": "html5",
+}
 
 # Pagination
 DEFAULT_PAGINATION = None

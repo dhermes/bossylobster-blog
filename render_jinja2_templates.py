@@ -86,12 +86,14 @@ def get_katex(latex_str, blockquote=False):
         raise RuntimeError("`node` must be installed")
 
     node_result = subprocess.check_output(["node", temp_script])
-    result = node_result.strip().decode("utf8")
+    result = node_result.strip().decode("utf-8")
     result = utf8_to_html_entities(result)
+    as_hex = binascii.hexlify(result.encode("utf-8")).decode("ascii")
+    wrapped_element = "<html-literal>{}</html-literal>".format(as_hex)
     if blockquote:
-        return KATEX_BLOCK_TEMPLATE % (result,)
+        return KATEX_BLOCK_TEMPLATE % (wrapped_element,)
     else:
-        return result
+        return wrapped_element
 
 
 def get_templates():

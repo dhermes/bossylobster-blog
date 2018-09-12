@@ -115,7 +115,7 @@ def html(session):
     # 4. Build HTML without paging.
     print("Making second pass without paging")
     print(PRINT_SEP)
-    _generate(session, pelican_opts)
+    _generate(session, pelican_opts, env=env)
     print(PRINT_SEP)
     # 5. Add back paging information.
     print("Putting back paging index*.html files")
@@ -144,11 +144,6 @@ def html(session):
     script = get_path("rewrite_custom_pagination.py")
     session.run("python", script)
     print(PRINT_SEP)
-    # 8. Hack to fix a rendering bug in a few posts.
-    print("Modifying HTML mangling.")
-    print(PRINT_SEP)
-    script = get_path("scripts", "modify_mangled_html.py")
-    session.run("python", script)
 
 
 def remove_file(filename):
