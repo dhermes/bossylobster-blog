@@ -30,9 +30,16 @@ ENV = jinja2.Environment(
     loader=jinja2.PackageLoader(__name__, "templated_content")
 )
 KATEX_PATH = os.path.join(BASE_DIR, "node_modules", "katex")
-NODE_SCRIPT_TEMPLATE = u"""\
+NODE_SCRIPT_TEMPLATE_INLINE = u"""\
 katex = require(%(katex_path)s);
 value = katex.renderToString("%%s");
+console.log(value);
+""" % {
+    "katex_path": json.dumps(KATEX_PATH)
+}
+NODE_SCRIPT_TEMPLATE_MATH_MODE = u"""\
+katex = require(%(katex_path)s);
+value = katex.renderToString("%%s", {displayMode: true});
 console.log(value);
 """ % {
     "katex_path": json.dumps(KATEX_PATH)
@@ -66,7 +73,10 @@ def utf8_to_html_entities(str_val):
 
 def get_katex(latex_str, blockquote=False):
     escaped = escape_string(latex_str)
-    script_content = NODE_SCRIPT_TEMPLATE % (escaped,)
+    if blockquote:
+        script_content = NODE_SCRIPT_TEMPLATE_MATH_MODE % (escaped,)
+    else:
+        script_content = NODE_SCRIPT_TEMPLATE_INLINE % (escaped,)
 
     temp_script = tempfile.mktemp()
     with open(temp_script, "w") as fh:
