@@ -67,7 +67,7 @@ In addition to the interest, we will have paid off {{ get_katex("R") }} hence
 Using this, we can actually determine {{ get_katex("P_i") }} strictly in terms
 of {{ get_katex("m, R") }} and {{ get_katex("P") }}. First, note that
 
-{{ get_latex_img("\\begin{align*} P_2 = P_1 \\cdot m - R &= (P_0 \\cdot m - R) \\cdot m - R \\\\ &= P \\cdot m^2 - R(m + 1) \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned} P_2 = P_1 \\cdot m - R &= (P_0 \\cdot m - R) \\cdot m - R \\\\ &= P \\cdot m^2 - R(m + 1) \\end{aligned}", blockquote=True) }}
 
 since {{ get_katex("P_0 = P") }}. We can show inductively that
 
@@ -76,7 +76,7 @@ since {{ get_katex("P_0 = P") }}. We can show inductively that
 We already have the base case {{ get_katex("i = 1") }}, by definition.
 Assuming it holds for {{ get_katex("i") }}, we see that
 
-{{ get_latex_img("\\begin{align*} P_{i + 1} = P_i \\cdot m - R &= m \\cdot \\left(P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j\\right) - R \\\\ &= P \\cdot m^{i + 1} - R \\cdot \\sum_{j = 1}^{i} m^j - R, \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned} P_{i + 1} = P_i \\cdot m - R &= m \\cdot \\left(P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j\\right) - R \\\\ &= P \\cdot m^{i + 1} - R \\cdot \\sum_{j = 1}^{i} m^j - R, \\end{aligned}", blockquote=True) }}
 
 and our induction is complete. (We bump the index {{ get_katex("j") }} since
 we are multiplying each {{ get_katex("m^j") }} by {{ get_katex("m") }}.)
@@ -100,13 +100,13 @@ We calculate this sum of a geometric series here, but I'll just refer you to the
 [Wikipedia page](http://en.wikipedia.org/wiki/Geometric_series) instead. With
 this reduction we want to solve
 
-{{ get_latex_img("\\begin{align*} & 0 = P \\cdot m^T - R \\cdot \\frac{m^T - 1}{m - 1} \\\\ & \\Longleftrightarrow P \\cdot m^T \\cdot (m - 1) =R \\cdot(m^T - 1). \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned} & 0 = P \\cdot m^T - R \\cdot \\frac{m^T - 1}{m - 1} \\\\ & \\Longleftrightarrow P \\cdot m^T \\cdot (m - 1) =R \\cdot(m^T - 1). \\end{aligned}", blockquote=True) }}
 
 With that, we have accomplished Step II, we have found a function (parameterized
 by {{ get_katex("P, T") }} and {{ get_katex("R") }} which we can
 use zeros from to find our interest rate:
 
-{{ get_latex_img("\\begin{align*} f_{P, T, R}(m) &= P \\cdot m^T \\cdot (m - 1) -R \\cdot(m^T - 1) \\\\ &= P \\cdot m^{T + 1} - (P + R) \\cdot m^T + R. \\end{align*}", blockquote=True, standalone=True) }}
+{{ get_katex("\\begin{aligned} f_{P, T, R}(m) &= P \\cdot m^T \\cdot (m - 1) -R \\cdot(m^T - 1) \\\\ &= P \\cdot m^{T + 1} - (P + R) \\cdot m^T + R. \\end{aligned}", blockquote=True) }}
 
 Step III: Write some code to implement the [Newton-Raphson method][newton-raph]
 ---------------------------------------------------------------------
@@ -127,12 +127,12 @@ slope of the line between the points {{ get_katex("(x, f(x))") }} and
 {{ get_katex("(y, f(y))") }} with the derivative nearby. Since we know
 {{ get_katex("x") }}, we use {{ get_katex("f'(x)") }} and intuit that
 
-{{ get_latex_img("f'(x) = \\text{slope} = \\frac{f(y) - f(x)}{y - x} \\Rightarrow y - x = \\frac{f(y) - f(x)}{f'(x)}.", blockquote=True) }}
+{{ get_katex("f'(x) = \\text{slope} = \\frac{f(y) - f(x)}{y - x} \\Rightarrow y - x = \\frac{f(y) - f(x)}{f'(x)}.", blockquote=True) }}
 
 But, since we know that {{ get_katex("y") }} is a zero,
 {{ get_katex("f(y) - f(x) = -f(x)") }} hence
 
-{{ get_latex_img("y - x = \\frac{-f(x)}{f'(x)} \\Rightarrow y = x - \\frac{f(x)}{f'(x)}.", blockquote=True) }}
+{{ get_katex("y - x = \\frac{-f(x)}{f'(x)} \\Rightarrow y = x - \\frac{f(x)}{f'(x)}.", blockquote=True) }}
 
 Using this method, one can start with a given value {{ get_katex("x_0 = x") }}
 and  compute better and better approximations of a zero via the iteration above
