@@ -47,6 +47,7 @@ MENUITEMS = [
     ("GitHub", "http://github.com/dhermes/"),
     ("Mathematics", "/mathematics"),
     ("Testimonials", "/testimonials"),
+    ("About Me", "/about-me"),
 ]
 
 # Archive customizations.
