@@ -30,7 +30,7 @@ That is, a function of two variables which is homogeneous of degree two.
 The coefficients {{ get_katex("A") }}, {{ get_katex("H") }}, and
 {{ get_katex("B") }} and variables {{ get_katex("x") }} and
 {{ get_katex("y") }} are often real numbers, rational numbers or integers.
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\blacksquare") }}
 
 When we require the coefficients {{ get_katex("A") }}, {{ get_katex("H") }}, and
 {{ get_katex("B") }} as well as the variables {{ get_katex("x, y") }} to be
@@ -72,7 +72,7 @@ A **strict base** is an ordered pair {{ get_katex("(e_1, e_2)") }} whose
 integral linear combinations are exactly all vectors with integer coordinates.
 A **lax base** is a set {{ get_katex("\\left\\{\\pm e_1, \\pm e_2\\right\\}") }}
 obtained from a strict base.
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\blacksquare") }}
 
 #### Definition: {{ "{#define-superbase}" }}
 
@@ -82,7 +82,7 @@ for which {{ get_katex("e_1 + e_2 + e_3 = (0, 0)") }} and
 a **lax superbase** is a set
 {{ get_katex("\\langle\\pm e_1, \\pm e_2, \\pm e_3\\rangle") }} where
 {{ get_katex("(e_1, e_2, e_3)") }} is a strict superbase.
-{{ get_latex_img("\\blacksquare") }}
+{{ get_katex("\\blacksquare") }}
 
 For our (and Conway's) purposes, it is useful to consider the lax notions and
 leave the strict notions as an afterthought since a binary quadratic form is
