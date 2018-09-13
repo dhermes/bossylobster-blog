@@ -60,6 +60,7 @@ ARCHIVE_TITLE = "All Posts"
 # This assumes pelican>=3.3
 STATIC_PATHS = [
     # Folders.
+    "code",
     "css",
     "images",
     "js",

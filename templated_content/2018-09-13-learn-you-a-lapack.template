@@ -1,0 +1,610 @@
+---
+title: Learn You a LAPACK for Great Good
+description: A small explainer on the core Linear Algebra package
+date: 2018-09-13
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Linear Algebra, Applied Mathematics, Mathematics, Programming
+slug: learn-you-a-lapack
+comments: true
+use_twitter_card: true
+use_open_graph: true
+use_schema_org: true
+twitter_site: @bossylobster
+twitter_creator: @bossylobster
+social_image: images/lu_factorization.png
+github_slug: content/2018-09-13-learn-you-a-lapack.md
+---
+
+Linear Algebra is an incredibly powerful tool. A joke among mathematicians
+is that the only way we can solve a hard problem is to boil it down to
+Linear Algebra[ref]This actually happened to me. My undergraduate research
+project (REU) eventually boiled down to showing that a particularly special
+matrix had a nonzero determinant.[/ref]. Harnessing the **numerical** power of
+Linear Algebra has been done via [LAPACK][1] for the last 40+ years.
+
+In my first semester of graduate school, I took UC Berkeley's Math 221, i.e.
+Numerical Linear Algebra. So in my second semester, I was ready to put my
+new skills to use. However, when I tried to use LAPACK from C and C++ code for
+an assignment, I gave up before getting anything working. I was frustrated
+by my deadline, by the LAPACK [documentation][2] (I didn't know where to look
+or how to read what I did find), by actually forming the arguments correctly
+and by getting the compiler flags right. I just gave up and turned to my trusty
+friend Python; I used a combination of NumPy and the low-level
+`scipy.linalg.lapack` package when necessary.
+
+I wished then that there was a blog post exactly like this one. Our goal here
+is to call a single LAPACK routine (`dgetrf`) from a few different contexts
+to get a feel for the library structure, argument specification, reading
+documentation and linking / building code.
+
+### Contents
+
+- [LU Factorization](#lu-factorization)
+- [High-Level Python](#high-level-py)
+- [Finding LAPACK](#finding-lapack)
+- [Low-Level Python](#low-level-py)
+- [C](#c)
+- [Compiling on OS X](#compiling-on-os-x)
+- [C++](#cpp)
+- [Conclusion](#conclusion)
+
+### LU Factorization {{ "{#lu-factorization}" }}
+
+As mentioned, we'll focus on the `dgetrf` method for performing
+[LU Factorization][3]. The names themselves can be confusing to newcomers.
+Luckily the Wikipedia [page][1] does a great job describing what is happening:
+
+- `d`: the matrix entries are of type `double` (i.e. a 64-bit IEEE-754
+  floating point number)
+- `ge`: the matrix is in **ge**neral form, as opposed to triangular, banded,
+  symmetric, or many other types of matrix where information need not be
+  repeated
+- `trf`: triangular factorization
+
+We'll focus on factoring a particular matrix {{ get_katex("A = LU") }}:
+
+{{ get_katex("\\underbrace{\\left[\\begin{array}{c c c} 4 & 4 & -3 \\\\ 0 & 4 & -1 \\\\ 1 & 1 & 1 \\end{array}\\right]}_{A} = \\underbrace{\\left[\\begin{array}{c c c} 1 & & \\\\ 0 & 1 & \\\\ 0.25 & 0 & 1 \\end{array}\\right]}_{L} \\underbrace{\\left[\\begin{array}{c c c} 4 & 4 & -3 \\\\ 0 & 4 & -1 \\\\ 0 & 0 & 1.75 \\end{array}\\right]}_{U}", blockquote=True) }}
+
+The method actually allows row pivoting, so in this case we should have
+{{ get_katex("A = PLU") }} where the pivot matrix {{ get_katex("P") }}
+is just the identity matrix.
+
+To actually call this method, we'll need to study the [documentation][2].
+I learned software in the web development world, so I was used to "modern"
+documentation like `readthedocs.org`. When I first saw the [Doxygen][4]-based
+LAPACK docs, I was intimidated. It's a bit of a different style and many
+URLs are not human readable (for example, the [URL][5] for `dgetrf`).
+In addition, the arguments often have short or abbreviated names that can be
+hard to parse and each argument has an **intent** of `in`, `out` or `inout`.
+The concept of an argument's intent is a Fortran feature and at first I
+didn't understand the purpose of it.
+
+Let's break down the arguments to `dgetrf`:
+
+**Constant Inputs**:
+
+- `M` is an `integer`; the number of rows in the matrix `A`.
+- `N` is an `integer`; the number of columns in the matrix `A`.
+- `LDA` is an `integer`; the leading dimension (**LD**) of `A`. This would
+  initially seem to be redundant since the number of rows `M` should be
+  the leading dimension. However, by allowing `LDA` (the stride) to be
+  different from `M`, `A` can be taken as a submatrix of a larger array without
+  having to copy the data.
+
+**Outputs**:
+
+- `IPIV` is a vector `integer` values of dimension `min(M, N)`; it describes
+  the row pivots used and is a more compact representation of the matrix `P`.
+- `INFO` is an integer `integer`; this returns `0` if the method succeeded,
+  uses negative return values to indicate invalid inputs (e.g. a matrix can't
+  have `N = -2` rows) and positive return values to indicate if a division
+  by zero occurred during Gaussian elimination.
+
+**Mutated Inputs** (i.e. intent `inout`):
+
+- `A` is a 2D array of `double` precision values of dimension `LDA x N`;
+  on input this is the matrix that is being factored. When the routine exits,
+  the lower triangle of `A` will contain the below diagonal elements of `L`
+  (the diagonal of `L` is already known to be all ones) and the upper triangle
+  of `A` will contain `U`.
+
+Since the original LAPACK implementation (and many current implementations)
+are written in Fortran, all arguments are passed by reference.
+
+### High-Level Python {{ "{#high-level-py}" }}
+
+There are two functions in SciPy for performaing an LU decomposition:
+`scipy.linalg.lapack.dgetrf` and `scipy.linalg.lu`. The former is a "direct"
+wrapper but the wrapper handles allocating the outputs and allows a flag
+`overwrite_a` which will determine if a copy of the input matrix is used
+when computing the factorization. The other function `scipy.linalg.lu` varies
+slightly, but not enough to warrant a separate discussion here.
+
+Now, we'll call `dgetrf` with our sample matrix. To avoid any overhead
+from copies we make sure `A` is in Fortran order (`"F"`) and set the
+`overwrite_a` flag to `True`:
+
+```python
+>>> import numpy as np
+>>> import scipy.linalg.lapack
+>>> A = np.array([
+...     [4., 4., -3.],
+...     [0., 4., -1.],
+...     [1., 1.,  1.],
+... ], order="F")
+>>> lu_mat, ipiv, info = scipy.linalg.lapack.dgetrf(A, overwrite_a=True)
+```
+
+The method succeeded and the pivots are "trivial", i.e. the identity matrix
+
+```python
+>>> info
+0
+>>> ipiv
+array([0, 1, 2], dtype=int32)
+```
+
+Our returned `lu_mat` is really just our input `A`, which has been mutated
+to contain `L` and `U` in the lower and upper triangles:
+
+```python
+>>> lu_mat is A
+True
+>>> A
+array([[ 4.  ,  4.  , -3.  ],
+       [ 0.  ,  4.  , -1.  ],
+       [ 0.25,  0.  ,  1.75]])
+```
+
+### Finding LAPACK {{ "{#finding-lapack}" }}
+
+> This section can be freely skipped. **TL;DR**: the `liblapack` shared library
+> contains the routine `dgetrf_`. In other words, the name in the symbol table
+> has an underscore appended to it.
+
+Before moving on to C, C++ and other low-level languages we need to
+understand the exported interface of LAPACK. To do this, we'll get
+a little help from the `ctypes` [library][6]:
+
+```python
+>>> import ctypes.util
+>>> ctypes.util.find_library("lapack")
+'liblapack.so.3'
+```
+
+Viewing the [source][7] in the Python standard library, we see that (on
+"most" posix systems) this is essentially equivalent to a direct usage
+of `ldconfig`:
+
+```
+$ LC_ALL=C LANG=C ldconfig -p | grep 'liblapack\.'
+    liblapack.so.3 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/liblapack.so.3
+    liblapack.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/liblapack.so
+```
+
+If that fails, including `-llapack` when compiling an empty file
+with `gcc` is used:
+
+```
+$ LC_ALL=C LANG=C gcc -Wl,-t -o /dev/null -llapack 2> /dev/null | grep lapack
+-llapack (/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/liblapack.so)
+$ objdump -p -j .dynamic \
+>   /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/liblapack.so \
+>   2> /dev/null | grep SONAME
+  SONAME               liblapack.so.3
+```
+
+If that also fails, `ld` (possibly extended by
+the `LD_LIBRARY_PATH` environment variable) is used:
+
+```
+$ ld -t -llapack 2> /dev/null
+ld: mode elf_x86_64
+-llapack (//usr/lib/x86_64-linux-gnu/liblapack.so)
+$ objdump -p -j .dynamic \
+>   //usr/lib/x86_64-linux-gnu/liblapack.so \
+>   2> /dev/null | grep SONAME
+  SONAME               liblapack.so.3
+```
+
+Once we've found the shared library, we need to look in the symbol table
+(`-T` for table) for `dgetrf`:
+
+```
+$ objdump -T /usr/lib/x86_64-linux-gnu/liblapack.so | grep -i dgetrf
+00000000001273d0 g    DF .text  0000000000000158  Base        clapack_dgetrf
+000000000002c520 g    DF .text  0000000000000025  Base        ATL_dgetrf
+0000000000036630 g    DF .text  00000000000000d4  Base        atl_f77wrap_dgetrf_
+000000000002c550 g    DF .text  0000000000000778  Base        ATL_dgetrfC
+000000000002ccd0 g    DF .text  00000000000002e0  Base        ATL_dgetrfR
+0000000000215590 g    DF .text  00000000000000b3  Base        dgetrf_
+0000000000215650 g    DF .text  0000000000000490  Base        dgetrf2_
+```
+
+We see that there are quite a few `dgetrf` routines, but the one we'll use
+is `dgetrf_`. The `dgetrf2_` routine is a recursive [version][8] of `dgetrf_`
+and the other routines are implementation details (specifically [CLAPACK][9]
+and [ATLAS][10]).
+
+This symbol name was a bit confusing to me when using LAPACK, but I took it
+on faith. The reason for it is [historical][11]:
+
+> The world's first Fortran 77 compiler ...
+> appended an underscore on Fortran external names. Thus, Fortran
+> `SUBROUTINE foo` is known as `foo_()` in C
+
+This convention has remained even as compilers have changed. For example
+CLAPACK (i.e. an implementation of LAPACK in C) follows this convention
+even though no Fortran compiler is used at all:
+
+> `f2c` has added this underscore to all the names in CLAPACK. So,
+> a call that in Fortran would look like: `call dgetrf(...)` becomes in C:
+> `dgetrf_(...);`
+
+Now that we understand the shared library, let's actually figure out where
+it came from. Following the symbolic links we see
+
+```
+/usr/lib/x86_64-linux-gnu/liblapack.so.3
+  -> /etc/alternatives/liblapack.so.3-x86_64-linux-gnu
+    -> /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3
+      -> /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3
+```
+
+Once the true location is given, we can find[ref]On a Debian Linux. For
+example, I am running Ubuntu 18.04[/ref] the package that owns the
+shared library
+
+```console
+$ dpkg-query -S /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3
+libatlas3-base:amd64: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3
+$ # Find ATLAS reverse dependencies of libatlas3-base package
+$ apt rdepends libatlas3-base 2> /dev/null | grep Depends | grep atlas
+  Depends: libatlas-base-dev (= 3.10.3-5)
+```
+
+### Low-Level Python (`ctypes`) {{ "{#low-level-py}" }}
+
+Now that we know which shared library to use, we can dynamically load
+the library into Python and verify that `dgetrf_` is in the symbol table:
+
+```python
+>>> import ctypes
+>>> liblapack = ctypes.cdll.LoadLibrary("liblapack.so.3")
+>>> liblapack.dgetrf_
+<_FuncPtr object at 0x7f3fd33ba688>
+```
+
+We can also verify that the `dgetrf` symbol is **not** present (and the
+traceback will show us the actual path to the shared library):
+
+```python
+>>> liblapack.dgetrf
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File ".../lib/python3.7/ctypes/__init__.py", line 369, in __getattr__
+    func = self.__getitem__(name)
+  File ".../lib/python3.7/ctypes/__init__.py", line 374, in __getitem__
+    func = self._FuncPtr((name_or_ordinal, self))
+AttributeError: /usr/lib/x86_64-linux-gnu/liblapack.so.3: undefined symbol: dgetrf
+```
+
+To actually call this routine, we first specify the input and output types:
+
+```python
+>>> dgetrf = liblapack.dgetrf_
+>>> int_ptr = ctypes.POINTER(ctypes.c_int)
+>>> double_ptr = ctypes.POINTER(ctypes.c_double)
+>>> dgetrf.argtypes = [int_ptr, int_ptr, double_ptr, int_ptr, int_ptr, int_ptr]
+>>> dgetrf.restype = None
+```
+
+To call it, we use `ctypes` and NumPy to allocate all of our arguments:
+
+```python
+>>> import numpy as np
+>>> M = ctypes.c_int(3)
+>>> N = ctypes.c_int(3)
+>>> A = np.array([
+...     [4., 4., -3.],
+...     [0., 4., -1.],
+...     [1., 1.,  1.],
+... ], order="F")
+>>> LDA = ctypes.c_int(3)
+>>> IPIV = np.empty(3, dtype=np.intc)
+>>> INFO = ctypes.c_int()
+>>> # Check Uninitialized
+>>> IPIV
+array([47155696,        0,        2], dtype=int32)
+>>> INFO
+c_int(50221552)
+```
+
+Since LAPACK follows the pass by reference convention, we pass
+in a pointer to each of these arguments
+
+```python
+>>> return_value = dgetrf(
+...     ctypes.pointer(M),
+...     ctypes.pointer(N),
+...     A.ctypes.data_as(double_ptr),
+...     ctypes.pointer(LDA),
+...     IPIV.ctypes.data_as(int_ptr),
+...     ctypes.pointer(INFO),
+... )
+```
+
+and the results match those from `scipy.linalg.lapack.dgetrf`:
+
+```python
+>>> return_value is None
+True
+>>> INFO
+c_int(0)
+>>> IPIV
+array([1, 2, 3], dtype=int32)
+>>> A
+array([[ 4.  ,  4.  , -3.  ],
+       [ 0.  ,  4.  , -1.  ],
+       [ 0.25,  0.  ,  1.75]])
+```
+
+### C {{ "{#c}" }}
+
+Unfortunately, LAPACK doesn't come with a standard header file, so
+the `dgetrf_` symbol must be declared via `extern`:
+
+```c
+extern void dgetrf_(const int* M, const int* N, double* A, const int* LDA,
+    int* IPIV, int* INFO);
+```
+
+Notice that all arguments are pointers. We've marked the input only arguments
+as `const` to help the C compiler out. We've also used `int` (rather than
+`long`) for the integer arguments.
+
+When calling `dgetrf_` in the C [example](/code/dgetrf_example.c), we take
+care to lay out `A` in Fortran order:
+
+```c
+int M = 3;
+int N = 3;
+double A[9] = { 4, 0, 1, 4, 4, 1, -3, -1, 1 };
+int LDA = 3;
+int IPIV[3];
+int INFO;
+```
+
+Actually building code that uses `liblapack` confused me. On a Debian-based
+Linux system, I could install LAPACK via
+
+```
+$ [sudo] apt install libatlas-base-dev
+```
+
+and be on my merry way with the `-llapack` flag:
+
+```
+$ gcc -o main dgetrf_example.c -llapack
+$ ./main
+Inputs:
+  M = 3
+  N = 3
+  A = [ 4.00,  4.00, -3.00]
+      [ 0.00,  4.00, -1.00]
+      [ 1.00,  1.00,  1.00]
+  LDA = 3
+Outputs:
+  A = [ 4.00,  4.00, -3.00]
+      [ 0.00,  4.00, -1.00]
+      [ 0.25,  0.00,  1.75]
+  IPIV = [1, 2, 3]
+  INFO = 0
+```
+
+### Compiling on OS X {{ "{#compiling-on-os-x}" }}
+
+> **TL;DR**: As of Mac OS X High Sierra (10.13), your code can link to LAPACK
+> via `-llapack` or `-framework Accelerate`. Also, when I started graduate
+> school I didn't know much about compiling code.
+
+I was using Mac OS X Mountain Lion (10.8) at the time. Without
+using Homebrew to install LAPACK or OpenBLAS, compiling[ref]Note that `gcc` is
+just an alias for `clang` on OS X[/ref] with `-llapack` failed with something
+along the lines of:
+
+```console
+$ clang -o main dgetrf_example.c -llapack
+ld: library not found for -llapack
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+Just leaving out the flag entirely was also not an option:
+
+```console
+$ clang -o main dgetrf_example.c
+Undefined symbols for architecture x86_64:
+  "_dgetrf_", referenced from:
+      _main in dgetrf_example-fcd533.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+I would eventually find out that Apple provides a custom [framework][12]
+called `vecLib` that contained a LAPACK implementation / interface among other
+things. So the correct magical incantation (as of OS X 10.8) was
+
+```console
+$ clang -o main dgetrf_example.c -framework vecLib
+```
+
+At some point[ref]It [seems][14] it was in Mac OS X Yosemite (10.10).[/ref],
+things **got better** ([thanks][15] Apple). On a current[ref]Mac OS X High
+Sierra (10.13)[/ref] version, `liblapack` comes with the OS:
+
+```python
+>>> import ctypes.util
+>>> ctypes.util.find_library("lapack")
+'/usr/lib/liblapack.dylib'
+```
+
+Following symlinks, we see that this shared library is part of the
+`Accelerate` [framework][13]:
+
+```python
+>>> import os
+>>> os.path.realpath("/usr/lib/liblapack.dylib")
+'/System/Library/Frameworks/Accelerate.framework/.../A/libLAPACK.dylib'
+```
+<!---
+Full path:
+'/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib'
+-->
+
+Now `vecLib` is contained in `Accelerate` and can no longer be
+included directly:
+
+```console
+$ readlink /System/Library/Frameworks/vecLib.framework
+Accelerate.framework//Versions/A/Frameworks/vecLib.framework
+$ clang -o main dgetrf_example.c -framework vecLib
+ld: cannot link directly with /System/Library/Frameworks//vecLib.framework/vecLib for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+```
+
+However, this means that LAPACK can be included the "Linux" way or via
+a framework:
+
+```console
+$ clang -o main dgetrf_example.c -llapack
+$ clang -o main dgetrf_example.c -framework Accelerate
+```
+
+### C++ {{ "{#cpp}" }}
+
+> **TL;DR**: Use `extern "C"` instead of just `extern` when declaring
+> LAPACK routines in C++ code.
+
+When I started graduate school I didn't know anything about shared libraries,
+symbol tables, [name mangling][16] or ABIs. It also didn't even occur to me
+that extra underscore in names of LAPACK routines in the shared library had
+anything to do with those topics.
+
+Luckily, after an hour or two[ref]I'm not joking, I was really stumped[/ref]
+of Googling I learned about `extern "C"` and everything "made sense". Once
+you know about `extern "C"`, declaring the LAPACK routine in C++ is essentially
+the same as in C:
+
+```c++
+extern "C" void dgetrf_(const int* M, const int* N, double* A, const int* LDA,
+    int* IPIV, int* INFO);
+```
+
+From there, `dgetrf_` can be used as it would in C. But I'd like to explain
+a bit further why we say `extern "C"` rather than `extern`. To explain,
+consider the simple program that is valid in C or C++:
+
+```c++
+int together(int m, int n) {
+    return m + n;
+}
+```
+
+If we compile this into an object file in C, we see the name `together`
+in the symbol table
+
+```console
+$ gcc -c together.c
+$ nm together.o
+0000000000000000 T together
+```
+
+but if we compile the same code in C++, the name is mangled (to
+`_Z8togetherii`) before it is put in the symbol table:
+
+```console
+$ g++ -c together.cpp
+$ nm together.o
+0000000000000000 T _Z8togetherii
+```
+
+This name mangling allows many features of C++. For example, we could
+provide a second implementation using the **same** name but with type
+`double`:
+
+```c++
+double together(double m, double n) {
+    return m + n;
+}
+```
+
+and the two functions can both be in the symbol table without "colliding"
+on their shared name:
+
+```console
+$ g++ -c together.cpp
+$ nm together.o
+0000000000000014 T _Z8togetherdd
+0000000000000000 T _Z8togetherii
+```
+
+For an example in the wild consider the `libjsoncpp` [package][17] (chosen at
+random since it is installed on my current system). The `valueToString` method
+in the `Json` namespace has six different implementations:
+
+```console
+$ objdump    -T /usr/lib/x86_64-linux-gnu/libjsoncpp.so.1.7.4 | grep valueToString
+0000000000020c30 ... _ZN4Json13valueToStringB5cxx11Eb
+0000000000020be0 ... _ZN4Json13valueToStringB5cxx11Ed
+0000000000020b60 ... _ZN4Json13valueToStringB5cxx11Ei
+0000000000020ba0 ... _ZN4Json13valueToStringB5cxx11Ej
+00000000000208c0 ... _ZN4Json13valueToStringB5cxx11Ex
+0000000000020a80 ... _ZN4Json13valueToStringB5cxx11Ey
+$ objdump -C -T /usr/lib/x86_64-linux-gnu/libjsoncpp.so.1.7.4 | grep valueToString
+0000000000020c30 ... Json::valueToString[abi:cxx11](bool)
+0000000000020be0 ... Json::valueToString[abi:cxx11](double)
+0000000000020b60 ... Json::valueToString[abi:cxx11](int)
+0000000000020ba0 ... Json::valueToString[abi:cxx11](unsigned int)
+00000000000208c0 ... Json::valueToString[abi:cxx11](long long)
+0000000000020a80 ... Json::valueToString[abi:cxx11](unsigned long long)
+```
+
+Why did I just tell you all this? To make it clear why we say `extern "C"`
+instead of just `extern`. This indicates to the compiler that the symbol
+we want to refer to is **literally** `dgetrf_`. By using `extern`, that would
+tell the compiler to look for a mangled external name. For example with `g++`,
+it would look for the name `_Z7dgetrf_PKiS0_PdS0_PiS2_`.
+
+### Conclusion {{ "{#conclusion}" }}
+
+I hope this post has been informational. Now you should have a better idea
+how to
+
+- Read LAPACK documentation to interpret and write the correct signature for
+  a LAPACK routine
+- Reference the correct symbol when calling a LAPACK routine as a foreign
+  function
+- Understand argument intent and pass by reference calling convention
+  for LAPACK's Fortran-like interface
+- Use Python's `ctypes` module (and NumPy's `ctypes.data_as` method) to
+  invoke LAPACK routines for fast prototyping and debugging
+
+Thanks for reading!
+
+[1]: https://en.wikipedia.org/wiki/LAPACK
+[2]: http://www.netlib.org/lapack/explore-html/
+[3]: https://en.wikipedia.org/wiki/LU_decomposition
+[4]: http://www.doxygen.nl/
+[5]: http://www.netlib.org/lapack/explore-html/dd/d9a/group__double_g_ecomputational_ga0019443faea08275ca60a734d0593e60.html
+[6]: https://docs.python.org/3/library/ctypes.html
+[7]: https://github.com/python/cpython/blob/v3.7.0/Lib/ctypes/util.py#L309-L312
+[8]: http://www.netlib.org/lapack/explore-html/dd/d9a/group__double_g_ecomputational_gabdd3af29e9f6bbaf4b352341a1e8b464.html#gabdd3af29e9f6bbaf4b352341a1e8b464
+[9]: http://www.netlib.org/clapack/readme
+[10]: http://math-atlas.sourceforge.net/
+[11]: https://www.math.utah.edu/software/c-with-fortran.html#routine-naming
+[12]: https://developer.apple.com/documentation/accelerate/veclib
+[13]: https://developer.apple.com/documentation/accelerate
+[14]: https://bugs.r-project.org/bugzilla/show_bug.cgi?id=16033
+[15]: https://github.com/scipy/scipy/wiki/Dropping-support-for-Accelerate
+[16]: https://en.wikipedia.org/wiki/Name_mangling
+[17]: https://github.com/open-source-parsers/jsoncpp
