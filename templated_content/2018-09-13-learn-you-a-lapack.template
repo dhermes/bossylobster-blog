@@ -63,7 +63,7 @@ Luckily the Wikipedia [page][1] does a great job describing what is happening:
 
 We'll focus on factoring a particular matrix {{ get_katex("A = LU") }}:
 
-{{ get_katex("\\underbrace{\\left[\\begin{array}{c c c} 4 & 4 & -3 \\\\ 0 & 4 & -1 \\\\ 1 & 1 & 1 \\end{array}\\right]}_{A} = \\underbrace{\\left[\\begin{array}{c c c} 1 & & \\\\ 0 & 1 & \\\\ 0.25 & 0 & 1 \\end{array}\\right]}_{L} \\underbrace{\\left[\\begin{array}{c c c} 4 & 4 & -3 \\\\ 0 & 4 & -1 \\\\ 0 & 0 & 1.75 \\end{array}\\right]}_{U}", blockquote=True) }}
+{{ get_katex("\\underbrace{\\left[\\begin{array}{c c c} 4 & 4 & -3 \\\\ 0 & 4 & -1 \\\\ 1 & 1 & 1 \\end{array}\\right]}_{A} = \\underbrace{\\left[\\begin{array}{c c c} 1 & & \\\\ 0 & 1 & \\\\ 0.25 & 0 & 1 \\end{array}\\right]}_{L} \\underbrace{\\left[\\begin{array}{c c c} 4 & 4 & -3 \\\\ & 4 & -1 \\\\ & & 1.75 \\end{array}\\right]}_{U}", blockquote=True) }}
 
 The method actually allows row pivoting, so in this case we should have
 {{ get_katex("A = PLU") }} where the pivot matrix {{ get_katex("P") }}
