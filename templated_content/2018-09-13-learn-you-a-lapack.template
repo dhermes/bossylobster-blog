@@ -12,7 +12,7 @@ use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
 social_image: images/lu_factorization.png
-github_slug: content/2018-09-13-learn-you-a-lapack.md
+github_slug: templated_content/2018-09-13-learn-you-a-lapack.template
 ---
 
 Linear Algebra is an incredibly powerful tool. A joke among mathematicians
