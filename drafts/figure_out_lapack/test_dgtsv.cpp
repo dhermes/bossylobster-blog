@@ -21,63 +21,62 @@
    http://www.math.utah.edu/software/lapack/lapack-d/dgtsv.html
    http://www.netlib.org/clapack/CLAPACK-3.1.1/SRC/dgtsv.c */
 
-double lowerDiag[] = {
-  -1, -2, -1, -1
-};
+double lowerDiag[] = { -1, -2, -1, -1 };
 
-double diag[] = {
-  2, 2, 3, 3, 1
-};
+double diag[] = { 2, 2, 3, 3, 1 };
 
-double upperDiag[] = {
-  -1, -1, -1, -2
-};
+double upperDiag[] = { -1, -1, -1, -2 };
 
-double bForRHS[] = {
-  1, 2, 3, 2, 1
-};
+double bForRHS[] = { 1, 2, 3, 2, 1 };
 
 // http://stackoverflow.com/questions/15830913
-extern "C" void dgtsv_(const long *Np, const long *NRHSp, double *DL,
-                       double *D, double *DU, double *B, const long *LDBp,
-                       long *INFOp);
+extern "C" void dgtsv_(const long* Np, const long* NRHSp, double* DL,
+    double* D, double* DU, double* B, const long* LDBp, long* INFOp);
 
-static long dgtsv(long N, long NRHS, double *DL, double *D, double *DU,
-                  double *B, long LDB)
+static long dgtsv(
+    long N, long NRHS, double* DL, double* D, double* DU, double* B, long LDB)
 {
-  long info;
-  dgtsv_(&N, &NRHS, DL, D, DU, B, &LDB, &info);
-  return info;
+    long info;
+    dgtsv_(&N, &NRHS, DL, D, DU, B, &LDB, &info);
+    return info;
 }
 
-int
-main()
+int main()
 {
-  int i, info;
-  long N = 5;
+    int i, info;
+    long N = 5;
 
-  printf("B for RHS before:\n");
-  for (i=0; i<N; ++i) printf("%5.1f\n", bForRHS[i]);
+    printf("B for RHS before:\n");
+    for (i = 0; i < N; ++i) {
+        printf("%5.1f\n", bForRHS[i]);
+    }
 
-  printf("Lower diag before:\n");
-  for (i=0; i<N; ++i) printf("%5.1f\n", lowerDiag[i]);
+    printf("Lower diag before:\n");
+    for (i = 0; i < N - 1; ++i) {
+        printf("%5.1f\n", lowerDiag[i]);
+    }
 
-  printf("==========\n==========\n==========\n");
+    printf("==========\n==========\n==========\n");
 
-  long NRHS = 1;
-  long LDB = N;
-  info = dgtsv(N, NRHS, lowerDiag, diag, upperDiag, bForRHS, LDB);
-  if (info != 0) fprintf(stderr, "failure with error %d\n", info);
+    long NRHS = 1;
+    long LDB = N;
+    info = dgtsv(N, NRHS, lowerDiag, diag, upperDiag, bForRHS, LDB);
+    if (info != 0) {
+        fprintf(stderr, "failure with error %d\n", info);
+    }
 
-  printf("B for RHS after:\n");
-  for (i=0; i<N; ++i) printf("%5.1f\n", bForRHS[i]);
+    printf("B for RHS after:\n");
+    for (i = 0; i < N; ++i) {
+        printf("%5.1f\n", bForRHS[i]);
+    }
 
-  printf("Lower diag after:\n");
-  for (i=0; i<N; ++i) printf("%5.1f\n", lowerDiag[i]);
+    printf("Lower diag after:\n");
+    for (i = 0; i < N; ++i) {
+        printf("%5.1f\n", lowerDiag[i]);
+    }
 
-  return 0;
+    return 0;
 }
-
 
 // 1. solve the equation   A*X = B,
 // 2. ...where A is an N-by-N tridiagonal matrix
@@ -95,8 +94,8 @@ main()
 // ---- DU : diagonal upper (the first superdiagonal); N - 1 length array
 // ---- B : the RHS matrix, expect it to be N x NRHS array in 2D
 
- /* On entry, the N-by-NRHS right hand side matrix B. */
- /* On exit, if INFO = 0, the N-by-NRHS solution matrix */
+/* On entry, the N-by-NRHS right hand side matrix B. */
+/* On exit, if INFO = 0, the N-by-NRHS solution matrix */
 
 // ---- LDB : Leading dimension of B, LDB >= max(1, N)
 // ---- INFO : exit code
