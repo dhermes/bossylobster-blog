@@ -18,6 +18,9 @@ things I made during that time.
 
 - Write-up and some code for generating the "optimal" finite difference
   [stencils][stencils] to compute a given derivative (November 2013)
+- [Discussion][sdp-dual] of spectral norm as dual to the nuclear norm, in the
+  sense of linear programming. Part of presentation of a
+  [paper][sdp-dual-paper] during student seminar (November 2014)
 - IPython notebook about [GMRES][gmres-gist] (October 2015)
 - [Discussion][implicitizing] of parametric curves. In particular, how to
   classify cubics and how implicitization helps with conversion from a
@@ -105,3 +108,5 @@ things I made during that time.
 [stencils]: https://gist.github.com/dhermes/ba7276f20d5a4947cafbb911671ab8f1#file-finite_difference_order-pdf
 [gmres-gist]: https://gist.github.com/dhermes/d72e36c40626bd93a4a02704ee79c7d1
 [implicitizing]: [https://gist.github.com/dhermes/3551f053e3f81a85d488c7cdb22a18c8#file-implicitizing_curves-pdf]
+[sdp-dual]: https://gist.github.com/dhermes/18793452c4e3b89b2ec86d7d73439483
+[sdp-dual-paper]: https://arxiv.org/abs/0706.4138
