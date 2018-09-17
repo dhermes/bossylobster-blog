@@ -14,8 +14,10 @@ doing research as a graduate student at UC Berkeley. (See my post
 retrospective.) This page is mostly intended as a place to gather some
 things I made during that time.
 
-### Code:
+### Code and Writing:
 
+- Write-up and some code for generating the "optimal" finite difference
+  [stencils][stencils] to compute a given derivative
 - `bezier` [library][bez-docs] ([GitHub][bez-gh], published [in JOSS][bez-joss]
   in August 2017)
 - `foreign-fortran` [project][foreign-fortran] ([GitHub][foreign-fortran-gh])
@@ -96,3 +98,4 @@ things I made during that time.
 [supermesh]: https://doi.org/10.1016/j.cma.2009.03.004
 [local-supermesh]: https://dx.doi.org/10.1016/j.cma.2010.07.015
 [m273-supermesh]: https://nbviewer.jupyter.org/format/slides/gist/dhermes/59f4c4b79be4b53dbf84a7761c029f01
+[stencils]: https://gist.github.com/dhermes/ba7276f20d5a4947cafbb911671ab8f1#file-finite_difference_order-pdf
