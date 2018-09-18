@@ -25,10 +25,12 @@ things I made during that time.
 - [Discussion][implicitizing] of parametric curves. In particular, how to
   classify cubics and how implicitization helps with conversion from a
   parametric curve to an algebraic curve. (April 2016)
+- Math 273 topics [course][m273] on numerical analysis ([GitHub][m273-gh],
+  course ran during Spring 2016)
 - `bezier` [library][bez-docs] ([GitHub][bez-gh], published [in JOSS][bez-joss]
   in August 2017)
-- `foreign-fortran` [project][foreign-fortran] ([GitHub][foreign-fortran-gh])
-- Math 273 topics [course][m273] on numerical analysis ([GitHub][m273-gh])
+- `foreign-fortran` [project][foreign-fortran] ([GitHub][foreign-fortran-gh],
+  started in Summer 2017, added to `readthedocs.org` in August 2018)
 
 ### Papers:
 
@@ -107,6 +109,6 @@ things I made during that time.
 [m273-supermesh]: https://nbviewer.jupyter.org/format/slides/gist/dhermes/59f4c4b79be4b53dbf84a7761c029f01
 [stencils]: https://gist.github.com/dhermes/ba7276f20d5a4947cafbb911671ab8f1#file-finite_difference_order-pdf
 [gmres-gist]: https://gist.github.com/dhermes/d72e36c40626bd93a4a02704ee79c7d1
-[implicitizing]: [https://gist.github.com/dhermes/3551f053e3f81a85d488c7cdb22a18c8#file-implicitizing_curves-pdf]
+[implicitizing]: https://gist.github.com/dhermes/3551f053e3f81a85d488c7cdb22a18c8#file-implicitizing_curves-pdf
 [sdp-dual]: https://gist.github.com/dhermes/18793452c4e3b89b2ec86d7d73439483
 [sdp-dual-paper]: https://arxiv.org/abs/0706.4138
