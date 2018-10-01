@@ -93,9 +93,9 @@ Let's break down the arguments to `dgetrf`:
 
 **Outputs**:
 
-- `IPIV` is a vector `integer` values of dimension `min(M, N)`; it describes
+- `IPIV` is a vector of `integer` values of dimension `min(M, N)`; it describes
   the row pivots used and is a more compact representation of the matrix `P`.
-- `INFO` is an integer `integer`; this returns `0` if the method succeeded,
+- `INFO` is an `integer`; this returns `0` if the method succeeded,
   uses negative return values to indicate invalid inputs (e.g. a matrix can't
   have `N = -2` rows) and positive return values to indicate if a division
   by zero occurred during Gaussian elimination.
