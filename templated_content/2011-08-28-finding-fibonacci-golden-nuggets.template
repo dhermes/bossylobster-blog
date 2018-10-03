@@ -32,7 +32,7 @@ The problem defines (without stating so), a sequence
 {{ get_katex("n") }} for which {{ get_katex("z_n") }} is rational.
 Such a value {{ get_katex("n") }} is called a **golden nugget**. As noted in
 the problem statement,
-{{ get_katex("\\displaystyle A_F\\left(\\frac{1}{2}\\right) = 2") }},
+{{ get_katex("\\displaystyle A_F\\left(\\frac{1}{2}\\right) = 2,") }}
 hence {{ get_katex("\\displaystyle z_2 = \\frac{1}{2}") }} is rational and
 {{ get_katex("2") }} is the first golden nugget.
 
@@ -52,7 +52,7 @@ which implies
 
 {{ get_katex("A_F(z) = \\frac{z}{1 - z -z^2}.", blockquote=True) }}
 
-Now solving{{ get_katex("A_F(z) = n") }}, we have
+Now solving{{ get_katex("A_F(z) = n,") }} we have
 
 {{ get_katex("z = n - n z - n z^2 \\Rightarrow n z^2 + (n + 1)z - n = 0.", blockquote=True) }}
 
@@ -85,7 +85,7 @@ to find our solutions. Note
   since {{ get_katex("y = 5 n + 1") }} must hold.
 - Since {{ get_katex("\\sqrt{5}") }} is irrational, {{ get_katex("f") }} can
   never take the value {{ get_katex("0") }}
-- Since {{ get_katex("f(1, 0) = 5") }} and {{ get_katex("f(0, 1) = -1") }},
+- Since {{ get_katex("f(1, 0) = 5") }} and {{ get_katex("f(0, 1) = -1,") }}
   there is a river on the topograph and the values of {{ get_katex("f") }} occur
   in a periodic fashion.
 - Finally, since we take pairs {{ get_katex("(x, y)") }} that occur on the
@@ -102,7 +102,7 @@ on the topograph or by taking a pair which satisfies
 due to the homogeneity of {{ get_katex("f") }}.
 
 Starting from the trivial base {{ get_katex("u = (1, 0)") }} and
-{{ get_katex("v = (0, 1)") }}, the full period of the river has length
+{{ get_katex("v = (0, 1),") }} the full period of the river has length
 {{ get_katex("8") }} as seen below:
 
 <div markdown="1" style="text-align: center;">
@@ -116,8 +116,8 @@ Starting from the trivial base {{ get_katex("u = (1, 0)") }} and
 
 Since every edge protruding from the river on the positive side has a value of
 {{ get_katex("4") }} on a side &mdash; the value pairs are
-{{ get_katex("(5, 4)") }}, {{ get_katex("(4, 1)") }},
-{{ get_katex("(1, 4)") }}, and {{ get_katex("(4, 5)") }} &mdash; by the
+{{ get_katex("(5, 4),") }} {{ get_katex("(4, 1),") }}
+{{ get_katex("(1, 4),") }} and {{ get_katex("(4, 5)") }} &mdash; by the
 climbing lemma, we know all values above
 those on the river have value greater than {{ get_katex("4") }}. Thus, the only
 solutions we are concerned with
@@ -133,9 +133,9 @@ solution set.
 When we start from the trivial base, we only need consider moving to the right
 (orientation provided by the above picture) along the river since we only care
 about the absolute value of the coordinates &mdash; {{ get_katex("n") }} comes
-from {{ get_katex("y") }}, so it must be positive. As such, we have a sequence
+from {{ get_katex("y,") }} so it must be positive. As such, we have a sequence
 of bases {{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
-{{ get_katex("u_0 = (1, 0)") }}, {{ get_katex("v_0 = (0, 1)") }} and recurrence
+{{ get_katex("u_0 = (1, 0),") }} {{ get_katex("v_0 = (0, 1)") }} and recurrence
 
 {{ get_katex("\\begin{aligned}u_{k + 1} &= 9 u_k + 20 v_k \\\\ v_{k + 1} &= 4 u_k + 9 v_k. \\end{aligned}", blockquote=True) }}
 
@@ -148,7 +148,7 @@ With these recurrences, you can take the three base solutions on the river and
 quickly find each successive golden nugget. Since each value is a coordinate in
 a vector, it satisfies the same linear recurrence as the vector. Also, since
 each of the solution vectors occur as linear combinations of
-{{ get_katex("u_k") }} and {{ get_katex("v_k") }}, they must satisfy the same
+{{ get_katex("u_k") }} and {{ get_katex("v_k,") }} they must satisfy the same
 recurrence as well.
 
 Since the recurrence is degree two, we need the first two values to determine
@@ -159,7 +159,7 @@ the entire sequence. For the first solution we start with
 {{ get_katex("u_1 + 2 v_1 = (17, 38)") }}; and for the third solution we start
 with {{ get_katex("5 u_0 + 11 v_0 = (5, 11)") }} and
 {{ get_katex("5 u_1 + 11 v_1 = (89, 199)") }}. For the second solution, since
-{{ get_katex("f(1, 2) = 1") }}, we use homogeneity to scale up to
+{{ get_katex("f(1, 2) = 1,") }} we use homogeneity to scale up to
 {{ get_katex("(2, 4)") }} and {{ get_katex("(34, 76)") }} to start us off. With
 these values, we take the second coordinate along the recurrence and get the
 following values:
@@ -245,7 +245,7 @@ following values:
 
 We don't get our fifteenth golden nugget candidate (value must be one
 more than a multiple of 5) until
-{{ get_katex("5600748293801") }}, which yields
+{{ get_katex("5600748293801,") }} which yields
 
 {{ get_katex("n = 1120149658760.", blockquote=True) }}
 

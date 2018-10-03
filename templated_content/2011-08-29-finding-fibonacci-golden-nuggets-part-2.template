@@ -33,9 +33,9 @@ were able to use
 > those on the river have value greater than 4
 
 but this is no help when trying to find solutions to
-{{ get_katex("5 x^2 - y^2 = 9") }}, for example.
+{{ get_katex("5 x^2 - y^2 = 9,") }} for example.
 
-To answer the question {{ get_katex("5 x^2 - y^2 = 9") }}, we'll use the same
+To answer the question {{ get_katex("5 x^2 - y^2 = 9,") }} we'll use the same
 pretty picture, but emphasize different parts of it. As you can see
 below, to classify all the values, we only need to travel from the
 initial base
@@ -52,7 +52,7 @@ indicate below:
 </div>
 
 As noted above,for problem 137, we luckily were concerned about finding
-values {{ get_katex("4") }} or {{ get_katex("1") }}, and the climbing lemma
+values {{ get_katex("4") }} or {{ get_katex("1,") }} and the climbing lemma
 saved us from leaving the river. However, as I've noted above with
 <span class="Apple-style-span" style="color: #6fa8dc;">#1</span>,
 <span class="Apple-style-span" style="color: #6fa8dc;">#2</span>,
@@ -60,7 +60,7 @@ saved us from leaving the river. However, as I've noted above with
 <span class="Apple-style-span" style="color: #6fa8dc;">#4</span>, there
 are four **tributaries** coming from the river where we can consider larger
 values. Using the **Arithmetic Progression Rule**, we find values
-{{ get_katex("19") }}, {{ get_katex("11") }}, {{ get_katex("11") }}, and
+{{ get_katex("19,") }} {{ get_katex("11,") }} {{ get_katex("11,") }} and
 {{ get_katex("19") }} as the first set of values above the river. From this
 point, we can stop checking for solutions to {{ get_katex("f(x, y) = 9") }}
 since the climbing lemma says all further values above the tributaries will be
@@ -76,7 +76,7 @@ superbases) and so we'll call it a **juncture** (my term, not Conway's).
 Each face in a juncture needs to be represented by both the pair
 {{ get_katex("(x, y)") }} and the value that {{ get_katex("f") }} takes on this
 face. For our sanity, we organize a juncture as a tuple
-{{ get_katex("(B, P, N, F)") }}, (in that order)
+{{ get_katex("(B, P, N, F),") }} (in that order)
 
 <div markdown="1" style="text-align: center;">
   ![Golden Nugget Juncture](/images/juncture.png)
@@ -86,15 +86,15 @@ where {{ get_katex("P") }} and {{ get_katex("N") }} form a base straddling the
 river, with {{ get_katex("P") }} taking the positive value and
 {{ get_katex("N") }} negative, as well as {{ get_katex("B") }} the face "back"
 according to our orientation and {{ get_katex("F") }} the face "forward". Note,
-depending on the value of the form at {{ get_katex("F") }}, the river may
-"turn left" or "turn right" at the superbase formed by {{ get_katex("P") }},
+depending on the value of the form at {{ get_katex("F,") }} the river may
+"turn left" or "turn right" at the superbase formed by {{ get_katex("P,") }}
 {{ get_katex("N") }} and {{ get_katex("F") }}.
 
 To move "along the river until we arrive at an identical base", we need
 a way to move "forward" (according to our imposed orientation) to the
 next juncture on the river. Moving along the river, we'll often come to
 superbases {{ get_katex("(B, N, P)") }} and need to calculate the forward face
-{{ get_katex("F") }}. To calculate {{ get_katex("F") }}, assume we have
+{{ get_katex("F") }}. To calculate {{ get_katex("F,") }} assume we have
 [already written](https://github.com/dhermes/project-euler/blob/31b005fe346927bc64e30f63381c7f675533752a/python/conway_topograph.py#L33)
 a `plus`
 function that determines the vector at {{ get_katex("F") }}
@@ -140,7 +140,7 @@ quadratic forms
 
 {{ get_katex("f(x, y) = a x^2 + b y^2", blockquote=True) }}
 
-where {{ get_katex("a > 0") }}, {{ get_katex("b < 0") }} and
+where {{ get_katex("a > 0,") }} {{ get_katex("b < 0") }} and
 {{ get_katex("\\sqrt{\\left|\\frac{a}{b}\\right|}") }} is not rational. This
 guarantees the existence of a river. We will pass such forms as an
 argument `form=(a, b)`
@@ -153,7 +153,7 @@ to our functions. We start our river at the juncture defined by the trivial base
 
 and crawl the river using the functions defined above.
 
-> **NOTE**: {{ get_katex("f(1, -1) = a(1)^2 + b(-1)^2 = a + b") }}, etc.
+> **NOTE**: {{ get_katex("f(1, -1) = a(1)^2 + b(-1)^2 = a + b,") }} etc.
 
 To find the recurrence, we need just walk along the river until we get
 an identical juncture where the trivial base is replaced by the base
@@ -161,7 +161,7 @@ an identical juncture where the trivial base is replaced by the base
 [part one](/2011/08/finding-fibonacci-golden-nuggets.html),
 let the base vectors define a sequence
 {{ get_katex("\\left\\{(u_k, v_k)\\right\\}_{k \\geq 0}") }} with
-{{ get_katex("u_0 = (1, 0)") }} and{{ get_katex("v_0 = (0, 1)") }}, then we
+{{ get_katex("u_0 = (1, 0)") }} and{{ get_katex("v_0 = (0, 1),") }} then we
 have a recurrence
 
 {{ get_katex("\\begin{aligned}u_{k + 1} &= p u_k + q v_k \\\\ v_{k + 1} &= r u_k + s v_k. \\end{aligned}", blockquote=True) }}
@@ -193,7 +193,7 @@ def get_recurrence(form):
     return (r*q - p*s, p + s)
 ```
 
-For solving {{ get_katex("f(x, y) = z") }}, {{ get_katex("(z > 0)") }}
+For solving {{ get_katex("f(x, y) = z,") }} {{ get_katex("(z > 0)") }}
 we need to consider all the positive tributaries coming out of the river and
 let them grow and grow until the climbing lemma tells us we no longer need
 to consider values larger than {{ get_katex("z") }}. In order to consider

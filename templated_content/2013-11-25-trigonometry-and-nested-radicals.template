@@ -52,7 +52,7 @@ since the polygon is inscribed in a unit circle. The angle
 has the same internal
 angle and there are {{ get_katex("N") }} of them. If we can find the
 perpendicular height {{ get_katex("h") }} from {{ get_katex("AB") }} to
-{{ get_katex("C") }}, the area will be
+{{ get_katex("C,") }} the area will be
 {{ get_katex("\\frac{1}{2} h \\left|AB\\right| = \\frac{h}{2}") }}. But we also
 know that
 
@@ -79,9 +79,9 @@ so these are indeed good approximations.
 
 Unfortunately for us (and Archimedes), computing
 {{ get_katex("\\sin\\left(\\frac{2\\pi}{N}\\right)") }} is not quite as simple
-as dividing by {{ get_katex("N") }}, so often special values of
+as dividing by {{ get_katex("N,") }} so often special values of
 {{ get_katex("N") }} were chosen. In fact, starting from {{ get_katex("N") }}
-and then using {{ get_katex("2N") }}, the areas could be computed via a special
+and then using {{ get_katex("2N,") }} the areas could be computed via a special
 way of averaging the previous areas. Lucky for us, such a method is equivalent
 to the trusty
 [half angle identities](http://en.wikipedia.org/wiki/List_of_trigonometric_identities#Double-angle.2C_triple-angle.2C_and_half-angle_formulae)
@@ -120,7 +120,7 @@ have worthwhile names):
 
 Before, we could rely on the fact that we know that a
 45-45-90 triangle looked like, but now, we come across
-{{ get_katex("\\cos\\left(\\frac{\\pi}{8}\\right)") }}, a value
+{{ get_katex("\\cos\\left(\\frac{\\pi}{8}\\right),") }} a value
 which we haven't seen before. Luckily, Abraham has help here as well:
 
 {{ get_katex("\\cos\\left(\\frac{\\pi}{8}\\right) = \\sqrt{\\frac{1 + \\cos\\left(\\frac{\\pi}{4}\\right)}{2}} = \\sqrt{\\frac{2 + \\sqrt{2}}{4}} = \\frac{1}{2} \\sqrt{2 + \\sqrt{2}}", blockquote=True) }}

@@ -105,6 +105,9 @@ def verify_template(filename):
         raise ValueError("Invalid content", filename)
     if "}})" in content:
         raise ValueError("Invalid content", filename)
+    # Don't allow templated content to be immediately followed by a comma.
+    if "}}," in content:
+        raise ValueError("Invalid content", filename)
 
 
 def get_templates():

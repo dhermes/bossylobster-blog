@@ -59,8 +59,8 @@ superbase (endpoint) has three bases (edges) coming out of it.
 </div>
 
 As we traverse each edge (base) surrounding a given vector
-{{ get_katex("(e_1)") }}, we move from superbase (vertex) to superbase
-(vertex), and form a face. Starting from a base {{ get_katex("e_1, e_2") }},
+{{ get_katex("(e_1),") }} we move from superbase (vertex) to superbase
+(vertex), and form a face. Starting from a base {{ get_katex("e_1, e_2,") }}
 traveling along each of the new faces encountered we begin to form the full
 (labeled) topograph below:
 
@@ -79,7 +79,7 @@ encounter on the topograph without actually knowing {{ get_katex("f") }}.
 
 #### Claim: {{ "{#claim-arith-prog-rule}" }}
 
-For vectors {{ get_katex("v_1, v_2") }},
+For vectors {{ get_katex("v_1, v_2,") }}
 
 {{ get_katex("f(v_1 + v_2) + f(v_1 - v_2) = 2\\left(f(v_1) + f(v_2)\\right)", blockquote=True) }}
 
@@ -99,14 +99,14 @@ then
 form an arithmetic progression with common difference {{ get_katex("h") }}. This
 so-called **Arithmetic Progression Rule** allows us to mark each edge with a
 direction based on the value of {{ get_katex("h") }}. Hence if
-{{ get_katex("d < a + b < c") }}, we have {{ get_katex("h > 0") }} and the
+{{ get_katex("d < a + b < c,") }} we have {{ get_katex("h > 0") }} and the
 following directed edge:
 
 <div markdown="1" style="text-align: center;">
   ![Conway Directed Edge](/images/conway_directed_edge.png)
 </div>
 
-Obviously starting from a base {{ get_katex("e_1, e_2") }}, one wonders if it is
+Obviously starting from a base {{ get_katex("e_1, e_2,") }} one wonders if it is
 possible to move to any pair {{ get_katex("(x, y)") }} with {{ get_katex("x") }}
 and {{ get_katex("y") }} coprime along the topograph. It turns out that we can;
 the topograph forms a structure called a tree, and all nodes are connected.
@@ -114,8 +114,8 @@ the topograph forms a structure called a tree, and all nodes are connected.
 #### Lemma: (Climbing Lemma) {{ "{#climbing-lemma}" }}
 
 Given a superbase {{ get_katex("Q") }} with the surrounding faces taking values
-{{ get_katex("a") }}, {{ get_katex("b") }}, and {{ get_katex("c") }} as below,
-if {{ get_katex("a") }}, {{ get_katex("b") }} and the common difference
+{{ get_katex("a,") }} {{ get_katex("b,") }} and {{ get_katex("c") }} as below,
+if {{ get_katex("a,") }} {{ get_katex("b") }} and the common difference
 {{ get_katex("h") }} are all positive, then {{ get_katex("c") }} is positive and
 the other two edges at {{ get_katex("Q") }} point away from {{ get_katex("Q") }}.
 
@@ -126,11 +126,11 @@ the other two edges at {{ get_katex("Q") }} point away from {{ get_katex("Q") }}
 #### Proof: {{ "{#proof-climbing-lemma}" }}
 
 First, {{ get_katex("c") }} is positive because
-{{ get_katex("h = c - (a + b)") }}, hence {{ get_katex("c = a + b + h > 0") }}.
+{{ get_katex("h = c - (a + b),") }} hence {{ get_katex("c = a + b + h > 0") }}.
 The two other edges at {{ get_katex("Q") }} have common differences
 {{ get_katex("(a + c) - b") }} and {{ get_katex("(b + c) - a") }}. Since
 {{ get_katex("c = a + b + h") }} is greater than both {{ get_katex("a") }} and
-{{ get_katex("b") }}, these differences are positive.
+{{ get_katex("b,") }} these differences are positive.
 {{ get_katex("\\blacksquare") }}
 
 Notice also that this establishes two new triples

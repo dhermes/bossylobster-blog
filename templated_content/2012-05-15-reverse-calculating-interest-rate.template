@@ -43,7 +43,7 @@ payments have been made. (Assuming monthly payments, this will be after
 then we have {{ get_katex("P_T = 0") }}.
 
 We have already introduced the term {{ get_katex("T") }}; we also need the
-value of the recurring (again, usually monthly) payment {{ get_katex("R") }},
+value of the recurring (again, usually monthly) payment {{ get_katex("R,") }}
 the interest rate {{ get_katex("r") }} and the initial principal owed
 {{ get_katex("P_0 = P") }}.
 
@@ -73,21 +73,21 @@ since {{ get_katex("P_0 = P") }}. We can show inductively that
 
 {{ get_katex("\\displaystyle P_i = P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j.", blockquote=True) }}
 
-We already have the base case {{ get_katex("i = 1") }}, by definition.
-Assuming it holds for {{ get_katex("i") }}, we see that
+We already have the base case {{ get_katex("i = 1,") }} by definition.
+Assuming it holds for {{ get_katex("i,") }} we see that
 
 {{ get_katex("\\begin{aligned} P_{i + 1} = P_i \\cdot m - R &= m \\cdot \\left(P \\cdot m^i - R \\cdot \\sum_{j = 0}^{i - 1} m^j\\right) - R \\\\ &= P \\cdot m^{i + 1} - R \\cdot \\sum_{j = 1}^{i} m^j - R, \\end{aligned}", blockquote=True) }}
 
 and our induction is complete. (We bump the index {{ get_katex("j") }} since
 we are multiplying each {{ get_katex("m^j") }} by {{ get_katex("m") }}.)
 Each term in the series is related to the previous one (except
-{{ get_katex("P_0") }}, since time can't be negative in this case).
+{{ get_katex("P_0,") }} since time can't be negative in this case).
 
 Step II: Determine a Function we want to find Zeros of
 ------------------------------------------------------
 
 Since we know {{ get_katex("P_T = 0") }} and
-{{ get_katex("\\displaystyle P_T = P \\cdot m^T - R \\cdot \\sum_{j = 0}^{T - 1} m^j") }},
+{{ get_katex("\\displaystyle P_T = P \\cdot m^T - R \\cdot \\sum_{j = 0}^{T - 1} m^j,") }}
 we actually have a polynomial in place that will let us solve for
 {{ get_katex("m") }} and in so doing, solve for {{ get_katex("r") }}.
 
@@ -120,12 +120,12 @@ the intuition behind the method.
 #### Intuition behind the method
 
 For the intuition, assume we know (and can compute) a function
-{{ get_katex("f") }}, its derivative {{ get_katex("f'") }} at a value
+{{ get_katex("f,") }} its derivative {{ get_katex("f'") }} at a value
 {{ get_katex("x") }}. Assume there is some zero {{ get_katex("y") }} nearby
 {{ get_katex("x") }}. Since they are close, we can approximate the
 slope of the line between the points {{ get_katex("(x, f(x))") }} and
 {{ get_katex("(y, f(y))") }} with the derivative nearby. Since we know
-{{ get_katex("x") }}, we use {{ get_katex("f'(x)") }} and intuit that
+{{ get_katex("x,") }} we use {{ get_katex("f'(x)") }} and intuit that
 
 {{ get_katex("f'(x) = \\text{slope} = \\frac{f(y) - f(x)}{y - x} \\Rightarrow y - x = \\frac{f(y) - f(x)}{f'(x)}.", blockquote=True) }}
 

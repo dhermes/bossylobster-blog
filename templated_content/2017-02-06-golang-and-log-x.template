@@ -53,7 +53,7 @@ around. If not, I hope you enjoyed the pretty picture.
 
 The "obvious" idea that comes to mind is to use a [Taylor series][2]
 approximation. But {{ get_katex("\\log(x)") }} is not defined at
-{{ get_katex("x = 0") }}, so a Taylor series of a related function is
+{{ get_katex("x = 0,") }} so a Taylor series of a related function is
 typically used[ref]This series is typically learned and forgotten by
 those who have made it through "Calc II".[/ref]:
 

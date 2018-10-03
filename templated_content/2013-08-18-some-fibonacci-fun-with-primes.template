@@ -16,7 +16,7 @@ Fibonacci number defined by
 
 {{ get_katex("F_n = F_{n-1} + F_{n-2}, \quad F_0 = 0, F_1 = 1.", blockquote=True) }}
 
-Show that for an odd prime {{ get_katex("p \\neq 5") }}, we have
+Show that for an odd prime {{ get_katex("p \\neq 5,") }} we have
 {{ get_katex("p") }} divides {{ get_katex("F_{p^2 - 1}") }}.
 
 **Proof:** We do this by working inside {{ get_katex("\\mathbb{F}_p") }}
@@ -44,10 +44,10 @@ we have
 {{ get_katex("\\alpha \\in \\mathbb{F}_p") }}; we can assume
 {{ get_katex("\\alpha \\in \\mathbb{F}_p") }}
 since {{ get_katex("-2\\alpha = -1") }} is
-the coefficient of {{ get_katex("t") }}, which means
+the coefficient of {{ get_katex("t,") }} which means
 {{ get_katex("\\alpha = 2^{-1} ") }} (we are fine with this since
 {{ get_katex("p") }} odd means that {{ get_katex("2^{-1}") }} exists). In
-order for this to be a root of {{ get_katex("\\chi_A") }}, we must have
+order for this to be a root of {{ get_katex("\\chi_A,") }} we must have
 
 {{ get_katex("\\begin{aligned} 0 \\equiv 4 \\cdot \\chi_A\\left(2^{-1}\\right) &\\equiv 4 \\cdot \\left(2^{-2} - 2^{-1} - 1\\right) \\\\ &\\equiv 1 - 2 - 4 \\equiv -5 \\bmod{p}. \\end{aligned}", blockquote=True) }}
 
@@ -58,7 +58,7 @@ a repeated root.
 Thus we may write {{ get_katex("\\chi_A(t) = (t - \\alpha)(t - \\beta)") }} for
 {{ get_katex("\\alpha, \\beta \\in \\mathbb{F}_{p^2}") }} (it's possible
 that {{ get_katex("\\chi_A") }} is irreducible over
-{{ get_katex("\\mathbb{F}_p") }}, but due to degree considerations it
+{{ get_katex("\\mathbb{F}_p,") }} but due to degree considerations it
 **must** split completely over {{ get_katex("\\mathbb{F}_{p^2}") }}.
 Using this, we may write
 

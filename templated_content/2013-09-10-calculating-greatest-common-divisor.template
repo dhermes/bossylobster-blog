@@ -68,17 +68,17 @@ Everything else is bookkeeping.
 Let's Start the Math
 --------------------
 
-First, if {{ get_katex("n = 0") }}, we see trivially that
+First, if {{ get_katex("n = 0,") }} we see trivially that
 
 {{ get_katex("\\gcd\\left(5^{2^0} + 1, 13^{2^0} + 1\\right) = \\gcd\\left(6, 14\\right) = 2", blockquote=True) }}
 
 and all the remaining terms are divisible by {{ get_katex("2") }} hence the
 {{ get_katex("\\gcd") }} over all the primes must be {{ get_katex("2") }}.
 
-Now, if {{ get_katex("n > 0") }}, we will show that {{ get_katex("2") }} divides
-our {{ get_katex("\\gcd") }}, but {{ get_katex("4") }} does not and that no odd
+Now, if {{ get_katex("n > 0,") }} we will show that {{ get_katex("2") }} divides
+our {{ get_katex("\\gcd,") }} but {{ get_katex("4") }} does not and that no odd
 prime can divide this {{ get_katex("\\gcd") }}. First, for
-{{ get_katex("2") }}, note that
+{{ get_katex("2,") }} note that
 
 {{ get_katex("p^{2^n} + 1 \\equiv \\left(\\pm 1\\right)^{2^n} + 1 \\equiv 2 \\bmod{4}", blockquote=True) }}
 
@@ -90,14 +90,14 @@ in question. We'll show no such {{ get_katex("p^{*}") }} can exist by
 contradiction.
 
 In much the same way we showed the {{ get_katex("\\gcd") }} wasn't divisible by
-{{ get_katex("4") }}, we seek to find a contradiction in some modulus. But since
+{{ get_katex("4,") }} we seek to find a contradiction in some modulus. But since
 we are starting with
 
-{{ get_katex("p^{2^n} + 1 \\equiv 0 \\bmod{p^{\\ast}},", blockquote=True) }}
+{{ get_katex("p^{2^n} + 1 \\equiv 0 \\bmod{p^{\\ast}}", blockquote=True) }}
 
 if we can find some such {{ get_katex("p") }} with
 
-{{ get_katex("p \\equiv 1 \\bmod{p^{\\ast}},", blockquote=True) }}
+{{ get_katex("p \\equiv 1 \\bmod{p^{\\ast}}", blockquote=True) }}
 
 then we'd have our contradiction from
 
@@ -106,11 +106,11 @@ then we'd have our contradiction from
 which can't occur since {{ get_katex("p^{*}") }} is an odd prime.
 
 With this in mind, along with a subsequence of the arithmetic
-progression {{ get_katex("\\left\\{5, 13, 21, 29, \\ldots\\right\\}") }}, it
+progression {{ get_katex("\\left\\{5, 13, 21, 29, \\ldots\\right\\},") }} it
 seems that using
-[Dirichlet's theorem on arithmetic progressions](http://en.wikipedia.org/wiki/Dirichlet's_theorem_on_arithmetic_progressions)
+[Dirichlet's theorem on arithmetic progressions](http://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions)
 may be a good strategy. However, this sequence only tells us about the
-residue modulo {{ get_katex("8") }}, but we also want to know about the residue
+residue modulo {{ get_katex("8,") }} but we also want to know about the residue
 modulo {{ get_katex("p^{*}") }}. Naturally, we look for a subsequence in
 
 {{ get_katex("\\mathbb{Z}/8\\mathbb{Z} \\times \\mathbb{Z}/p^{*}\\mathbb{Z}", blockquote=True) }}
@@ -121,11 +121,11 @@ corresponding to the residue pair
 this corresponds to a unique residue modulo {{ get_katex("8p^{*}") }}.
 
 Since this residue {{ get_katex("r") }} has
-{{ get_katex("r \\equiv 1 \\bmod{p^{\\ast}}") }}, we must have
+{{ get_katex("r \\equiv 1 \\bmod{p^{\\ast}} ,") }} we must have
 
 {{ get_katex("r \\in \\left\\{1, 1 + p^{*}, 1 + 2p^{*}, \\ldots, 1 + 7p^{*}\\right\\}.", blockquote=True) }}
 
-But since {{ get_katex("1 + kp^{\\ast} \\equiv r \\equiv 5 \\bmod{8}") }},
+But since {{ get_katex("1 + kp^{\\ast} \\equiv r \\equiv 5 \\bmod{8},") }}
 we have {{ get_katex("kp^{\\ast} \\equiv 4 \\bmod{8}") }} and
 {{ get_katex("k = 4\\left(p^{*}\\right)^{-1} \\text{ mod }{8}") }} since
 {{ get_katex("p^{*}") }} is odd and invertible mod {{ get_katex("8") }}. But
@@ -145,7 +145,7 @@ is congruent to
 What's more, since
 {{ get_katex("5 \\in \\left(\\mathbb{Z}/8\\mathbb{Z}\\right)^{\\times}") }}
 and
-{{ get_katex("1 \\in \\left(\\mathbb{Z}/p^{*}\\mathbb{Z}\\right)^{\\times}") }},
+{{ get_katex("1 \\in \\left(\\mathbb{Z}/p^{*}\\mathbb{Z}\\right)^{\\times},") }}
 we have
 {{ get_katex("1 + 4 p^{*} \\in \\left(\\mathbb{Z}/8p^{*}\\mathbb{Z}\\right)^{\\times}") }}
 (again by the Chinese remainder theorem). Thus the arithmetic progression
@@ -166,7 +166,7 @@ if the strong version {{ get_katex("(2)") }}
 {{ get_katex("\\gcd\\left(5^{2^n} + 1, 13^{2^n} + 1\\right) = 2", blockquote=True) }}
 
 By similar arguments as above, if any odd prime
-{{ get_katex("p^{*}") }} divides this {{ get_katex("\\gcd") }}, then we have
+{{ get_katex("p^{*}") }} divides this {{ get_katex("\\gcd,") }} then we have
 
 {{ get_katex("5^{2^n} \\equiv -1 \\bmod{p^{\\ast}}", blockquote=True) }}
 

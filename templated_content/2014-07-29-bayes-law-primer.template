@@ -29,7 +29,7 @@ easily be computed. It is written as
 vertical bar is meant like the word "given", in other words, the event
 {{ get_katex("X") }}
 is distinct from the event
-{{ get_katex("(X \\, | \\, Y)") }}, i.e.
+{{ get_katex("(X \\, | \\, Y),") }} i.e.
 {{ get_katex("X") }} given {{ get_katex("Y") }}.
 Bayes' law, states that
 
@@ -58,7 +58,7 @@ As we expect, one out of every three odd rolls is a {{ get_katex("3") }}.
 Bayes' Law Extended Form {{ "{#extended}" }}
 --------------------------------------------
 
-Instead of considering a single event {{ get_katex("Y") }}, we can consider
+Instead of considering a single event {{ get_katex("Y,") }} we can consider
 a range of {{ get_katex("n") }} possible events
 {{ get_katex("Y_1, Y_2, \\ldots, Y_n") }}
 occur. We require that one of these {{ get_katex("Y") }}-events must occur

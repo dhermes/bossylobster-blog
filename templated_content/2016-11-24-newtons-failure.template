@@ -38,7 +38,7 @@ which has corresponding iteration function
 
 {{ get_katex("g(x) = x - \\frac{(x - 1)^2}{2(x - 1)} = \\frac{x + 1}{2}.", blockquote=True) }}
 
-Starting with {{ get_katex("x_0 = 1 + 2^{-0} = 2") }}, in exact
+Starting with {{ get_katex("x_0 = 1 + 2^{-0} = 2,") }} in exact
 arithmetic (i.e. no rounding) we'll always have
 {{ get_katex("x_n = 1 + 2^{-n}") }} since
 
@@ -49,7 +49,7 @@ the error halves every term. However, in [double precision][3], the
 sequence stops once {{ get_katex("n = 53") }}: at that
 point {{ get_katex("1 \oplus 2^{-53} = 0") }}.
 
-However, if we told the computer that {{ get_katex("f(x) = (x - 1)^2") }},
+However, if we told the computer that {{ get_katex("f(x) = (x - 1)^2,") }}
 there would be no reason to use Newton's method, the roots are clearly
 {{ get_katex("1") }} and {{ get_katex("1") }}. Instead, the "data"
 the computer is given are the coefficients in
@@ -66,7 +66,7 @@ where the numerator and denominator are given
 Each floating point operation
 {{ get_katex("(\\otimes, \\oslash, \\oplus, \\ominus)") }} rounds the
 "exact" result to the nearest floating point number. For
-{{ get_katex("x_1, \\, \\ldots, \\, x_{27}") }}, there is no rounding
+{{ get_katex("x_1, \\, \\ldots, \\, x_{27},") }} there is no rounding
 needed and we get the same values that we got in exact
 arithmetic.
 
