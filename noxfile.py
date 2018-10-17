@@ -21,6 +21,8 @@ import psutil
 import py.path
 
 
+nox.options.error_on_external_run = True
+
 DEFAULT_INTERPRETER = "3.7"
 PRINT_SEP = "=" * 60
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -45,7 +47,7 @@ def _render(session, env=None):
     if py.path.local.sysfind("npm") is None:
         session.skip("`npm` must be installed")
 
-    session.run("npm", "install")
+    session.run("npm", "install", external=True)
     script = get_path("render_jinja2_templates.py")
     session.run("python", script, env=env)
 
