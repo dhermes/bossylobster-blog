@@ -35,13 +35,17 @@ things I made during that time.
 ### Papers:
 
 - Compensated de Casteljau algorithm in `K` times the working precision
-  ([arXiv][k-compensated], [GitHub][k-compensated-gh], submitted May 2016 to
+  ([arXiv][k-compensated], [GitHub][k-compensated-gh], submitted May 2018 to
   [AMC][AMC])
 - A Curious Case of Curbed Condition ([arXiv][curbed-cond],
   [GitHub][curbed-cond-gh], June 2018)
-- UC Berkeley [Dissertation][thesis] ([GitHub][thesis-gh], submitted August 2018)
+- UC Berkeley [Dissertation][thesis] ([GitHub][thesis-gh], submitted August
+  2018)
 - A 2-Norm Condition Number for B&#xe9;zier Curve Intersection
   ([arXiv][cond-num], [GitHub][cond-num-gh], August 2018)
+- High-order Solution Transfer between Curved Triangular Meshes
+  ([arXiv][solution-transfer], [GitHub][solution-transfer-gh], submitted
+  October 2018 to [CAMCoS][camcos])
 
 ### Talks:
 
@@ -112,3 +116,6 @@ things I made during that time.
 [implicitizing]: https://gist.github.com/dhermes/3551f053e3f81a85d488c7cdb22a18c8#file-implicitizing_curves-pdf
 [sdp-dual]: https://gist.github.com/dhermes/18793452c4e3b89b2ec86d7d73439483
 [sdp-dual-paper]: https://arxiv.org/abs/0706.4138
+[solution-transfer]: https://arxiv.org/abs/1810.06806
+[solution-transfer-gh]: https://github.com/dhermes/solution-transfer-curved-meshes
+[camcos]: https://msp.org/camcos/about/journal/about.html
