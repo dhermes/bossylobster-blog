@@ -5,5 +5,5 @@
 #    pip-compile --output-file render-requirements.txt render-requirements.in
 #
 jinja2==2.10
-markupsafe==1.0           # via jinja2
-py==1.6.0
+markupsafe==1.1.0         # via jinja2
+py==1.7.0

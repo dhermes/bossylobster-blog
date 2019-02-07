@@ -259,7 +259,7 @@ def update_requirements(session):
         session.run(
             "pip-compile", "--upgrade", "--output-file", txt_name, in_name
         )
-        session.run("git", "add", txt_name)
+        session.run("git", "add", txt_name, external=True)
 
 
 @nox.session(python=DEFAULT_INTERPRETER)
