@@ -113,7 +113,7 @@ are written in Fortran, all arguments are passed by reference.
 
 ### High-Level Python {{ "{#high-level-py}" }}
 
-There are two functions in SciPy for performaing an LU decomposition:
+There are two functions in SciPy for performing an LU decomposition:
 `scipy.linalg.lapack.dgetrf` and `scipy.linalg.lu`. The former is a "direct"
 wrapper but the wrapper handles allocating the outputs and allows a flag
 `overwrite_a` which will determine if a copy of the input matrix is used
@@ -135,7 +135,9 @@ from copies we make sure `A` is in Fortran order (`"F"`) and set the
 >>> lu_mat, ipiv, info = scipy.linalg.lapack.dgetrf(A, overwrite_a=True)
 ```
 
-The method succeeded and the pivots are "trivial", i.e. the identity matrix
+The method succeeded and the pivots are "trivial", i.e. the identity
+matrix[ref]Though SciPy has returned 0-based pivots rather than the 1-based
+indices returned from LAPACK)[/ref]
 
 ```python
 >>> info
