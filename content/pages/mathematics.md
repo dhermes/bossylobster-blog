@@ -42,7 +42,8 @@ things I made during that time.
 - UC Berkeley [Dissertation][thesis] ([GitHub][thesis-gh], submitted August
   2018)
 - A 2-Norm Condition Number for B&#xe9;zier Curve Intersection
-  ([arXiv][cond-num], [GitHub][cond-num-gh], August 2018)
+  ([arXiv][cond-num], [GitHub][cond-num-gh], August 2018, submitted April 2019
+  to [Computer Aided Geometric Design][CAGD])
 - High-order Solution Transfer between Curved Triangular Meshes
   ([arXiv][solution-transfer], [GitHub][solution-transfer-gh], submitted
   October 2018 to [CAMCoS][camcos])
@@ -76,6 +77,7 @@ things I made during that time.
 [k-compensated-doi]: https://doi.org/10.1016/j.amc.2019.03.047
 [cond-num]: https://arxiv.org/abs/1808.06126
 [cond-num-gh]: https://github.com/dhermes/condition-number-bezier-curve-intersection
+[CAGD]: https://www.journals.elsevier.com/computer-aided-geometric-design
 [curbed-cond]: https://arxiv.org/abs/1806.05145
 [curbed-cond-gh]: https://github.com/dhermes/curious-case-curbed-condition
 [thesis-talk]: https://github.com/dhermes/phd-thesis/blob/master/doc/thesis_talk.pdf
