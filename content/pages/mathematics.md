@@ -35,8 +35,8 @@ things I made during that time.
 ### Papers:
 
 - Compensated de Casteljau algorithm in `K` times the working precision
-  ([arXiv][k-compensated], [GitHub][k-compensated-gh], submitted May 2018 to
-  [AMC][AMC])
+  ([arXiv][k-compensated], [GitHub][k-compensated-gh], submitted May 2018,
+  [published][k-compensated-doi] April 2019)
 - A Curious Case of Curbed Condition ([arXiv][curbed-cond],
   [GitHub][curbed-cond-gh], June 2018)
 - UC Berkeley [Dissertation][thesis] ([GitHub][thesis-gh], submitted August
@@ -73,6 +73,7 @@ things I made during that time.
 
 [k-compensated]: https://arxiv.org/abs/1808.10387
 [k-compensated-gh]: https://github.com/dhermes/k-compensated-de-casteljau
+[k-compensated-doi]: https://doi.org/10.1016/j.amc.2019.03.047
 [cond-num]: https://arxiv.org/abs/1808.06126
 [cond-num-gh]: https://github.com/dhermes/condition-number-bezier-curve-intersection
 [curbed-cond]: https://arxiv.org/abs/1806.05145
@@ -80,7 +81,6 @@ things I made during that time.
 [thesis-talk]: https://github.com/dhermes/phd-thesis/blob/master/doc/thesis_talk.pdf
 [thesis]: https://github.com/dhermes/phd-thesis/blob/master/doc/thesis.pdf
 [thesis-gh]: https://github.com/dhermes/phd-thesis
-[AMC]: https://www.journals.elsevier.com/applied-mathematics-and-computation
 [butterfly-github]: https://github.com/dhermes/butterfly-algorithm
 [butterfly]: https://www.bossylobster.com/butterfly-slides
 [fa-2014]: https://drive.google.com/drive/u/0/folders/0B91542R0K_UPalprVm9ZdEwwamM
