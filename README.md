@@ -41,6 +41,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   [Unlimited Commerical Use][25]
 - `graduation.png` - From [openclipart][27] via
   [Unlimited Commerical Use][25]
+- `fail-whale.png` - From [Wikipedia][28], via fair use
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -67,3 +68,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [25]: https://openclipart.org/unlimited-commercial-use-clipart
 [26]: https://openclipart.org/detail/102853/football
 [27]: https://openclipart.org/detail/178476/graduation-penguin
+[28]: https://en.wikipedia.org/wiki/File:Failwhale.png
