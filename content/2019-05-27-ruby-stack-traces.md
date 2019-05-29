@@ -109,7 +109,7 @@ slight bit by removing some words such as "like"[/ref]:
 > upstairs". It would kick that up to literally the caller of this thing "oh I
 > got it that's fine I'm off the end of the array, no problem. I get it. But
 > I've done it the right way! I've done it without repeating myself or
-> whatever." (Faceplam)
+> whatever." (Facepalm)
 >
 > It's like "oh k". So that was obviously very bad. And it highlights a bunch
 > of things. It highlights the cost of some of these abstractions, the runtime
