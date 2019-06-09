@@ -42,6 +42,8 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - `graduation.png` - From [openclipart][27] via
   [Unlimited Commerical Use][25]
 - `fail-whale.png` - From [Wikipedia][28], via fair use
+- A community logo for TypeScript `ts-logo.png`, via [Remo Jansen][29] and
+  provided with the MIT [license][30]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -69,3 +71,5 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [26]: https://openclipart.org/detail/102853/football
 [27]: https://openclipart.org/detail/178476/graduation-penguin
 [28]: https://en.wikipedia.org/wiki/File:Failwhale.png
+[29]: https://github.com/remojansen/logo.ts
+[30]: https://github.com/remojansen/logo.ts/blob/5b4f0df433a5301aee0180582a8782bfbc9a0739/LICENSE

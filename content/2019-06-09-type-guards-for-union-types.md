@@ -11,6 +11,7 @@ use_open_graph: true
 use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
+social_image: images/ts-logo.png
 github_slug: content/2019-06-09-type-guards-for-union-types.md
 ---
 
