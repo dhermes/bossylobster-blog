@@ -184,7 +184,7 @@ def serve(session):
 
 @nox.session(py=DEFAULT_INTERPRETER)
 def serve_local(session):
-    """Serve at http://192.168.XX.YY."""
+    """Serve at http://192.168.XX.YY:8001."""
     script = get_path("get_local_ip.py")
     local_ip = session.run("python", script, silent=True)
     script = get_path("pelican_server.py")
@@ -192,7 +192,7 @@ def serve_local(session):
     session.cd(OUTPUT_DIR)
     # ``root`` doesn't know about our virtualenv.
     py_exe = os.path.join(session.bin, "python")
-    session.run("sudo", py_exe, script, "80", local_ip.strip())
+    session.run(py_exe, script, "8001", local_ip.strip())
 
 
 @nox.session(py=DEFAULT_INTERPRETER)

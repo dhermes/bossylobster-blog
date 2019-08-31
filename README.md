@@ -44,6 +44,11 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - `fail-whale.png` - From [Wikipedia][28], via fair use
 - A community logo for TypeScript `ts-logo.png`, via [Remo Jansen][29] and
   provided with the MIT [license][30]
+- The `grpc-logo.png` [for gRPC][31] from the (archived) `grpc.github.io`
+  repo, licensed as [Apache 2.0][32]
+- A screenshot `tcp-packet.png` from the [Transmission Control Protocol][33]
+  Wikipedia page, which is under the
+  [Creative Commons Attribution-ShareAlike License][34]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -73,3 +78,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [28]: https://en.wikipedia.org/wiki/File:Failwhale.png
 [29]: https://github.com/remojansen/logo.ts
 [30]: https://github.com/remojansen/logo.ts/blob/5b4f0df433a5301aee0180582a8782bfbc9a0739/LICENSE
+[31]: https://github.com/grpc/grpc.github.io/blob/80f02e605ca324131c21335087fd3189a1854cb2/img/grpc_square_reverse_4x.png
+[32]: https://github.com/grpc/grpc.github.io/blob/80f02e605ca324131c21335087fd3189a1854cb2/LICENSE
+[33]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+[34]: https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
