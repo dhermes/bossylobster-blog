@@ -16,6 +16,10 @@ things I made during that time.
 
 ### Code and Writing:
 
+- `bezier` [library][bez-docs] ([GitHub][bez-gh], published [in JOSS][bez-joss]
+  in August 2017)
+- `foreign-fortran` [project][foreign-fortran] ([GitHub][foreign-fortran-gh],
+  started in Summer 2017, added to `readthedocs.org` in August 2018)
 - Write-up and some code for generating the "optimal" finite difference
   [stencils][stencils] to compute a given derivative (November 2013)
 - [Discussion][sdp-dual] of spectral norm as dual to the nuclear norm, in the
@@ -27,23 +31,19 @@ things I made during that time.
   parametric curve to an algebraic curve. (April 2016)
 - Math 273 topics [course][m273] on numerical analysis ([GitHub][m273-gh],
   course ran during Spring 2016)
-- `bezier` [library][bez-docs] ([GitHub][bez-gh], published [in JOSS][bez-joss]
-  in August 2017)
-- `foreign-fortran` [project][foreign-fortran] ([GitHub][foreign-fortran-gh],
-  started in Summer 2017, added to `readthedocs.org` in August 2018)
 
 ### Papers:
 
 - Compensated de Casteljau algorithm in `K` times the working precision
   ([arXiv][k-compensated], [GitHub][k-compensated-gh], submitted May 2018,
   [published][k-compensated-doi] April 2019)
+- A 2-Norm Condition Number for B&#xe9;zier Curve Intersection
+  ([arXiv][cond-num], [GitHub][cond-num-gh], August 2018, submitted April 2019,
+  [published][cond-num-doi] November 2019)
 - A Curious Case of Curbed Condition ([arXiv][curbed-cond],
   [GitHub][curbed-cond-gh], June 2018)
 - UC Berkeley [Dissertation][thesis] ([GitHub][thesis-gh], submitted August
   2018)
-- A 2-Norm Condition Number for B&#xe9;zier Curve Intersection
-  ([arXiv][cond-num], [GitHub][cond-num-gh], August 2018, submitted April 2019
-  to [Computer Aided Geometric Design][CAGD])
 - High-order Solution Transfer between Curved Triangular Meshes
   ([arXiv][solution-transfer], [GitHub][solution-transfer-gh], submitted
   October 2018 to [CAMCoS][camcos])
@@ -77,6 +77,7 @@ things I made during that time.
 [k-compensated-doi]: https://doi.org/10.1016/j.amc.2019.03.047
 [cond-num]: https://arxiv.org/abs/1808.06126
 [cond-num-gh]: https://github.com/dhermes/condition-number-bezier-curve-intersection
+[cond-num-doi]: https://doi.org/10.1016/j.cagd.2019.101791
 [CAGD]: https://www.journals.elsevier.com/computer-aided-geometric-design
 [curbed-cond]: https://arxiv.org/abs/1806.05145
 [curbed-cond-gh]: https://github.com/dhermes/curious-case-curbed-condition
