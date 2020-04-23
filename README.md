@@ -49,6 +49,8 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - A screenshot `tcp-packet.png` from the [Transmission Control Protocol][33]
   Wikipedia page, which is under the
   [Creative Commons Attribution-ShareAlike License][34]
+- The `requests-python-logo.png` from the [Requests][35] Wikipedia page, has
+  the same license as the project, which is Apache 2.0
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -82,3 +84,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [32]: https://github.com/grpc/grpc.github.io/blob/80f02e605ca324131c21335087fd3189a1854cb2/LICENSE
 [33]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 [34]: https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
+[35]: https://en.wikipedia.org/wiki/File:Requests_Python_Logo.png
