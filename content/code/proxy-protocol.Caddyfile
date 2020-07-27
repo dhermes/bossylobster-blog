@@ -1,0 +1,9 @@
+:3443
+proxy / localhost:3000
+tls ./localhost-cert.pem ./localhost-key.pem
+log stdout
+
+proxyprotocol
+# See:
+# - https://caddyserver.com/v1/docs/http.proxyprotocol
+# - https://github.com/mastercactapus/caddy-proxyprotocol/issues/9

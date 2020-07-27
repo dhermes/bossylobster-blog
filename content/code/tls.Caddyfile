@@ -1,0 +1,11 @@
+:3443
+proxy / localhost:3000
+# See:
+# - https://caddyserver.com/v1/docs/proxy
+# - https://caddyserver.com/docs/caddyfile/directives/reverse_proxy
+tls ./localhost-cert.pem ./localhost-key.pem
+# See:
+# - https://caddyserver.com/v1/docs/tls
+log stdout
+# See
+# - https://caddyserver.com/v1/docs/log
