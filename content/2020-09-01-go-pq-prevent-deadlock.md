@@ -11,7 +11,7 @@ use_open_graph: true
 use_schema_org: true
 twitter_site: @bossylobster
 twitter_creator: @bossylobster
-social_image: images/deadlock.png
+social_image: images/Lock-Up-The-Forest.jpg
 github_slug: content/2020-09-01-go-pq-prevent-deadlock.md
 ---
 
