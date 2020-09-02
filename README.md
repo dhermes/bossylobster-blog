@@ -51,6 +51,13 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   [Creative Commons Attribution-ShareAlike License][34]
 - The `requests-python-logo.png` from the [Requests][35] Wikipedia page, has
   the same license as the project, which is Apache 2.0
+- The `deadlock.svg` (formerly `DROWN_logo.svg`) is [licensed][36] public
+  domain. The `deadlock.png` image was created from it as well
+  ```
+  convert -density 288 -background none -size 312x312 \
+    content/images/deadlock.svg content/images/deadlock.png
+  ```
+- `Lock-Up-The-Forest.jpg` - From [Flickr][37], via [Public Domain][38]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -85,3 +92,6 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [33]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 [34]: https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
 [35]: https://en.wikipedia.org/wiki/File:Requests_Python_Logo.png
+[36]: https://commons.wikimedia.org/w/index.php?curid=47270714
+[37]: https://flic.kr/p/X1cKzX
+[38]: https://creativecommons.org/publicdomain/zero/1.0/
