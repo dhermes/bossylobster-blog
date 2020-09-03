@@ -84,7 +84,7 @@ docker run \
 
 In order to introduce a deadlock, we borrow an example from
 [When Postgres blocks: 7 tips for dealing with locks][1].
-In the first transaction we update "hello" rows following by "world" rows
+In the first transaction we update "hello" rows followed by "world" rows
 
 ```sql
 BEGIN;
