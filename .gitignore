@@ -13,8 +13,7 @@ output
 _build
 _nb_header.html
 
-# Generated directories
+# Generated files and directories for posts / dev / etc.
 .nox/
-
-# ``node`` generated files
 node_modules/
+istio-sds-linux-amd64

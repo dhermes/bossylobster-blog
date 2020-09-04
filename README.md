@@ -52,6 +52,14 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - The `requests-python-logo.png` from the [Requests][35] Wikipedia page, has
   the same license as the project, which is Apache 2.0
 - `Lock-Up-The-Forest.jpg` - From [Flickr][37], via [Public Domain][36]
+- `istio-whitelogo-bluebackground-framed.svg` from Istio [Media Resources][38]
+  which says "Cool: Use the Istio logo in a blog post or news article about
+  Istio" and converted to `.png` via
+  ```
+  cd content/images/
+  convert -density 288 -background none -size 300x300 \
+    ./istio-whitelogo-bluebackground-framed.svg ./istio-logo.png
+  ```
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -88,3 +96,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [35]: https://en.wikipedia.org/wiki/File:Requests_Python_Logo.png
 [36]: https://creativecommons.org/publicdomain/zero/1.0/
 [37]: https://flic.kr/p/X1cKzX
+[38]: https://istio.io/latest/about/media-resources/
