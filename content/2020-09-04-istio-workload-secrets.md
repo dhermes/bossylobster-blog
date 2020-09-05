@@ -178,7 +178,7 @@ Running the script on an Istio / Envoy sidecar will (almost certainly)
 require building the binary on a different machine since the container
 won't have the toolchain installed[ref]If the entire filesystem in the sidecar
 is read-only, it's **impossible** to `kubectl cp` a pre-built binary into the
-container[/ref]. Firsy build the binary:
+container[/ref]. First build the binary:
 
 ```
 $ GOARCH=amd64 GOOS=linux go build -o istio-sds-linux-amd64 ./istio-sds.go
