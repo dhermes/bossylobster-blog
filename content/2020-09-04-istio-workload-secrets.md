@@ -139,7 +139,7 @@ response, err := c.FetchSecrets(ctx, request, grpc.Header(&header), grpc.Trailer
 #### Parse the Response
 
 Ensure the `type_url` in the response indicates a
-`envoy.api.v2.auth.Secret` and than parse the protobuf `Any` in the
+`envoy.api.v2.auth.Secret` and then parse the protobuf `Any` in the
 `resources[0]` field as a secret:
 
 ```go
