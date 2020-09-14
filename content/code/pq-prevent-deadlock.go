@@ -126,9 +126,7 @@ func txFinalize(tx *sql.Tx, err error) error {
 // between.
 // H/T to https://www.citusdata.com/blog/2018/02/22/seven-tips-for-dealing-with-postgres-locks/
 // for the idea on how to "easily" introduce a deadlock.
-func contendReads(ctx context.Context, wg *sync.WaitGroup, tx *sql.Tx, key1, key2 string, cfg *Config) error {
-	defer wg.Done()
-
+func contendReads(ctx context.Context, tx *sql.Tx, key1, key2 string, cfg *Config) error {
 	updateRows := "UPDATE might_deadlock SET counter = counter + 1 WHERE key = $1;"
 	_, err := tx.ExecContext(ctx, updateRows, key1)
 	if err != nil {
@@ -163,10 +161,12 @@ func intentionalContention(ctx context.Context, pool *sql.DB, cfg *Config) (err 
 	wg.Add(2)
 	var contendErr1, contendErr2 error
 	go func() {
-		contendErr1 = contendReads(ctx, &wg, tx1, "hello", "world", cfg)
+		defer wg.Done()
+		contendErr1 = contendReads(ctx, tx1, "hello", "world", cfg)
 	}()
 	go func() {
-		contendErr2 = contendReads(ctx, &wg, tx2, "world", "hello", cfg)
+		defer wg.Done()
+		contendErr2 = contendReads(ctx, tx2, "world", "hello", cfg)
 	}()
 	wg.Wait()
 
