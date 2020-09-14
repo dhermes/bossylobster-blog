@@ -105,13 +105,21 @@ func ignoreTxDone(err error) error {
 	return err
 }
 
+func appendErr(err1, err2 error) error {
+	err := multierror.Append(err1, err2)
+	if len(err.Errors) == 0 {
+		return nil
+	}
+	return err
+}
+
 func txFinalize(tx *sql.Tx, err error) error {
 	if tx == nil {
 		return err
 	}
 
 	rollbackErr := ignoreTxDone(tx.Rollback())
-	return multierror.Append(err, rollbackErr)
+	return appendErr(err, rollbackErr)
 }
 
 // contendReads introduces two reads (in a transaction) with a sleep in
@@ -152,29 +160,28 @@ func intentionalContention(ctx context.Context, pool *sql.DB, cfg *Config) (err 
 
 	// Kick off two goroutines that contend with each other.
 	wg := sync.WaitGroup{}
-	errLock := sync.Mutex{}
 	wg.Add(2)
+	var contendErr1, contendErr2 error
 	go func() {
-		contendErr := contendReads(ctx, &wg, tx1, "hello", "world", cfg)
-		errLock.Lock()
-		defer errLock.Unlock()
-		err = multierror.Append(err, contendErr)
+		contendErr1 = contendReads(ctx, &wg, tx1, "hello", "world", cfg)
 	}()
 	go func() {
-		contendErr := contendReads(ctx, &wg, tx2, "world", "hello", cfg)
-		errLock.Lock()
-		defer errLock.Unlock()
-		err = multierror.Append(err, contendErr)
+		contendErr2 = contendReads(ctx, &wg, tx2, "world", "hello", cfg)
 	}()
 	wg.Wait()
 
-	if err != nil {
-		return
-	}
+	err = appendErr(err, contendErr1)
+	err = appendErr(err, contendErr2)
 
 	// Make sure to commit both transactions before moving on.
-	err = multierror.Append(err, tx1.Commit())
-	err = multierror.Append(err, tx2.Commit())
+	if contendErr1 == nil {
+		err = appendErr(err, tx1.Commit())
+	}
+
+	if contendErr2 == nil {
+		err = appendErr(err, tx2.Commit())
+	}
+
 	return
 }
 
