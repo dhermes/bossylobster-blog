@@ -259,7 +259,7 @@ psql: error: could not connect to server: invalid URI query parameter: "lock_tim
 ```
 
 Instead `github.com/lib/pq` parses all query parameters when [reading a DSN][6]
-and then passes all non-driver setting through as key-value pairs when
+and then passes all non-driver settings through as key-value pairs when
 [forming a startup packet][7]. There are 13[ref]Though 13 are supported by
 `github.com/lib/pq`, there are 29 `postgres` [parameter keywords][5][/ref]
 designated driver settings [supported by][8] `github.com/lib/pq`: `host`,
