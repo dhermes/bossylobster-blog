@@ -37,6 +37,7 @@ PATH = "content"  # Directory containing posts.
 DEFAULT_DATE_FORMAT = "%b %d, %Y"
 TIMEZONE = "US/Pacific"
 DEFAULT_LANG = u"en"
+FORMATTED_FIELDS = ["title"]
 
 # Set the article URL
 ARTICLE_URL = "{date:%Y}/{date:%m}/{slug}.html"
