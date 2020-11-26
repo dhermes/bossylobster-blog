@@ -68,7 +68,7 @@ installed as well.
 In order to run the examples, make sure a local `postgres` server is
 running[ref]Take note of the connection parameters[/ref]:
 
-```plaintext
+```text
 docker run \
   --detach \
   --hostname localhost \
@@ -177,7 +177,7 @@ By setting `lock_timeout` to 10 milliseconds, much shorter than the 200
 millisecond sleep between statements, we can induce [error][4]
 `55P03: lock_not_available` directly from `postgres`:
 
-```plaintext
+```text
 $ LOCK_TIMEOUT=10ms CONTEXT_TIMEOUT=600ms go run ./pq-prevent-deadlock.go
 0.039350 Starting transactions
 0.059424 Transactions opened
@@ -197,7 +197,7 @@ leave `postgres` on its own to suffer with (and detect) the deadlock.
 After less than two seconds the deadlock is detected and error
 `40P01: deadlock_detected` is returned:
 
-```plaintext
+```text
 $ LOCK_TIMEOUT=10s CONTEXT_TIMEOUT=10s go run ./pq-prevent-deadlock.go
 0.043090 Starting transactions
 0.058350 Transactions opened
@@ -212,7 +212,7 @@ sleep between statements), the transaction will be canceled **during** the
 sleep which means the next statement will not even attempt to communicate
 with `postgres`:
 
-```plaintext
+```text
 $ LOCK_TIMEOUT=10s CONTEXT_TIMEOUT=100ms go run ./pq-prevent-deadlock.go
 0.049146 Starting transactions
 0.060474 Transactions opened
@@ -227,7 +227,7 @@ Setting the context timeout to 600 milliseconds is long enough that the sleep
 between statements completes but not so long that `postgres` detects the
 deadlock. In this case a `57014: query_canceled` is returned:
 
-```plaintext
+```text
 $ LOCK_TIMEOUT=10s CONTEXT_TIMEOUT=600ms go run ./pq-prevent-deadlock.go
 0.037892 Starting transactions
 0.048328 Transactions opened
@@ -253,7 +253,7 @@ Though `lock_timeout` is directly supported in the connection string in
 `github.com/lib/pq`, it's [explicitly][5] **not** supported in
 `psql` / `libpq`:
 
-```plaintext
+```text
 $ psql "postgres://superuser:testpassword_superuser@localhost:28007/superuser_db?lock_timeout=10ms&sslmode=disable"
 psql: error: could not connect to server: invalid URI query parameter: "lock_timeout"
 ```
@@ -278,7 +278,7 @@ Using `PGOPTIONS="-c {key}={value}"` with `psql` enables [setting][10]
 named run-time parameters[ref]It's also worth noting that `github.com/lib/pq`
 is `PGOPTIONS`-[aware][11][/ref]:
 
-```plaintext
+```text
 $ PGOPTIONS="-c lock_timeout=10ms" psql "postgres://superuser:testpassword_superuser@localhost:28007/superuser_db?connect_timeout=5&sslmode=disable"
 ...
 superuser_db=# SHOW lock_timeout;

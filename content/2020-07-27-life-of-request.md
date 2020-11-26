@@ -85,14 +85,14 @@ having `node` and `npm` installed, in a directory with a `package.json` file.
 For our example we are using `node@12.14.1`, `npm@6.13.4` and installing
 Express with `npm install express@4.17.1 --save-exact`.[/ref]:
 
-```plaintext
+```text
 $ node server.js
 Example app listening on port 3000!
 ```
 
 In another terminal window, send a request to the server:
 
-```plaintext
+```text
 $ curl http://localhost:3000
 req.ip: "::1"
 req.xff: undefined
@@ -135,7 +135,7 @@ version 2 of `caddy`.[/ref]. We'll use this to run a TLS proxy on port 3443
 fronting the webserver on port 3000, with the following `Caddyfile`[ref]See
 [source][16] for `tls.Caddyfile`.[/ref]
 
-```plaintext
+```text
 :3443
 proxy / localhost:3000
 tls ./localhost-cert.pem ./localhost-key.pem
@@ -146,7 +146,7 @@ We can run this proxy server and communicate with it over TLS[ref]See
 [Why](#curl-flag) `--cacert` Flag.[/ref] with `curl` to verify that it proxies
 traffic to port 3000:
 
-```plaintext
+```text
 $ caddy -conf ./tls.Caddyfile &
 Activating privacy features... done.
 
@@ -166,7 +166,7 @@ our system, external proxies may have also written to the header.) The TLS
 proxy either sets the XFF header or adds an entry to the end of the XFF list if
 the header is already present:
 
-```plaintext
+```text
 $ curl \
 >   --cacert ./rootCA-cert.pem \
 >   --header 'X-Forwarded-For: 127.0.0.2' \
@@ -208,7 +208,7 @@ Rather than modifying the encrypted bytes, a header is prepended to the TCP
 bytesteam[ref]See [Observing PROXY Protocol](#netcat-proxy-protocol).[/ref].
 For [example][7] with an IPv4 connection:
 
-```plaintext
+```text
 PROXY TCP4 198.51.100.22 203.0.113.7 35646 80\r\n
 ```
 
@@ -217,7 +217,7 @@ To utilize this information, we can modify our `Caddyfile` to enable the
 `proxy-protocol.Caddyfile`.[/ref]. After doing this, we can use `curl` to pass
 along a PROXY protocol prefix and verify the Caddy server handles it:
 
-```plaintext
+```text
 $ caddy -conf ./proxy-protocol.Caddyfile &
 ...
 $ curl --haproxy-protocol \
@@ -235,7 +235,7 @@ to simulate the example above involving `198.51.100.22`. We can use a raw TCP
 socket, manually send the PROXY protocol prefix and then wrap the socket in a
 TLS connection[ref]See [source][18] for `wrapped-request.go`.[/ref]:
 
-```plaintext
+```text
 $ go run ./wrapped-request.go
 req.ip: "::1"
 req.xff: "127.0.0.4, 127.0.0.3, 127.0.0.2, 198.51.100.22"
@@ -276,7 +276,7 @@ last entry in XFF. Running our server[ref]See [source][19] for
 `server-trust.js`.[/ref] with "trust proxy", we see `req.ip` derived from XFF
 rather than the TCP socket:
 
-```plaintext
+```text
 $ node server-trust.js
 Example app listening on port 3000!
 ...
@@ -312,7 +312,7 @@ to application server as follows:
 To concretely understand how PROXY protocol works, we can use
 [netcat][3] (`nc`) to print out the raw TCP stream sent in an HTTP
 request. Compare a regular HTTP GET
-```plaintext
+```text
 $ (echo WITHOUT | nc -l 9876 &) && \
 >   curl http://localhost:9876
 GET / HTTP/1.1
@@ -323,7 +323,7 @@ Accept: */*
 WITHOUT
 ```
 to an HTTP GET with the PROXY protocol prefix:
-```plaintext
+```text
 $ (echo WITH | nc -l 9876 &) && \
 >   curl --haproxy-protocol http://localhost:9876
 PROXY TCP4 127.0.0.1 127.0.0.1 53577 9876
@@ -357,7 +357,7 @@ and this script itself relies on the `generate-tls-certs-on-alpine.sh`
 Note that "trust proxy" **requires** that the server trusts the proxy that
 it is communicating with. If the client communicates directly (rather than
 through the proxy), the XFF header can be spoofed
-```plaintext
+```text
 $ curl http://localhost:3000
 req.ip: "::1"
 req.xff: undefined
@@ -372,7 +372,7 @@ req.xff: "198.51.100.22"
 
 The `--cacert` flag is required when using TLS to communicate with an
 untrusted local server. If not provided requests will fail:
-```plaintext
+```text
 $ curl https://localhost:3443
 curl: (60) SSL certificate problem: unable to get local issuer certificate
 More details here: https://curl.haxx.se/docs/sslcerts.html
