@@ -1,5 +1,5 @@
 ---
-title: A Threadsafe Connection Pool for `requests`
+title: A Threadsafe Connection Pool for Requests
 description: Using Queue-based Locking for Requests Sessions
 date: 2020-04-22
 author: Danny Hermes (dhermes@bossylobster.com)
