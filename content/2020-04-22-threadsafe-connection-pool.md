@@ -1,5 +1,5 @@
 ---
-title: A Threadsafe Connection Pool for Requests
+title: A Threadsafe Connection Pool for `requests`
 description: Using Queue-based Locking for Requests Sessions
 date: 2020-04-22
 author: Danny Hermes (dhermes@bossylobster.com)
@@ -29,7 +29,7 @@ responses and inspect them after the fact; I wanted an **escape hatch** into
 the event loop firing off requests.
 
 Motivated by `wrk`, I wanted to utilize a large-ish thread pool all sharing
-a connection pool. A shared conneciton pool enables testing of re-used TCP
+a connection pool. A shared connection pool enables testing of re-used TCP
 sockets and can generate more load since TLS negotiation can be re-used. Using
 the `select` [package][4] and low-level [socket][5] objects to accomplish this
 task likely would've given maximal throughput but the sheer amount of work
