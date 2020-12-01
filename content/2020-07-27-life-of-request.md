@@ -86,7 +86,7 @@ For our example we are using `node@12.14.1`, `npm@6.13.4` and installing
 Express with `npm install express@4.17.1 --save-exact`.[/ref]:
 
 ```text
-$ node server.js
+$ node ./server.js
 Example app listening on port 3000!
 ```
 
@@ -277,10 +277,10 @@ last entry in XFF. Running our server[ref]See [source][19] for
 rather than the TCP socket:
 
 ```text
-$ node server-trust.js
+$ node ./server-trust.js
 Example app listening on port 3000!
 ...
-$ go run wrapped-request.go
+$ go run ./wrapped-request.go
 req.ip: "198.51.100.22"
 req.xff: "127.0.0.4, 127.0.0.3, 127.0.0.2, 198.51.100.22"
 ```

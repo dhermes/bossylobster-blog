@@ -60,6 +60,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   convert -density 288 -background none -size 300x300 \
     ./istio-whitelogo-bluebackground-framed.svg ./istio-logo.png
   ```
+- `broken-pipe.jpg` - From [Flickr][39], via [CC BY-NC-ND 2.0][40]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -97,3 +98,5 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [36]: https://creativecommons.org/publicdomain/zero/1.0/
 [37]: https://flic.kr/p/X1cKzX
 [38]: https://istio.io/latest/about/media-resources/
+[39]: https://flic.kr/p/2zaGo
+[40]: https://creativecommons.org/licenses/by-nc-nd/2.0/

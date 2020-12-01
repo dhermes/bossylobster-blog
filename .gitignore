@@ -17,3 +17,6 @@ _nb_header.html
 .nox/
 node_modules/
 istio-sds-linux-amd64
+
+# OS-specific marker files
+.DS_Store
