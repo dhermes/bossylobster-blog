@@ -196,7 +196,7 @@ TCP proxy that **usually** shuttles packets between the Go client and the
 `postgres` server. However, it polls the (shared) state file and once the
 client has gone `IDLE` it closes the connection. In normal circumstances,
 closing the connection would still not result in an RST, the kernel[ref]This
-port of the socket lifecycle is not managed by Go at all, but fully by the
+part of the socket lifecycle is not managed by Go at all, but fully by the
 kernel.[/ref] will send a FIN to gracefully close the connection. To modify
 this behavior we must set the `SO_LINGER` socket option:
 
