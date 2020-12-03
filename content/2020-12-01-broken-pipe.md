@@ -70,7 +70,7 @@ by failure to gracefully manage idle connections.
 In order to **pinpoint** the exact cause of the failure I decided to set up
 packet capture for one of the offending services. Rather than trying to
 find errors across multiple pods, the first thing I did was scale the
-microservice down to one pod, being sure to removal the autoscaler in the
+microservice down to one pod, being sure to remove the autoscaler in the
 process:
 
 ```text
