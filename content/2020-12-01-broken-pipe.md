@@ -122,7 +122,7 @@ the broken pipe errors occurred on first usage after an extended idle period.
 
 A bit more about why the sockets had "gone bad". I was initially unhappy that
 AWS RDS had sent RST packets, essentially hanging up the phone abruptly as
-opposed to saying goobye with a FIN packet to cleanly close the connection.
+opposed to saying goodbye with a FIN packet to cleanly close the connection.
 However it appears that a minute before the RST packets arrived (around
 `18:26:09` UTC), the AWS RDS instance attempted to send FIN packets to each
 of the idle sockets. However, the client responded with an RST from a
