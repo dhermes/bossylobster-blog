@@ -402,7 +402,7 @@ So what should a reader take away from this long and winding road to a bugfix?
 [7]: https://istio.io/
 [8]: /images/rst-port-40320.png
 [9]: https://github.com/ngrok/sqlmw
-[10]: /code/wrapped-request.go
+[10]: /code/broken-pipe.go
 [11]: https://github.com/lib/pq
 [12]: /code/rst-proxy.go
 [13]: https://stackoverflow.com/a/6440364/1068170
