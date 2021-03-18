@@ -170,7 +170,7 @@ pow7:
 ### I Don't Speak Assembly {{ "{#assembly}" }}
 
 Like most professional software engineers (and science PhDs who write code) I
-have no formal training, so reading assembly is never something I've done.
+have no formal training, so reading assembly is something I've never done.
 So I wrote a [script][7] to generate a Fortran subroutine that computes
 `b = a**n` for a fixed value of `n`, compiles the code to an object file
 and then disassembles it. For example:
