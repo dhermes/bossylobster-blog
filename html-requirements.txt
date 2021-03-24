@@ -4,18 +4,41 @@
 #
 #    pip-compile --upgrade --output-file html-requirements.txt html-requirements.in
 #
-blinker==1.4              # via pelican
-docutils==0.14            # via pelican
-feedgenerator==1.9        # via pelican
+blinker==1.4
+    # via pelican
+docutils==0.14
+    # via pelican
+feedgenerator==1.9
+    # via pelican
 html5lib==1.0.1
-jinja2==2.10.1
+    # via -r html-requirements.in
+jinja2==2.11.3
+    # via
+    #   -r html-requirements.in
+    #   pelican
 markdown==3.1
-markupsafe==1.1.1         # via jinja2
+    # via -r html-requirements.in
+markupsafe==1.1.1
+    # via jinja2
 pelican==4.0.1
+    # via -r html-requirements.in
 py==1.8.0
-pygments==2.3.1           # via pelican
-python-dateutil==2.8.0    # via pelican
-pytz==2019.1              # via feedgenerator, pelican
-six==1.12.0               # via feedgenerator, html5lib, pelican, python-dateutil
-unidecode==1.0.23         # via pelican
-webencodings==0.5.1       # via html5lib
+    # via -r html-requirements.in
+pygments==2.3.1
+    # via pelican
+python-dateutil==2.8.0
+    # via pelican
+pytz==2019.1
+    # via
+    #   feedgenerator
+    #   pelican
+six==1.12.0
+    # via
+    #   feedgenerator
+    #   html5lib
+    #   pelican
+    #   python-dateutil
+unidecode==1.0.23
+    # via pelican
+webencodings==0.5.1
+    # via html5lib
