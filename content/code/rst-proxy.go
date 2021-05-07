@@ -26,7 +26,7 @@ const (
 	proxyAddr          = "localhost:23370"
 	readTimeout        = 250 * time.Millisecond
 	stateCheckInterval = 100 * time.Millisecond
-	stateFilename      = "./state.json"
+	stateFilename      = "./state.txt"
 )
 
 type setLingerForRST struct {

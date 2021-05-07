@@ -28,7 +28,7 @@ import (
 
 const (
 	dsnTemplate   = "postgres://superuser:password@localhost:%s/superuser_db?sslmode=disable"
-	stateFilename = "./state.json"
+	stateFilename = "./state.txt"
 )
 
 func setState(filename, state string) error {
