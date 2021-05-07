@@ -256,8 +256,13 @@ def update_requirements(session):
     for name in names:
         in_name = "{}-requirements.in".format(name)
         txt_name = "{}-requirements.txt".format(name)
+        session.run("rm", "-f", txt_name, external=True)
         session.run(
-            "pip-compile", "--upgrade", "--output-file", txt_name, in_name
+            "pip-compile",
+            "--generate-hashes",
+            "--output-file",
+            txt_name,
+            in_name,
         )
         session.run("git", "add", txt_name, external=True)
 
