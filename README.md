@@ -62,6 +62,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   ```
 - `broken-pipe.jpg` - From [Flickr][39], via [CC BY-NC-ND 2.0][40]
 - `door-nowhere.jpg` - From Panoramio via [Wikimedia][41], via [CC BY 3.0][42]
+- `heavy-duty-patch.png` - From Miniature Rhino [blog][43]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -103,3 +104,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [40]: https://creativecommons.org/licenses/by-nc-nd/2.0/
 [41]: https://commons.wikimedia.org/wiki/File:A_Door_In_The_Middle_Of_Nowhere_-_panoramio.jpg
 [42]: https://creativecommons.org/licenses/by/3.0/deed.en
+[43]: https://miniaturerhino.myshopify.com/blogs/news/easy-patching-for-heavy-duty-fabrics

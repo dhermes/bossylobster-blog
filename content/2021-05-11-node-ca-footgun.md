@@ -47,7 +47,7 @@ rename options or change behavior in a core package once released.
 
 This outage motivated me to try to address the biggest issue in this
 outage: the `ca` TLS option wipes away the default root trust store.
-I'll be writing up "Fixing the Custom CA Problem in Node.js" soon to showcase
+I wrote [Fixing the Custom CA Problem in Node.js][5] to showcase
 how `ca` is currently broken and to demonstrate how my `ca-append` [package][6]
 tries to patch the brokenness.
 
@@ -277,6 +277,7 @@ from this outage are not cut and dry:
 [2]: https://nodejs.org/docs/latest-v14.x/api/tls.html#tls_tls_createsecurecontext_options
 [3]: https://en.wikipedia.org/wiki/Certificate_signing_request
 [4]: https://www.digicert.com/kb/digicert-root-certificates.htm
+[5]: /2021/05/node-ca-append.html
 [6]: https://github.com/dhermes/ca-append-js
 [7]: https://en.wiktionary.org/wiki/footgun
 [8]: https://letsencrypt.org/2015/11/09/why-90-days.html
