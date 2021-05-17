@@ -219,7 +219,7 @@ When running the `rst-proxy.go` script and pointing our client at the proxy
 port, we can reproduce the error 100% of the time:
 
 ```text
-$ go run ./content/code/rst-proxy.go
+$ go run ./rst-proxy.go
 14:48:18.799745 Setting up TCP proxy on localhost:23370
 14:48:20.803298 Handling TCP connection from 127.0.0.1:57781
 14:48:20.905144 State file switched to IDLE, closing connection
