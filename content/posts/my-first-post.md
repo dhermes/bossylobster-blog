@@ -5,3 +5,5 @@ draft: true
 ---
 
 Lorem ipsum.
+
+<!-- {{ get_katex("\\frac{1}{3}") }} -->
