@@ -1,0 +1,4 @@
+baseURL = "https://blog.bossylobster.com/"
+languageCode = "en-us"
+title = "Bossy Lobster"
+theme = "hugo-octopress"
