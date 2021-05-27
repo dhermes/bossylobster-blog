@@ -5,6 +5,7 @@ help:
 	@echo 'Usage:'
 	@echo '   make run [PORT=...]        Run static-content server, with reloading'
 	@echo '   make run-all [PORT=...]    Run static-content server, with reloading; include expired/drafts/future'
+	@echo '   make build                 Build static content to `publishDir`'
 	@echo ''
 
 HUGO_PRESENT := $(shell command -v hugo 2> /dev/null)
@@ -21,6 +22,10 @@ run: _require-hugo
 .PHONY: run-all
 run-all: _require-hugo
 	@hugo --minify --log --verbose --buildDrafts --buildFuture --buildExpired --port=$(PORT) server
+
+.PHONY: build
+build: _require-hugo
+	@hugo --minify
 
 .PHONY: _require-hugo
 _require-hugo:
