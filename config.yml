@@ -2,6 +2,8 @@
 baseURL: "https://blog.bossylobster.com/"
 languageCode: "en-us"
 title: "Bossy Lobster"
+params:
+  subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
