@@ -2,12 +2,15 @@
 baseURL: "https://blog.bossylobster.com/"
 languageCode: "en-us"
 title: "Bossy Lobster"
+metadataformat: "yaml"
+paginate: 5
 params:
   author: "Danny Hermes (dhermes@bossylobster.com)"
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
   disableReadingTime: true
   # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
-  searchEngineURL: "https://google.com/search"
+  searchEngineURL: "https://www.google.com/search"
+  rss: true
   sidebarRecentLimit: 5
   sidebarText: |
     ![bossylobster](/images/bossy_lobster_350_alpha.png)
@@ -15,6 +18,7 @@ params:
     ![dhermes](/images/dhermes_headshot.jpg)
   twitter: "https://twitter.com/bossylobster"
   github: "https://github.com/dhermes"
+  truncate: true
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
