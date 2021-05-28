@@ -12,3 +12,5 @@ staticDir:
 
 permalinks:
   posts: "/:year/:month/:title"
+
+disqusShortname: "bossylobster"
