@@ -1,4 +1,5 @@
 ---
+type: post
 title: Getting Divvy-like functionality on Linux
 date: 2011-07-01
 author: Danny Hermes (dhermes@bossylobster.com)

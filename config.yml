@@ -8,6 +8,14 @@ params:
   disableReadingTime: true
   # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
   searchEngineURL: "https://google.com/search"
+  sidebarRecentLimit: 5
+  sidebarMenuEnabled: true
+  sidebarText: |
+    ![bossylobster](/images/bossy_lobster_350_alpha.png)
+
+    ![dhermes](/images/dhermes_headshot.jpg)
+  twitter: "https://twitter.com/bossylobster"
+  github: "https://github.com/dhermes"
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
