@@ -21,6 +21,8 @@ params:
   twitter: "https://twitter.com/bossylobster"
   github: "https://github.com/dhermes"
   truncate: true
+  mainSections:
+  - post
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
