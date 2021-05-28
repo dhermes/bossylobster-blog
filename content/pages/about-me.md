@@ -1,7 +1,8 @@
 ---
+type: page
 slug: about-me
 title: About Me
-github_slug: content/about-me.md
+github_slug: content/pages/about-me.md
 ---
 
 My name is Danny Hermes. I am a bit of a mix between a mathematician and

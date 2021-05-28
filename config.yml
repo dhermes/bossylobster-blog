@@ -38,6 +38,7 @@ menus:
    weight: -300
 
 permalinks:
+  pages: "/:title"
   posts: "/:year/:month/:title"
 
 disqusShortname: "bossylobster"

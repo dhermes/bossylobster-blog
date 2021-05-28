@@ -1,7 +1,8 @@
 ---
+type: page
 slug: testimonials
 title: Testimonials
-github_slug: content/testimonials.md
+github_slug: content/pages/testimonials.md
 ---
 
 * Danny manages to be relaxed, funny, and watchable AND very knowledgeable

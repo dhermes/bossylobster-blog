@@ -1,7 +1,8 @@
 ---
+type: page
 slug: mathematics
 title: Mathematics
-github_slug: content/mathematics.md
+github_slug: content/pages/mathematics.md
 ---
 
 For as long as I can remember, I have had a love of learning math and problem
