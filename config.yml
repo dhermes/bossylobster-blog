@@ -6,6 +6,7 @@ params:
   author: "Danny Hermes (dhermes@bossylobster.com)"
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
   disableReadingTime: true
+  # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
