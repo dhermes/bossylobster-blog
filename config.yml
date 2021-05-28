@@ -3,6 +3,7 @@ baseURL: "https://blog.bossylobster.com/"
 languageCode: "en-us"
 title: "Bossy Lobster"
 params:
+  author: "Danny Hermes (dhermes@bossylobster.com)"
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
   disableReadingTime: true
 theme: "hugo-octopress"
