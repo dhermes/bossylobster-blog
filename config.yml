@@ -4,6 +4,8 @@ languageCode: "en-us"
 title: "Bossy Lobster"
 metadataformat: "yaml"
 paginate: 5
+pygmentscodefences: true
+pygmentsStyle: "solarized-light"
 params:
   author: "Danny Hermes (dhermes@bossylobster.com)"
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."

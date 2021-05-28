@@ -64,11 +64,15 @@ here is how I did it:
 
 1.  Install Compiz from the command line via
 
-        sudo apt-get install compizconfig-settings-manager
+    ```text
+    sudo apt-get install compizconfig-settings-manager
+    ```
 
 1.  Install the extra plugins via
 
-        apt-get install compiz-fusion-plugins-extra
+    ```text
+    apt-get install compiz-fusion-plugins-extra
+    ```
 
 1.  Open Compiz (`ccsm` from the command line) or
     {{< image src="/images/ccsm.png" alt="CompixConfig Settings Manager" >}}
