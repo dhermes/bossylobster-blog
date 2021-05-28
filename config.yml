@@ -7,10 +7,28 @@ params:
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
   disableReadingTime: true
   # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
+  searchEngineURL: "https://google.com/search"
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
 - "static"
+menus:
+ main:
+ - name: "All Posts"
+   url: "/all-posts"
+   weight: -700
+ - name: "GitHub"
+   url: "https://github.com/dhermes/"
+   weight: -600
+ - name: "Mathematics"
+   url: "/mathematics"
+   weight: -500
+ - name: "Testimonials"
+   url: "/testimonials"
+   weight: -400
+ - name: "About Me"
+   url: "/about-me"
+   weight: -300
 
 permalinks:
   posts: "/:year/:month/:title"
