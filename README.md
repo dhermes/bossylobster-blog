@@ -10,3 +10,5 @@ Usage:
    make build                 Build static content to `publishDir`
 
 ```
+
+<!-- {{ get_katex("\\frac{1}{3}") }} -->

@@ -3,3 +3,7 @@ languageCode = "en-us"
 title = "Bossy Lobster"
 theme = "hugo-octopress"
 publishDir = "public"
+staticDir = ["static"]
+
+[permalinks]
+  posts = "/:year/:month/:title"
