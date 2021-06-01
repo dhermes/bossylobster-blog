@@ -4,12 +4,13 @@ languageCode: "en-us"
 title: "Bossy Lobster"
 metadataformat: "yaml"
 paginate: 5
-pygmentscodefences: true
-pygmentsStyle: "solarized-light"
+pygmentsUseClasses: true
 params:
   author: "Danny Hermes (dhermes@bossylobster.com)"
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
   disableReadingTime: true
+  customCSS:
+  - "css/syntax.css"
   # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
   searchEngineURL: "https://www.google.com/search"
   rss: true
