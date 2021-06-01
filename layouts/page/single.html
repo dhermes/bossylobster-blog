@@ -7,6 +7,12 @@
     <div>
       <article class="hentry" role="article">
         <header>
+          {{ if not ($.Scratch.Get "isHome") }}
+          {{ if and (eq .Type "page") (isset .Params "github_slug") }}
+          <a href="https://github.com/dhermes/bossylobster-blog/blob/master/{{ .Params.github_slug }}" class="fab fa-github">&nbsp;Edit on GitHub</a>
+          {{ end }}
+          {{ end }}
+
           <h1 class="entry-title">
             {{ .Title }} <!-- we don't need page title to be a link on the actual page -->
           </h1>
