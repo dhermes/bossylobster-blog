@@ -24,6 +24,7 @@ params:
   truncate: true
   mainSections:
   - post
+  twitterCardEnabled: true
 theme: "hugo-octopress"
 publishDir: "public"
 staticDir:
