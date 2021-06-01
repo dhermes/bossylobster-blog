@@ -11,8 +11,10 @@
       - {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize | lower }}/">{{ . }} </a>{{ end }}
     {{ end }}
   </p>
+  {{ if not ($.Scratch.Get "isHome") }}
   {{ if and (eq .Type "post") (isset .Params "github_slug") }}
   <a href="https://github.com/dhermes/bossylobster-blog/blob/master/{{ .Params.github_slug }}" class="fab fa-github">&nbsp;Edit on GitHub</a>
+  {{ end }}
   {{ end }}
   <h1 class="entry-title">
     {{ if ($.Scratch.Get "isHome") }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ else }} {{ .Title }} {{ end }}
