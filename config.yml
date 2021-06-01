@@ -10,6 +10,7 @@ params:
   subtitle: "A blog by Danny Hermes; musing on tech, mathematics, etc."
   disableReadingTime: true
   customCSS:
+  - "css/fa.css"
   - "css/syntax.css"
   # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
   searchEngineURL: "https://www.google.com/search"
