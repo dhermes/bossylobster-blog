@@ -14,9 +14,13 @@
         </header>
         <div id="blog-archives" class="category">
           {{ range .Data.Pages }}
+          {{ $listYear := .Date | dateFormat "2006" }}
+          {{ if ne ($.Scratch.Get "listYear") $listYear }}
+          <!-- {{ $.Scratch.Set "listYear" $listYear }}  -->
           <h2>
-            {{ .Date | dateFormat "2006"}}
+            {{ $listYear }}
           </h2>
+          {{ end }}
           <article>
             <h1>
               <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
