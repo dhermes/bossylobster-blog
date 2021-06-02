@@ -12,7 +12,7 @@
           </h1>
         </header>
         <div id="blog-archives" class="category">
-          {{ $paginator := where site.RegularPages "Type" "in" site.Params.mainSections }}
+          {{ $paginator := where site.RegularPages "Type" "in" .Params.page_types }}
           {{ range $paginator }}
           {{ $listYear := .Date | dateFormat "2006" }}
           {{ if ne ($.Scratch.Get "listYear") $listYear }}
