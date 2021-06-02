@@ -49,6 +49,7 @@ menus:
    weight: -300
 
 permalinks:
+  archives: "/:title"
   pages: "/:title"
   posts: "/:year/:month/:title"
 
