@@ -11,6 +11,8 @@ params:
   disableReadingTime: true
   customCSS:
   - "css/fa.css"
+  - "css/katex-mod.css"
+  - "css/katex.min.css"
   - "css/syntax.css"
   # googleAnalytics: "UA-56716324-1"  # TODO, enable this conditionally
   searchEngineURL: "https://www.google.com/search"

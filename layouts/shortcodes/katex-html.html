@@ -1,0 +1,2 @@
+{{ $b64 := .Get "b64" }}
+{{ $b64 | base64Decode | safeHTML }}
