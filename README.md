@@ -63,6 +63,11 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - `broken-pipe.jpg` - From [Flickr][39], via [CC BY-NC-ND 2.0][40]
 - `door-nowhere.jpg` - From Panoramio via [Wikimedia][41], via [CC BY 3.0][42]
 - `heavy-duty-patch.png` - From Miniature Rhino [blog][43]
+- `Vault_PrimaryLogo_Black_RGB.png` - From Hashicorp brand [page][44], which
+  states
+  > Please don't modify the marks or use them in a confusing way, including
+  > suggesting sponsorship or endorsement by HashiCorp, or in a way that
+  > confuses HashiCorp with another brand (including your own).
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -105,3 +110,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [41]: https://commons.wikimedia.org/wiki/File:A_Door_In_The_Middle_Of_Nowhere_-_panoramio.jpg
 [42]: https://creativecommons.org/licenses/by/3.0/deed.en
 [43]: https://miniaturerhino.myshopify.com/blogs/news/easy-patching-for-heavy-duty-fabrics
+[44]: https://www.hashicorp.com/brand
