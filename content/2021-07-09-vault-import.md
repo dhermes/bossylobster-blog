@@ -1,6 +1,6 @@
 ---
-title: "Importing" External Keys into Vault
-description: Synthetic Backups and "Offsite" Decryption
+title: Importing External Keys into Vault
+description: Synthetic Backups and Offsite Decryption
 date: 2021-07-09
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Hashicorp, Vault, Import, Encryption
