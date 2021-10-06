@@ -2,7 +2,7 @@
 title: Decrypting Vault Ciphertext with a Context
 date: 2021-10-05
 author: Danny Hermes (dhermes@bossylobster.com)
-tags: Hashicorp, Vault, Import, Encryption
+tags: Hashicorp, Vault, Encryption, Key Derivation
 slug: decrypt-vault-ciphertext-context
 comments: true
 use_twitter_card: true
