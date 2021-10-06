@@ -146,7 +146,6 @@ b'{"bar":"baz"}'
 ...     algorithm=algorithm, length=32, info=context, backend=backend, salt=None
 ... )
 >>>
->>> import base64
 >>> key = base64.b64decode("rph2pwTQCx+TD/lk+7o9igzQw5A7FU3+S+Z24Cf9Duk=")
 >>> derived_key = hkdf.derive(key)
 >>> len(derived_key)
