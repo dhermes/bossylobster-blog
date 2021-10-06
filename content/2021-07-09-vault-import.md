@@ -128,9 +128,9 @@ is 12 bytes (or 96 bits) since the scheme used is `aes256-gcm96`.[/ref]
 are the initialization vector (IV):
 
 ```python
->>> import base64
->>>
 >>> encoded = "aMEvW33l8iXqoDcvXl8KTtkaJEVcB8yeSsQ69mOltw=="
+>>>
+>>> import base64
 >>> iv_and_ciphertext = base64.b64decode(encoded)
 >>> iv_bytes = iv_and_ciphertext[:12]
 >>> ciphertext_bytes = iv_and_ciphertext[12:]
