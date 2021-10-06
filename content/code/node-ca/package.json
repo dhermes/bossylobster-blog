@@ -9,7 +9,7 @@
     "printWidth": 120
   },
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.21.2",
     "ca-append": "0.1.0"
   },
   "devDependencies": {
