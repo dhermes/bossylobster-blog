@@ -1,5 +1,6 @@
 ---
 title: Decrypting Vault Ciphertext with a Context
+description: Mechanics of Vault Derived Keys
 date: 2021-10-05
 author: Danny Hermes (dhermes@bossylobster.com)
 tags: Hashicorp, Vault, Encryption, Key Derivation
