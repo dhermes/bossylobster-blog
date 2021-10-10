@@ -68,6 +68,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   > Please don't modify the marks or use them in a confusing way, including
   > suggesting sponsorship or endorsement by HashiCorp, or in a way that
   > confuses HashiCorp with another brand (including your own).
+- `postgresql-elephant.svg` - From Wikimedia Commons ([file][45])
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -111,3 +112,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [42]: https://creativecommons.org/licenses/by/3.0/deed.en
 [43]: https://miniaturerhino.myshopify.com/blogs/news/easy-patching-for-heavy-duty-fabrics
 [44]: https://www.hashicorp.com/brand
+[45]: https://commons.wikimedia.org/wiki/File:Postgresql_elephant.svg
