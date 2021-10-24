@@ -1,0 +1,422 @@
+---
+title: When Elementary Becomes Elliptic
+description: Curious Diophantine Equations
+date: 2021-10-23
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Math, Number Theory, Elliptic Curves
+slug: elementary-elliptic
+comments: true
+use_twitter_card: true
+use_open_graph: true
+use_schema_org: true
+twitter_site: @bossylobster
+twitter_creator: @bossylobster
+social_image: images/elementary-elliptic-pq.png
+github_slug: templated_content/2021-10-23-elementary-elliptic.template
+---
+
+I enjoy watching math videos targeted at advanced high school or undergraduate
+students &mdash; even if the topics are far away from research level
+mathematics. I was recently watching a "quick and easy challenge in
+algebra" [video][3] from [SyberMath][2][ref]I also really enjoy
+[Michael Penn][1] videos.[/ref] that used a neat trick to solve the problem.
+As the video title hints, this could've been a homework problem for advanced
+high schoolers. In the video, SyberMath makes an **offhand** comment:
+
+> Notice that the original expression is equal to one and obviously you can
+> find some numbers that satisfy this, right?
+
+The ensuing proof in the video shows that an identity holds for **all**
+values, so the task of "find some numbers" never actually happens. However,
+this comment stuck with me and I tried to find the "simplest" numbers that
+would make that expression equal one. Going down this path I accidentally
+waded[ref]I actually consulted my great friend [Wade][4] when wading into these
+deep waters.[/ref] into deep waters with advanced number theory concepts.
+
+### Contents
+
+- [Original Problem](#original-problem)
+- [Reduction](#reduction)
+- [A Wild Elliptic Curve Appears](#wild-elliptic-curve)
+- [Bad News](#bad-news)
+- [The Next Best Thing](#next-best-thing)
+- [The End](#the-end)
+
+### Original Problem {{ "{#original-problem}" }}
+
+The original problem statement[ref]I have swapped out the variable names used
+in the video since I'll be introducing many more variables in this post.[/ref]
+is as follows. Given
+
+{{ get_katex("\\frac{a}{b + c} + \\frac{b}{c + a} + \\frac{c}{a + b} = 1", blockquote=True) }}
+
+show:
+
+{{ get_katex("\\frac{a^2}{b + c} + \\frac{b^2}{c + a} + \\frac{c^2}{a + b} = 0", blockquote=True) }}
+
+This blog post will focus on finding triples {{ get_katex("a, b, c") }} that
+satisfy the first equation. I was **hoping** I could find a solution in
+{{ get_katex("\\mathbf{Q}^3") }} but as we'll see below this is
+**impossible**!
+
+### Reduction {{ "{#reduction}" }}
+
+**TL;DR** we reduce to two degrees of freedom via
+
+{{ get_katex("\\begin{gather*}s = a + b + c, p = \\frac{a}{s}, q = \\frac{b}{s} \\\\ \\frac{1}{1 - p} + \\frac{1}{1 - q} + \\frac{1}{p + q} = 4\\end{gather*}", blockquote=True) }}
+
+<!--
+import matplotlib  # matplotlib==3.3.4
+import matplotlib.pyplot as plt
+import numpy as np  # numpy==1.20.1
+import seaborn  # seaborn==0.11.1
+
+
+def discriminant(p_vals):
+    # (p + 1)(4p - 3)(4 p^2 - 3p + 1) = 16 p^4 - 8 p^3 - 11 p^2 + 10p - 3
+    return (((16 * p_vals - 8) * p_vals - 11) * p_vals + 10) * p_vals - 3
+
+
+def get_q_vals(p_vals):
+    delta = discriminant(p_vals)
+    sqrt_delta = np.sqrt(delta)
+    numerator_vals = (1 - p_vals) * (3 - 4 * p_vals)
+    denominator_vals = 2 * (3 - 4 * p_vals)
+
+    q_plus = (numerator_vals + sqrt_delta) / denominator_vals
+    q_minus = (numerator_vals - sqrt_delta) / denominator_vals
+    return q_plus, q_minus
+
+
+def main():
+    # Python 3.9.1
+    seaborn.set()
+    matplotlib.rcParams["mathtext.fontset"] = "cm"
+    matplotlib.rcParams["mathtext.rm"] = "serif"
+
+    figure = plt.figure()
+    ax = figure.gca()
+
+    p_vals_left = np.linspace(-5.0, -1.0, 1025)[::-1]
+    p_vals_right = np.linspace(0.75, 4.75, 1025)[1::]
+    q_plus_left, q_minus_left = get_q_vals(p_vals_left)
+    q_plus_right, q_minus_right = get_q_vals(p_vals_right)
+    (line,) = ax.plot(p_vals_left, q_plus_left)
+    ax.plot(p_vals_left, q_minus_left, color=line.get_color())
+    ax.plot(p_vals_right, q_plus_right, color=line.get_color())
+    ax.plot(p_vals_right, q_minus_right, color=line.get_color())
+    ax.plot(
+        [-1.0, 1.0, 1.0],
+        [1.0, -1.0, 1.0],
+        marker="o",
+        color="black",
+        linestyle="none",
+    )
+    ax.text(
+        1.5,
+        -0.75,
+        "$(1, -1)$",
+        fontsize=12,
+        verticalalignment="top",
+        horizontalalignment="left",
+    )
+    ax.text(
+        -0.75,
+        0.75,
+        "$(-1, 1)$",
+        fontsize=12,
+        verticalalignment="top",
+        horizontalalignment="right",
+    )
+    ax.text(
+        1.5,
+        1.5,
+        "$(1, 1)$",
+        fontsize=12,
+        verticalalignment="center",
+        horizontalalignment="center",
+    )
+    ax.set_xlabel("$p$", fontsize=16)
+    ax.set_ylabel("$q$", rotation=0, fontsize=16)
+    ax.axis("scaled")
+
+    figure.set_size_inches(12.8, 9.6)
+    figure.savefig("elementary-elliptic-pq.png", bbox_inches="tight")
+    plt.close(figure)
+
+
+if __name__ == "__main__":
+    main()
+-->
+
+<div markdown="1" style="text-align: center;">
+  ![Plot p-q](/images/elementary-elliptic-pq.png)
+</div>
+
+Feel free to skip to the next section if you don't care how or why we can
+make this reduction.
+
+Since the equation has three unknowns and one constraint, we expect the
+solution to be a family with two degrees of freedom, so we want to first
+reduce it. Note that this equation is homogeneous; scaling
+{{ get_katex("a, b, c") }} to
+{{ get_katex("\\lambda a, \\lambda b, \\lambda c") }} for any
+{{ get_katex("\\lambda \\neq 0") }} will preserve the relationship.
+
+For the expression to be well-defined we must have
+{{ get_katex("a + b \\neq 0") }} (and similar for the other permuted
+denominators). With this out of the way we'll incorporate
+{{ get_katex("s = a + b + c") }} into the original equation in a fashion
+similar to the trick in the video:
+
+{{ get_katex("\\begin{aligned} s\\left(\\frac{1}{s - a} + \\frac{1}{s - b} + \\frac{1}{a + b}\\right) &= \\frac{a}{b + c} + \\frac{b + c}{b + c} + \\cdots \\\\ &= \\frac{a}{b + c} + \\frac{b}{c + a} + \\frac{c}{a + b} + 3 \\\\ &= 4.\\end{aligned}", blockquote=True) }}
+
+We must have {{ get_katex("a \\neq 0") }} and by symmetry
+{{ get_katex("b \\neq 0") }} and {{ get_katex("c \\neq 0") }}. By way of
+contradiction, if {{ get_katex("a = 0") }}:
+
+{{ get_katex("\\frac{b}{c} + \\frac{c}{b} = 1 \\implies \\frac{b}{c} = \\frac{1 \\pm i \\sqrt{3}}{2}", blockquote=True) }}
+
+which can't happen if {{ get_katex("b, c \\in \\mathbf{R}") }}.
+Using this, we can finally show {{ get_katex("s \\neq 0") }}; again
+by way of contradiction, if {{ get_katex("s = 0") }}:
+
+{{ get_katex("\\frac{a}{s - a} + \\cdots = \\frac{a}{-a} + \\frac{b}{-b} + \\frac{c}{-c} = -3 \\neq 1.", blockquote=True) }}
+
+Now we can safely divide by {{ get_katex("s") }} to make an equation with our
+two free parameters:
+
+{{ get_katex("\\begin{aligned} 4 &= \\frac{s}{s - a} + \\frac{s}{s - b} + \\frac{s}{a + b} \\\\ &= \\frac{1}{1 - a/s} + \\frac{1}{1 - b/s} + \\frac{1}{a/s + b/s}.\\end{aligned}", blockquote=True) }}
+
+### A Wild Elliptic Curve Appears {{ "{#wild-elliptic-curve}" }}
+
+Clearing dominators in our equation we can form an equation in
+{{ get_katex("q") }}:
+
+{{ get_katex("(3 - 4p) q^2 - (1 - p)(3 - 4p) q + \\left(3 p^2 - 3p + 1\\right) = 0", blockquote=True) }}
+
+which has solutions:
+
+{{ get_katex("q = \\frac{(1 - p)(3 - 4p) \\pm \\sqrt{\\Delta}}{2(3 - 4p)}.", blockquote=True) }}
+
+Given a rational {{ get_katex("p") }} we only have rational
+{{ get_katex("q") }} if the discriminant is the square of a rational:
+
+{{ get_katex("d^2 = \\Delta = \\left(p + 1\\right) \\left(4p - 3\\right) \\left(4 p^2 - 3p + 1\\right).", blockquote=True) }}
+
+Thanks to a helpful [tip][5] to use a [M&#xf6;bius transformation][6], we can
+transform via
+
+{{ get_katex("d = \\frac{63y}{(3x - 25)^2}, p = \\frac{9(x + 1)}{4(3x - 25)}", blockquote=True) }}
+
+which produces an [elliptic curve][7] in Weierstrass form:
+
+{{ get_katex("y^2 = x^3 + \\frac{215}{3} x - \\frac{10582}{27}.", blockquote=True) }}
+
+In other words, rational solutions
+{{ get_katex("\\left(a, b, c\\right) \\in \\mathbf{Q}^3") }} correspond to
+rational solutions {{ get_katex("\\left(p, q\\right) \\in \\mathbf{Q}^2") }}
+which in turn correspond to rational points
+{{ get_katex("\\left(x, y\\right)") }} on this elliptic curve.
+
+### Bad News {{ "{#bad-news}" }}
+
+<!--
+import matplotlib  # matplotlib==3.3.4
+import matplotlib.pyplot as plt
+import numpy as np  # numpy==1.20.1
+import seaborn  # seaborn==0.11.1
+
+
+def get_y_vals(x_vals):
+    y_squared = ((27 * x_vals * x_vals + 215 * 9) * x_vals - 10582) / 27
+    y_plus = np.sqrt(y_squared)
+    y_minus = -y_plus
+    return y_plus, y_minus
+
+
+def main():
+    # Python 3.9.1
+    seaborn.set()
+    matplotlib.rcParams["mathtext.fontset"] = "cm"
+    matplotlib.rcParams["mathtext.rm"] = "serif"
+
+    figure = plt.figure()
+    ax = figure.gca()
+
+    x_vals = np.linspace(13.0, 120.0, 1025) / 3.0
+    y_plus, y_minus = get_y_vals(x_vals)
+    (line,) = ax.plot(x_vals, y_plus)
+    ax.plot(x_vals, y_minus, color=line.get_color())
+    ax.plot(
+        [13.0 / 3.0, 25.0 / 3.0, 25.0 / 3.0, 109.0 / 3.0, 109.0 / 3.0],
+        [0.0, 28.0, -28.0, 224.0, -224.0],
+        marker="o",
+        color="black",
+        linestyle="none",
+    )
+    ax.text(
+        4.25,
+        -10.0,
+        r"$\left(\frac{13}{3}, 0\right)$",
+        fontsize=18,
+        verticalalignment="top",
+        horizontalalignment="center",
+    )
+    ax.text(
+        8.25,
+        -35.0,
+        r"$\left(\frac{25}{3}, -28\right)$",
+        fontsize=18,
+        verticalalignment="top",
+        horizontalalignment="center",
+    )
+    ax.text(
+        8.25,
+        35.0,
+        r"$\left(\frac{25}{3}, 28\right)$",
+        fontsize=18,
+        verticalalignment="bottom",
+        horizontalalignment="center",
+    )
+    ax.text(
+        36.25,
+        -240.0,
+        r"$\left(\frac{109}{3}, -224\right)$",
+        fontsize=18,
+        verticalalignment="top",
+        horizontalalignment="center",
+    )
+    ax.text(
+        36.25,
+        240.0,
+        r"$\left(\frac{109}{3}, 224\right)$",
+        fontsize=18,
+        verticalalignment="bottom",
+        horizontalalignment="center",
+    )
+    ax.set_xlabel("$x$", fontsize=24)
+    ax.set_ylabel("$y$", rotation=0, fontsize=24)
+
+    figure.set_size_inches(12.8, 9.6)
+    figure.savefig("elementary-elliptic-xy.png", bbox_inches="tight")
+    plt.close(figure)
+
+
+if __name__ == "__main__":
+    main()
+-->
+
+<div markdown="1" style="text-align: center;">
+  ![Plot x-y](/images/elementary-elliptic-xy.png)
+</div>
+
+In general, finding rational points on an elliptic curve (and proving you have
+found them all) is a challenge. Luckily [MAGMA][8] exists and the helpful
+mathematicians on the internet want you to [know][9]. Plugging in our curve
+
+```
+E:=EllipticCurve([215 / 3, - 10582 / 27]);
+MordellWeilGroup(E);
+RationalPoints(E : Bound:=1000);
+```
+
+we find that there are only **six** rational points on the curve (including
+the point at infinity, which requires looking for points in projective space).
+These points are isomorphic to {{ get_katex("\\mathbf{Z}/6\\mathbf{Z}") }}
+under addition on the curve, so a single generator is enough to describe
+the points. Using projective coordinates {{ get_katex("x = X/Z, y = Y/Z") }}
+we can start with one of the two generators:
+
+{{ get_katex("\\begin{aligned}P_1 &= \\left[ 109 : 672 : 3 \\right] \\\\ 2P_1 &= \\left[ 25 : 84 : 3 \\right] \\\\ 3P_1 &= \\left[ 13 : 0 : 3 \\right] \\\\ 4P_1 &= \\left[ 25 : -84 : 3 \\right] \\\\ 5P_1 &= \\left[ 109 : -672 : 3 \\right] \\\\ 6P_1 &= \\left[ 0 : 1 : 0 \\right].\\end{aligned}", blockquote=True) }}
+
+Since we'd like to convert these back to solutions {{ get_katex("p, q") }}
+we want to represent these points in terms of
+{{ get_katex("\\left[ X : Y : Z \\right]") }}. Plugging in our transformations
+for {{ get_katex("p") }} and {{ get_katex("d") }} we have
+
+{{ get_katex("\\begin{aligned}p &= \\frac{9(x + 1)}{4(3x - 25)} = \\frac{18(X + Z)}{8(3X - 25Z)} \\\\ q &= \\frac{3x - 109 \\pm 3y}{8(3x - 25)} = \\frac{3X - 109Z \\pm 3Y}{8(3X - 25Z)}.\\end{aligned}", blockquote=True) }}
+
+These are relevant because we can convert to points in projective space
+{{ get_katex("p = P/R, q = Q/R") }} using {{ get_katex("R = 8(3X - 25Z)") }}:
+
+{{ get_katex("\\begin{aligned}\\left[ X : Y : Z \\right] &\\iff \\left[ P : Q : R \\right] \\\\ 6P_1 &\\iff \\left[ 0 : 1 : 0 \\right] \\\\ 2P_1 \\text{ or } 4P_1 &\\iff \\left[ 1 : 0 : 0 \\right] \\\\ 2P_1 \\text{ or } 4P_1 &\\iff \\left[ 1 : -1 : 0 \\right] \\\\ P_1 \\text{ or } 5P_1 &\\iff \\left[ 1 : 1 : 1 \\right] \\\\ P_1 \\text{ or } 5P_1 &\\iff \\left[ 1 : -1 : 1 \\right] \\\\ 3P_1 &\\iff \\left[ -1 : 1 : 1 \\right].\\end{aligned}", blockquote=True) }}
+
+So unfortunately, half of the six rational points on the elliptic curve
+correspond to points {{ get_katex("\\left[ P : Q : R \\right]") }} at infinity
+and the other half are invalid because {{ get_katex("p = 1") }} or
+{{ get_katex("q = 1") }}.
+
+### The Next Best Thing {{ "{#next-best-thing}"}}
+
+So we can't find solutions over {{ get_katex("\\mathbf{Q}") }} and it's pretty
+obvious that we **can** find solutions over {{ get_katex("\\mathbf{R}") }}
+but is there anything simpler? What about over
+{{ get_katex("\\mathbf{Q}\\left[\sqrt{n}\\right]") }} for a sufficiently
+small value of {{ get_katex("n") }}? Luckily, we can search for solutions
+in these rings by slightly modifying our previous procedure to find
+rational solutions to
+
+{{ get_katex("n d^2 = \\Delta", blockquote=True) }}
+
+and can use a family of M&#xf6;bius transformations to transform to
+Weierstrass form:
+
+{{ get_katex("\\begin{gather*}d = \\frac{63ny}{(3nx - 25)^2}, p = \\frac{9(nx + 1)}{4(3nx - 25)} \\\\ y^2 = x^3 + \\frac{215}{3 n^2} x - \\frac{10582}{27 n^3}.\\end{gather*}", blockquote=True) }}
+
+For all choices of {{ get_katex("n") }} there is a rational point
+{{ get_katex("\\left[ X : Y : Z \\right] = \\left[ 13 : 0 : 3n \\right]") }}
+that will always have order two and will always correspond to the invalid
+{{ get_katex("p = -1, q = 1") }}.
+
+To find **some** solution over
+{{ get_katex("\\mathbf{Q}\\left[\sqrt{n}\\right]") }} the "simplest" choice
+would be {{ get_katex("n = 2") }} but it turns out the elliptic curve produced
+has even **fewer** rational points than the {{ get_katex("n = 1") }} case! The
+rational points are isomorphic to {{ get_katex("\\mathbf{Z}/2\\mathbf{Z}") }}
+and they correspond to a point at infinity and the point
+{{ get_katex("p = -1, q = 1") }} common to all values of {{ get_katex("n") }}.
+
+The next choice up &mdash; {{ get_katex("n = 3") }} &mdash; luckily yields
+an infinite family of rational points! The group has the same generator with
+finite order mentioned above and a second generator with infinite order
+{{ get_katex("\\left[ X : Y : Z \\right] = \\left[ 31 : 66 : 9 \\right]") }}.
+Following our transformation backwards from this point we get
+
+{{ get_katex("p = \\frac{17}{4}, q = \\frac{-13 \\pm 11 \\sqrt{3}}{8}.", blockquote=True) }}
+
+To clear denominators we can arbitrarily choose {{ get_katex("s = 8") }} and
+find a solution to the original equation:
+
+{{ get_katex("a = 34, b = -13 + 11 \\sqrt{3}, c = -13 - 11 \\sqrt{3}.", blockquote=True) }}
+
+It should come as no surprise that {{ get_katex("b") }} and
+{{ get_katex("c") }} are conjugates in
+{{ get_katex("\\mathbf{Q}\\left[\sqrt{3}\\right]") }}.
+
+### The End {{ "{#the-end}" }}
+
+Even simple questions have deeper questions just one or two hops away! The
+offhand comment by SyberMath spawned an exploration that led to much deeper
+mathematics. In fact, the questions don't stop here. Clearly the differences
+between {{ get_katex("\\mathbf{Q}\\left[\sqrt{2}\\right]") }} and
+{{ get_katex("\\mathbf{Q}\\left[\sqrt{3}\\right]") }} above is part of a
+larger pattern and investigating that pattern more could lead to even
+more deep mathematics.
+
+Given how simple the original homogeneous equation is, I was floored that there
+are zero rational solutions. But I was also ecstatic that the tools exist to
+conclusively confirm the absence of rational solutions. If you've made it this
+far, thanks for following along!
+
+<hr style="margin-bottom: 25px; width: 50%;">
+
+[1]: https://www.youtube.com/c/MichaelPennMath/videos
+[2]: https://www.youtube.com/c/SyberMath/videos
+[3]: https://youtu.be/Wy_uzVX1U_g
+[4]: https://sites.google.com/a/alumni.brown.edu/whindes/home
+[5]: https://mathoverflow.net/a/239752
+[6]: https://en.wikipedia.org/wiki/M%C3%B6bius_transformation
+[7]: https://en.wikipedia.org/wiki/Elliptic_curve
+[8]: http://magma.maths.usyd.edu.au/calc/
+[9]: https://math.stackexchange.com/a/1330867/31956
