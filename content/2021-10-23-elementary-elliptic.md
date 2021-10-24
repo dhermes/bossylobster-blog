@@ -97,6 +97,7 @@ def get_q_vals(p_vals):
 def main():
     # Python 3.9.1
     seaborn.set()
+    matplotlib.rcParams["text.usetex"] = "true"
     matplotlib.rcParams["mathtext.fontset"] = "cm"
     matplotlib.rcParams["mathtext.rm"] = "serif"
 
@@ -204,7 +205,7 @@ two free parameters:
 
 ### A Wild Elliptic Curve Appears {#wild-elliptic-curve}
 
-Clearing dominators in our equation we can form a quadratic in
+Clearing denominators in our equation we can form a quadratic in
 <html-literal>3c7370616e20636c6173733d226b61746578223e3c7370616e20636c6173733d226b617465782d6d6174686d6c223e3c6d61746820786d6c6e733d22687474703a2f2f7777772e77332e6f72672f313939382f4d6174682f4d6174684d4c223e3c73656d616e746963733e3c6d726f773e3c6d693e713c2f6d693e3c2f6d726f773e3c616e6e6f746174696f6e20656e636f64696e673d226170706c69636174696f6e2f782d746578223e713c2f616e6e6f746174696f6e3e3c2f73656d616e746963733e3c2f6d6174683e3c2f7370616e3e3c7370616e20636c6173733d226b617465782d68746d6c2220617269612d68696464656e3d2274727565223e3c7370616e20636c6173733d2262617365223e3c7370616e20636c6173733d22737472757422207374796c653d226865696768743a302e363235656d3b766572746963616c2d616c69676e3a2d302e3139343434656d3b223e3c2f7370616e3e3c7370616e20636c6173733d226d6f7264206d6174686e6f726d616c22207374796c653d226d617267696e2d72696768743a302e3033353838656d3b223e713c2f7370616e3e3c2f7370616e3e3c2f7370616e3e3c2f7370616e3e</html-literal>:
 
 <div class="katex-elt"><blockquote>
@@ -262,6 +263,7 @@ def get_y_vals(x_vals):
 def main():
     # Python 3.9.1
     seaborn.set()
+    matplotlib.rcParams["text.usetex"] = "true"
     matplotlib.rcParams["mathtext.fontset"] = "cm"
     matplotlib.rcParams["mathtext.rm"] = "serif"
 
