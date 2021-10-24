@@ -406,11 +406,11 @@ Outputs:
 
 ### Compiling on OS X {{ "{#compiling-on-os-x}" }}
 
-> **TL;DR**: As of Mac OS X High Sierra (10.13), your code can link to LAPACK
+> **TL;DR**: As of macOS High Sierra (10.13), your code can link to LAPACK
 > via `-llapack` or `-framework Accelerate`. Also, when I started graduate
 > school I didn't know much about compiling code.
 
-I was using Mac OS X Mountain Lion (10.8) at the time. Without
+I was using OS X Mountain Lion (10.8) at the time. Without
 using Homebrew to install LAPACK or OpenBLAS, compiling[ref]Note that `gcc` is
 just an alias for `clang` on OS X[/ref] with `-llapack` failed with something
 along the lines of:
@@ -440,8 +440,8 @@ things. So the correct magical incantation (as of OS X 10.8) was
 $ clang -o main dgetrf_example.c -framework vecLib
 ```
 
-At some point[ref]It [seems][14] it was in Mac OS X Yosemite (10.10).[/ref],
-things **got better** ([thanks][15] Apple). On a current[ref]Mac OS X High
+At some point[ref]It [seems][14] it was in OS X Yosemite (10.10).[/ref],
+things **got better** ([thanks][15] Apple). On a current[ref]macOS High
 Sierra (10.13)[/ref] version, `liblapack` comes with the OS:
 
 ```python
