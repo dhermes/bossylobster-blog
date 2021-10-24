@@ -177,7 +177,7 @@ contradiction, if {{ get_katex("a = 0") }}:
 
 {{ get_katex("\\frac{b}{c} + \\frac{c}{b} = 1 \\implies \\frac{b}{c} = \\frac{1 \\pm i \\sqrt{3}}{2}", blockquote=True) }}
 
-which can't happen if {{ get_katex("b, c \\in \\mathbf{R}") }}.
+which can't happen since {{ get_katex("b, c \\in \\mathbf{R}") }}.
 Using this, we can finally show {{ get_katex("s \\neq 0") }}; again
 by way of contradiction, if {{ get_katex("s = 0") }}:
 
@@ -190,7 +190,7 @@ two free parameters:
 
 ### A Wild Elliptic Curve Appears {{ "{#wild-elliptic-curve}" }}
 
-Clearing dominators in our equation we can form an equation in
+Clearing denominators in our equation we can form a quadratic in
 {{ get_katex("q") }}:
 
 {{ get_katex("(3 - 4p) q^2 - (1 - p)(3 - 4p) q + \\left(3 p^2 - 3p + 1\\right) = 0", blockquote=True) }}
@@ -415,7 +415,7 @@ far, thanks for following along!
 [2]: https://www.youtube.com/c/SyberMath/videos
 [3]: https://youtu.be/Wy_uzVX1U_g
 [4]: https://sites.google.com/a/alumni.brown.edu/whindes/home
-[5]: https://mathoverflow.net/a/239752
+[5]: https://mathoverflow.net/a/239752/40609
 [6]: https://en.wikipedia.org/wiki/M%C3%B6bius_transformation
 [7]: https://en.wikipedia.org/wiki/Elliptic_curve
 [8]: http://magma.maths.usyd.edu.au/calc/
