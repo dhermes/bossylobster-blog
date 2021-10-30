@@ -68,6 +68,8 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   > Please don't modify the marks or use them in a confusing way, including
   > suggesting sponsorship or endorsement by HashiCorp, or in a way that
   > confuses HashiCorp with another brand (including your own).
+- `Legal_pad_and_pencil.jpg` - From [Wikimedia][45], via [CC BY-SA 4.0][46]
+- `database_milestone.jpg` - From [Flickr][47], via [CC BY-NC 2.0][48]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -111,3 +113,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [42]: https://creativecommons.org/licenses/by/3.0/deed.en
 [43]: https://miniaturerhino.myshopify.com/blogs/news/easy-patching-for-heavy-duty-fabrics
 [44]: https://www.hashicorp.com/brand
+[45]: https://commons.wikimedia.org/wiki/File:Legal_pad_and_pencil.jpg
+[46]: https://creativecommons.org/licenses/by-sa/4.0/deed.en
+[47]: https://flic.kr/p/2maimQh
+[48]: https://creativecommons.org/licenses/by-nc/2.0/
