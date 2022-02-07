@@ -155,7 +155,7 @@ Since the recurrence is degree two, we need the first two values to determine
 the entire sequence. For the first solution we start with
 {{ get_katex("u_0 + v_0 = (1, 1)") }} and
 {{ get_katex("u_1 + v_1 = (13, 29)") }}; for the second solution we start with
-{{ get_katex("u_0 + 2 v_0 = (2, 4)") }} and
+{{ get_katex("u_0 + 2 v_0 = (1, 2)") }} and
 {{ get_katex("u_1 + 2 v_1 = (17, 38)") }}; and for the third solution we start
 with {{ get_katex("5 u_0 + 11 v_0 = (5, 11)") }} and
 {{ get_katex("5 u_1 + 11 v_1 = (89, 199)") }}. For the second solution, since
