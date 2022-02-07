@@ -70,6 +70,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   > confuses HashiCorp with another brand (including your own).
 - `Legal_pad_and_pencil.jpg` - From [Wikimedia][45], via [CC BY-SA 4.0][46]
 - `database_milestone.jpg` - From [Flickr][47], via [CC BY-NC 2.0][48]
+- `gopher-cake-art.png` - From [Pinclipart][49], Public Domain
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -117,3 +118,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [46]: https://creativecommons.org/licenses/by-sa/4.0/deed.en
 [47]: https://flic.kr/p/2maimQh
 [48]: https://creativecommons.org/licenses/by-nc/2.0/
+[49]: https://www.pinclipart.com/maxpin/ibwJRbw/
