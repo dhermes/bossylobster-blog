@@ -124,7 +124,7 @@ This most interesting bug wasn't a bug in the library, but an
 incorrectly configured local environment. Once we realized
 this fact, the fix was as simple as:
 
-```bash
+```console
 $ sudo ntpdate -s ntp.ubuntu.com
 ```
 
