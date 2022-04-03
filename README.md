@@ -71,6 +71,11 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - `Legal_pad_and_pencil.jpg` - From [Wikimedia][45], via [CC BY-SA 4.0][46]
 - `database_milestone.jpg` - From [Flickr][47], via [CC BY-NC 2.0][48]
 - `gopher-cake-art.png` - From [Pinclipart][49], Public Domain
+- `so-long-farewell.jpg` - This work is in the public domain in the United
+  States because it was published in the United States between 1927 and 1977,
+  inclusive, without a copyright notice.
+- `so-long.gif` from "The Hitchhiker's Guide to the Galaxy", via Nick Bentley
+  [blog post][50]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -119,3 +124,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [47]: https://flic.kr/p/2maimQh
 [48]: https://creativecommons.org/licenses/by-nc/2.0/
 [49]: https://www.pinclipart.com/maxpin/ibwJRbw/
+[50]: https://www.nickbentley.games/the-biggest-difference-between-evolution-and-oceans-besides-the-fish/
