@@ -24,7 +24,7 @@ Consider the following Express application which binds to the default IP for
 port 3000, explicitly binds to `127.0.0.1` for port 4000 and explicitly binds
 to `0.0.0.0` for port 5000:
 
-```js
+```javascript
 // index.js
 const express = require("express");
 const app = express();

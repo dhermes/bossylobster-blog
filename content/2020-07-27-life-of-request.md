@@ -63,7 +63,7 @@ editor. Here we go!
 We'll first create a web server[ref]See [source][15] for `server.js`.[/ref]
 using Node.js and Express:
 
-```js
+```javascript
 const express = require('express');
 const app = express();
 const port = 3000;

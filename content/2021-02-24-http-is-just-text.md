@@ -66,7 +66,7 @@ b'\r\n'
 
 We'll use an Express server on port `6426` to capture an HTTP response:
 
-```js
+```javascript
 const express = require("express");
 
 function main(port) {

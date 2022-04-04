@@ -15,7 +15,9 @@ social_image: images/rename_created_at.jpg
 github_slug: content/2021-11-01-safe-column-renames.md
 ---
 
-![Rename Name Tag](/images/rename_created_at.jpg)
+<div markdown="1" style="text-align: center;">
+  ![Rename Name Tag](/images/rename_created_at.jpg)
+</div>
 
 ### Minor Mismatch
 
@@ -37,7 +39,7 @@ naming conventions in JavaScript / TypeScript types.
 Consider the following TypeScript type for tracking issues in a ticketing
 system:
 
-```ts
+```typescript
 import * as typeorm from 'typeorm';
 
 @typeorm.Entity()
@@ -143,7 +145,7 @@ here we'd use `created_at` instead of `createdAt`.
 
 In TypeORM, a column rename is as simple as
 
-```ts
+```typescript
   @typeorm.CreateDateColumn({ type: 'timestamp with time zone', name: 'created_at' })
   createdAt!: Date;
 ```
@@ -151,7 +153,7 @@ In TypeORM, a column rename is as simple as
 so we can just commit this and run the auto-generated migration? Right?
 RIGHT? Maybe. But probably not. The generated migration is harmless enough:
 
-```ts
+```typescript
 await queryRunner.query(`ALTER TABLE "ticket" RENAME COLUMN "createdAt" TO "created_at"`);
 ```
 
