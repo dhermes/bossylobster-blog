@@ -45,7 +45,7 @@ and smaller. In order to find and fix the bug I
 
 ### Signs of Trouble {#signs-of-trouble}
 
-In our `sandbox` environment at [Blend][25], there were some reports of
+In our `sandbox` environment at Blend, there were some reports of
 "broken pipe" errors showing up a few hundred times per day. Although the
 **error rate** for this particular error was essentially zero, I was worried
 this may be an issue with [AWS RDS][6] that may get worse, so I devoted a
@@ -417,4 +417,3 @@ So what should a reader take away from this long and winding road to a bugfix?
 [22]: https://github.com/lib/pq/blob/v1.8.0/error.go#L495-L497
 [23]: https://github.com/jackc/pgconn/blob/v1.7.2/pgconn.go#L923
 [24]: https://github.com/jackc/pgx/blob/v4.9.2/stdlib/sql.go#L336-L337
-[25]: https://blend.com/careers/

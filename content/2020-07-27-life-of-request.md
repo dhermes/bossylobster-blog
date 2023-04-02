@@ -19,7 +19,7 @@ I recently[ref]It was recent when I wrote this on July 27, 2020.[/ref] had the
 privilege of co-authoring a blog post on the Blend [engineering blog][26] with
 my esteemed colleague [Austin Poore][27]. Our engineering organization is
 growing like crazy right now and it's a lot of fun so if any of this post is
-interesting to you, check out our [careers page][28]. I copied this content
+interesting to you, check out our careers page. I copied this content
 over mostly as-is from the [original post][29] but wanted to preserve it here
 as well.
 
@@ -413,5 +413,4 @@ by the CA we generated above, which is not in the root of trust for `curl`
 [25]: /code/rootCA-key.pem
 [26]: https://full-stack.blend.com/
 [27]: https://github.com/hapoore
-[28]: https://blend.com/company/careers/
 [29]: https://full-stack.blend.com/a-day-in-the-life-of-a-secure-request.html
