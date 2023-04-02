@@ -15,7 +15,7 @@ social_image: images/ts-logo.png
 github_slug: content/2019-06-09-type-guards-for-union-types.md
 ---
 
-In my day job at [Blend][1], I write a lot of TypeScript[ref]This may surprise
+In my day job at Blend, I write a lot of TypeScript[ref]This may surprise
 many of my colleagues from the Python world[/ref]. One great feature of
 TypeScript is the ability to specify an enum with a finite set of values
 as a [union type][2]:
@@ -199,7 +199,6 @@ directly in our unit test without having to form the stand-in `asKeys` value
 const expectedKeys = Object.keys(CoordinateNames).sort()
 ```
 
-[1]: https://blend.com/careers/
 [2]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types
 [3]: https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types
 [4]: https://github.com/hapijs/joi
