@@ -76,6 +76,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
   inclusive, without a copyright notice.
 - `so-long.gif` from "The Hitchhiker's Guide to the Galaxy", via Nick Bentley
   [blog post][50]
+- `3b1b-moser-thumbnail.jpg` - From [YouTube][51], `3blue1brown` [channel][52]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -125,3 +126,5 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [48]: https://creativecommons.org/licenses/by-nc/2.0/
 [49]: https://www.pinclipart.com/maxpin/ibwJRbw/
 [50]: https://www.nickbentley.games/the-biggest-difference-between-evolution-and-oceans-besides-the-fish/
+[51]: https://www.youtube.com/watch?v=YtkIWDE36qU
+[52]: https://www.youtube.com/@3blue1brown

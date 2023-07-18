@@ -1,0 +1,296 @@
+---
+title: Moser's Circle Problem and Polynomial Root Asymptotes
+description: Framing root growth towards infinity with a Laurent series
+date: 2023-07-18
+author: Danny Hermes (dhermes@bossylobster.com)
+tags: Math, Number Theory, Elliptic Curves, Analysis
+slug: moser-circle-estimates
+comments: true
+use_twitter_card: true
+use_open_graph: true
+use_schema_org: true
+twitter_site: @bossylobster
+twitter_creator: @bossylobster
+social_image: images/3b1b-moser-thumbnail.jpg
+github_slug: templated_content/2023-07-18-moser-circle-estimates.template
+---
+
+<div markdown="1" style="text-align: center;">
+  ![3b1b Moser's Circle Problem](/images/3b1b-moser-thumbnail.jpg)
+</div>
+
+Below, we'll show two facts which help understand the positive integer solutions
+to the following diophantine equation:
+
+{{ get_katex("1 + \\binom{n}{2} + \\binom{n}{4} = 2^m.", blockquote=True) }}
+
+We'll show that there is a lone positive root and as
+{{ get_katex("m \\longrightarrow \\infty") }} the root approaches:
+
+{{ get_katex("\\sqrt[4]{24 \\cdot 2^m} + \\frac{3}{2} + \\mathcal{O}\\left(\\frac{1}{\\sqrt[4]{24 \\cdot 2^m}}\\right).", blockquote=True) }}
+
+Additionally, if this root is an integer (i.e. the relevant solutions to a
+diophantine equation), then for {{ get_katex("m \\geq 4") }} it must be exactly
+equal to:
+
+{{ get_katex("n = \\left\\lfloor \\sqrt[4]{24 \\cdot 2^m} + \\frac{3}{2} \\right\\rfloor.", blockquote=True) }}
+
+### Contents
+
+- [Motivation](#motivation)
+- [Open Question](#open-question)
+- [Reframing](#reframing)
+- [Finding Coefficients](#finding-coefficients)
+- [Root as Floor](#root-as-floor)
+- [Tighter Bounds](#tigher-bounds)
+- [Future Work](#future-work)
+
+### Motivation {{ "{#motivation}" }}
+
+I started down this path after watching a [video][1] from 3Blue1Brown[ref]Grant
+Sanderson, aka [3Blue1Brown][5] is awesome and I highly recommend all of his
+videos.[/ref] where he discusses [Moser's circle problem][4]. In particular, he
+demonstrates the formula
+
+{{ get_katex("F_n = 1 + \\binom{n}{2} + \\binom{n}{4}", blockquote=True) }}
+
+for the number of distinct regions a circle is divided into when connecting
+all pairs of {{ get_katex("n") }} points around the circle in
+**general position**.
+
+The video is about showing the perils of assuming a pattern repeats
+indefinitely:
+
+{{ get_katex("F_1 = 1, F_2 = 2, F_3 = 4, F_4 = 8, F_5 = 16, F_6 = 31 \\neq 32.", blockquote=True) }}
+
+but also shows one more value equal to a power of two:
+{{ get_katex("F_{10} = 256")}}.
+
+### Open Question {{ "{#open-question}" }}
+
+At the [end of the video][2] he poses a challenge question that piqued my
+interest and that's what we'll be talking about here[ref]I know the
+[last time][3] I wrote about math on this blog it was the same situation, i.e.
+an offhand comment on a popular YouTube video.[/ref]: **Will there ever be
+another power of 2**?
+
+<div markdown="1" style="text-align: center;">
+  ![3b1b Challenge Question](/images/3b1b-moser-challenge-question.png)
+</div>
+
+There is a fairly clean [solution][6] to this on Math StackExchange, but
+it uses extremely non-elementary methods (I am not a number theorist). It does
+use a simple observation to transform the exponential part of the equation into
+a low degree polynomial so that existing tools for solving diophantine equations
+can be used. In particular, it uses the observation that {{ get_katex("2^m")}}
+is either equal to {{ get_katex("k^2") }} or {{ get_katex("2k^2") }}
+depending on the parity of {{ get_katex("m") }}.
+
+I tried (and failed) to make progress on this challenge question by
+investigating properties of a solution {{ get_katex("n") }} as
+{{ get_katex("m") }} varies. (As opposed to what I view the more common approach
+of investigating factors of {{ get_katex("F_n") }} as {{ get_katex("n") }}
+varies.) However along the way I discovered some interesting facts about the
+roots as {{ get_katex("m \\longrightarrow \\infty") }}.
+
+### Reframing {{ "{#reframing}" }}
+
+We'll reframe {{ get_katex("F_n = 2^m") }} via a change of variables to get an
+explicit Laurent series to more easily understand the behavior of the positive
+root. Note that we can say **the** positive root: there is exactly one. To see
+why, consider
+
+{{ get_katex("\\begin{aligned} f(n; m) &= 24 \\left(F_n - 2^m\\right) \\\\ &= n^4 - 6n^3 + 23n^2 - 18n - 24 \\left(2^m - 1\\right). \\end{aligned}", blockquote=True) }}
+
+This function is concave up since monic and
+
+{{ get_katex("f''(n; m) = 12 n^2 - 36 n + 46 = 3\\left(2n - 3\\right)^2 + 19.", blockquote=True) }}
+
+For {{ get_katex("m \\geq 1") }} we have
+{{ get_katex("f(0; m) = f(1; m) = -24\\left(2^m - 1\\right) < 0") }} which
+guarantees a root greater than 1 and a root less than 0.
+
+We'd like to understand the asymptotic root behavior, but as
+{{ get_katex("m \\longrightarrow \\infty") }} both the "input"
+{{ get_katex("2^m") }} goes to infinity and the "output" {{ get_katex("n") }}
+goes to infinity since the largest term of the polynomial will dominate:
+
+{{ get_katex("n^4 + \\mathcal{O}\\left(n^3\\right) = 24 \\cdot 2^m \\Longrightarrow n \\approx \\sqrt[4]{24 \\cdot 2^m}.", blockquote=True) }}
+
+We'd like a Taylor series at infinity that converges to infinity. However, no
+such expansion exists, so we instead use a quantity that goes to infinity as
+some input {{ get_katex("X") }} goes to zero:
+
+{{ get_katex("n^4 - 6n^3 + 23n^2 - 18n + 24 = 24 \\cdot 2^m = \\frac{1}{X^4}.", blockquote=True) }}
+
+This satisfies {{ get_katex("\\frac{1}{X^4} \\longrightarrow \\infty") }} as
+{{ get_katex("X \\longrightarrow 0^+") }} but since
+{{ get_katex("n \\sim \\sqrt[4]{\\frac{1}{X^4}} = \\frac{1}{X}") }} it doesn't
+solve the {{ get_katex("n \\longrightarrow \\infty") }} problem. For that, we
+use the substitution {{ get_katex("s = n X") }} and now can start to pursue
+a Taylor series for our root via
+
+{{ get_katex("\\left(s / X\\right)^4 - 6\\left(s / X\\right)^3 + 23\\left(s / X\\right)^2 - 18\\left(s / X\\right) + 24 = \\frac{1}{X^4}", blockquote=True) }}
+
+which is equivalent to finding roots of the parameterized polynomial
+
+{{ get_katex("g(s; X) = s^4 - 6X s^3 + 23 X^2 s^2 - 18 X^3 s + \\left(24X^4 - 1\\right).", blockquote=True) }}
+
+This polynomial allows us to **define** the positive root
+{{ get_katex("\\alpha(X)") }} as an implicit function via
+
+{{ get_katex("0 \\equiv g\\left(\\alpha(X); X\\right).", blockquote=True) }}
+
+We'll start from the Taylor series
+
+{{ get_katex("\\alpha(X) = a_0 + a_1 X + \\frac{a_2}{2} X^2 + \\mathcal{O}\\left(X^3\\right)", blockquote=True) }}
+
+and transform to the Laurent series for {{ get_katex("n = s / X") }}
+
+{{ get_katex("\\frac{a_0}{X} + a_1 + \\frac{a_2}{2} X + \\mathcal{O}\\left(X^2\\right).", blockquote=True) }}
+
+### Finding Coefficients {{ "{#finding-coefficients}" }}
+
+To find the first few terms of this expansion, we'll utilize [SymPy][7].
+First, we'll set up our variables, our parameterized polynomial
+{{ get_katex("g(s; X)") }} and the first three terms of the Taylor series
+{{ get_katex("\\alpha(X)") }} (utilizing the **very** useful `sympy.Order` type
+in SymPy):
+
+```python
+In [1]: import sympy; sympy.__version__
+Out[1]: '1.12'
+
+In [2]: a0, a1, a2, s, X = sympy.symbols("a0, a1, a2, s, X")
+
+In [3]: g = s**4 - 6 * X * s**3 + 23 * X**2 * s**2 - 18 * X**3 * s + (24 * X**4 - 1)
+
+In [4]: alpha = a0 + a1 * X + a2 / 2 * X**2 + sympy.Order(X**3)
+```
+
+Substituting `alpha` and expanding, we have a series with quadratic terms
+in {{ get_katex("X") }} and as expected a tail of the form
+{{ get_katex("\\mathcal{O}\\left(X^3\\right)") }}:
+
+```python
+In [5]: g.subs({s: alpha}).expand()
+Out[5]: -1 + a0**4 - 6*X*a0**3 + 4*X*a0**3*a1 + 23*X**2*a0**2 - 18*X**2*a0**2*a1 + 6*X**2*a0**2*a1**2 + 2*X**2*a0**3*a2 + O(X**3)
+
+In [6]: T2 = sympy.Poly(g.subs({s: alpha}).expand().removeO(), X)
+
+In [7]: T2
+Out[7]: Poly((2*a0**3*a2 + 6*a0**2*a1**2 - 18*a0**2*a1 + 23*a0**2)*X**2 + (4*a0**3*a1 - 6*a0**3)*X + a0**4 - 1, X, domain='ZZ[a0,a1,a2]')
+```
+
+Setting the coefficients of the first three terms to zero, we'll have our
+expansion:
+
+```python
+In [8]: T2.coeff_monomial(1)
+Out[8]: a0**4 - 1
+
+In [9]: T2.coeff_monomial(X).factor()
+Out[9]: 2*a0**3*(2*a1 - 3)
+
+In [10]: T2.coeff_monomial(X**2).factor()
+Out[10]: a0**2*(2*a0*a2 + 6*a1**2 - 18*a1 + 23)
+```
+
+Since we want the **positive** root, we choose
+{{ get_katex("\\alpha(0) = a_0 = 1") }}. Independent of this value we also
+see {{ get_katex("a_1 = \\frac{3}{2}") }} (since all four possible values of
+{{ get_katex("a_0") }} are nonzero). Finally solving for the last term:
+
+```python
+In [11]: T2.coeff_monomial(X**2).subs({a0: 1, a1: sympy.Rational(3, 2)}).factor()
+Out[11]: (4*a2 + 19)/2
+```
+
+Putting it all together:
+
+{{ get_katex("\\alpha(X) = 1 + \\frac{3}{2} X - \\frac{19}{8} X^2 + \\mathcal{O}\\left(X^3\\right).", blockquote=True) }}
+
+### Root as Floor {{ "{#root-as-floor}" }}
+
+We'll show below that
+{{ get_katex("1 + \\frac{1}{2} X < \\alpha(X) < 1 + \\frac{3}{2} X") }} for
+small enough {{ get_katex("X") }}[ref]Note that the negative
+quadratic term in the Taylor series for the root indicates the
+upper bound.[/ref]. Once established, this means
+
+{{ get_katex("\\frac{1}{X} + \\frac{1}{2} < n = \\frac{\\alpha(X)}{X} < \\frac{1}{X} + \\frac{3}{2}", blockquote=True) }}
+
+and since this interval has a width of {{ get_katex("1") }} we have
+{{ get_katex("n = \\left\\lfloor \\frac{1}{X} + \\frac{3}{2} \\right\\rfloor") }}.
+The connection to {{ get_katex("m") }} comes in via:
+
+{{ get_katex("\\frac{1}{X^4} = 24 \\cdot 2^m \\Longleftrightarrow \\frac{1}{X} = \\sqrt[4]{24 \\cdot 2^m}.", blockquote=True) }}
+
+We can establish the upper bound via:
+
+{{ get_katex("g\\left(1 + \\frac{3}{2} X; X\\right) = \\frac{537}{16} X^4 + 24 X^3 + \\frac{19}{2} X^2.", blockquote=True) }}
+
+This quantity is always positive for {{ get_katex("X") }} in our domain, which
+means it is to the right of {{ get_katex("\\alpha(X)") }} due to the concavity
+of {{ get_katex("g") }}.
+
+<div markdown="1" style="text-align: center;">
+  ![3b1b Challenge Question](/images/moser-upper-bound.png)
+</div>
+
+For the lower bound:
+
+{{ get_katex("g\\left(1 + \\frac{1}{2} X; X\\right) = \\frac{321}{16} X^4 + X^3 + \\frac{31}{2} X^2 - 4X.", blockquote=True) }}
+
+This quantity is negative for {{ get_katex("X < 0.2371") }} which
+first happens when {{ get_katex("m = 4") }} and remains negative
+thereafter:
+
+<div markdown="1" style="text-align: center;">
+  ![3b1b Challenge Question](/images/moser-lower-bound-01.png)
+</div>
+
+### Tighter Bounds {{ "{#tigher-bounds}" }}
+
+In an attempt to show that there could be no more solutions to the
+original diophantine equation, I tightened the bounds on
+{{ get_katex("\\alpha(X)") }} and explored the behavior. In fact, for
+{{ get_katex("m \\geq 20") }} we have
+
+{{ get_katex("\\sqrt[4]{24 \\cdot 2^m} + 1.46 < n < \\sqrt[4]{24 \\cdot 2^m} + \\frac{3}{2}", blockquote=True) }}
+
+which is a very small window of width {{ get_katex("0.04") }}. I was hoping to
+show that for large enough {{ get_katex("m") }} this window contains no
+integers,= but unfortunately it appears that the window contains an integer
+about 4% of the time. Plotting the number of such windows
+{{ get_katex("C_{1.46}(m)") }} against a line with slope
+{{ get_katex("0.04") }}:
+
+<!--
+C_{1.46}(m) = \\left| \\left\\{z \\in \\mathbb{Z} \\mid 1.46 < z - \\sqrt[4]{24 \\cdot 2^{\\ell}} < 1.5 \\text{ for } \\ell \\leq m \\right\} \\right|
+-->
+
+<div markdown="1" style="text-align: center;">
+  ![3b1b Challenge Question](/images/moser-integers-in-window.png)
+</div>
+
+### Future Work {{ "{#future-work}" }}
+
+Though I didn't get the result I was hoping for, I did have a lot of fun
+exploring the behavior of roots as
+{{ get_katex("m \\longrightarrow \\infty") }}. I do think there is more
+progress to be made in this direction. For example, in order for our expected
+root to **actually** be a root, we must have
+
+{{ get_katex("24 \\left(2^m - 1\\right) \\equiv 0 \\bmod{\\left\\lfloor \\sqrt[4]{24 \\cdot 2^m} + \\frac{3}{2} \\right\\rfloor}.", blockquote=True) }}
+
+but it appears that {{ get_katex("m = 36") }} is the last time this is
+satisfied.
+
+[1]: https://www.youtube.com/watch?v=YtkIWDE36qU
+[2]: https://www.youtube.com/watch?v=YtkIWDE36qU&t=900s
+[3]: /2021/10/elementary-elliptic
+[4]: https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas
+[5]: https://www.youtube.com/@3blue1brown
+[6]: https://math.stackexchange.com/a/3442247/31956
+[7]: https://www.sympy.org/en/index.html
