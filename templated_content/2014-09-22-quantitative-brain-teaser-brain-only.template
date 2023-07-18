@@ -130,13 +130,13 @@ be 0) so consider the case
 This corresponds to an occurrence of the digit 2, hence we set
 {{ get_katex("d_2 = 1") }}.
 
-Now we have 4 non-zero digits along with six 0's to place:
+Now we have 4 nonzero digits along with six 0's to place:
 
 {{ get_katex("6,210,001,000", blockquote=True) }}
 
 Thus **we have found a number** which satisfies the criteria!
 The zero digits in the 3, 4, 5, 7, 8, and 9 places correspond to the
-absence of those digits. The non-zero digits in the 0, 1, 2, and 6
+absence of those digits. The nonzero digits in the 0, 1, 2, and 6
 places also are the correct counts of each of those digits.
 
 As a math nerd, I was still curious to know how to find every possible

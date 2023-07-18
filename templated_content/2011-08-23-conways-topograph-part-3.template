@@ -124,7 +124,7 @@ If two of the {{ get_katex("m_i") }} are equal, then {{ get_katex("v") }}
 must be an integral multiple of the third vector, hence the value
 {{ get_katex("f(v)") }} will be at least as largeas the value of
 {{ get_katex("f") }} on the third vector. If not, all the differences must be
-non-zero (hence greater than or equal to {{ get_katex("1") }} in absolute value,
+nonzero (hence greater than or equal to {{ get_katex("1") }} in absolute value,
 since integers), thus
 
 {{ get_katex("f(v) \\geq \\alpha \\cdot 1^2 + \\beta \\cdot 1^2 + \\gamma \\cdot 1^2", blockquote=True) }}
