@@ -1,5 +1,5 @@
 ---
-title: "The missing type in the Go standard library: Date!"
+title: The missing type in the Go standard library: Date!
 description: Introducing the go-date package. Filling in the gap left by the Go standard library.
 date: 2024-02-29
 author: Danny Hermes (dhermes@bossylobster.com)
