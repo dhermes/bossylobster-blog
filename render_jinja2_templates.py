@@ -165,6 +165,10 @@ def write_template(template):
         fh.write("\n")
 
 
-if __name__ == "__main__":
+def main():
     for template in get_templates():
         write_template(template)
+
+
+if __name__ == "__main__":
+    main()
