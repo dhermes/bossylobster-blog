@@ -42,7 +42,7 @@ library!
 > Having a mix of datetimes and date values became a persistent source of subtle
 > confusion and extended discussion within our engineering team
 
-## Opportunity for correctness to degrade
+## Opportunity for correctness to degrade {#opportunity-for-correctness-to-degrade}
 
 To understand an example where correctness can start to degrade, consider
 a datetime value (`now`) and a date value (`deadline`):
