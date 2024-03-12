@@ -19,6 +19,8 @@ github_slug: content/2024-02-29-date-the-missing-type.md
   ![go-date](/images/calendar-pins.jpg)
 </div>
 
+> This is cross-posted from the Hardfin engineering [blog][9].
+
 The Go standard library uses a single overloaded [type][1] as a stand-in for
 both full datetimes[ref]Here by **datetime**, we mean an object that contains
 **both** date (year, month, day), time information (hour, minute, second,
@@ -180,3 +182,4 @@ distinction between datetime and date values!
 [6]: https://docs.sqlc.dev
 [7]: https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar
 [8]: https://www.postgresql.org/docs/16/datatype-datetime.html
+[9]: https://engineering.hardfin.com/2024/02/date-the-missing-type/
