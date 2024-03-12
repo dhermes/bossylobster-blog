@@ -6,8 +6,7 @@ github_slug: content/pages/about-me.md
 
 My name is Danny Hermes. I am a bit of a mix between a mathematician and a
 software engineer, but either way I really enjoy thinking about hard problems. I
-am currently having a **phenomenal** time as Co-founder & Head of Engineering at
-[Hardfin][2].
+am currently having a **phenomenal** time as Co-founder & CTO at [Hardfin][2].
 
 I am passionate about building high quality software. I am focused on tools that
 eliminate toil and create delight to maximize productivity in engineering
