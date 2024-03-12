@@ -173,7 +173,7 @@ def regenerate(session):
 
 @nox.session(py=DEFAULT_INTERPRETER)
 def serve(session):
-    """"Serve site at http://localhost:${PORT}'."""
+    """Serve site at http://localhost:${PORT}'."""
     script = get_path("pelican_server.py")
     session.cd(OUTPUT_DIR)
     if PORT is None:

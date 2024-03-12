@@ -30,21 +30,21 @@ ENV = jinja2.Environment(
     loader=jinja2.PackageLoader(__name__, "templated_content")
 )
 KATEX_PATH = os.path.join(BASE_DIR, "node_modules", "katex")
-NODE_SCRIPT_TEMPLATE_INLINE = u"""\
+NODE_SCRIPT_TEMPLATE_INLINE = """\
 katex = require(%(katex_path)s);
 value = katex.renderToString("%%s");
 console.log(value);
 """ % {
     "katex_path": json.dumps(KATEX_PATH)
 }
-NODE_SCRIPT_TEMPLATE_MATH_MODE = u"""\
+NODE_SCRIPT_TEMPLATE_MATH_MODE = """\
 katex = require(%(katex_path)s);
 value = katex.renderToString("%%s", {displayMode: true});
 console.log(value);
 """ % {
     "katex_path": json.dumps(KATEX_PATH)
 }
-KATEX_BLOCK_TEMPLATE = u"""\
+KATEX_BLOCK_TEMPLATE = """\
 <div class="katex-elt"><blockquote>
 %s
 </blockquote></div>"""
