@@ -23,7 +23,7 @@ import py.path
 
 nox.options.error_on_external_run = True
 
-DEFAULT_INTERPRETER = "3.7"
+DEFAULT_INTERPRETER = "3.12"
 PRINT_SEP = "=" * 60
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 INPUT_DIR = os.path.join(BASE_DIR, "content")
