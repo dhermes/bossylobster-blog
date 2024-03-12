@@ -77,6 +77,10 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - `so-long.gif` from "The Hitchhiker's Guide to the Galaxy", via Nick Bentley
   [blog post][50]
 - `3b1b-moser-thumbnail.jpg` - From [YouTube][51], `3blue1brown` [channel][52]
+- `calendar-pins.jpg` - From [Unsplash][54], via [Unsplash license][53]
+- `calendar-clipboard.jpg` - From [Unsplash][55], via [Unsplash license][53]
+- `train-aerial-view.jpg` - From [Unsplash][56], via [Unsplash license][53]
+- `puzzle-missing-pieces.jpg` - From [Unsplash][57], via [Unsplash license][53]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -128,3 +132,8 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [50]: https://www.nickbentley.games/the-biggest-difference-between-evolution-and-oceans-besides-the-fish/
 [51]: https://www.youtube.com/watch?v=YtkIWDE36qU
 [52]: https://www.youtube.com/@3blue1brown
+[53]: https://unsplash.com/license
+[54]: https://unsplash.com/photos/bwOAixLG0uc
+[55]: https://unsplash.com/photos/BRBjShcA8D4
+[56]: https://unsplash.com/photos/MjGjIDzKhLk
+[57]: https://unsplash.com/photos/TksUmauJpcA
