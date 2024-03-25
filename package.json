@@ -2,7 +2,7 @@
   "name": "bossylobster-blog",
   "version": "0.0.0",
   "dependencies": {
-    "katex": "0.13.18",
+    "katex": "0.16.10",
     "commander": "8.3.0"
   },
   "repository": {
