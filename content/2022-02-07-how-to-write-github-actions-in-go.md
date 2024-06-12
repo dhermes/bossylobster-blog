@@ -16,6 +16,8 @@ github_slug: content/2022-02-07-how-to-write-github-actions-in-go.md
 
 ![Go with GitHub Actions](/images/go-with-github-actions.png)
 
+> This post was included in [Golang Weekly issue 399][25].
+
 I recently[ref]It was recent when I wrote this on February 7, 2022.[/ref] had
 the privilege of co-authoring a blog post on the Blend [engineering blog][100]
 with my esteemed colleague [Thomas Taylor][101]. I copied this content over
@@ -424,6 +426,7 @@ have our cake and eat it too.
 [22]: https://docs.github.com/en/actions/advanced-guides/caching-dependencies-to-speed-up-workflows
 [23]: https://www.digitalocean.com/community/tutorials/building-go-applications-for-different-operating-systems-and-architectures
 [24]: https://www.arp242.net/static-go.html
+[25]: https://golangweekly.com/issues/399
 [100]: https://full-stack.blend.com/
 [101]: https://github.com/thomasnotfound
 [102]: https://full-stack.blend.com/how-we-write-github-actions-in-go.html
