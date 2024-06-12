@@ -5,8 +5,7 @@ github_slug: content/pages/about-me.md
 ---
 
 My name is Danny Hermes. I am a bit of a mix between a mathematician and a
-software engineer, but either way I really enjoy thinking about hard problems. I
-am currently having a **phenomenal** time as Co-founder & CTO at [Hardfin][2].
+software engineer, but either way I really enjoy thinking about hard problems.
 
 I am passionate about building high quality software. I am focused on tools that
 eliminate toil and create delight to maximize productivity in engineering
@@ -25,8 +24,7 @@ I enjoy spending time with my family, coding (usually in Go or Python), amateur
 wrestling, MMA, Brazilian Jiu Jitsu and following Michigan's basketball
 and wrestling teams.
 
-Thanks for visiting my blog! In addition to my personal blog I also write on the
-[Hardfin Engineering blog][3].
+Thanks for visiting my blog!
 
 ## When and Where
 
@@ -37,8 +35,8 @@ Thanks for visiting my blog! In addition to my personal blog I also write on the
 - UC Berkeley PhD in Applied Mathematics (2013-2018)
 - Staff SWE [Blend][1], where I focused on scaling the infrastructure as Blend
   grew rapidly in the years leading up to IPO (2018-2022)
-- Co-founder at Hardfin (March 2022-present)
+- Co-founder and Head of Engineering / CTO at [Hardfin][2], building financial
+  software for equipment manufacturers (2022-2024)
 
 [1]: https://blend.com/
 [2]: https://www.hardfin.com/
-[3]: https://engineering.hardfin.com/
