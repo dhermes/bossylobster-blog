@@ -81,6 +81,7 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 - `calendar-clipboard.jpg` - From [Unsplash][55], via [Unsplash license][53]
 - `train-aerial-view.jpg` - From [Unsplash][56], via [Unsplash license][53]
 - `puzzle-missing-pieces.jpg` - From [Unsplash][57], via [Unsplash license][53]
+- `almost-unique.jpg` - From [Unsplash][58], via [Unsplash license][53]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -137,3 +138,4 @@ of `output/`. (Be careful not to write over the `CNAME` file.)
 [55]: https://unsplash.com/photos/BRBjShcA8D4
 [56]: https://unsplash.com/photos/MjGjIDzKhLk
 [57]: https://unsplash.com/photos/TksUmauJpcA
+[58]: https://unsplash.com/photos/5E5N49RWtbA
