@@ -1,3 +1,6 @@
 [submodule "pelican-octopress-theme"]
 	path = pelican-octopress-theme
 	url = https://github.com/dhermes/pelican-octopress-theme.git
+[submodule "tmp/themes/Hugo-Octopress"]
+	path = tmp/themes/Hugo-Octopress
+	url = https://github.com/parsiya/Hugo-Octopress
