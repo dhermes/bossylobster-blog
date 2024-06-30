@@ -1,0 +1,58 @@
+<!-- To modify sidebar width check the css file lines 757 and 765 (for large screens) -->
+
+<aside class="sidebar thirds">
+  <section class="first odd">
+
+    {{ with .Site.Params.sidebarHeader }}
+      <h1>{{ . | markdownify }}</h1>
+    {{ end }}
+
+    <p>
+      {{ with .Site.Params.sidebarText }}
+        {{ . | markdownify }}
+      {{ end }}
+    </p>
+  </section>
+
+  <!-- Social media icons are moved to social.html -->
+  {{ partial "social.html" . }}
+
+  <!-- Sidebar menu - items are read from the config file
+       first we check if it is enabled in config file and then start adding items.
+       if Site.Params.sidebarNewWindow exists and is set to true then open these links in a new window -->
+
+  {{ with .Site.Params.sidebarMenuEnabled }}
+    {{ if eq . true }}
+      <section class="odd">
+        {{ with $.Site.Params.sidebarMenuHeader }}
+          <h1>{{ . }}</h1>
+        {{ end }}
+        {{ range $.Site.Menus.sidebar }}
+          <li>
+            <a href="{{ .URL | absURL }}" title="{{ .Name }}" {{ if eq $.Site.Params.sidebarNewWindow true }} target="_blank" rel="noopener noreferrer" {{ end }}>{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </section>
+    {{ end }}
+  {{ end }}
+
+  <!-- Add recent posts - limit is .Site.Params.sidebarRecentLimit - example copied from https://gohugo.io/templates/go-templates/ -->
+  <!-- Only display this section if sideBarRecentLimit is not zero -->
+  {{ with .Site.Params.sidebarRecentLimit }}
+    {{ if not (eq . 0) }}
+      <section class="even">
+        <h1>Recent Posts</h1>
+        <ul id="recent_posts">
+          {{ $pages := where $.Site.Pages "Type" "post" }}
+          {{ range first . $pages }}
+            {{ if .IsPage }}
+              <li class="post">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+  {{ end }}
+</aside>

@@ -11,6 +11,42 @@
 # limitations under the License.
 ---
 baseURL: https://example.org/
+disablePathToLower: false
 languageCode: en-us
 title: My New Hugo Site
-theme: Hugo-Octopress
+
+paginate: 5
+
+permalinks:
+  post: /:year/:month/:slug/
+
+params:
+  github: https://github.com/dhermes/bossylobster-blog
+  twitter: https://twitter.com/bossylobster/
+
+  truncate: true
+  author: Author
+  subtitle: A blog by Danny Hermes; musing on tech, mathematics, etc.
+  searchEngineURL: https://www.google.com/search
+  continueReadingText: Would you like to know more? &rarr;
+  disableReadingTime: false
+  disableGoogleFonts: true
+  generateTaxonomyList: true
+  rss: true
+  textrss: false
+  description: Default description
+
+  notFoundHeader: Nothing here
+  notFoundText: >-
+    This **IS** markdown
+
+    Please go back to other back
+
+  sidebarRecentLimit: 5
+  sidebarMenuEnabled: true
+  sidebarMenuHeader: Sidebar Links
+  sidebarHeader: Sidebar Header
+  sidebarText: >-
+    This **IS** markdown
+
+    Lots of text here
