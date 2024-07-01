@@ -11,7 +11,7 @@
 # limitations under the License.
 ---
 languageCode: en-us
-title: My New Hugo Site
+title: Bossy Lobster
 metaDataFormat: yaml
 
 permalinks:
@@ -65,9 +65,6 @@ params:
     Please go back to other back
 
   sidebarRecentLimit: 5
-  sidebarMenuEnabled: true
-  sidebarMenuHeader: Sidebar Links
-  sidebarHeader: Sidebar Header
   sidebarText: >-
     This **IS** markdown
 
@@ -84,18 +81,17 @@ params:
 
 menu:
   main:
-    - Name: example.net
-      URL: https://www.example.net/
+    - Name: All Posts
+      URL: /all-posts
       weight: -5
-    - Name: This theme on Github
-      URL: https://www.github.com/parsiya/hugo-octopress
-  sidebar:
-    - Name: example.net
-      URL: https://www.example.net
-      weight: 0
-    - Name: This theme on Github
-      URL: https://www.github.com/parsiya/hugo-octopress
-      weight: 1
+    - Name: GitHub
+      URL: https://github.com/dhermes/
+    - Name: Mathematics
+      URL: /mathematics
+    - Name: Testimonials
+      URL: /testimonials
+    - Name: About Me
+      URL: /about-me
 # # See:
 # # - https://gohugo.io/getting-started/configuration/#configure-minify
 # # - https://github.com/gohugoio/hugo/issues/6621
