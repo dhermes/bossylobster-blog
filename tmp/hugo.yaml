@@ -66,9 +66,8 @@ params:
 
   sidebarRecentLimit: 5
   sidebarText: >-
-    This **IS** markdown
-
-    Lots of text here
+    ![bossy lobster](/images/bossy_lobster_350_alpha.png)
+    ![dhermes headshot](/images/dhermes_headshot.jpg)
 
   sortTaxonomyAlphabetical: true
 
