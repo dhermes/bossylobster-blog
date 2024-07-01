@@ -29,7 +29,7 @@ disablePathToLower: false
 markup:
   defaultMarkdownHandler: goldmark
   highlight:
-    style: solarized-dark
+    style: solarized-light
   tableOfContents:
     startLevel: 2 # 1
     endLevel: 3 # 8
@@ -50,7 +50,7 @@ params:
   author: Author
   subtitle: A blog by Danny Hermes; musing on tech, mathematics, etc.
   searchEngineURL: https://www.google.com/search
-  continueReadingText: Would you like to know more? &rarr;
+  continueReadingText: Read On &crarr;
   disableReadingTime: false
   disableGoogleFonts: true
   generateTaxonomyList: true
