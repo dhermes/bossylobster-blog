@@ -10,19 +10,41 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-baseURL: https://example.org/
-disablePathToLower: false
 languageCode: en-us
 title: My New Hugo Site
-
-paginate: 5
+metaDataFormat: yaml
 
 permalinks:
   post: /:year/:month/:slug/
 
+paginate: 5
+
+baseURL: https://example.org/
+disablePathToLower: false
+
+# See:
+# - https://gohugo.io/getting-started/configuration-markup
+# NOTE: At some point we may want to toggle the CSS for syntax highlighting
+#       based on light or dark mode.
+markup:
+  defaultMarkdownHandler: goldmark
+  highlight:
+    style: solarized-dark
+  tableOfContents:
+    startLevel: 2 # 1
+    endLevel: 3 # 8
+
 params:
   github: https://github.com/dhermes/bossylobster-blog
   twitter: https://twitter.com/bossylobster/
+  # bitbucket: ""
+  # facebook: ""
+  # instagram: ""
+  # keybase: ""
+  # linkedin: ""
+  # mastodon: ""
+  # stackoverflow: ""
+  # youtube: ""
 
   truncate: true
   author: Author
@@ -50,3 +72,35 @@ params:
     This **IS** markdown
 
     Lots of text here
+
+  sortTaxonomyAlphabetical: true
+
+  twitterCardEnabled: true
+  twitterCardSite: bossylobster
+  twitterCardDomain: bossylobster.com
+  twitterCardAuthor: Danny Hermes
+
+  # googleAnalytics: ""
+
+menu:
+  main:
+    - Name: example.net
+      URL: https://www.example.net/
+      weight: -5
+    - Name: This theme on Github
+      URL: https://www.github.com/parsiya/hugo-octopress
+  sidebar:
+    - Name: example.net
+      URL: https://www.example.net
+      weight: 0
+    - Name: This theme on Github
+      URL: https://www.github.com/parsiya/hugo-octopress
+      weight: 1
+# # See:
+# # - https://gohugo.io/getting-started/configuration/#configure-minify
+# # - https://github.com/gohugoio/hugo/issues/6621
+# # - https://discourse.gohugo.io/t/hugo-minify-and-quotes-in-meta-tags/21603
+# minify:
+#   tdewolff:
+#     html:
+#       keepQuotes: true
