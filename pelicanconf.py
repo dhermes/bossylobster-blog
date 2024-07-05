@@ -25,10 +25,10 @@ def get_path(*names):
     return os.path.join(CURR_DIR, *names)
 
 
-AUTHOR = u"Danny Hermes"
+AUTHOR = "Danny Hermes"
 
-SITENAME = u"Bossy Lobster"
-SITESUBTITLE = u"A blog by Danny Hermes; musing on tech, mathematics, etc."
+SITENAME = "Bossy Lobster"
+SITESUBTITLE = "A blog by Danny Hermes; musing on tech, mathematics, etc."
 # Default is empty string unless building to publish.
 SITEURL = ""
 PATH = "content"  # Directory containing posts.
@@ -36,7 +36,7 @@ PATH = "content"  # Directory containing posts.
 # Times and dates
 DEFAULT_DATE_FORMAT = "%b %d, %Y"
 TIMEZONE = "US/Pacific"
-DEFAULT_LANG = u"en"
+DEFAULT_LANG = "en"
 FORMATTED_FIELDS = ["title"]
 
 # Set the article URL
@@ -140,6 +140,7 @@ DISQUS_SITENAME = "bossylobster"
 # Put pages in root. This is strictly for the 404 page.
 PAGE_URL = "{slug}.html"
 PAGE_SAVE_AS = "{slug}.html"
+
 
 # NOTE: This is not secure for actually serving requests, but
 #       is fine for static, trusted and known content.

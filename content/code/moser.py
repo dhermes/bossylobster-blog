@@ -52,7 +52,9 @@ def part1():
     print("0 =", implicit2.subs({X: 0}))
     print(
         "0 =",
-        implicit2.subs({X: 0}).subs({alpha0: 1, alpha_prime0: sympy.Rational(3, 2)}),
+        implicit2.subs({X: 0}).subs(
+            {alpha0: 1, alpha_prime0: sympy.Rational(3, 2)}
+        ),
     )
 
 
@@ -67,7 +69,10 @@ def lower_bound_half(x_value):
 
 def lower_bound_one(x_value):
     return (
-        24.0 * x_value**4 + 14.0 * x_value**3 + 11.0 * x_value**2 - 2.0 * x_value
+        24.0 * x_value**4
+        + 14.0 * x_value**3
+        + 11.0 * x_value**2
+        - 2.0 * x_value
     )
 
 
@@ -81,7 +86,11 @@ def lower_bound_46(x_value):
 
 
 def upper_bound(x_value):
-    return 537.0 * x_value**4 / 16.0 + 24.0 * x_value**3 + 19.0 * x_value**2 / 2.0
+    return (
+        537.0 * x_value**4 / 16.0
+        + 24.0 * x_value**3
+        + 19.0 * x_value**2 / 2.0
+    )
 
 
 def part2_plot1(ax):
@@ -145,7 +154,9 @@ def part2_plot3(ax):
         if m == 19 or m == 20:
             ax.text(X_value + 0.001, Y_value, f"$m = {m}$", fontsize=10)
         else:
-            ax.text(X_value + 0.001, Y_value - 0.0001, f"$m = {m}$", fontsize=10)
+            ax.text(
+                X_value + 0.001, Y_value - 0.0001, f"$m = {m}$", fontsize=10
+            )
 
     ax.plot(0.0, 0.0, color=GREEN, marker="o", linestyle="none")
 
