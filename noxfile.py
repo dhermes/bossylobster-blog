@@ -10,6 +10,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import functools
 import glob
 import errno
 import os
@@ -19,6 +20,11 @@ import subprocess
 import nox
 import psutil
 import py.path
+
+
+_SHUTIL_RMTREE_IGNORE_ERRORS = functools.partial(
+    shutil.rmtree, ignore_errors=True
+)
 
 
 nox.options.error_on_external_run = True
@@ -112,7 +118,7 @@ def html(session):
     index_files = glob.glob(os.path.join(OUTPUT_DIR, "index*.html"))
     for filename in index_files:
         session.run(shutil.move, filename, BASE_DIR)
-    session.run(shutil.rmtree, OUTPUT_DIR, ignore_errors=True)
+    session.run(_SHUTIL_RMTREE_IGNORE_ERRORS, OUTPUT_DIR)
     print(PRINT_SEP)
     # 4. Build HTML without paging.
     print("Making second pass without paging")
@@ -132,11 +138,13 @@ def html(session):
     print(PRINT_SEP)
     session.run(remove_file, os.path.join(OUTPUT_DIR, "authors.html"))
     session.run(
-        shutil.rmtree, os.path.join(OUTPUT_DIR, "author"), ignore_errors=True
+        _SHUTIL_RMTREE_IGNORE_ERRORS,
+        os.path.join(OUTPUT_DIR, "author"),
     )
     session.run(remove_file, os.path.join(OUTPUT_DIR, "categories.html"))
     session.run(
-        shutil.rmtree, os.path.join(OUTPUT_DIR, "category"), ignore_errors=True
+        _SHUTIL_RMTREE_IGNORE_ERRORS,
+        os.path.join(OUTPUT_DIR, "category"),
     )
     session.run(remove_file, os.path.join(OUTPUT_DIR, "tags.html"))
     print(PRINT_SEP)
@@ -285,4 +293,4 @@ def clean(session):
         get_path("pelican-plugins", "__pycache__"),
     )
     for dir_path in dir_paths:
-        session.run(shutil.rmtree, dir_path, ignore_errors=True)
+        session.run(_SHUTIL_RMTREE_IGNORE_ERRORS, dir_path)
