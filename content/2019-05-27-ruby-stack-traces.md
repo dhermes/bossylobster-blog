@@ -124,6 +124,6 @@ for this old Twitter bug both Gary and Bryan interacted on Twitter!
 [1]: https://twitter.com/garybernhardt
 [2]: https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
 [3]: https://twitter.com/bcantrill
-[4]: https://www.youtube.com/watch?v=LjFM8vw3pbU
+[4]: https://www.youtube.com/watch?v=YKv_IDN0zCA
 [5]: http://dtrace.org/blogs/about/
 [6]: https://twitter.com/bossylobster/status/1129873135132659714
