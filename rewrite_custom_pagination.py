@@ -37,13 +37,23 @@ def rewrite_links(page_num, filename=None):
     prev_link = 'href="%s/index%d.html"' % (SITEURL, page_num - 1)
     if content.count(prev_link) > 1:
         raise ValueError(
-            ("Link occurred more than once.", prev_link, filename)
+            (
+                "Link occurred more than once.",
+                prev_link,
+                filename,
+                content.count(prev_link),
+            )
         )
 
     next_link = 'href="%s/index%d.html"' % (SITEURL, page_num + 1)
     if content.count(next_link) > 1:
         raise ValueError(
-            ("Link occurred more than once.", next_link, filename)
+            (
+                "Link occurred more than once.",
+                next_link,
+                filename,
+                content.count(next_link),
+            )
         )
 
     prev_link_new = 'href="%s/page/%d"' % (SITEURL, page_num - 1)

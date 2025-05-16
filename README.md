@@ -7,10 +7,16 @@ as markdown. The blog is built with [Pelican][8] and I followed
 After cloning, local dev can be done via
 
 ```
-nox -s clean
-nox -s html
-nox -s serve &
-nox -s stopserver
+nox --session clean
+nox --session html --reuse-existing-virtualenvs
+nox --session serve --reuse-existing-virtualenvs
+
+# NOTE: For newer versions of Python 3.7 / nox / pip, there may be environment
+#       issues and you may need to manually create virtual environments first.
+
+mkdir ./.nox
+python3.7 -m venv ./.nox/html/
+python3.7 -m venv ./.nox/serve/
 ```
 
 This relies on heavily on the [`pelican-octopress-theme`][6] with
