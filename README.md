@@ -29,6 +29,10 @@ Build with the `PUBLISH` environment variable set to `true` and then
 replace the content on [`dhermes.github.io`][3] with the contents
 of `output/`. (Be careful not to write over the `CNAME` file.)
 
+```
+PUBLISH=true nox --session html --reuse-existing-virtualenvs
+```
+
 ## Content Attribution
 
 - `abraham-de-moivre.jpg` - From [Wikipedia Commons][11]
