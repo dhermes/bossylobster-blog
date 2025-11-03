@@ -92,6 +92,8 @@ PUBLISH=true nox --session html --reuse-existing-virtualenvs
 - `train-aerial-view.jpg` - From [Unsplash][56], via [Unsplash license][53]
 - `puzzle-missing-pieces.jpg` - From [Unsplash][57], via [Unsplash license][53]
 - `almost-unique.jpg` - From [Unsplash][58], via [Unsplash license][53]
+- `thundering-herd.jpg` - From [Unsplash][59], via [Unsplash license][53]
+- `traffic-jam.jpg` - From [Unsplash][60], via [Unsplash license][53]
 
 [1]: https://github.com/dhermes/dhermes.github.io
 [2]: https://blog.bossylobster.com
@@ -149,3 +151,5 @@ PUBLISH=true nox --session html --reuse-existing-virtualenvs
 [56]: https://unsplash.com/photos/MjGjIDzKhLk
 [57]: https://unsplash.com/photos/TksUmauJpcA
 [58]: https://unsplash.com/photos/5E5N49RWtbA
+[59]: https://unsplash.com/photos/-zxeFLnmnkQ
+[60]: https://unsplash.com/photos/cekJ1XXx1Rk
